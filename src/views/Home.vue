@@ -1,12 +1,19 @@
 <template>
-<Navbar />
+<Navbar class="has-shadow" />
 <div class="columns">
   <div class="column is-2 is-hidden-mobile">
-    <Menu/>
+    <Menu />
   </div>
+
   <div class="column is-7">
-    <Post />
+    <div class="card mt-3">
+      <Post class="card-content" />
+    </div>
+    <div class="card mt-3">
+      <Post class="card-content" />
+    </div>
   </div>
+
   <div class="column is-3 is-hidden-mobile">
     Right
   </div>
