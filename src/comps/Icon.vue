@@ -24,6 +24,9 @@ export default {
       required: true
     },
     label: String
+  },
+  mounted () {
+    console.log(this.$attrs)
   }
 }
 </script>
