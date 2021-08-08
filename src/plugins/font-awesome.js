@@ -11,7 +11,11 @@ import {
   faComments,
   faDollarSign,
   faImage,
-  faSmile
+  faSmile,
+  faPoll,
+  faVideo,
+  faFile,
+  faSearch
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
@@ -26,5 +30,9 @@ library.add(
   faComments,
   faDollarSign,
   faImage,
-  faSmile
+  faSmile,
+  faPoll,
+  faVideo,
+  faFile,
+  faSearch
 )

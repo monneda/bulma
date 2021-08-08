@@ -1,6 +1,12 @@
 <template>
 <aside class="menu">
   <ul class="menu-list">
+    <li class="level">
+      <span class="level-item"></span>
+      <button class="level-item button is-rounded is-link">Nova Cartera</button>
+      <span class="level-item"></span>
+    </li>
+    <hr>
     <li>
       <a><Icon icon="newspaper" label="Feed" /></a>
     </li>

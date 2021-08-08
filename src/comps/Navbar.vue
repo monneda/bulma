@@ -11,12 +11,14 @@
       <span></span>
     </a>
   </div>
+
   <div class="navbar-menu">
     <div class="navbar-start">
       <div class="navbar-item">
-        <input class="input is-rounded is-spaced" type="text" placeholder="Pesquisar">
+        <Search />
       </div>
     </div>
+
     <div class="navbar-end">
       <!-- Common items -->
       <a class="navbar-item"><Icon icon="bell" label="Notificações" /></a>
@@ -45,12 +47,14 @@
 
 <script>
 import Icon from '@/comps/Icon'
+import Search from '@/comps/Search'
 
 export default {
   name: 'Navbar',
 
   components: {
-    Icon
+    Icon,
+    Search
   },
 
   methods: {
