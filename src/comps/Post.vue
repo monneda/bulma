@@ -32,23 +32,31 @@
           <small class="level-item">10 compartilhamentos</small>
         </span>
       </nav>
-    </div>
 
-    <!-- Share buttons -->
-    <nav class="level is-mobile">
-      <button class="button is-inverted is-link">
-        <Icon class="level-item" icon="heart" label="Curtir" />
-      </button>
-      <button class="button is-inverted is-link">
-        <Icon class="level-item" icon="share" label="Compartilhar" />
-      </button>
-      <button class="button is-inverted is-link">
-        <Icon class="level-item" icon="paper-plane" label="Enviar" />
-      </button>
-      <button class="button is-inverted is-link">
-        <Icon class="level-item" icon="bookmark" label="Salvar" />
-      </button>
-    </nav>
+      <!-- Share buttons -->
+      <nav class="level is-mobile">
+        <button class="button is-inverted is-link">
+          <Icon class="level-item" icon="heart" label="Curtir" />
+        </button>
+        <button class="button is-inverted is-link">
+          <Icon class="level-item" icon="share" label="Compartilhar" />
+        </button>
+        <button class="button is-inverted is-link">
+          <Icon class="level-item" icon="paper-plane" label="Enviar" />
+        </button>
+        <button class="button is-inverted is-link">
+          <Icon class="level-item" icon="bookmark" label="Salvar" />
+        </button>
+      </nav>
+
+      <!-- Comment input -->
+      <div class="field">
+        <span class="control has-icons-right">
+          <input class="input" type="text" name="comment" placeholder="Adicionar comentário">
+          <Icon class="icon is-right" icon="image" />
+        </span>
+      </div>
+    </div>
   </div>
 </article>
 </template>
@@ -57,8 +65,27 @@
 import Icon from '@/comps/Icon'
 
 export default {
+  name: 'Post',
+
   components: {
     Icon
+  },
+
+  data: () => ({
+    comment: ''
+  }),
+
+  computed: {
+    rows () {
+      const newlines = this.comment.split('\n').length
+      return Math.max(newlines, 1)
+    }
   }
 }
 </script>
+
+<style scoped>
+textarea {
+  resize: none;
+}
+</style>

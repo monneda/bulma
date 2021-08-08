@@ -18,15 +18,6 @@
 <script>
 export default {
   name: 'Icon',
-  props: {
-    icon: {
-      type: String,
-      required: true
-    },
-    label: String
-  },
-  mounted () {
-    console.log(this.$attrs)
-  }
+  props: ['icon', 'label']
 }
 </script>

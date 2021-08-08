@@ -7,7 +7,11 @@ import {
   faNewspaper,
   faShare,
   faPaperPlane,
-  faBookmark
+  faBookmark,
+  faComments,
+  faDollarSign,
+  faImage,
+  faSmile
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
@@ -18,5 +22,9 @@ library.add(
   faNewspaper,
   faShare,
   faPaperPlane,
-  faBookmark
+  faBookmark,
+  faComments,
+  faDollarSign,
+  faImage,
+  faSmile
 )

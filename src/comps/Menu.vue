@@ -2,13 +2,13 @@
 <aside class="menu">
   <ul class="menu-list">
     <li>
-      <a><Icon icon="bell" label="Feed" /></a>
+      <a><Icon icon="newspaper" label="Feed" /></a>
     </li>
     <li>
-      <a><Icon icon="bell" label="Ativos" /></a>
+      <a><Icon icon="dollar-sign" label="Ativos" /></a>
     </li>
     <li>
-      <a><Icon icon="bell" label="Fórum" /></a>
+      <a><Icon icon="comments" label="Fórum" /></a>
     </li>
   </ul>
 </aside>
