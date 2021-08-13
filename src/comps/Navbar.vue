@@ -1,5 +1,5 @@
 <template>
-<nav class="navbar">
+<nav class="navbar is-white">
   <div class="navbar-brand">
     <a class="navbar-item">
       <img src="@/assets/logo.png" height="48">
@@ -26,12 +26,12 @@
 
       <!-- User dropdown -->
       <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          <Icon icon="user" label="Conta" />
+        <a class="navbar-item has-text-black">
+          <Icon icon="user" label="Conta"/>
         </a>
 
         <!-- Dropdown items -->
-        <div class="navbar-dropdown">
+        <div class="navbar-dropdown is-right">
           <a class="navbar-item">Perfil</a>
           <a class="navbar-item">Nova carteira</a>
           <a class="navbar-item">Configurações</a>

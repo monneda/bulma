@@ -12,7 +12,7 @@
     <div class="level">
       <span class="level-left">
         <p>
-          <strong>Guilherme Bueno</strong> <small>@bueno</small>
+          <strong>Guilherme Bueno</strong> <br> <small>@bueno</small>
           <br>
           Founder
         </p>

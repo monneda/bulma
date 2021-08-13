@@ -1,6 +1,6 @@
 <template>
-<Navbar class="has-shadow is-dark" />
-<div class="columns mt-3">
+<Navbar class="has-shadow" />
+<div class="columns pt-5 has-background-light">
   <!-- Left -->
   <div class="column is-2 is-hidden-mobile">
     <Menu />
@@ -8,12 +8,12 @@
 
   <!-- Center -->
   <div class="column is-7">
-    <div class="box">
+    <div class="card p-3 is-shadowless">
       <PostCreate />
     </div>
 
     <template v-for="i in [1, 2, 3]" :key="i">
-      <div class="box">
+      <div class="card mt-4 is-shadowless p-3">
         <Post />
       </div>
     </template>
@@ -21,7 +21,7 @@
 
   <!-- Right -->
   <div class="column is-3 is-hidden-mobile">
-    <div class="box mr-3">
+    <div class="card mr-3 p-3 is-shadowless">
       <UserIcon />
       <hr>
       <span class="level">
@@ -54,3 +54,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.card {
+  border: 1px solid #E9E9E9;
+}
+</style>

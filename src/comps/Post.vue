@@ -12,7 +12,7 @@
     <div class="content">
       <!-- User info -->
       <p>
-        <strong>Guilherme Bueno</strong> <small>@bueno</small> <small>31m</small>
+        <strong>Guilherme Bueno</strong><small> @bueno</small> <small>31m</small>
         <br>
         <small>Founder</small>
       </p>
