@@ -1,58 +1,105 @@
 <template>
-<article class="media">
-  <!-- User image -->
-  <figure class="media-left">
-    <p class="image is-64x64">
+<article>
+  <div class="media">
+    <figure class="media-left image is-64x64">
       <img class="is-rounded" src="http://placekitten.com/64/64">
-    </p>
-  </figure>
+    </figure>
 
-  <!-- Content -->
-  <div class="media-content">
-    <div class="content">
-      <!-- Post input -->
+    <div class="media-content my-auto">
       <div class="field">
-        <span class="control">
+        <p class="control">
           <textarea
             class="textarea"
             placeholder="Novo post"
             :rows="rows"
             v-model="comment"
           />
-        </span>
+        </p>
       </div>
-
-      <!-- Share buttons -->
-      <nav class="level is-mobile">
-        <button class="button is-inverted is-link">
-          <Icon class="level-item" icon="image" label="Imagem" />
-        </button>
-        <button class="button is-inverted is-link">
-          <Icon class="level-item" icon="video" label="Vídeo" />
-        </button>
-        <button class="button is-inverted is-link">
-          <Icon class="level-item" icon="poll" label="Enquete" />
-        </button>
-        <button class="button is-inverted is-link">
-          <Icon class="level-item" icon="file" label="Documento" />
-        </button>
-        <button class="button is-link">
-          <Icon class="level-item" icon="paper-plane" label="Publicar" />
-        </button>
-      </nav>
     </div>
   </div>
+
+  <Breakpoint class="level is-mobile mt-2" br="mobile">
+    <button class="level-item button is-inverted is-link">
+      <span class="icon">
+        <font-awesome-icon icon="image" />
+      </span>
+    </button>
+    <button class="level-item button is-inverted is-link">
+      <span class="icon">
+        <font-awesome-icon icon="video" />
+      </span>
+    </button>
+    <button class="level-item button is-inverted is-link">
+      <span class="icon">
+        <font-awesome-icon icon="poll" />
+      </span>
+    </button>
+    <button class="level-item button is-inverted is-link">
+      <span class="icon">
+        <font-awesome-icon icon="file" />
+      </span>
+    </button>
+    <button class="level-item button is-link">
+      <span class="icon">
+        <font-awesome-icon icon="paper-plane" />
+      </span>
+    </button>
+  </Breakpoint>
+
+  <Breakpoint class="level mt-2" br="mobile" hide>
+    <button class="level-item button is-inverted is-link">
+      <span class="icon-text">
+        <span class="icon">
+          <font-awesome-icon icon="image" />
+        </span>
+        <span>Imagem</span>
+      </span>
+    </button>
+    <button class="level-item button is-inverted is-link">
+      <span class="icon-text">
+        <span class="icon">
+          <font-awesome-icon icon="video" />
+        </span>
+        <span>Vídeo</span>
+      </span>
+    </button>
+    <button class="level-item button is-inverted is-link">
+      <span class="icon-text">
+        <span class="icon">
+          <font-awesome-icon icon="poll" />
+        </span>
+        <span>Enquete</span>
+      </span>
+    </button>
+    <button class="level-item button is-inverted is-link">
+      <span class="icon-text">
+        <span class="icon">
+          <font-awesome-icon icon="file" />
+        </span>
+        <span>Documento</span>
+      </span>
+    </button>
+    <button class="level-item button is-link">
+      <span class="icon-text">
+        <span class="icon">
+          <font-awesome-icon icon="paper-plane" />
+        </span>
+        <span>Publicar</span>
+      </span>
+    </button>
+  </Breakpoint>
 </article>
 </template>
 
 <script>
-import Icon from '@/comps/Icon'
+import Breakpoint from '@/comps/Breakpoint'
 
 export default {
   name: 'PostCreate',
 
   components: {
-    Icon
+    Breakpoint
   },
 
   data: () => ({
