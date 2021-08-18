@@ -1,20 +1,16 @@
 <template>
 
-<template v-if="label">
-  <span class="icon-text">
-    <span v-if="!before">{{ label }}</span>
-    <span class="icon">
-      <font-awesome-icon :icon="icon" />
-    </span>
-    <span v-if="before">{{ label }}</span>
-  </span>
-</template>
-
-<template v-else>
+<span v-if="label" class="icon-text">
+  <span v-if="!before">{{ label }}</span>
   <span class="icon">
     <font-awesome-icon :icon="icon" />
   </span>
-</template>
+  <span v-if="before">{{ label }}</span>
+</span>
+
+<span v-else class="icon">
+  <font-awesome-icon :icon="icon" />
+</span>
 
 </template>
 
