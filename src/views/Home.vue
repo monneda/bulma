@@ -1,6 +1,6 @@
 <template>
 <Navbar class="has-shadow" />
-<div class="columns pt-5 has-background-light">
+<div class="columns mx-0 my-1">
   <!-- Left -->
   <div class="column is-2 is-hidden-mobile">
     <Menu />
@@ -8,30 +8,23 @@
 
   <!-- Center -->
   <div class="column is-7">
-    <div class="card p-3 is-shadowless">
-      <PostCreate />
-    </div>
-
-    <template v-for="i in [1, 2, 3]" :key="i">
-      <div class="card mt-4 is-shadowless p-3">
-        <Post />
-      </div>
-    </template>
+    <PostCreate class="box" />
+    <Post v-for="i in [1, 2, 3]" :key="i" class="box" />
   </div>
 
   <!-- Right -->
   <div class="column is-3 is-hidden-mobile">
-    <div class="card mr-3 p-3 is-shadowless">
+    <div class="card p-3 is-shadowless">
       <UserIcon />
+
       <hr>
+
       <span class="level">
         <strong class="level-left">Sugestão de investidores</strong>
         <span class="level-right">ver todos</span>
       </span>
-      <UserIcon />
-      <UserIcon />
-      <UserIcon />
-      <UserIcon />
+
+      <UserIcon v-for="i of [1, 2, 3]" :key="i" />
     </div>
   </div>
 </div>

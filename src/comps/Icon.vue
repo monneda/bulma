@@ -1,11 +1,11 @@
 <template>
 
 <span v-if="label" class="icon-text">
-  <span v-if="!before">{{ label }}</span>
+  <span v-if="before">{{ label }}</span>
   <span class="icon">
     <font-awesome-icon :icon="icon" />
   </span>
-  <span v-if="before">{{ label }}</span>
+  <span v-if="!before">{{ label }}</span>
 </span>
 
 <span v-else class="icon">

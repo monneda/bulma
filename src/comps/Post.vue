@@ -31,20 +31,11 @@
 
   <Breakpoint class="level is-mobile has-text-grey mt-2 mb-1" br="mobile">
     <div class="level-left">
-      <span class="level-item icon-text">
-        <span class="icon"><font-awesome-icon icon="heart" /></span>
-        <span>5</span>
-      </span>
+      <Icon class="level-item" icon="heart" label="5" />
     </div>
     <div class="level-right">
-      <span class="level-item icon-text">
-        <span class="icon"><font-awesome-icon icon="comments" /></span>
-        <span>2</span>
-      </span>
-      <span class="level-item icon-text">
-        <span class="icon"><font-awesome-icon icon="share" /></span>
-        <span>11</span>
-      </span>
+      <Icon class="level-item" icon="comments" label="2" />
+      <Icon class="level-item" icon="share" label="11" />
     </div>
   </Breakpoint>
 
@@ -62,37 +53,39 @@
 
   <Breakpoint class="level is-mobile" br="mobile">
     <button class="level-item button is-inverted is-link">
-      <span class="icon">
-        <font-awesome-icon icon="heart" />
-      </span>
+      <Icon icon="heart" />
     </button>
     <button class="level-item button is-inverted is-link">
-      <span class="icon">
-        <font-awesome-icon icon="comments" />
-      </span>
+      <Icon icon="comments" />
     </button>
     <button class="level-item button is-inverted is-link">
-      <span class="icon">
-        <font-awesome-icon icon="share" />
-      </span>
+      <Icon icon="share" />
     </button>
   </Breakpoint>
 
   <Breakpoint class="level" br="mobile" hide>
-    <button class="level-item button is-inverted is-link">Curtir</button>
-    <button class="level-item button is-inverted is-link">Comentar</button>
-    <button class="level-item button is-inverted is-link">Compartilhar</button>
+    <button class="level-item button is-inverted is-link">
+      <Icon icon="heart" label="Curtir" />
+    </button>
+    <button class="level-item button is-inverted is-link">
+      <Icon icon="comments" label="Comentar" />
+    </button>
+    <button class="level-item button is-inverted is-link">
+      <Icon icon="share" label="Compartilhar" />
+    </button>
   </Breakpoint>
 </article>
 </template>
 
 <script>
+import Icon from '@/comps/Icon'
 import Breakpoint from '@/comps/Breakpoint'
 
 export default {
   name: 'Post',
 
   components: {
+    Icon,
     Breakpoint
   },
 

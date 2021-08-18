@@ -9,10 +9,10 @@
 
     <hr>
 
-    <li><a><Icon icon="newspaper" label="Feed" before /></a></li>
-    <li><a><Icon icon="dollar-sign" label="Ativos" before /></a></li>
-    <li><a><Icon icon="heart" label="Descobrir" before /></a></li>
-    <li><a><Icon icon="comments" label="Fórum" before /></a></li>
+    <li><a><Icon icon="newspaper" label="Feed" /></a></li>
+    <li><a><Icon icon="dollar-sign" label="Ativos" /></a></li>
+    <li><a><Icon icon="heart" label="Descobrir" /></a></li>
+    <li><a><Icon icon="comments" label="Fórum" /></a></li>
   </ul>
 </aside>
 </template>

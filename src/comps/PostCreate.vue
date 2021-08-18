@@ -21,84 +21,51 @@
 
   <Breakpoint class="level is-mobile mt-2" br="mobile">
     <button class="level-item button is-inverted is-link">
-      <span class="icon">
-        <font-awesome-icon icon="image" />
-      </span>
+      <Icon icon="image" />
     </button>
     <button class="level-item button is-inverted is-link">
-      <span class="icon">
-        <font-awesome-icon icon="video" />
-      </span>
+      <Icon icon="video" />
     </button>
     <button class="level-item button is-inverted is-link">
-      <span class="icon">
-        <font-awesome-icon icon="poll" />
-      </span>
+      <Icon icon="poll" />
     </button>
     <button class="level-item button is-inverted is-link">
-      <span class="icon">
-        <font-awesome-icon icon="file" />
-      </span>
+      <Icon icon="file" />
     </button>
     <button class="level-item button is-link">
-      <span class="icon">
-        <font-awesome-icon icon="paper-plane" />
-      </span>
+      <Icon icon="paper-plane" />
     </button>
   </Breakpoint>
 
   <Breakpoint class="level mt-2" br="mobile" hide>
     <button class="level-item button is-inverted is-link">
-      <span class="icon-text">
-        <span class="icon">
-          <font-awesome-icon icon="image" />
-        </span>
-        <span>Imagem</span>
-      </span>
+      <Icon icon="image" label="Imagem" />
     </button>
     <button class="level-item button is-inverted is-link">
-      <span class="icon-text">
-        <span class="icon">
-          <font-awesome-icon icon="video" />
-        </span>
-        <span>Vídeo</span>
-      </span>
+      <Icon icon="video" label="Vídeo" />
     </button>
     <button class="level-item button is-inverted is-link">
-      <span class="icon-text">
-        <span class="icon">
-          <font-awesome-icon icon="poll" />
-        </span>
-        <span>Enquete</span>
-      </span>
+      <Icon icon="poll" label="Enquete" />
     </button>
     <button class="level-item button is-inverted is-link">
-      <span class="icon-text">
-        <span class="icon">
-          <font-awesome-icon icon="file" />
-        </span>
-        <span>Documento</span>
-      </span>
+      <Icon icon="file" label="Documento" />
     </button>
     <button class="level-item button is-link">
-      <span class="icon-text">
-        <span class="icon">
-          <font-awesome-icon icon="paper-plane" />
-        </span>
-        <span>Publicar</span>
-      </span>
+      <Icon icon="paper-plane" label="Publicar" />
     </button>
   </Breakpoint>
 </article>
 </template>
 
 <script>
+import Icon from '@/comps/Icon'
 import Breakpoint from '@/comps/Breakpoint'
 
 export default {
   name: 'PostCreate',
 
   components: {
+    Icon,
     Breakpoint
   },
 

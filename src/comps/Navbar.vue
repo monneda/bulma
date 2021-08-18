@@ -22,31 +22,16 @@
     <div class="navbar-end">
       <!-- Common items -->
       <a class="navbar-item">
-        <span class="icon-text">
-          <span class="icon">
-            <font-awesome-icon icon="bell" />
-          </span>
-          <span>Notificações</span>
-        </span>
+        <Icon icon="bell" label="Notificações" />
       </a>
       <a class="navbar-item">
-        <span class="icon-text">
-          <span class="icon">
-            <font-awesome-icon icon="envelope" />
-          </span>
-          <span>Mensagens</span>
-        </span>
+        <Icon icon="envelope" label="Mensagens" />
       </a>
 
       <!-- User dropdown -->
       <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-item has-text-black">
-          <span class="icon-text">
-            <span class="icon">
-              <font-awesome-icon icon="user" />
-            </span>
-            <span>Conta</span>
-          </span>
+          <Icon icon="user" label="Conta" />
         </a>
 
         <!-- Dropdown items -->
@@ -65,12 +50,14 @@
 </template>
 
 <script>
+import Icon from '@/comps/Icon'
 import Search from '@/comps/Search'
 
 export default {
   name: 'Navbar',
 
   components: {
+    Icon,
     Search
   },
 
