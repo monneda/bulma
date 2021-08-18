@@ -1,10 +1,12 @@
 <template>
+
 <template v-if="label">
   <span class="icon-text">
+    <span v-if="!before">{{ label }}</span>
     <span class="icon">
       <font-awesome-icon :icon="icon" />
     </span>
-    <span v-if="label">{{ label }}</span>
+    <span v-if="before">{{ label }}</span>
   </span>
 </template>
 
@@ -13,11 +15,25 @@
     <font-awesome-icon :icon="icon" />
   </span>
 </template>
+
 </template>
 
 <script>
 export default {
   name: 'Icon',
-  props: ['icon', 'label']
+  props: {
+    icon: {
+      type: String,
+      required: true
+    },
+    label: {
+      type: String,
+      default: ''
+    },
+    before: {
+      type: Boolean,
+      default: false
+    }
+  }
 }
 </script>
