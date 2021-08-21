@@ -8,7 +8,7 @@ import router from './router'
 import './registerServiceWorker'
 
 // Css
-import 'bulma/css/bulma.css'
+import '@/styles.scss'
 
 // Icons
 import '@/plugins/font-awesome'
