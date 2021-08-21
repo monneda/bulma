@@ -1,6 +1,8 @@
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
   faBell,
+  faChartLine,
+  faCompass,
   faEnvelope,
   faUser,
   faHeart,
@@ -16,11 +18,14 @@ import {
   faPoll,
   faVideo,
   faFile,
-  faSearch
+  faSearch,
+  faWallet
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
   faBell,
+  faChartLine,
+  faCompass,
   faEnvelope,
   faUser,
   faHeart,
@@ -36,5 +41,6 @@ library.add(
   faPoll,
   faVideo,
   faFile,
-  faSearch
+  faSearch,
+  faWallet
 )

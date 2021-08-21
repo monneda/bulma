@@ -1,8 +1,11 @@
 <template>
-  <span v-if="label" class="icon-text is-flex-direction-column is-align-items-center">
-    <span class="icon is-medium">
+  <span class="icon-text is-flex-direction-column is-align-items-center">
+    <span v-if="icon" class="icon is-medium">
       <font-awesome-icon class="fas fa-lg" :icon="icon" />
     </span>
+    <figure v-else class="image is-32x32">
+      <img class="is-rounded" :src="src">
+    </figure>
     <span>{{ label }}</span>
   </span>
 </template>
@@ -13,11 +16,19 @@ export default {
   props: {
     icon: {
       type: String,
-      required: true
+      required: false
+    },
+    src: {
+      type: String,
+      required: false
     },
     label: {
       type: String,
-      default: ''
+      required: true
+    },
+    isActive: {
+      type: Boolean,
+      default: false
     }
   }
 }

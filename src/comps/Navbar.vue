@@ -25,6 +25,15 @@
         <NavbarItem icon="home" label="Feed"/>
       </a>
       <a class="navbar-item">
+        <NavbarItem icon="wallet" label="Carteras"/>
+      </a>
+      <a class="navbar-item">
+        <NavbarItem icon="chart-line" label="Ativos"/>
+      </a>
+      <a class="navbar-item">
+        <NavbarItem icon="compass" label="Descobrir"/>
+      </a>
+      <a class="navbar-item">
         <NavbarItem icon="bell" label="Notificações"/>
       </a>
       <a class="navbar-item">
@@ -33,8 +42,8 @@
 
       <!-- User dropdown -->
       <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link has-text-black">
-          <Icon icon="user" label="Conta" />
+        <a class="navbar-link has-text-black" >
+          <NavbarItem src="http://placekitten.com/64/64" label="Conta" />
         </a>
 
         <!-- Dropdown items -->
