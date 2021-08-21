@@ -1,5 +1,7 @@
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
+  faArrowCircleUp,
+  faArrowCircleDown,
   faBell,
   faChartLine,
   faCompass,
@@ -23,6 +25,8 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
+  faArrowCircleUp,
+  faArrowCircleDown,
   faBell,
   faChartLine,
   faCompass,

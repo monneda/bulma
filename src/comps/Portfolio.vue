@@ -1,111 +1,79 @@
 <template>
-<article>
-  <!-- User info -->
-  <div class="level is-mobile mb-1">
-    <div class="level-left">
-      <!-- Header -->
-      <div class="level-item">
-        <p><strong> Carteras </strong></p>
+  <!-- Carteira info -->
+  <div class="card p-0">
+    <!-- Header -->
+    <div class="level card-header has-background-light">
+      <div class="level-left ml-4">
+        <div class="level-item">
+          <figure class="image is-48x48">
+            <img class="is-rounded" src="http://placekitten.com/64/64">
+          </figure>
+        </div>
+        <div class="level-item">
+          <div class="column">
+            <span> Cartera de </span>
+            <p><strong>Roberta Heinrich</strong></p>
+          </div>
+        </div>
+      </div>
+      <div class="level-right mr-4">
+          <div class="level-item">
+            <div class="buttons">
+              <button class="button is-inverted is-light is-outlined">Compartilhar</button>
+              <button class="button is-inverted is-light is-outlined">Enviar</button>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="card-content">
+      <div class="level">
+        <div class="level-left ml-3">
+          <div class="level-item">
+            <div class="icon-text">
+              <Icon class="fa-lg" icon="wallet" label="À prova de balas"></Icon>
+            </div>
+          </div>
+        </div>
+        <div class="level-right mr-3">
+          <div class="level-item">
+            <div class="icon-text">
+              <Icon class="fa-lg" icon="arrow-circle-up"/> <strong>Variação:</strong> 15.69%
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="m-3">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pellentesque enim a mi efficitur, tincidunt accumsan
+        dolor mollis. Etiam eu sodales urna. Donec auctor pulvinar neque, a sollicitudin sem pulvinar vitae. Integer sit
+        amet facilisis metus. Donec vulputate pulvinar nunc ut mollis. Morbi vulputate nulla a nibh accumsan, non viverra
+        nisl aliquam. Nulla facilisi. Aenean dictum eleifend purus eu posuere. Cras euismod, nulla nec fringilla sodales,
+        mauris felis vehicula turpis, sit amet mattis justo eros ut dolor. Proin pretium faucibus enim eget accumsan.
+        Donec non aliquet purus. Quisque quis turpis vel urna tristique venenatis. Aliquam odio orci, aliquet nec auctor
+        et, dapibus vitae ante. Ut dolor enim, feugiat sed posuere nec, tempor a libero. Nullam commodo mi in ipsum
+        sagittis euismod.
       </div>
     </div>
-    <div class="level-left">
-          <!-- Info -->
-      <div class="level-item">
-        <p>
-          Variação
-        </p>
-      </div>
-      <div class="level-item">
-        <div class="box m-0 py-0 first-box-border box-width" style="background-color:#35E599">
-          <small> 1D </small>
-        </div>
-        <div class="box m-0 py-0 middle-box-border box-width">
-          <small> 1S </small>
-        </div>
-        <div class="box m-0 py-0 middle-box-border box-width">
-          <small> 1M </small>
-        </div>
-        <div class="box m-0 py-0 middle-box-border box-width">
-          <small> 3M </small>
-        </div>
-        <div class="box m-0 py-0 middle-box-border box-width">
-          <small> YTD </small>
-        </div>
-        <div class="box m-0 py-0 last-box-border box-width">
-          <small> 1A </small>
-        </div>
-      </div>
+    <div class="level card-footer has-background-light">
+      <button class="card-footer-item button is-light">
+        Ativos
+      </button>
+      <button class="card-footer-item button is-light">
+        Composição
+      </button>
+      <button class="card-footer-item button is-light">
+        Histórico
+      </button>
     </div>
   </div>
-
-  <!-- Post -->
-  <div class="content mt-2 mb-0">
-    <p class="has-text-justified has-text-grey-darker">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-    </p>
-  </div>
-
-  <Breakpoint class="level is-mobile has-text-grey mt-2 mb-1" br="mobile">
-    <div class="level-left">
-      <Icon class="level-item" icon="heart" label="5" />
-    </div>
-    <div class="level-right">
-      <Icon class="level-item" icon="comments" label="2" />
-      <Icon class="level-item" icon="share" label="11" />
-    </div>
-  </Breakpoint>
-
-  <Breakpoint class="level has-text-grey mt-2 mb-1" br="mobile" hide>
-    <div class="level-left">
-      <small class="level-item">5 curtidas</small>
-    </div>
-    <div class="level-right">
-      <small class="level-item">2 comentários</small>
-      <small class="level-item">11 compartilhamentos</small>
-    </div>
-  </Breakpoint>
-
-  <hr class="mt-2 mb-1">
-
-  <Breakpoint class="level is-mobile" br="mobile">
-    <button class="level-item button is-inverted is-link">
-      <Icon icon="heart" />
-    </button>
-    <button class="level-item button is-inverted is-link">
-      <Icon icon="comments" />
-    </button>
-    <button class="level-item button is-inverted is-link">
-      <Icon icon="share" />
-    </button>
-  </Breakpoint>
-
-  <Breakpoint class="level" br="mobile" hide>
-    <button class="level-item button is-inverted is-link">
-      <Icon icon="heart" label="Curtir" />
-    </button>
-    <button class="level-item button is-inverted is-link">
-      <Icon icon="comments" label="Comentar" />
-    </button>
-    <button class="level-item button is-inverted is-link">
-      <Icon icon="share" label="Compartilhar" />
-    </button>
-  </Breakpoint>
-</article>
 </template>
 
 <script>
-import Icon from '@/comps/Icon'
-import Breakpoint from '@/comps/Breakpoint'
 
+import Icon from './Icon'
 export default {
   name: 'Portfolio',
-
-  components: {
-    Icon,
-    Breakpoint
-  },
-
+  components: { Icon },
   data: () => ({
     comment: '',
     portfolios: ['a', 'b', 'c']
