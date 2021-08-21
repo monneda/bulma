@@ -1,8 +1,8 @@
 <template>
 <span class="field">
-  <span class="control has-icons-right">
-    <input class="input is-rounded is-spaced" type="text" placeholder="Pesquisar">
-    <Icon class="is-right" icon="search" />
+  <span class="control has-icons-left">
+    <Icon icon="search"/>
+    <input class="input" type="text" placeholder="Pesquisar usuários..." style="border-radius: 10px">
   </span>
 </span>
 </template>

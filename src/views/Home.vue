@@ -24,7 +24,7 @@
         <span class="level-right">ver todos</span>
       </span>
 
-      <UserIcon v-for="i of [1, 2, 3]" :key="i" />
+      <UserIcon v-for="i of [1, 2, 3, 4, 5]" :key="i" />
     </div>
   </div>
 </div>

@@ -2,35 +2,38 @@
 <nav class="navbar is-white">
   <div class="navbar-brand">
     <a class="navbar-item">
-      <img src="@/assets/logo.png" height="48">
+      <img class="mx-5" src="@/assets/logo-horizontal-fundo-claro.png" height="48">
     </a>
 
-    <a class="navbar-burger" ref="burger" @click="toggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </a>
-  </div>
-
-  <div class="navbar-menu" ref="menu">
     <div class="navbar-start">
       <div class="navbar-item">
         <Search />
       </div>
     </div>
 
+    <a class="navbar-burger" ref="burger" @click="toggle">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div class="navbar-menu" ref="menu">
     <div class="navbar-end">
       <!-- Common items -->
       <a class="navbar-item">
-        <Icon icon="bell" label="Notificações" />
+        <NavbarItem icon="home" label="Feed"/>
       </a>
       <a class="navbar-item">
-        <Icon icon="envelope" label="Mensagens" />
+        <NavbarItem icon="bell" label="Notificações"/>
+      </a>
+      <a class="navbar-item">
+        <NavbarItem icon="envelope" label="Mensagens"/>
       </a>
 
       <!-- User dropdown -->
       <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-item has-text-black">
+        <a class="navbar-link has-text-black">
           <Icon icon="user" label="Conta" />
         </a>
 
@@ -50,14 +53,14 @@
 </template>
 
 <script>
-import Icon from '@/comps/Icon'
+import NavbarItem from '@/comps/NavbarItem'
 import Search from '@/comps/Search'
 
 export default {
   name: 'Navbar',
 
   components: {
-    Icon,
+    NavbarItem,
     Search
   },
 
