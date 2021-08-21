@@ -2,7 +2,7 @@
 <span class="field">
   <span class="control has-icons-left">
     <Icon icon="search"/>
-    <input class="input" type="text" placeholder="Pesquisar usuários..." style="border-radius: 10px">
+    <input class="input" type="text" placeholder="Pesquisar usuários...">
   </span>
 </span>
 </template>
