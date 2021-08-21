@@ -2,7 +2,7 @@
 <nav class="navbar is-white">
   <div class="navbar-brand">
     <a class="navbar-item">
-      <img class="mx-5" src="@/assets/logo-horizontal-fundo-claro.png" height="48">
+      <img class="mx-5" src="@/assets/logo-horizontal-fundo-claro.png">
     </a>
 
     <div class="navbar-start">
@@ -43,7 +43,7 @@
       <!-- User dropdown -->
       <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link has-text-black" >
-          <NavbarItem src="http://placekitten.com/64/64" label="Conta" />
+          <NavbarItem src="http://placekitten.com/32/32" label="Conta" />
         </a>
 
         <!-- Dropdown items -->

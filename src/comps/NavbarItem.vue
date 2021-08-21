@@ -3,7 +3,7 @@
     <span v-if="icon" class="icon is-medium">
       <font-awesome-icon class="fas fa-lg" :icon="icon" />
     </span>
-    <figure v-else class="image is-32x32">
+    <figure v-else class="image is-30x30">
       <img class="is-rounded" :src="src">
     </figure>
     <span>{{ label }}</span>
