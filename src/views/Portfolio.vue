@@ -3,43 +3,26 @@
 <div class="columns mx-0 my-1">
   <!-- Left -->
   <div class="column is-2 is-hidden-mobile">
-    <Menu />
   </div>
 
   <!-- Center -->
-  <div class="column is-7">
+  <div class="column is-8">
     <Portfolio class="box" />
   </div>
 
   <!-- Right -->
-  <div class="column is-3 is-hidden-mobile">
-    <div class="card p-3 is-shadowless">
-      <UserIcon />
-
-      <hr>
-
-      <span class="level">
-        <strong class="level-left">Sugestão de investidores</strong>
-        <span class="level-right">ver todos</span>
-      </span>
-
-      <UserIcon v-for="i of [1, 2, 3, 4, 5]" :key="i" />
-    </div>
+  <div class="column is-2 is-hidden-mobile">
   </div>
 </div>
 </template>
 
 <script>
-import Menu from '@/comps/Menu'
 import Portfolio from '@/comps/Portfolio'
 import Navbar from '@/comps/Navbar'
-import UserIcon from '@/comps/UserIcon'
 
 export default {
   components: {
-    Menu,
     Navbar,
-    UserIcon,
     Portfolio
   },
 
