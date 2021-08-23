@@ -25,10 +25,13 @@ $cartera-border-color: #EFEFEF;
 
 // Update Bulma's global variables
 $primary: $cartera-green;
-$radius-large: 10px;
-$radius: 10px;
+$success: $cartera-green-light3;
+$dark: #A2A3A4;
+$radius: 10px; // example: on inputs
+$radius-large: 10px; // example: on boxes
+$radius-small: 10px; // example: on small buttons
 $family-sans-serif: 'Lato';
-$border: black solid;
+// $border: $cartera-border-color;
 $shadow: 0rem 0rem 0rem 0.1rem $cartera-border-color;
 $input-border-color: $cartera-border-color;
 
