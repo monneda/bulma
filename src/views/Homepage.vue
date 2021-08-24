@@ -1,18 +1,35 @@
 <template>
+<!--  NAVBAR -->
+<nav class="navbar is-fixed-top custom-navbar is-spaced">
+  <div class="navbar-brand ml-6">
+    <a class="navbar-item">
+      <img src="@/assets/logo-horizontal-fundo-claro.png">
+    </a>
+  </div>
+  <div class="navbar-menu mr-6">
+    <div class="navbar-end ">
+      <div class="navbar-item">
+        <button class="button navbar-item is-primary is-outlined homepage-buttons" style="width: 100px;"> entrar </button>
+      </div>
+      <div class="navbar-item">
+        <button class="button navbar-item is-primary homepage-buttons" style="width: 130px;"> criar conta</button>
+      </div>
+    </div>
+  </div>
+</nav>
+<!-- CONTENT -->
 <div class="container is-fluid has-background-light px-0">
   <section class="section is-medium">
     <div class="columns">
-      <div class="column is-1"></div>
-      <div class="column is-4">
-        <p class="is-size-1 has-text-weight-bold">
-          <span class="has-text-grey-darker"> o seu network de </span>
-          <br>
-          <span class="has-text-primary"> valor está aqui. </span>
+      <div class="column is-5 mt-6">
+        <p class="is-size-1 has-text-weight-bold" style="line-height: 0.9">
+          <span class="has-text-black-ter t1"> o seu network de</span>
+          <span class="has-text-primary t1"> valor está aqui. </span>
         </p>
 
         <br>
 
-        <p class="is-size-4 has-text-grey">
+        <p class="is-size-5 has-text-grey-darker">
           A Cartera é uma rede social para investidores e futuros investidores.
           Conecte-se ao network que realmente tem valor para seus investimentos.
         </p>
@@ -21,7 +38,9 @@
         <br>
         <br>
 
-        <button class="button is-primary has-text-grey-darker has-text-weight-bold is-large">
+        <button
+          class="button is-primary has-text-grey-darker has-text-weight-bold is-large"
+          style="font-size: 18px; width: 250px; height: 55px;">
           quero fazer parte!
         </button>
       </div>
@@ -170,3 +189,30 @@ export default {
   name: 'Homepage'
 }
 </script>
+
+<style scoped>
+.custom-navbar {
+  /* Off White */
+  background: #F6F9FC;
+  /* Feed */
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+.homepage-buttons {
+  /* criar conta e entrar*/
+  height: 40px;
+  /* Botões */
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 100%;
+}
+.t1 {
+  /* o seu network de valor está aqui. */
+  /* Title */
+  font-family: Tajawal;
+  font-weight: bold;
+  font-size: 4rem;
+
+  /* Preto */
+  color: #23252E;
+}
+</style>

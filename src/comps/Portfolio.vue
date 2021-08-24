@@ -74,7 +74,7 @@
       </button>
     </div>
   </div>
-  <Assets v-if="activeButton === 0"/>
+  <Assets :assets=portfolio.assets v-if="activeButton === 0"/>
   <Composition v-if="activeButton === 1"/>
   <Historic v-if="activeButton === 2"/>
 </template>

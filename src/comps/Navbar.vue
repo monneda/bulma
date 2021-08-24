@@ -1,5 +1,5 @@
 <template>
-<nav class="navbar is-white">
+<nav class="navbar is-white is-fixed-top">
   <div class="navbar-brand">
     <a class="navbar-item">
       <img class="mx-5" src="@/assets/logo-horizontal-fundo-claro.png">
@@ -21,7 +21,7 @@
   <div class="navbar-menu" ref="menu">
     <div class="navbar-end">
       <!-- Common items -->
-      <a class="navbar-item">
+      <a class="navbar-item is-tab is-active">
         <NavbarItem icon="home" label="Feed"/>
       </a>
       <a class="navbar-item">
