@@ -12,26 +12,36 @@
         </div>
       </div>
     </div>
-    <article v-for="(portfolio, index) in portfolios" :key="portfolio" class="media">
-      <div class="media-left">
-        <span
-          class="has-text-weight-bold number-circle"
-          :class="index === 0? 'has-text-white top-1': 'has-text-primary top-2'"
-        >
-          {{ index + 1}}
-        </span>
-        <figure class="image is-64x64">
-          <img class="is-rounded" :src="portfolio.picture" style="position: absolute">
-        </figure>
-      </div>
-      <div class="media-content">
-        <div class="content">
-          <p>
-            <strong> {{ portfolio.username }} </strong>
-            <br>
-            {{ portfolio.portfolioName }}
-          </p>
+    <hr>
+    <article v-for="(portfolio, index) in portfolios" :key="portfolio" class="box has-background-green5 p-2">
+      <div class="media">
+        <div class="media-left is-align-self-center">
+          <span
+            class="has-text-weight-bold number-circle"
+            :class="index === 0? 'has-text-white top-1': 'has-text-primary top-2'"
+          >
+            {{ index + 1}}
+          </span>
+          <figure class="image" style="width: 45px; height: 45px">
+            <img class="is-rounded" :src="portfolio.picture" style="position: absolute">
+          </figure>
         </div>
+        <div class="media-content is-align-self-center">
+          <div class="content">
+            <p>
+              <strong> {{ portfolio.username }} </strong>
+              <br>
+              <span class="has-text-green3" style="font-size: 13px"> {{ portfolio.portfolioName }} </span>
+            </p>
+          </div>
+        </div>
+        <div class="media-right has-text-right">
+            <Icon v-if="portfolio.variation > 0" icon="arrow-circle-up" class="fa-lg has-text-green3"></Icon>
+            <Icon v-else icon="arrow-circle-down" class="fa-lg has-text-dark"></Icon>
+            <br>
+            <span v-if="portfolio.variation > 0" class="has-text-weight-bold has-text-danger"> {{portfolio.variation.toFixed(2)}}% </span>
+            <span v-else class="has-text-weight-bold has-text-danger"> {{portfolio.variation.toFixed(2)}}% </span>
+          </div>
       </div>
     </article>
   </div>
@@ -93,6 +103,13 @@ export default {
   text-align: center;
   position: absolute;
   z-index: 3;
+  left: 2rem;
+}
+.has-background-green5 {
+  background: #DEFFF1;
+}
+.has-text-green3 {
+  color: #16B570;
 }
 
 </style>
