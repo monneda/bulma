@@ -5,6 +5,7 @@ import {
   faBell,
   faChartLine,
   faCompass,
+  faCircle,
   faEnvelope,
   faUser,
   faHeart,
@@ -19,6 +20,7 @@ import {
   faSmile,
   faPoll,
   faVideo,
+  faTrophy,
   faFile,
   faSearch,
   faWallet
@@ -30,6 +32,7 @@ library.add(
   faBell,
   faChartLine,
   faCompass,
+  faCircle,
   faEnvelope,
   faUser,
   faHeart,
@@ -44,6 +47,7 @@ library.add(
   faSmile,
   faPoll,
   faVideo,
+  faTrophy,
   faFile,
   faSearch,
   faWallet

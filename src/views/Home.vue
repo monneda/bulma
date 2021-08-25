@@ -2,14 +2,14 @@
 <Navbar class="has-shadow" />
 <div class="columns mx-0 my-1">
   <!-- Left -->
-  <div class="column is-2 is-hidden-mobile">
-    <Menu />
+  <div class="column is-3 is-hidden-mobile">
+    <Top5/>
   </div>
 
   <!-- Center -->
-  <div class="column is-7">
+  <div class="column is-6">
     <PostCreate class="box" />
-    <Post v-for="i in [1, 2, 3]" :key="i" class="box" />
+    <Post v-for="i in [1, 2, 3, 4, 5, 6]" :key="i" class="box" />
   </div>
 
   <!-- Right -->
@@ -31,15 +31,15 @@
 </template>
 
 <script>
-import Menu from '@/comps/Menu'
 import Post from '@/comps/Post'
 import Navbar from '@/comps/Navbar'
 import UserIcon from '@/comps/UserIcon'
 import PostCreate from '@/comps/PostCreate'
+import Top5 from '../comps/Top5'
 
 export default {
   components: {
-    Menu,
+    Top5,
     Post,
     Navbar,
     UserIcon,
