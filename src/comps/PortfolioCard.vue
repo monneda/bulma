@@ -1,5 +1,5 @@
 <template>
-<div class="box gradient-green p-0">
+<article class="box gradient-green p-0">
   <!-- Icon -->
   <div class="level p-5">
     <Icon class="level-item" icon="wallet" color="white" />
@@ -47,7 +47,7 @@
       </div>
     </div>
   </div>
-</div>
+</article>
 </template>
 
 <script>

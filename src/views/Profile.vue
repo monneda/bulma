@@ -6,10 +6,29 @@
 
   <!-- Center -->
   <div class="column is-8">
-    <Profile />
-    nice
     <ProfileBanner />
-    <PortfolioCard />
+
+    <div class="box">
+      <div class="level">
+        <h1 class="title"> Carteras </h1>
+
+        <!-- Buttons -->
+        <div class="field has-addons">
+          <p class="control"><button class="button"> 1 dia </button></p>
+          <p class="control"><button class="button"> 1 semana </button></p>
+          <p class="control"><button class="button"> 1 mês </button></p>
+          <p class="control"><button class="button"> 3 meses </button></p>
+          <p class="control"><button class="button"> 1 ano </button></p>
+        </div>
+      </div>
+
+      <!-- Portfolios -->
+      <div class="columns is-flex-wrap-wrap">
+        <div class="column is-4"><PortfolioCard /></div>
+        <div class="column is-4"><PortfolioCard /></div>
+        <div class="column is-4"><PortfolioCard /></div>
+      </div>
+    </div>
   </div>
 
   <!-- Right -->
@@ -19,14 +38,12 @@
 
 <script>
 import Navbar from '@/comps/Navbar'
-import Profile from '@/comps/Profile'
 import ProfileBanner from '@/comps/ProfileBanner'
 import PortfolioCard from '@/comps/PortfolioCard'
 
 export default {
   components: {
     Navbar,
-    Profile,
     ProfileBanner,
     PortfolioCard
   },
