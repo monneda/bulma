@@ -25,6 +25,7 @@
           </div>
         </div>
     </div>
+
     <div class="card-content">
       <div class="level">
         <div class="level-left ml-3">
@@ -50,6 +51,7 @@
         {{ portfolio.description }}
       </div>
     </div>
+
     <div class="level card-footer has-background-light">
       <button
         @click=buttonClicked(0)
@@ -87,7 +89,13 @@ import Composition from './portfolio/Composition'
 import Historic from './portfolio/Historic'
 export default {
   name: 'Portfolio',
-  components: { Historic, Composition, Assets, Icon },
+  components: {
+    Icon,
+    Assets,
+    Historic,
+    Composition
+  },
+
   data: () => ({
     portfolio: {
       id: '60b6a3aa6757757d371711dc',
