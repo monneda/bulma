@@ -29,6 +29,19 @@
         <div class="column is-4"><PortfolioCard /></div>
       </div>
     </div>
+
+    <h1 class="title"> Publicações </h1>
+
+    <div>
+      <div class="columns">
+        <div class="column box m-3 is-8">
+          <Post class="py-3" />
+          <Post class="py-3" />
+          <Post class="py-3" />
+        </div>
+        <div class="column box m-3"> Right </div>
+      </div>
+    </div>
   </div>
 
   <!-- Right -->
@@ -37,12 +50,14 @@
 </template>
 
 <script>
+import Post from '@/comps/Post'
 import Navbar from '@/comps/Navbar'
 import ProfileBanner from '@/comps/ProfileBanner'
 import PortfolioCard from '@/comps/PortfolioCard'
 
 export default {
   components: {
+    Post,
     Navbar,
     ProfileBanner,
     PortfolioCard
