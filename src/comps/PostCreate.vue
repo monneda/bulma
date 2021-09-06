@@ -36,7 +36,7 @@
   </nav>
 
   <div class="modal" ref="modal">
-    <div class="modal-background"></div>
+    <div class="modal-background" @click="toggle"></div>
     <div class="modal-card">
       <!-- Title -->
       <header class="modal-card-head has-background-white">
