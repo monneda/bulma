@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import Navbar from '@/comps/Navbar'
+import Navbar from '@/comps/navbar/Navbar'
 import Portfolio from '@/comps/Portfolio'
 import PortfolioBanner from '@/comps/PortfolioBanner'
 

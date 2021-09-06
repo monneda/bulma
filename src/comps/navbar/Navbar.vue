@@ -38,9 +38,9 @@
 </template>
 
 <script>
-import Search from '@/comps/Search'
-import NavbarItem from '@/comps/NavbarItem'
-import NavbarItemUser from '@/comps/NavbarItemUser'
+import Search from '@/comps/navbar/Search'
+import NavbarItem from '@/comps/navbar/NavbarItem'
+import NavbarItemUser from '@/comps/navbar/NavbarItemUser'
 
 export default {
   name: 'Navbar',

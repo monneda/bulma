@@ -51,7 +51,7 @@
 
 <script>
 import Post from '@/comps/Post'
-import Navbar from '@/comps/Navbar'
+import Navbar from '@/comps/navbar/Navbar'
 import ProfileBanner from '@/comps/ProfileBanner'
 import PortfolioCard from '@/comps/PortfolioCard'
 

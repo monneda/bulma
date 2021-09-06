@@ -32,7 +32,7 @@
 
 <script>
 import Post from '@/comps/Post'
-import Navbar from '@/comps/Navbar'
+import Navbar from '@/comps/navbar/Navbar'
 import UserIcon from '@/comps/UserIcon'
 import PostCreate from '@/comps/PostCreate'
 import Top5 from '../comps/Top5'
