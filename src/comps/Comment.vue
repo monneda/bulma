@@ -1,5 +1,5 @@
 <template>
-<article class="media">
+<article class="media my-0">
   <!-- Image -->
   <figure class="media-left">
     <figure class="image is-48x48">
@@ -53,5 +53,9 @@ export default {
 .comment {
   line-height: 0.25rem;
   border-radius: 5px 15px 15px 15px;
+}
+
+.media {
+  border-top: none;  /* Hide border top color */
 }
 </style>
