@@ -1,24 +1,24 @@
 <template>
-  <span class="icon-text is-flex-direction-column is-align-items-center">
-    <span v-if="icon" class="icon is-medium">
-      <font-awesome-icon class="fas fa-lg" :icon="icon" />
-    </span>
-    <figure v-else class="image is-30x30">
-      <img class="is-rounded" :src="src">
-    </figure>
-    <span>{{ label }}</span>
-  </span>
+<a :class="classes">
+  <div class="is-flex is-flex-direction-column is-align-items-center">
+    <Icon class="fas fa-lg" :icon="icon" />
+    <span class="is-uppercase">{{ label }}</span>
+  </div>
+</a>
 </template>
 
 <script>
+import Icon from '@/comps/Icon'
+
 export default {
   name: 'NavbarItem',
+
+  components: {
+    Icon
+  },
+
   props: {
     icon: {
-      type: String,
-      required: false
-    },
-    src: {
       type: String,
       required: false
     },
@@ -29,6 +29,16 @@ export default {
     isActive: {
       type: Boolean,
       default: false
+    }
+  },
+
+  computed: {
+    classes () {
+      return {
+        'navbar-item': true,
+        'is-tab': true,
+        'is-active': this.isActive
+      }
     }
   }
 }

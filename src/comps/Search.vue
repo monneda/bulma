@@ -1,7 +1,7 @@
 <template>
 <span class="field">
   <span class="control has-icons-left">
-    <Icon icon="search"/>
+    <Icon icon="search" class="has-text-primary" />
     <input class="input" type="text" placeholder="Pesquisar usuários...">
   </span>
 </span>
