@@ -2,9 +2,9 @@
 <article class="media my-0">
   <!-- Image -->
   <figure class="media-left">
-    <figure class="image is-48x48">
+    <p class="image is-48x48">
       <img class="is-rounded" src="https://placekitten.com/64/64">
-    </figure>
+    </p>
   </figure>
 
   <div class="media-content">

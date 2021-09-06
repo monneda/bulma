@@ -1,6 +1,6 @@
 <template>
-<nav class="navbar">
-  <div class="container level">
+<nav class="container">
+  <div class="level">
     <strong class="level-item">Variação de suas Carteras</strong>
     <span class="level-item"><NavbarWalletItem /></span>
     <span class="level-item"><NavbarWalletItem /></span>

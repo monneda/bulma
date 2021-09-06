@@ -60,3 +60,9 @@ export default {
 }
 
 </script>
+
+<style scoped>
+.navbar {
+  min-height: 5rem;
+}
+</style>

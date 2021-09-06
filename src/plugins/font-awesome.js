@@ -23,7 +23,8 @@ import {
   faTrophy,
   faFile,
   faSearch,
-  faWallet
+  faWallet,
+  faLock
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
@@ -50,5 +51,6 @@ library.add(
   faTrophy,
   faFile,
   faSearch,
-  faWallet
+  faWallet,
+  faLock
 )
