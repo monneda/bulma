@@ -5,7 +5,7 @@
   <span class="icon">
     <font-awesome-icon :icon="icon" :color="color" />
   </span>
-  <span v-if="!before">{{ label }}</span>
+  <span v-if="!before" class="my-auto">{{ label }}</span>
 </span>
 
 <span v-else class="icon">

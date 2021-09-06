@@ -1,7 +1,7 @@
 <template>
 <article>
   <!-- User info -->
-  <div class="level is-mobile mb-1">
+  <div class="level">
     <div class="level-left">
       <!-- Image -->
       <div class="level-item">
@@ -12,81 +12,75 @@
 
       <!-- Info -->
       <div class="level-item">
-        <p>
-          <strong>Guilherme Bueno</strong> <small>@bueno</small> <small>31m</small>
-          <br>
-          <small>Founder</small>
-        </p>
+        <div>
+          <p><strong>bueno</strong></p>
+          <p><small>31m</small></p>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- Post -->
-  <div class="content mt-2 mb-0">
+  <div class="content">
     <p class="has-text-justified has-text-grey-darker">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+      A Amazon e a Shopee estão na reta final para locar a maior parte do Faria Lima Plaza, transformando o edifício do Largo da Batata num verdadeiro polo do ecommerce brasileiro.
+      <br>
+      <br>
+      A locação é uma boa notícia para o XP Properties ($XPPR11), um fundo imobiliário da XP  que em setembro comprou 40% do edifício e que apanhou muito na pandemia por conta do home office parecer que veio para ficar.
+      <br>
+      <br>
+      Eai, será que vai ficar ou todo mundo ta louco pra voltar pro escritório?
+      <br>
+      <br>
+      Fonte: https://cutt.ly/Pm7a4lU
     </p>
+
+    <figure class="image mx-0 is-2by1">
+      <img src="https://placekitten.com/400/200">
+    </figure>
   </div>
 
-  <Breakpoint class="level is-mobile has-text-grey mt-2 mb-1" br="mobile">
+  <!-- Share info -->
+  <nav class="level">
     <div class="level-left">
-      <Icon class="level-item" icon="heart" label="5" />
+      <Icon class="level-item has-text-primary fas fa-lg" icon="heart"/>
+      <span class="level-item">5,8 mil curtidas</span>
     </div>
+
     <div class="level-right">
-      <Icon class="level-item" icon="comments" label="2" />
-      <Icon class="level-item" icon="share" label="11" />
+      <span class="level-item">5 comentários</span>
+      <span class="level-item">11 compartilhamentos</span>
     </div>
-  </Breakpoint>
+  </nav>
 
-  <Breakpoint class="level has-text-grey mt-2 mb-1" br="mobile" hide>
-    <div class="level-left">
-      <small class="level-item">5 curtidas</small>
-    </div>
-    <div class="level-right">
-      <small class="level-item">2 comentários</small>
-      <small class="level-item">11 compartilhamentos</small>
-    </div>
-  </Breakpoint>
+  <hr>
 
-  <hr class="mt-2 mb-1">
-
-  <Breakpoint class="level is-mobile" br="mobile">
-    <button class="level-item button is-inverted is-link">
-      <Icon icon="heart" />
+  <!-- Buttons -->
+  <nav class="level">
+    <button class="level-item button is-white has-text-grey-dark">
+      <Icon class="fas fa-lg" icon="heart" label="Curtir" />
     </button>
-    <button class="level-item button is-inverted is-link">
-      <Icon icon="comments" />
+    <button class="level-item button is-white has-text-grey-dark">
+      <Icon class="fas fa-lg" icon="comments" label="Comentar" />
     </button>
-    <button class="level-item button is-inverted is-link">
-      <Icon icon="share" />
+    <button class="level-item button is-white has-text-grey-dark">
+      <Icon class="fas fa-lg" icon="share" label="Compartilhar" />
     </button>
-  </Breakpoint>
-
-  <Breakpoint class="level" br="mobile" hide>
-    <button class="level-item button is-inverted is-link">
-      <Icon icon="heart" label="Curtir" />
+    <button class="level-item button is-white has-text-grey-dark">
+      <Icon class="fas fa-lg" icon="paper-plane" label="Enviar" />
     </button>
-    <button class="level-item button is-inverted is-link">
-      <Icon icon="comments" label="Comentar" />
-    </button>
-    <button class="level-item button is-inverted is-link">
-      <Icon icon="share" label="Compartilhar" />
-    </button>
-  </Breakpoint>
+  </nav>
 </article>
 </template>
 
 <script>
 import Icon from '@/comps/Icon'
-import Breakpoint from '@/comps/Breakpoint'
 
 export default {
   name: 'Post',
 
   components: {
-    Icon,
-    Breakpoint
+    Icon
   },
 
   data: () => ({
@@ -102,8 +96,8 @@ export default {
 }
 </script>
 
-<style scoped>
-textarea {
-  resize: none;
+<style>
+img {
+  border-radius: 25px;
 }
 </style>
