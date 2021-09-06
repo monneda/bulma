@@ -47,9 +47,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.card {
-  border: 1px solid #E9E9E9;
-}
-</style>

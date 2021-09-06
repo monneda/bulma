@@ -4,47 +4,13 @@
 @import url('https://fonts.googleapis.com/css?family=Tajawal:400,700');
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700');
 
-// Set your brand colors
-$cartera-green: #35E599;
-$cartera-green-dark1: #2DDB90;
-$cartera-green-dark2: #23C881;
-$cartera-green-dark3: #16B570;
-$cartera-green-light1: #4CF6AC;
-$cartera-green-light2: #81FFC9;
-$cartera-green-light3: #C0FFE4;
-$cartera-green-light4: #DEFFF1;
-$cartera-green-light5: #F2FFF9;
-$cartera-black1: #23252E;
-$cartera-black2: #50525C;
-$cartera-black3: #A2A3A4;
-$cartera-black4: #DFDFDF;
-$cartera-black5: #EFEFEF;
-$cartera-black6: #F5F5F5;
-$cartera-white: #F6F9FC;
-$cartera-border-color: #EFEFEF;
-
-// Update Bulma's global variables
-$primary: $cartera-green;
-$success: $cartera-green-light3;
-$dark: #A2A3A4;
-$radius: 10px; // example: on inputs
-$radius-large: 10px; // example: on boxes
-$radius-small: 10px; // example: on small buttons
-$family-sans-serif: 'Lato';
-// $border: $cartera-border-color;
-$shadow: 0rem 0rem 0rem 0.1rem $cartera-border-color;
-$input-border-color: $cartera-border-color;
-
-// Navbar colors
-$navbar-item-hover-color: $primary;
-$navbar-tab-active-color: $primary;
-$navbar-tab-hover-border-bottom-color: $primary;
-$navbar-tab-active-border-bottom-color: $primary;
-$navbar-dropdown-arrow: $primary;
+// Update bulma variables
+// $navbar-item-hover-color: $primary;
+// $navbar-tab-active-color: $primary;
+// $navbar-tab-hover-border-bottom-color: $primary;
+// $navbar-tab-active-border-bottom-color: $primary;
+// $navbar-dropdown-arrow: $primary;
 $navbar-height: 5rem;
-
-// $scheme-main: #000;
-// $scheme-invert: #fff;
 
 // Import only what you need from Bulma
 @import 'bulma/bulma.sass'

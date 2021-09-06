@@ -5,86 +5,117 @@
       <img class="is-rounded" src="http://placekitten.com/64/64">
     </figure>
 
-    <div class="media-content my-auto">
-      <div class="field">
-        <p class="control">
-          <textarea
-            class="textarea"
-            placeholder="Novo post"
-            :rows="rows"
-            v-model="comment"
-          />
-        </p>
-      </div>
+    <div class="media-content my-auto" @click="toggle">
+      <textarea
+        class="textarea has-background-white-ter is-clickable is-clipped"
+        readonly
+        rows="1"
+      > Como estão seus investimentos hoje?
+      </textarea>
     </div>
   </div>
 
-  <Breakpoint class="level is-mobile mt-2" br="mobile">
-    <button class="level-item button is-inverted is-link">
-      <Icon icon="image" />
-    </button>
-    <button class="level-item button is-inverted is-link">
-      <Icon icon="video" />
-    </button>
-    <button class="level-item button is-inverted is-link">
-      <Icon icon="poll" />
-    </button>
-    <button class="level-item button is-inverted is-link">
-      <Icon icon="file" />
-    </button>
-    <button class="level-item button is-link">
-      <Icon icon="paper-plane" />
-    </button>
-  </Breakpoint>
+  <hr>
 
-  <Breakpoint class="level mt-2" br="mobile" hide>
-    <button class="level-item button is-inverted is-link">
-      <Icon icon="image" label="Imagem" />
+  <nav class="level has-text-grey">
+    <button class="level-item button is-primary is-inverted mx-2">
+      <Icon icon="image" label="Foto" />
     </button>
-    <button class="level-item button is-inverted is-link">
+    |
+    <button class="level-item button is-primary is-inverted mx-2">
       <Icon icon="video" label="Vídeo" />
     </button>
-    <button class="level-item button is-inverted is-link">
+    |
+    <button class="level-item button is-primary is-inverted mx-2">
       <Icon icon="poll" label="Enquete" />
     </button>
-    <button class="level-item button is-inverted is-link">
+    |
+    <button class="level-item button is-primary is-inverted mx-2">
       <Icon icon="file" label="Documento" />
     </button>
-    <button class="level-item button is-link">
-      <Icon icon="paper-plane" label="Publicar" />
-    </button>
-  </Breakpoint>
+  </nav>
+
+  <div class="modal" ref="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <!-- Title -->
+      <header class="modal-card-head has-background-white">
+        <p class="modal-card-title">Criar publicação</p>
+        <button class="delete is-large" @click="toggle"></button>
+      </header>
+
+      <!-- Form -->
+      <section class="modal-card-body is-clipped">
+        <textarea class="is-size-5" placeholder="Como estão seus investimentos hoje?" rows="10" />
+      </section>
+
+      <!-- Buttons -->
+      <footer class="modal-card-foot has-background-white">
+        <nav class="level has-text-grey">
+          <div class="level-left">
+            <button class="level-item button is-primary is-light mx-2">
+              <Icon icon="image" label="Foto" />
+            </button>
+            <button class="level-item button is-primary is-light mx-2">
+              <Icon icon="video" label="Vídeo" />
+            </button>
+            <button class="level-item button is-primary is-light mx-2">
+              <Icon icon="poll" label="Enquete" />
+            </button>
+            <button class="level-item button is-primary is-light mx-2">
+              <Icon icon="file" label="Documento" />
+            </button>
+          </div>
+
+          <div class="level-right">
+            <button class="level-item button is-light mx-2">
+              <Icon icon="paper-plane" label="Publicar" />
+            </button>
+          </div>
+        </nav>
+      </footer>
+    </div>
+  </div>
 </article>
 </template>
 
 <script>
 import Icon from '@/comps/Icon'
-import Breakpoint from '@/comps/Breakpoint'
 
 export default {
   name: 'PostCreate',
 
   components: {
-    Icon,
-    Breakpoint
+    Icon
   },
 
-  data: () => ({
-    comment: ''
-  }),
-
-  computed: {
-    rows () {
-      const newlines = this.comment.split('\n').length
-      const min = Math.max(newlines, 1) || 1
-      return Math.min(min, 5)
+  methods: {
+    toggle () {
+      this.$refs.modal.classList.toggle('is-active')
     }
   }
 }
 </script>
 
 <style scoped>
-textarea {
+.media-content textarea {
   resize: none;
+  border-radius: 25px;
+}
+
+.modal-card-body textarea {
+  border-color: transparent;
+  resize: none;
+  outline: none;
+  min-height: 100%;
+  min-width: 100%;
+}
+
+nav {
+  min-width: 100%;
+}
+
+.modal-card {
+  width: 50vw;
 }
 </style>
