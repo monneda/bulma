@@ -8,7 +8,7 @@
   </figure>
 
   <div class="media-content">
-    <div class="comment has-background-light p-3">
+    <div class="comment has-background-light p-5">
       <!-- User -->
       <div class="level">
         <div class="level-left">
@@ -55,7 +55,8 @@ export default {
   border-radius: 5px 15px 15px 15px;
 }
 
-.media {
-  border-top: none;  /* Hide border top color */
+/* Hide border colors */
+article .media {
+  border: 0px transparent;
 }
 </style>

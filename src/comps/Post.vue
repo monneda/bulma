@@ -53,10 +53,10 @@
     </div>
   </nav>
 
-  <hr>
+  <hr class="mb-2">
 
   <!-- Buttons -->
-  <nav class="level">
+  <nav class="level my-0">
     <button class="level-item button is-white has-text-grey-dark">
       <Icon class="fas fa-lg" icon="heart" label="Curtir" />
     </button>
@@ -71,9 +71,10 @@
     </button>
   </nav>
 
+  <hr class="mt-2">
+
   <div class="is-flex is-flex-direction-column">
-    <Comment />
-    <Comment />
+    <CommentCreate />
     <Comment />
   </div>
 </article>
@@ -82,13 +83,15 @@
 <script>
 import Icon from '@/comps/Icon'
 import Comment from '@/comps/Comment'
+import CommentCreate from '@/comps/CommentCreate'
 
 export default {
   name: 'Post',
 
   components: {
     Icon,
-    Comment
+    Comment,
+    CommentCreate
   },
 
   data: () => ({
