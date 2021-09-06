@@ -1,5 +1,7 @@
 <template>
-<Navbar class="has-shadow" />
+<Navbar />
+<NavbarWallets class="has-shadow" />
+
 <div class="columns mx-0 my-1">
   <!-- Left -->
   <div class="column is-3 is-hidden-mobile">
@@ -33,6 +35,7 @@
 <script>
 import Post from '@/comps/Post'
 import Navbar from '@/comps/navbar/Navbar'
+import NavbarWallets from '@/comps/navbar/NavbarWallets'
 import UserIcon from '@/comps/UserIcon'
 import PostCreate from '@/comps/PostCreate'
 import Top5 from '../comps/Top5'
@@ -43,7 +46,8 @@ export default {
     Post,
     Navbar,
     UserIcon,
-    PostCreate
+    PostCreate,
+    NavbarWallets
   }
 }
 </script>
