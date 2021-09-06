@@ -33,6 +33,7 @@
         <span class="level-item">
           <Icon class="has-text-primary" icon="heart" />
         </span>
+        <span class="level-item">&bull;</span>
         <span class="level-item">Responder</span>
       </div>
     </div>

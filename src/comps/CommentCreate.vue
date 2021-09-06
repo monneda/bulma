@@ -8,11 +8,8 @@
   </figure>
 
   <div class="media-content" @click="toggle">
-    <textarea
-      class="textarea has-background-white-ter is-clickable is-clipped"
-      readonly
-      rows="1"
-    > Escreva um comentário...
+    <textarea class="textarea has-background-white-ter is-clickable is-clipped" readonly rows="1">
+      Escreva um comentário...
     </textarea>
   </div>
 </article>
