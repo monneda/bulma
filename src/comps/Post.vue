@@ -70,17 +70,25 @@
       <Icon class="fas fa-lg" icon="paper-plane" label="Enviar" />
     </button>
   </nav>
+
+  <div class="is-flex is-flex-direction-column">
+    <Comment />
+    <Comment />
+    <Comment />
+  </div>
 </article>
 </template>
 
 <script>
 import Icon from '@/comps/Icon'
+import Comment from '@/comps/Comment'
 
 export default {
   name: 'Post',
 
   components: {
-    Icon
+    Icon,
+    Comment
   },
 
   data: () => ({
