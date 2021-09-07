@@ -7,8 +7,7 @@
   <!-- Center -->
   <div class="column is-8">
     <PortfolioBanner class="box" />
-    nice
-    <Portfolio class="box" />
+    <PortfolioTable class="box" />
   </div>
 
   <!-- Right -->
@@ -18,13 +17,13 @@
 
 <script>
 import Navbar from '@/comps/navbar/Navbar'
-import Portfolio from '@/comps/Portfolio'
+import PortfolioTable from '@/comps/PortfolioTable'
 import PortfolioBanner from '@/comps/PortfolioBanner'
 
 export default {
   components: {
     Navbar,
-    Portfolio,
+    PortfolioTable,
     PortfolioBanner
   },
 
