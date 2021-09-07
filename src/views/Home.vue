@@ -16,17 +16,46 @@
 
   <!-- Right -->
   <div class="column is-3 is-hidden-mobile">
-    <div class="card p-3 is-shadowless">
-      <UserIcon />
+    <div class="box">
+      <div class="level">
+        <div class="level-item">
+          <div class="is-flex is-flex-direction-column is-align-items-center">
+            <figure class="image is-128x128">
+              <img class="is-rounded" src="https://placekitten.com/128/128">
+            </figure>
+
+            <br>
+
+            <strong class="title is-3">Roberta</strong>
+            <span class="title is-5 has-text-grey">Investidora</span>
+          </div>
+        </div>
+      </div>
 
       <hr>
 
-      <span class="level">
-        <strong class="level-left">Sugestão de investidores</strong>
-        <span class="level-right">ver todos</span>
-      </span>
+      <div class="level">
+        <div class="level-left">
+          <strong class="level-item has-text-grey-dark">
+            Sugestão de investidores
+          </strong>
+        </div>
+        <div class="level-right">
+          <span class="level-item has-text-primary">
+            ver todos
+          </span>
+        </div>
+      </div>
 
-      <UserIcon v-for="i of [1, 2, 3, 4, 5]" :key="i" />
+      <UserIcon username="Banamna" label="Segue aqui">
+        <button class="button is-primary is-light">Seguir</button>
+      </UserIcon>
+      <UserIcon username="Maurício" label="Pegaki">
+        <button class="button is-primary is-light">Seguir</button>
+      </UserIcon>
+      <UserIcon username="Bruna" label="Olá Marilene">
+        <button class="button is-primary is-light">Seguir</button>
+      </UserIcon>
     </div>
   </div>
 </div>

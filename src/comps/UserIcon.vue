@@ -1,30 +1,41 @@
 <template>
-<article class="media">
-  <!-- User image -->
-  <figure class="media-left image is-48x48">
-    <img class="is-rounded" src="http://placekitten.com/64/64">
-  </figure>
-
-  <!-- Content -->
-  <div class="media-content">
-    <div class="level">
-      <span class="level-left">
-        <p>
-          <strong>Guilherme Bueno</strong> <small>@bueno</small>
-          <br>
-          <small>Founder</small>
-        </p>
-      </span>
-      <span class="level-right">
-        <button class="button is-small is-link">Seguir</button>
-      </span>
+<div class="level">
+  <div class="level-left">
+    <div class="level-item">
+      <figure class="image is-48x48">
+        <img class="is-rounded" src="https://placekitten.com/64/64">
+      </figure>
+    </div>
+    <div class="level-item">
+      <div>
+        <strong>{{ username }}</strong>
+        <br>
+        <small>{{ label }}</small>
+      </div>
     </div>
   </div>
-</article>
+
+  <div class="level-right">
+    <div class="level-item">
+      <slot></slot>
+    </div>
+  </div>
+</div>
 </template>
 
 <script>
 export default {
-  name: 'UserIcon'
+  name: 'UserIcon',
+
+  props: {
+    username: {
+      type: String,
+      required: true
+    },
+    label: {
+      type: String,
+      default: ''
+    }
+  }
 }
 </script>
