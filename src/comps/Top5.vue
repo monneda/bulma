@@ -1,55 +1,36 @@
 <template>
-  <div class="box">
-    <div class="level is-div">
-      <div class="level-left">
-        <div class="level-item">
-          <span class="has-text-weight-bold"> Top Carteras que você segue</span>
-        </div>
-      </div>
-      <div class="level-right">
-        <div class="level-item">
-          <Icon icon="trophy"/>
-        </div>
-      </div>
+<div>
+  <div class="level">
+    <div class="level-left">
+      <strong class="level-item">Top carteiras que você segue</strong>
     </div>
-    <hr>
-    <article v-for="(portfolio, index) in portfolios" :key="portfolio" class="box has-background-green5 p-2">
-      <div class="media">
-        <div class="media-left is-align-self-center">
-          <span
-            class="has-text-weight-bold number-circle"
-            :class="index === 0? 'has-text-white top-1': 'has-text-primary top-2'"
-          >
-            {{ index + 1}}
-          </span>
-          <figure class="image" style="width: 45px; height: 45px">
-            <img class="is-rounded" :src="portfolio.picture" style="position: absolute">
-          </figure>
-        </div>
-        <div class="media-content is-align-self-center">
-          <div class="content">
-            <p>
-              <strong> {{ portfolio.username }} </strong>
-              <br>
-              <span class="has-text-green3" style="font-size: 13px"> {{ portfolio.portfolioName }} </span>
-            </p>
-          </div>
-        </div>
-        <div class="media-right has-text-right">
-            <Icon v-if="portfolio.variation > 0" icon="arrow-circle-up" class="fa-lg has-text-green3"></Icon>
-            <Icon v-else icon="arrow-circle-down" class="fa-lg has-text-dark"></Icon>
-            <br>
-            <span v-if="portfolio.variation > 0" class="has-text-weight-bold has-text-danger"> {{portfolio.variation.toFixed(2)}}% </span>
-            <span v-else class="has-text-weight-bold has-text-danger"> {{portfolio.variation.toFixed(2)}}% </span>
-          </div>
-      </div>
-    </article>
+    <div class="level-right">
+      <Icon class="has-text-primary fas fa-lg" icon="trophy" />
+    </div>
   </div>
+
+  <hr>
+
+  <TopWalletItem class="p-3" number="1" :gain="25.0" first />
+  <TopWalletItem class="p-3" number="2" :gain="12.4" />
+  <TopWalletItem class="p-3" number="3" :gain="0.3" />
+  <TopWalletItem class="p-3" number="4" :gain="-2.0" />
+  <TopWalletItem class="p-3" number="5" :gain="-5.43" />
+</div>
 </template>
+
 <script>
-import Icon from './Icon'
+import Icon from '@/comps/Icon'
+import TopWalletItem from '@/comps/TopWalletItem'
+
 export default {
-  components: { Icon },
+  name: 'Top5',
+
+  components: {
+    Icon,
+    TopWalletItem
+  },
+
   data: () => ({
     portfolios: [
       {

@@ -5,7 +5,7 @@
 <div class="columns mx-0 my-1">
   <!-- Left -->
   <div class="column is-3 is-hidden-mobile">
-    <Top5/>
+    <Top5 class="box" />
   </div>
 
   <!-- Center -->
