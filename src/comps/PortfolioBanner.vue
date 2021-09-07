@@ -1,56 +1,69 @@
 <template>
-<article class="box p-0">
-  <!-- User -->
-  <div class="level box is-shadowless is-radiusless has-background-primary-light">
+<article>
+  <div class="level has-background-primary-light p-4">
     <div class="level-left">
-      <!-- Image -->
       <div class="level-item">
         <figure class="image is-48x48">
           <img class="is-rounded" src="http://placekitten.com/128/128">
         </figure>
       </div>
 
-      <!-- ame -->
       <div class="level-item">
-        <div>
-          <p> Cartera de </p>
-          <p><strong> Joao </strong></p>
+        <div class="is-flex is-flex-direction-column">
+          <span>Cartera de</span>
+          <strong>Joao</strong>
         </div>
       </div>
     </div>
 
-    <!-- Buttons -->
     <div class="level-right">
       <div class="level-item">
-        <button class="button level-item"> Compartilhar </button>
-        <button class="button level-item"> Enviar </button>
+        <button class="button is-primary">Editar cartera</button>
+      </div>
+      <div class="level-item">
+        <button class="button">Compartilhar</button>
       </div>
     </div>
   </div>
 
-  <!-- Title -->
-  <div class="level box is-shadowless">
+  <div class="level">
     <div class="level-left">
       <div class="level-item">
-        <Icon class="is-large" icon="wallet" />
-        <h1 class="title"> Minha cartera na clear </h1>
+        <Icon class="fas fa-lg has-text-primary" icon="wallet" />
+      </div>
+      <div class="level-item">
+        <span class="title">
+          À prova de balas
+        </span>
       </div>
     </div>
 
     <div class="level-right">
       <div class="level-item">
-        <Icon icon="wallet" />
-        <p>
-          <strong> Variação: </strong> 12.5%
-        </p>
+        <div class="select is-primary">
+          <select v-model="selected">
+            <option>7 dias</option>
+            <option>1 mês</option>
+            <option>3 meses</option>
+            <option>YTD</option>
+          </select>
+        </div>
+      </div>
+      <div class="level-item">
+        <Icon class="fas fa-lg" icon="wallet" />
+      </div>
+      <div class="level-item">
+        <div class="is-flex is-flex-direction-column">
+          <strong>Variação {{ selected }}:</strong>
+          <span>10%</span>
+        </div>
       </div>
     </div>
   </div>
 
   <hr>
 
-  <!-- Description -->
-  <div class="content box is-shadowless">
+  <div class="content">
     <p>
       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -60,24 +73,30 @@
       proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     </p>
   </div>
-
-  <!-- Tabs -->
-  <div class="level box has-background-grey-lighter p-1">
-    <button class="level-item button has-background-grey-lighter"> Ativos </button>
-    <button class="level-item button has-background-grey-lighter"> Composição </button>
-    <button class="level-item button has-background-grey-lighter"> Histórico </button>
-  </div>
 </article>
 </template>
 
 <script>
 import Icon from '@/comps/Icon'
 
+const OPTIONS = ['7 dias', '1 mês', '3 meses', 'YTD']
+
 export default {
   name: 'PortfolioBanner',
 
   components: {
     Icon
-  }
+  },
+
+  data: () => ({
+    options: OPTIONS,
+    selected: OPTIONS[0]
+  })
 }
 </script>
+
+<style scoped>
+div .level {
+  border-radius: 15px 15px 0px 0px;
+}
+</style>

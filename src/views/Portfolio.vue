@@ -6,7 +6,7 @@
 
   <!-- Center -->
   <div class="column is-8">
-    <PortfolioBanner />
+    <PortfolioBanner class="box" />
     nice
     <Portfolio class="box" />
   </div>
