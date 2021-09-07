@@ -45,17 +45,7 @@
 import Icon from '@/comps/Icon'
 
 export default {
-  name: 'AssetCard',
-
-  components: {
-    Icon
-  },
-
-  props: {
-    code: {
-      type: String,
-      required: true
-    }
-  }
+  name: 'AssetTile',
+  components: { Icon }
 }
 </script>

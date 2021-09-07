@@ -2,20 +2,20 @@
 <article>
   <div class="columns is-multiline">
     <div v-for="(item, i) of assets" :key="i" class="column is-6">
-      <AssetCard class="box" />
+      <AssetTile class="box" />
     </div>
   </div>
 </article>
 </template>
 
 <script>
-import AssetCard from '@/comps/portfolio/AssetCard'
+import AssetTile from '@/comps/portfolio/AssetTile'
 
 export default {
-  name: 'PortfolioTile',
+  name: 'PortfolioTiles',
 
   components: {
-    AssetCard
+    AssetTile
   },
 
   props: {
