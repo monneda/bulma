@@ -1,19 +1,14 @@
 <template>
 <Navbar class="has-shadow" />
-<div class="columns mx-0 my-1">
-  <!-- Left -->
-  <div class="column is-2 is-hidden-mobile"></div>
-
-  <!-- Center -->
+<div class="columns py-4">
+  <div class="column is-2"></div>
   <div class="column is-8">
     <PortfolioBanner class="box" />
     <PortfolioInputs class="box" @mode="updateMode" />
     <PortfolioTiles v-if="isTiles" :assets="[1, 2, 3, 4, 5, 6]" />
     <PortfolioTable v-if="isTable" class="box" :assets="[1, 2, 3, 4, 5, 6]" />
   </div>
-
-  <!-- Right -->
-  <div class="column is-2 is-hidden-mobile"></div>
+  <div class="column is-2"></div>
 </div>
 </template>
 
