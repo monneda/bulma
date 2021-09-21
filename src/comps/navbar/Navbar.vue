@@ -8,7 +8,7 @@
 
     <!-- Search -->
     <div class="navbar-item">
-      <Search style="min-width: 32rem;" />
+      <Search style="min-width: 12rem;" />
     </div>
 
     <!-- Burguer -->
@@ -29,7 +29,6 @@
       <NavbarItem class="mx-3" icon="compass" label="Descobrir" />
       <NavbarItem class="mx-3" icon="envelope" label="Chat" />
       <NavbarItem class="mx-3" icon="bell" label="Notificações" />
-
       <!-- User -->
       <NavbarItemUser class="mx-3" user="Roberta" />
     </div>
