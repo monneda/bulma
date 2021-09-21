@@ -82,6 +82,6 @@
 
 <script>
 export default {
-  name: 'PortfolioBanner'
+  name: 'ProfileBanner'
 }
 </script>
