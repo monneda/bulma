@@ -1,18 +1,16 @@
 <template>
 <Navbar class="has-shadow" />
-<div class="columns mx-0 my-1" style="background-color: #E5E5E5; height: 100rem">
-  <!-- Left -->
-  <div class="column is-2 is-hidden-mobile"></div>
 
-  <!-- Center -->
-  <div class="column is-8">
-    <ProfileBanner />
+<div class="container">
+  <section class="section">
+    <ProfileBanner class="box" />
+  </section>
 
-    <div class="box">
+  <section class="section">
+    <article class="box">
+      <!-- Title + Buttons -->
       <div class="level">
         <h1 class="title"> Carteras </h1>
-
-        <!-- Buttons -->
         <div class="field has-addons">
           <p class="control"><button class="button"> 1 dia </button></p>
           <p class="control"><button class="button"> 1 semana </button></p>
@@ -28,21 +26,25 @@
         <div class="column is-4"><PortfolioCard /></div>
         <div class="column is-4"><PortfolioCard /></div>
       </div>
-    </div>
+    </article>
+  </section>
 
+  <section class="section">
     <h1 class="title"> Publicações </h1>
 
-    <div>
-      <div class="columns">
-        <div class="column box m-3 is-8">
-          <Post class="py-3" />
-          <Post class="py-3" />
-          <Post class="py-3" />
+    <div class="columns">
+      <div class="column is-8">
+        <div class="box">
+          <Post />
+          <Post />
+          <Post />
         </div>
-        <div class="column box m-3"> Right </div>
+      </div>
+      <div class="column">
+        <div class="box">Right</div>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- Right -->
   <div class="column is-2 is-hidden-mobile"></div>
@@ -52,7 +54,7 @@
 <script>
 import Post from '@/comps/Post'
 import Navbar from '@/comps/navbar/Navbar'
-import ProfileBanner from '@/comps/ProfileBanner'
+import ProfileBanner from '@/comps/profile/ProfileBanner'
 import PortfolioCard from '@/comps/PortfolioCard'
 
 export default {
@@ -71,9 +73,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.card {
-  border: 1px solid #E9E9E9;
-}
-</style>
