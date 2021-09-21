@@ -1,8 +1,10 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import Home from '../views/Home.vue'
-import Portfolio from '../views/Portfolio.vue'
-import Profile from '../views/Profile.vue'
-import Homepage from '../views/Homepage'
+
+import Home from '@/views/Home.vue'
+import Test from '@/views/Test.vue'
+import Profile from '@/views/Profile.vue'
+import Homepage from '@/views/Homepage'
+import Portfolio from '@/views/Portfolio.vue'
 
 const routes = [
   {
@@ -34,12 +36,15 @@ const routes = [
     path: '/l',
     name: 'Landing page',
     component: Homepage
+  },
+  {
+    path: '/t',
+    name: 'Test',
+    component: Test
   }
 ]
 
-const router = createRouter({
+export default createRouter({
   history: createWebHashHistory(),
   routes
 })
-
-export default router
