@@ -1,18 +1,37 @@
 <template>
 <!--  NAVBAR -->
-<nav class="navbar is-fixed-top custom-navbar is-spaced">
-  <div class="navbar-brand ml-6">
-    <a class="navbar-item">
+<nav class="navbar is-fixed-top custom-navbar">
+  <div class="navbar-brand">
+    <a class="navbar-item ml-4">
       <img src="@/assets/logo-horizontal-fundo-claro.png">
     </a>
+    <a class="navbar-burger" ref="burger" @click="toggle">
+      <span class="is-rounded-15" style="width: 22px; height: 0.16rem;"></span>
+      <span class="is-rounded-15" style="width: 22px; height: 0.16rem;"></span>
+      <span class="is-rounded-15" style="width: 22px; height: 0.16rem;"></span>
+    </a>
   </div>
-  <div class="navbar-menu mr-6">
-    <div class="navbar-end ">
+  <div class="navbar-menu" ref="menu">
+    <div class="navbar-end">
+      <a class="navbar-item font-title is-invisible-desktop" style="nav link">
+        Home
+      </a>
+      <a class="navbar-item is-invisible-desktop">
+        Política de Privacidade
+      </a>
+      <a class="navbar-item is-invisible-desktop">
+        Termos de Uso
+      </a>
+      <a class="navbar-item is-invisible-desktop">
+        Contato
+      </a>
       <div class="navbar-item">
-        <button class="button navbar-item is-primary is-outlined homepage-buttons" style="width: 100px;"> entrar </button>
+        <button class="button navbar-item navbar-button is-primary is-outlined font-button">
+          login
+        </button>
       </div>
       <div class="navbar-item">
-        <button class="button navbar-item is-primary homepage-buttons" style="width: 130px;"> criar conta</button>
+        <button class="button navbar-item navbar-button is-primary font-button"> criar conta </button>
       </div>
     </div>
   </div>
@@ -22,14 +41,11 @@
   <section class="section is-medium">
     <div class="columns">
       <div class="column is-5 mt-6">
-        <p class="is-size-1 has-text-weight-bold" style="line-height: 0.9">
-          <span class="has-text-black-ter t1"> o seu network de</span>
-          <span class="has-text-primary t1"> valor está aqui. </span>
-        </p>
-
+        <h1 class="h1 has-text-black has-text-centered-mobile is-h3-mobile"> o seu network de </h1>
+        <h1 class="h1 has-text-weight-bold has-text-black has-text-centered-mobile is-h3-mobile"> valor está aqui </h1>
         <br>
 
-        <p class="is-size-5 has-text-grey-darker">
+        <p class="has-text-primary font-super-title has-text-grey-darker has-text-centered-mobile is-title-mobile">
           A Cartera é uma rede social para investidores e futuros investidores.
           Conecte-se ao network que realmente tem valor para seus investimentos.
         </p>
@@ -38,11 +54,14 @@
         <br>
         <br>
 
-        <button
-          class="button is-primary has-text-grey-darker has-text-weight-bold is-large"
-          style="font-size: 18px; width: 250px; height: 55px;">
-          quero fazer parte!
-        </button>
+        <div class="has-text-centered-mobile">
+          <button
+            class="button is-primary font-title-bold has-text-black-bis"
+            style="border-radius: 15px"
+          >
+            <span class="px-5">quero fazer parte!</span>
+          </button>
+        </div>
       </div>
       <div class="column is-1"></div>
       <div class="column">
@@ -186,14 +205,21 @@
 
 <script>
 export default {
-  name: 'Homepage'
+  name: 'Homepage',
+
+  methods: {
+    toggle () {
+      this.$refs.menu.classList.toggle('is-active')
+      this.$refs.burger.classList.toggle('is-active')
+    }
+  }
 }
 </script>
 
 <style scoped>
 .custom-navbar {
   /* Off White */
-  background: #F6F9FC;
+  background: #FFFFFF;
   /* Feed */
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
 }
@@ -205,14 +231,8 @@ export default {
   font-size: 14px;
   line-height: 100%;
 }
-.t1 {
-  /* o seu network de valor está aqui. */
-  /* Title */
-  font-family: Tajawal;
-  font-weight: bold;
-  font-size: 4rem;
-
-  /* Preto */
-  color: #23252E;
+.navbar-button {
+  padding: 0px 30px;
 }
+
 </style>

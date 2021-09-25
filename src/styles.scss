@@ -1,8 +1,8 @@
 @charset "utf-8";
 
 // Import a Google Font
-@import url('https://fonts.googleapis.com/css?family=Tajawal:400,700');
-@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+@import 'fonts/Tajawal.css';
+@import 'fonts/Lato.css';
 
 // Update bulma variables
 // $navbar-item-hover-color: $primary;
@@ -12,6 +12,160 @@
 // $navbar-dropdown-arrow: $primary;
 // $navbar-height: 5rem;
 
+// Sizes heading
+$size-1: 4rem; // h1 64px
+$size-2: 3.25rem; // h2 52px
+$size-3: 2.688rem; // h3 43px
+$size-4: 1.5rem; // h4 24px
+$size-5: 1.25rem; // super title 20px
+$size-6: 1rem; // title 16px
+$size-7: 0.875rem; // paragraphs, buttons and links 14px
+$size-8: 0.813rem; // details 13px
+$size-9: 0.688rem; // menu, percentages 11px
+
+// Black/White
+$black: hsla(0, 0%, 0%, 1);
+$black-bis: hsla(229, 14%, 16%, 1);
+$black-ter: hsla(229, 14%, 16%, 1);
+$grey-darker: hsla(229, 6%, 34%, 1);
+$grey-dark: hsla(229, 6%, 34%, 1);
+$grey: hsla(0, 0%, 54%, 1);
+$grey-light: hsla(0, 0%, 88%, 1);
+$grey-lighter: hsla(0, 0%, 91%, 1);
+$grey-lightest: hsla(0, 0%, 93%, 1);
+$white-ter: hsla(0, 0%, 96%, 1);
+$white-bis: hsla(210, 50%, 98%, 1);
+$white: hsla(0, 0%, 100%, 1);
+
+// Shades of green
+$green-darkest: hsla(154, 80%, 37%, 1);
+$green-darker: hsla(154, 76%, 42%, 1);
+$green-dark: hsla(152, 67%, 49%, 1);
+$green: hsla(154, 77%, 55%, 1); // Main color
+$green-light-1: hsla(154, 90%, 63%, 1);
+$green-light-2: hsla(154, 100%, 85%, 1);
+$green-light-3: hsla(154, 100%, 88%, 1);
+$green-lighter: hsla(154, 100%, 94%, 1);
+$green-lightest: hsla(154, 100%, 97%, 1);
+
+// Complementary
+$c-red: hsla(0, 77%, 46%, 1);
+$c-white: hsla(0, 60%, 97%, 1);
+
+// Linear gradient colors
+$lg-red: linear-gradient(135.66deg, #E87575 -6.09%, #CE1B1B 102.06%);
+$lg-green: linear-gradient(138.32deg, #35E599 -6.06%, #009887 118.07%);
+
+$primary: $green;
+$family-primary: Lato;
+$body-size: 16px;
+$navbar-item-hover-color: $primary;
+$navbar-burger-color: $primary;
+$navbar-tab-active-border-bottom-color: $primary;
+$navbar-tab-active-color: $primary;
+$navbar-tab-hover-border-bottom-color: $primary;
+$navbar-dropdown-arrow: $primary;
+
+.h1 {
+  font-family: Tajawal;
+  font-size: $size-1;
+  line-height: 90%;
+}
+
+.h2 {
+  font-family: Tajawal;
+  font-size: $size-2;
+  line-height: 100%;
+}
+
+.h3 {
+  font-family: Tajawal;
+  font-size: $size-3;
+  line-height: 100%;
+}
+
+.h4 {
+  font-family: Tajawal;
+  font-size: $size-4;
+  line-height: 100%;
+}
+
+.font-super-title {
+  font-family: Lato;
+  font-size: $size-5;
+  line-height: 130%;
+}
+
+.font-title-bold {
+  font-family: Lato;
+  font-weight: bold;
+  font-size: $size-6;
+  line-height: 120%;
+}
+
+.font-title {
+  font-family: Lato;
+  font-size: $size-6;
+  line-height: 120%;
+}
+
+.font-button {
+  font-family: Lato;
+  font-size: $size-7;
+  line-height: 120%;
+  font-weight: bold;
+}
+
+.font-paragraph {
+  font-family: Lato;
+  font-size: $size-7;
+  line-height: 120%;
+}
+
+.font-details {
+  font-family: Lato;
+  font-size: $size-8;
+  line-height: 110%;
+}
+
+.font-menu {
+  font-family: Lato;
+  font-size: $size-9;
+  line-height: 100%;
+  text-transform: uppercase;
+}
+
+.font-percentage {
+  font-family: Lato;
+  font-size: $size-9;
+  line-height: 100%;
+}
+
+.is-size-8 {
+  font-size: $size-8
+}
+
+.is-size-9 {
+  font-size: $size-9
+}
+
+.is-rounded-15 {
+  border-radius: 15px;
+}
+.is-rounded-10 {
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .is-h3-mobile {
+    font-size: $size-3;
+    line-height: 100%;
+  }
+  .is-title-mobile {
+    font-size: $size-6;
+    line-height: 120%;
+  }
+}
 
 // Import only what you need from Bulma
 @import 'bulma/bulma.sass';
