@@ -1,155 +1,168 @@
 <template>
-<!--  NAVBAR -->
+<!--  Navbar -->
 <nav class="navbar is-fixed-top custom-navbar">
-  <div class="navbar-brand">
-    <a class="navbar-item ml-4">
-      <img src="@/assets/logo-horizontal-fundo-claro.png">
-    </a>
-    <a class="navbar-burger" ref="burger" @click="toggle">
-      <span class="is-rounded-15" style="width: 22px; height: 0.16rem;"></span>
-      <span class="is-rounded-15" style="width: 22px; height: 0.16rem;"></span>
-      <span class="is-rounded-15" style="width: 22px; height: 0.16rem;"></span>
-    </a>
-  </div>
-  <div class="navbar-menu" ref="menu">
-    <div class="navbar-end">
-      <a class="navbar-item font-title is-invisible-desktop" style="nav link">
-        Home
+  <div class="container">
+
+    <!-- Brand -->
+    <div class="navbar-brand">
+      <!-- Logo -->
+      <a class="navbar-item">
+        <figure class="image">
+          <img src="@/assets/logo-horizontal-fundo-claro.png">
+        </figure>
       </a>
-      <a class="navbar-item is-invisible-desktop">
-        Política de Privacidade
+
+      <!-- Buguer -->
+      <a class="navbar-burger has-text-primary" ref="burger" @click="toggle">
+        <span></span>
+        <span></span>
+        <span></span>
       </a>
-      <a class="navbar-item is-invisible-desktop">
-        Termos de Uso
-      </a>
-      <a class="navbar-item is-invisible-desktop">
-        Contato
-      </a>
-      <div class="navbar-item">
-        <button class="button navbar-item navbar-button is-primary is-outlined font-button">
-          login
-        </button>
-      </div>
-      <div class="navbar-item">
-        <button class="button navbar-item navbar-button is-primary font-button"> criar conta </button>
+    </div>
+
+    <!-- Menu -->
+    <div class="navbar-menu" ref="menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <button class="button is-primary is-outlined is-rounded">
+            login
+          </button>
+        </div>
+        <div class="navbar-item">
+          <button class="button is-primary is-rounded">criar conta</button>
+        </div>
       </div>
     </div>
   </div>
 </nav>
-<!-- CONTENT -->
-<div class="container is-fluid has-background-light px-0">
-  <section class="section is-medium">
-    <div class="columns">
-      <div class="column is-5 mt-6">
-        <h1 class="h1 has-text-black has-text-centered-mobile is-h3-mobile"> o seu network de </h1>
-        <h1 class="h1 has-text-weight-bold has-text-black has-text-centered-mobile is-h3-mobile"> valor está aqui </h1>
-        <br>
 
-        <p class="has-text-primary font-super-title has-text-grey-darker has-text-centered-mobile is-title-mobile">
-          A Cartera é uma rede social para investidores e futuros investidores.
-          Conecte-se ao network que realmente tem valor para seus investimentos.
-        </p>
+<!-- Content -->
+<div class="container is-fluid p-0 pt-6">
+  <section class="section is-medium has-background-light">
+    <div class="container">
+      <div class="columns is-vcentered">
+        <!-- Text -->
+        <div class="column is-5 has-text-centered-mobile">
+          <p class="title is-size-1 is-size-2-mobile has-text-weight-normal">
+            o seu network de
+          </p>
+          <p class="subtitle is-size-1 is-size-2-mobile has-text-weight-bold">
+            valor está aqui
+          </p>
 
-        <br>
-        <br>
-        <br>
+          <p class="is-size-4 is-size-5-mobile">
+            A Cartera é uma rede social para investidores e futuros investidores.
+            Conecte-se ao network que realmente tem valor para seus investimentos.
+          </p>
 
-        <div class="has-text-centered-mobile">
-          <button
-            class="button is-primary font-title-bold has-text-black-bis"
-            style="border-radius: 15px"
-          >
-            <span class="px-5">quero fazer parte!</span>
+          <br>
+          <br>
+
+          <button class="button is-primary is-large is-rounded">
+            <span class="has-text-dark">
+              quero fazer parte!
+            </span>
           </button>
         </div>
-      </div>
-      <div class="column is-1"></div>
-      <div class="column">
-        <figure class="image">
-          <img src="https://placekitten.com/575/350">
-        </figure>
+
+        <div class="column is-1"></div>
+
+        <!-- Image -->
+        <div class="column is-6">
+          <figure class="image">
+            <img src="https://placekitten.com/575/350">
+          </figure>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="section is-medium has-background-primary">
-    <p class="is-size-1 has-text-grey-darker has-text-weight-bold has-text-centered">
-      suas oportunidades sobre
+    <div class="container has-text-centered">
+      <div class="title is-size-1 is-size-3-mobile has-text-centered">
+        <p>suas oportunidades sobre</p>
+        <p>investimentos em um único lugar</p>
+      </div>
+
       <br>
-      investimentos em um único lugar.
-    </p>
+      <br>
+      <br>
 
-    <br>
-    <br>
-    <br>
-
-    <div class="container">
       <div class="level">
         <div class="level-item">
-          <div class="has-text-centered">
-            <p class="is-size-1 has-text-grey-darker"> carteiras </p>
-            <p class="is-size-4 has-text-grey-dark"> dos seus amigos </p>
+          <div>
+            <p class="title is-size-1"> carteiras </p>
+            <p class="is-size-4"> dos seus amigos </p>
           </div>
         </div>
 
-        <div class="level-item is-size-1 has-text-grey-darker"> + </div>
+        <div class="level-item">
+          <p class="title is-size-1">+</p>
+        </div>
 
         <div class="level-item">
-          <div class="has-text-centered">
-            <p class="is-size-1 has-text-grey-darker"> notícias </p>
-            <p class="is-size-4 has-text-grey-dark"> sobre a bolsa </p>
+          <div>
+            <p class="title is-size-1"> notícias </p>
+            <p class="is-size-4"> sobre a bolsa </p>
           </div>
         </div>
 
-        <div class="level-item is-size-1 has-text-grey-darker"> + </div>
+        <div class="level-item">
+          <p class="title is-size-1">+</p>
+        </div>
 
         <div class="level-item">
-          <div class="has-text-centered">
-            <p class="is-size-1 has-text-grey-darker"> ativos </p>
-            <p class="is-size-4 has-text-grey-dark"> saiba o que está em alta </p>
+          <div>
+            <p class="title is-size-1"> ativos </p>
+            <p class="is-size-4"> saiba o que está em alta </p>
           </div>
         </div>
 
-        <div class="level-item is-size-1 has-text-grey-darker"> + </div>
+        <div class="level-item">
+          <p class="title is-size-1">+</p>
+        </div>
 
         <div class="level-item">
-          <div class="has-text-centered">
-            <p class="is-size-1 has-text-grey-darker"> descubra </p>
-            <p class="is-size-4 has-text-grey-dark"> o que está em alta </p>
+          <div>
+            <p class="title is-size-1"> descubra </p>
+            <p class="is-size-4"> o que está em alta </p>
           </div>
         </div>
       </div>
-    </div>
 
-    <br>
-    <br>
-    <br>
+      <br>
+      <br>
+      <br>
 
-    <p class="has-text-centered">
-      <button class="button is-white is-large">
+      <button class="button is-white is-large is-rounded">
         quero fazer parte!
       </button>
-    </p>
+    </div>
   </section>
 
   <section class="section is-medium has-background-light">
     <div class="container">
-      <div class="columns">
-        <div class="column is-5">
+      <div class="columns is-vcentered">
+        <!-- Image -->
+        <div class="column is-6">
           <figure class="image">
             <img src="https://placekitten.com/550/350">
           </figure>
         </div>
-        <div class="column is-2"></div>
+
+        <div class="column is-1"></div>
+
+        <!-- Text -->
         <div class="column is-5">
-          <p class="is-size-2 has-text-grey-darker has-text-weight-bold">
-            interaja com investidores e fique por dentro.
-          </p>
-          <br>
-          <p class="is-size-5 has-text-grey">
-            Saiba o que seus amigos estão investindo e intereja na sua posição
-            de suas carteira: comente, curta ou indique "bear" ou "bull".
-          </p>
+          <span class="has-text-centered-mobile">
+            <p class="title is-size-1 is-size-3-mobile">
+              interaja com investidores e fique por dentro
+            </p>
+            <p class="is-size-4 is-size-5-mobile">
+              Saiba o que seus amigos estão investindo e intereja na sua posição
+              de suas carteira: comente, curta ou indique "bear" ou "bull".
+            </p>
+          </span>
         </div>
       </div>
     </div>
@@ -157,19 +170,24 @@
 
   <section class="section is-medium has-background-light">
     <div class="container">
-      <div class="columns">
+      <div class="columns is-vcentered">
+        <!-- Text -->
         <div class="column is-5">
-          <p class="is-size-2 has-text-grey-darker has-text-weight-bold">
-            invista melhor seu dinheiro
-          </p>
-          <br>
-          <p class="is-size-5 has-text-grey">
-            Veja as carteiras mais rentáveis do mês e as notícias impactantes
-            do mercado, realocando assim seu dinheiro para as melhores posições.
-          </p>
+          <span class="has-text-centered-mobile">
+            <p class="title is-size-1 is-size-3-mobile">
+              invista melhor o seu dinheiro
+            </p>
+            <p class="is-size-4 is-size-5-mobile">
+              Veja as carteiras mais rentáveis do mês e as notícias impactantes
+              do mercado, realocando assim seu dinheiro para as melhores posições.
+            </p>
+          </span>
         </div>
-        <div class="column is-2"></div>
-        <div class="column is-5">
+
+        <div class="column is-1"></div>
+
+        <!-- Image -->
+        <div class="column is-6">
           <figure class="image">
             <img src="https://placekitten.com/550/350">
           </figure>
@@ -180,26 +198,33 @@
 
   <section class="section is-medium has-background-light">
     <div class="container">
-      <div class="columns">
-        <div class="column is-5">
+      <div class="columns is-vcentered">
+        <!-- Image -->
+        <div class="column is-6">
           <figure class="image">
             <img src="https://placekitten.com/550/350">
           </figure>
         </div>
-        <div class="column is-2"></div>
+
+        <div class="column is-1"></div>
+
+        <!-- Text -->
         <div class="column is-5">
-          <p class="is-size-2 has-text-grey-darker has-text-weight-bold">
-            segurança com os seus dados.
-          </p>
-          <br>
-          <p class="is-size-5 has-text-grey">
-            Seus dados estão protegidos conosco, apenas você pode ver o valor
-            da sua carteira. Seus amigos só veem a composição em %.
-          </p>
+          <span class="has-text-centered-mobile">
+            <p class="title is-size-1 is-size-3-mobile">
+              segurança com os seus dados
+            </p>
+            <p class="is-size-4 is-size-5-mobile">
+              Seus dados estão protegidos conosco, apenas você pode ver o valor
+              da sua carteira. Seus amigos só veem a composição em %.
+            </p>
+          </span>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- TODO: last section -->
 </div>
 </template>
 
@@ -215,24 +240,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.custom-navbar {
-  /* Off White */
-  background: #FFFFFF;
-  /* Feed */
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-}
-.homepage-buttons {
-  /* criar conta e entrar*/
-  height: 40px;
-  /* Botões */
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 100%;
-}
-.navbar-button {
-  padding: 0px 30px;
-}
-
-</style>
