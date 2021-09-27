@@ -166,9 +166,17 @@
 
         <!-- Text -->
         <div class="column is-4 has-text-centered-mobile">
+          <span class="icon has-text-primary">
+            <font-awesome-icon icon="user-friends" />
+          </span>
+
+          <br>
+          <br>
+
           <h3 class="title">
             interaja com investidores e fique por dentro
           </h3>
+
           <p class="is-size-6">
             Saiba o que seus amigos estão investindo e
             intereja na sua posição de suas carteira: comente,
@@ -188,9 +196,17 @@
 
         <!-- Text -->
         <div class="column is-4 has-text-centered-mobile">
+          <span class="icon has-text-primary">
+            <font-awesome-icon icon="chart-line" />
+          </span>
+
+          <br>
+          <br>
+
           <h3 class="title">
             invista melhor o seu dinheiro
           </h3>
+
           <p class="is-size-6">
             Veja as carteiras mais rentáveis do mês e
             as notícias impactantes do mercado, realocando
@@ -224,9 +240,17 @@
 
         <!-- Text -->
         <div class="column is-4 has-text-centered-mobile">
+          <span class="icon has-text-primary">
+            <font-awesome-icon icon="lock" />
+          </span>
+
+          <br>
+          <br>
+
           <h3 class="title">
             segurança com os seus dados
           </h3>
+
           <p class="is-size-6">
             Seus dados estão protegidos conosco, apenas
             você pode ver o valor da sua carteira. Seus
