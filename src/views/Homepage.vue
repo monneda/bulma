@@ -263,7 +263,26 @@
     </div>
   </section>
 
-  <!-- TODO: last section -->
+  <section class="section is-custom">
+    <div class="container">
+      <div class="is-flex is-justify-content-center">
+        <figure class="image">
+          <img src="@/assets/landing-5.png">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section has-background-primary pt-0">
+    <div class="container has-text-centered">
+      <h3 class="title">
+        <p>os melhores investidores estão aqui.</p>
+        <p>e você?</p>
+      </h3>
+      <br>
+      <button class="button is-white is-large">quero fazer parte!</button>
+    </div>
+  </section>
 </div>
 
 <Footer />
@@ -284,3 +303,11 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+@import '@/styles.scss';
+
+.is-custom {
+  background: linear-gradient(to top, $primary 0%, $primary 50%, $light 50%, $light 100%);
+}
+</style>
