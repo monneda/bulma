@@ -292,8 +292,11 @@
 import Footer from '@/comps/Footer'
 
 export default {
-  name: 'Homepage',
-  components: { Footer },
+  name: 'Landing',
+
+  components: {
+    Footer
+  },
 
   methods: {
     toggle () {

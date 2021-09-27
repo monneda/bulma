@@ -1,10 +1,10 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 
-import Home from '@/views/Home.vue'
-import Test from '@/views/Test.vue'
-import Profile from '@/views/Profile.vue'
-import Homepage from '@/views/Homepage'
-import Portfolio from '@/views/Portfolio.vue'
+import Home from '@/views/Home'
+import Test from '@/views/Test'
+import Profile from '@/views/Profile'
+import Landing from '@/views/Landing'
+import Portfolio from '@/views/Portfolio'
 
 const routes = [
   {
@@ -35,7 +35,7 @@ const routes = [
   {
     path: '/l',
     name: 'Landing page',
-    component: Homepage
+    component: Landing
   },
   {
     path: '/t',
