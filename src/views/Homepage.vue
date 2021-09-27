@@ -1,6 +1,6 @@
 <template>
 <!--  Navbar -->
-<nav class="navbar is-fixed-top custom-navbar">
+<nav class="navbar is-fixed-top">
   <div class="container">
 
     <!-- Brand -->
@@ -24,12 +24,12 @@
     <div class="navbar-menu" ref="menu">
       <div class="navbar-end">
         <div class="navbar-item">
-          <button class="button is-primary is-outlined is-rounded">
+          <button class="button is-primary is-outlined">
             login
           </button>
         </div>
         <div class="navbar-item">
-          <button class="button is-primary is-rounded">criar conta</button>
+          <button class="button is-primary">criar conta</button>
         </div>
       </div>
     </div>
@@ -38,8 +38,6 @@
 
 <!-- Content -->
 <div class="container is-fluid p-0">
-  <br class="is-hidden-desktop">
-
   <section class="section is-medium has-background-light">
     <div class="container">
       <div class="columns is-vcentered">
@@ -167,17 +165,18 @@
         <div class="column is-1"></div>
 
         <!-- Text -->
-        <div class="column is-5">
-          <span class="has-text-centered-mobile">
-            <p class="title is-size-1 is-size-3-mobile">
-              interaja com investidores e fique por dentro
-            </p>
-            <p class="is-size-4 is-size-5-mobile">
-              Saiba o que seus amigos estão investindo e intereja na sua posição
-              de suas carteira: comente, curta ou indique "bear" ou "bull".
-            </p>
-          </span>
+        <div class="column is-4 has-text-centered-mobile">
+          <h3 class="title">
+            interaja com investidores e fique por dentro
+          </h3>
+          <p class="is-size-6">
+            Saiba o que seus amigos estão investindo e
+            intereja na sua posição de suas carteira: comente,
+            curta ou indique "bear" ou "bull".
+          </p>
         </div>
+
+        <div class="column is-1"></div>
       </div>
     </div>
   </section>
@@ -185,17 +184,18 @@
   <section class="section is-medium has-background-light">
     <div class="container">
       <div class="columns is-vcentered">
+        <div class="column is-1"></div>
+
         <!-- Text -->
-        <div class="column is-5">
-          <span class="has-text-centered-mobile">
-            <p class="title is-size-1 is-size-3-mobile">
-              invista melhor o seu dinheiro
-            </p>
-            <p class="is-size-4 is-size-5-mobile">
-              Veja as carteiras mais rentáveis do mês e as notícias impactantes
-              do mercado, realocando assim seu dinheiro para as melhores posições.
-            </p>
-          </span>
+        <div class="column is-4 has-text-centered-mobile">
+          <h3 class="title">
+            invista melhor o seu dinheiro
+          </h3>
+          <p class="is-size-6">
+            Veja as carteiras mais rentáveis do mês e
+            as notícias impactantes do mercado, realocando
+            assim seu dinheiro para as melhores posições.
+          </p>
         </div>
 
         <div class="column is-1"></div>
@@ -223,17 +223,18 @@
         <div class="column is-1"></div>
 
         <!-- Text -->
-        <div class="column is-5">
-          <span class="has-text-centered-mobile">
-            <p class="title is-size-1 is-size-3-mobile">
-              segurança com os seus dados
-            </p>
-            <p class="is-size-4 is-size-5-mobile">
-              Seus dados estão protegidos conosco, apenas você pode ver o valor
-              da sua carteira. Seus amigos só veem a composição em %.
-            </p>
-          </span>
+        <div class="column is-4 has-text-centered-mobile">
+          <h3 class="title">
+            segurança com os seus dados
+          </h3>
+          <p class="is-size-6">
+            Seus dados estão protegidos conosco, apenas
+            você pode ver o valor da sua carteira. Seus
+            amigos só veem a composição em %.
+          </p>
         </div>
+
+        <div class="column is-1"></div>
       </div>
     </div>
   </section>
