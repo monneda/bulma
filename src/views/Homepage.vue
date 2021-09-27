@@ -43,16 +43,16 @@
   <section class="section is-medium has-background-light">
     <div class="container">
       <div class="columns is-vcentered">
-        <!-- Text -->
-        <div class="column is-5 has-text-centered-mobile">
-          <p class="title is-size-1 is-size-2-mobile has-text-weight-normal">
-            o seu network de
-          </p>
-          <p class="subtitle is-size-1 is-size-2-mobile has-text-weight-bold">
-            valor está aqui
-          </p>
+        <div class="column is-1"></div>
 
-          <p class="is-size-4 is-size-5-mobile">
+        <!-- Text -->
+        <div class="column is-4 has-text-centered-mobile">
+          <h1 class="title is-size-1 is-size-2-mobile">
+            <p class="has-text-weight-normal">o seu network de</p>
+            <p>valor está aqui</p>
+          </h1>
+
+          <p class="is-size-6">
             A Cartera é uma rede social para investidores e futuros investidores.
             Conecte-se ao network que realmente tem valor para seus investimentos.
           </p>
@@ -60,8 +60,8 @@
           <br>
           <br>
 
-          <button class="button is-primary is-large is-rounded">
-            <span class="has-text-dark">
+          <button class="button is-primary is-large">
+            <span class="has-text-weight-bold has-text-dark">
               quero fazer parte!
             </span>
           </button>
@@ -72,7 +72,7 @@
         <!-- Image -->
         <div class="column is-6">
           <figure class="image">
-            <img src="https://placekitten.com/575/350">
+            <img src="@/assets/landing-1.png">
           </figure>
         </div>
       </div>
@@ -81,51 +81,63 @@
 
   <section class="section is-medium has-background-primary">
     <div class="container has-text-centered">
-      <div class="title is-size-1 is-size-3-mobile has-text-centered">
+      <h1 class="title is-size-1 is-size-3-mobile">
         <p>suas oportunidades sobre</p>
         <p>investimentos em um único lugar</p>
-      </div>
+      </h1>
 
       <br>
       <br>
       <br>
 
-      <div class="level">
+      <div class="level has-background-success p-6" style="border-radius: 20px;">
         <div class="level-item">
           <div>
+            <span class="icon is-large">
+              <font-awesome-icon icon="wallet" />
+            </span>
             <p class="title is-size-1"> carteiras </p>
             <p class="is-size-4"> dos seus amigos </p>
           </div>
         </div>
 
         <div class="level-item">
-          <p class="title is-size-1">+</p>
+          <p class="title is-size-1"> + </p>
         </div>
 
         <div class="level-item">
           <div>
+            <span class="icon is-large">
+              <font-awesome-icon icon="newspaper" />
+            </span>
             <p class="title is-size-1"> notícias </p>
             <p class="is-size-4"> sobre a bolsa </p>
           </div>
         </div>
 
         <div class="level-item">
-          <p class="title is-size-1">+</p>
+          <p class="title is-size-1"> + </p>
         </div>
 
         <div class="level-item">
           <div>
+            <span class="icon is-large">
+              <font-awesome-icon icon="chart-pie" />
+            </span>
             <p class="title is-size-1"> ativos </p>
             <p class="is-size-4"> saiba o que está em alta </p>
           </div>
         </div>
 
         <div class="level-item">
-          <p class="title is-size-1">+</p>
+          <p class="title is-size-1"> + </p>
         </div>
 
         <div class="level-item">
           <div>
+            <span class="icon is-large">
+              <font-awesome-icon icon="compass" />
+            </span>
             <p class="title is-size-1"> descubra </p>
             <p class="is-size-4"> o que está em alta </p>
           </div>
@@ -148,7 +160,7 @@
         <!-- Image -->
         <div class="column is-6">
           <figure class="image">
-            <img src="https://placekitten.com/550/350">
+            <img src="@/assets/landing-2.png">
           </figure>
         </div>
 
@@ -191,7 +203,7 @@
         <!-- Image -->
         <div class="column is-6">
           <figure class="image">
-            <img src="https://placekitten.com/550/350">
+            <img src="@/assets/landing-3.png">
           </figure>
         </div>
       </div>
@@ -204,7 +216,7 @@
         <!-- Image -->
         <div class="column is-6">
           <figure class="image">
-            <img src="https://placekitten.com/550/350">
+            <img src="@/assets/landing-4.png">
           </figure>
         </div>
 
