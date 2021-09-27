@@ -1,16 +1,18 @@
 <template>
 <!--  Navbar -->
-<nav class="navbar is-fixed-top">
+<nav class="navbar is-fixed-top is-spaced has-background-gray-7">
   <div class="container">
 
     <!-- Brand -->
     <div class="navbar-brand">
       <!-- Logo -->
-      <a class="navbar-item">
-        <figure class="image">
-          <img src="@/assets/imgs/logo-horizontal-fundo-claro.png">
-        </figure>
-      </a>
+      <div class="navbar-item">
+        <a>
+          <figure class="image">
+            <img src="@/assets/imgs/logo-horizontal-fundo-claro.png" style="border-radius: 0px;">
+          </figure>
+        </a>
+      </div>
 
       <!-- Buguer -->
       <a class="navbar-burger has-text-primary" ref="burger" @click="toggle">
@@ -24,12 +26,14 @@
     <div class="navbar-menu" ref="menu">
       <div class="navbar-end">
         <div class="navbar-item">
-          <button class="button is-primary is-outlined">
-            login
+          <button class="button is-outlined is-green-2">
+            <span class="p-4">login</span>
           </button>
         </div>
         <div class="navbar-item">
-          <button class="button is-primary">criar conta</button>
+          <button class="button is-primary has-text-weight-bold">
+            <span class="p-4">criar conta</span>
+          </button>
         </div>
       </div>
     </div>
@@ -41,16 +45,14 @@
   <section class="section is-medium has-background-light">
     <div class="container">
       <div class="columns is-vcentered">
-        <div class="column is-1"></div>
-
         <!-- Text -->
-        <div class="column is-4 has-text-centered-mobile">
+        <div class="column is-6 has-text-centered-mobile">
           <h1 class="title is-size-1 is-size-2-mobile">
             <p class="has-text-weight-normal">o seu network de</p>
             <p>valor está aqui</p>
           </h1>
 
-          <p class="is-size-6">
+          <p class="is-size-5">
             A Cartera é uma rede social para investidores e futuros investidores.
             Conecte-se ao network que realmente tem valor para seus investimentos.
           </p>
@@ -58,17 +60,24 @@
           <br>
           <br>
 
-          <button class="button is-primary is-large">
-            <span class="has-text-weight-bold has-text-dark">
+          <button class="button is-primary is-medium">
+            <span class="has-text-weight-bold is-size-6 px-6">
               quero fazer parte!
             </span>
           </button>
         </div>
 
-        <div class="column is-1"></div>
-
         <!-- Image -->
         <div class="column is-6">
+          <figure class="image cartera-icon is-1">
+            <img src="@/assets/svgs/cartera-outlined.svg">
+          </figure>
+          <figure class="image cartera-icon is-2">
+            <img src="@/assets/svgs/cartera-outlined.svg">
+          </figure>
+          <figure class="image cartera-icon is-3">
+            <img src="@/assets/svgs/cartera-outlined.svg">
+          </figure>
           <figure class="image">
             <img src="@/assets/imgs/landing-1.png">
           </figure>
@@ -310,5 +319,37 @@ export default {
 <style lang="scss" scoped>
 .is-custom-background {
   background: linear-gradient(to top, $primary 0%, $primary 50%, $light 50%, $light 100%);
+}
+
+.cartera-icon {
+  position: absolute;
+}
+
+.cartera-icon > img {
+  border-radius: 0px;
+  stroke-width: 1px;
+}
+
+.is-1 {
+  left: 74.03%;
+  right: 3.21%;
+  top: 0.94%;
+  bottom: 92.31%;
+}
+
+.is-2 {
+  left: 88.89%;
+  right: 3.15%;
+  top: 14.98%;
+  bottom: 82.65%;
+  transform: rotate(-180deg);
+}
+
+.is-3 {
+  left: 59.59%;
+  right: 35.19%;
+  top: 7.33%;
+  bottom: 91.12%;
+  transform: rotate(-180deg);
 }
 </style>
