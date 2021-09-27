@@ -37,7 +37,9 @@
 </nav>
 
 <!-- Content -->
-<div class="container is-fluid p-0 pt-6">
+<div class="container is-fluid p-0">
+  <br class="is-hidden-desktop">
+
   <section class="section is-medium has-background-light">
     <div class="container">
       <div class="columns is-vcentered">
@@ -226,11 +228,16 @@
 
   <!-- TODO: last section -->
 </div>
+
+<Footer />
 </template>
 
 <script>
+import Footer from '@/comps/Footer'
+
 export default {
   name: 'Homepage',
+  components: { Footer },
 
   methods: {
     toggle () {
