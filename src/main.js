@@ -7,17 +7,14 @@ import store from './store'
 import router from './router'
 import './registerServiceWorker'
 
-// Css
-import '@/styles.scss'
-
 // Icons
-import '@/plugins/font-awesome'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import registerIcons from '@/plugins/icons'
 
 const app = createApp(App)
 app.use(store)
 app.use(router)
 
-app.component('font-awesome-icon', FontAwesomeIcon)
+// Register plugins
+registerIcons(app)
 
 app.mount('#app')

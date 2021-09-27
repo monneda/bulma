@@ -305,7 +305,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '@/styles.scss';
+@import '@/assets/scss/index';
 
 .is-custom {
   background: linear-gradient(to top, $primary 0%, $primary 50%, $light 50%, $light 100%);
