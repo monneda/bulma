@@ -6,7 +6,7 @@
       <div class="level-left">
         <div class="level-item">
           <figure class="image is-96x96">
-            <img src="@/assets/logo.png">
+            <img src="@/assets/imgs/logo.png">
           </figure>
         </div>
         <div class="level-item">

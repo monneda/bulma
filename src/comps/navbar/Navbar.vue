@@ -3,7 +3,7 @@
   <div class="navbar-brand">
     <!-- Logo -->
     <a class="navbar-item">
-      <img src="@/assets/logo-horizontal-fundo-claro.png">
+      <img src="@/assets/imgs/logo-horizontal-fundo-claro.png">
     </a>
 
     <!-- Search -->

@@ -5,7 +5,7 @@
       <span class="level-item"></span>
       <button class="level-item button is-rounded is-primary">
         <figure class="image is-32x32">
-          <img src="@/assets/icone-branco.png" height="48">
+          <img src="@/assets/imgs/icone-branco.png" height="48">
         </figure>
         <span>
           Minhas Carteras

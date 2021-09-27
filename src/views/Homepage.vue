@@ -8,7 +8,7 @@
       <!-- Logo -->
       <a class="navbar-item">
         <figure class="image">
-          <img src="@/assets/logo-horizontal-fundo-claro.png">
+          <img src="@/assets/imgs/logo-horizontal-fundo-claro.png">
         </figure>
       </a>
 
@@ -70,7 +70,7 @@
         <!-- Image -->
         <div class="column is-6">
           <figure class="image">
-            <img src="@/assets/landing-1.png">
+            <img src="@/assets/imgs/landing-1.png">
           </figure>
         </div>
       </div>
@@ -158,7 +158,7 @@
         <!-- Image -->
         <div class="column is-6">
           <figure class="image">
-            <img src="@/assets/landing-2.png">
+            <img src="@/assets/imgs/landing-2.png">
           </figure>
         </div>
 
@@ -219,7 +219,7 @@
         <!-- Image -->
         <div class="column is-6">
           <figure class="image">
-            <img src="@/assets/landing-3.png">
+            <img src="@/assets/imgs/landing-3.png">
           </figure>
         </div>
       </div>
@@ -232,7 +232,7 @@
         <!-- Image -->
         <div class="column is-6">
           <figure class="image">
-            <img src="@/assets/landing-4.png">
+            <img src="@/assets/imgs/landing-4.png">
           </figure>
         </div>
 
@@ -263,11 +263,11 @@
     </div>
   </section>
 
-  <section class="section is-custom">
+  <section class="section is-custom-background">
     <div class="container">
       <div class="is-flex is-justify-content-center">
         <figure class="image">
-          <img src="@/assets/landing-5.png">
+          <img src="@/assets/imgs/landing-5.png">
         </figure>
       </div>
     </div>
@@ -305,7 +305,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.is-custom {
+.is-custom-background {
   background: linear-gradient(to top, $primary 0%, $primary 50%, $light 50%, $light 100%);
 }
 </style>
