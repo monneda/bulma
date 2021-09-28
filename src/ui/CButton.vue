@@ -17,14 +17,6 @@ export default {
       type: Boolean,
       default: false
     }
-  },
-
-  computed: {
-    background () {
-      if (this.secondary) {
-        return 'white'
-      }
-    }
   }
 }
 </script>
