@@ -1,4 +1,22 @@
 @charset 'utf-8';
 
 @import './variables';
+
+// Gradients
+$gradient-red:      linear-gradient(135.66deg, #E87575 -6.09%, #CE1B1B 102.06%);
+$gradient-green:    linear-gradient(138.32deg, #35E599 -6.06%, #009887 118.07%);
+
+
+// TODO: move this somewhere else
+.has-background-gradient-red {
+    background-image: $gradient-red !important;
+}
+.has-background-gradient-green {
+    background-image: $gradient-green !important;
+}
+
+button {
+    border-radius: 15px;
+}
+
 @import '~bulma';

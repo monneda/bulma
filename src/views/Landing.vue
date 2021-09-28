@@ -42,14 +42,17 @@
 
 <!-- Content -->
 <div class="container is-fluid p-0">
+  <br class="is-hidden-desktop">
+
   <section class="section is-medium has-background-light">
     <div class="container">
       <div class="columns is-vcentered">
         <!-- Text -->
         <div class="column is-6 has-text-centered-mobile">
-          <h1 class="title is-size-1 is-size-2-mobile">
-            <p class="has-text-weight-normal">o seu network de</p>
-            <p>valor está aqui</p>
+          <h1 class="title is-size-2-mobile">
+            <span class="has-text-weight-normal">o seu network de</span>
+            <br>
+            valor está aqui
           </h1>
 
           <p class="is-size-5">
@@ -69,15 +72,6 @@
 
         <!-- Image -->
         <div class="column is-6">
-          <figure class="image cartera-icon is-1">
-            <img src="@/assets/svgs/cartera-outlined.svg">
-          </figure>
-          <figure class="image cartera-icon is-2">
-            <img src="@/assets/svgs/cartera-outlined.svg">
-          </figure>
-          <figure class="image cartera-icon is-3">
-            <img src="@/assets/svgs/cartera-outlined.svg">
-          </figure>
           <figure class="image">
             <img src="@/assets/imgs/landing-1.png">
           </figure>
@@ -88,80 +82,87 @@
 
   <section class="section is-medium has-background-primary">
     <div class="container has-text-centered">
-      <h1 class="title is-size-1 is-size-3-mobile">
-        <p>suas oportunidades sobre</p>
-        <p>investimentos em um único lugar</p>
-      </h1>
+      <h2 class="title is-size-2 is-size-3-mobile">
+        suas oportunidades sobre
+        <br>
+        investimentos em um único lugar
+      </h2>
 
       <br>
-      <br>
-      <br>
 
-      <div class="level has-background-success p-6" style="border-radius: 20px;">
+      <div class="level p-6 has-background-green-3" style="border-radius: 20px;">
         <div class="level-item">
           <div>
-            <span class="icon is-large">
-              <font-awesome-icon icon="wallet" />
+            <span class="icon is-large has-background-green-2 has-text-light is-rounded is-96x96">
+              <c-icon icon="cartera-fill" />
             </span>
-            <p class="title is-size-1"> carteiras </p>
-            <p class="is-size-4"> dos seus amigos </p>
+            <br>
+            <br>
+            <p class="title is-3"> carteiras </p>
+            <p class="title is-5"> dos seus amigos </p>
           </div>
         </div>
 
         <div class="level-item">
-          <p class="title is-size-1"> + </p>
+          <p class="title is-3"> + </p>
         </div>
 
         <div class="level-item">
           <div>
-            <span class="icon is-large">
-              <font-awesome-icon icon="newspaper" />
+            <span class="icon is-large has-background-green-2 has-text-light is-rounded is-96x96">
+              <c-icon icon="newspaper" />
             </span>
-            <p class="title is-size-1"> notícias </p>
-            <p class="is-size-4"> sobre a bolsa </p>
+            <br>
+            <br>
+            <p class="title is-3"> notícias </p>
+            <p class="title is-5"> sobre a bolsa </p>
           </div>
         </div>
 
         <div class="level-item">
-          <p class="title is-size-1"> + </p>
+          <p class="title is-3"> + </p>
         </div>
 
         <div class="level-item">
           <div>
-            <span class="icon is-large">
-              <font-awesome-icon icon="chart-pie" />
+            <span class="icon is-large has-background-green-2 has-text-light is-rounded is-96x96">
+              <c-icon icon="graph-pie" />
             </span>
-            <p class="title is-size-1"> ativos </p>
-            <p class="is-size-4"> saiba o que está em alta </p>
+            <br>
+            <br>
+            <p class="title is-3"> ativos </p>
+            <p class="title is-5"> saiba o que está em alta </p>
           </div>
         </div>
 
         <div class="level-item">
-          <p class="title is-size-1"> + </p>
+          <p class="title is-3"> + </p>
         </div>
 
         <div class="level-item">
           <div>
-            <span class="icon is-large">
-              <font-awesome-icon icon="compass" />
+            <span class="icon is-large has-background-green-2 has-text-light is-rounded is-96x96">
+              <c-icon icon="compass" />
             </span>
-            <p class="title is-size-1"> descubra </p>
-            <p class="is-size-4"> o que está em alta </p>
+            <br>
+            <br>
+            <p class="title is-3"> descubra </p>
+            <p class="title is-5"> o que está em alta </p>
           </div>
         </div>
       </div>
 
       <br>
-      <br>
-      <br>
 
-      <button class="button is-white is-large is-rounded">
-        quero fazer parte!
+      <button class="button is-white">
+        <span class="has-text-weight-bold p-6">
+          quero fazer parte!
+        </span>
       </button>
     </div>
   </section>
 
-  <section class="section is-medium has-background-light">
+  <section class="section has-background-light">
     <div class="container">
       <div class="columns is-vcentered">
         <!-- Image -->
@@ -175,8 +176,8 @@
 
         <!-- Text -->
         <div class="column is-4 has-text-centered-mobile">
-          <span class="icon has-text-primary">
-            <font-awesome-icon icon="user-friends" />
+          <span class="icon has-background-white has-text-primary has-shadow is-rounded is-96x96">
+            <c-icon icon="users" />
           </span>
 
           <br>
@@ -186,7 +187,7 @@
             interaja com investidores e fique por dentro
           </h3>
 
-          <p class="is-size-6">
+          <p>
             Saiba o que seus amigos estão investindo e
             intereja na sua posição de suas carteira: comente,
             curta ou indique "bear" ou "bull".
@@ -198,15 +199,15 @@
     </div>
   </section>
 
-  <section class="section is-medium has-background-light">
+  <section class="section has-background-light">
     <div class="container">
       <div class="columns is-vcentered">
         <div class="column is-1"></div>
 
         <!-- Text -->
         <div class="column is-4 has-text-centered-mobile">
-          <span class="icon has-text-primary">
-            <font-awesome-icon icon="chart-line" />
+          <span class="icon has-background-white has-text-primary has-shadow is-rounded is-96x96">
+            <c-icon icon="line-up" />
           </span>
 
           <br>
@@ -216,7 +217,7 @@
             invista melhor o seu dinheiro
           </h3>
 
-          <p class="is-size-6">
+          <p>
             Veja as carteiras mais rentáveis do mês e
             as notícias impactantes do mercado, realocando
             assim seu dinheiro para as melhores posições.
@@ -235,7 +236,7 @@
     </div>
   </section>
 
-  <section class="section is-medium has-background-light">
+  <section class="section has-background-light">
     <div class="container">
       <div class="columns is-vcentered">
         <!-- Image -->
@@ -249,8 +250,8 @@
 
         <!-- Text -->
         <div class="column is-4 has-text-centered-mobile">
-          <span class="icon has-text-primary">
-            <font-awesome-icon icon="lock" />
+          <span class="icon has-background-white has-text-primary has-shadow is-rounded is-96x96">
+            <c-icon icon="lock" />
           </span>
 
           <br>
@@ -260,7 +261,7 @@
             segurança com os seus dados
           </h3>
 
-          <p class="is-size-6">
+          <p>
             Seus dados estão protegidos conosco, apenas
             você pode ver o valor da sua carteira. Seus
             amigos só veem a composição em %.
@@ -272,21 +273,18 @@
     </div>
   </section>
 
-  <section class="section is-custom-background">
-    <div class="container">
+  <section class="section has-background-custom">
+    <div class="container has-text-centered">
       <div class="is-flex is-justify-content-center">
         <figure class="image">
           <img src="@/assets/imgs/landing-5.png">
         </figure>
       </div>
-    </div>
-  </section>
-
-  <section class="section has-background-primary pt-0">
-    <div class="container has-text-centered">
+      <br>
       <h3 class="title">
-        <p>os melhores investidores estão aqui.</p>
-        <p>e você?</p>
+        os melhores investidores estão aqui.
+        <br>
+        e você?
       </h3>
       <br>
       <button class="button is-white is-large">quero fazer parte!</button>
@@ -298,12 +296,14 @@
 </template>
 
 <script>
+import CIcon from '@/ui/CIcon'
 import Footer from '@/comps/Footer'
 
 export default {
   name: 'Landing',
 
   components: {
+    CIcon,
     Footer
   },
 
@@ -315,41 +315,21 @@ export default {
   }
 }
 </script>
-
 <style lang="scss" scoped>
-.is-custom-background {
-  background: linear-gradient(to top, $primary 0%, $primary 50%, $light 50%, $light 100%);
+.has-background-custom {
+  background: linear-gradient(to top, $primary 0%, $primary 70%, $light 70%, $light 100%);
 }
 
-.cartera-icon {
-  position: absolute;
+.is-96x96 {
+  height: 96px;
+  width: 96px;
 }
 
-.cartera-icon > img {
-  border-radius: 0px;
-  stroke-width: 1px;
+.is-rounded {
+  border-radius: 9999px;
 }
 
-.is-1 {
-  left: 74.03%;
-  right: 3.21%;
-  top: 0.94%;
-  bottom: 92.31%;
-}
-
-.is-2 {
-  left: 88.89%;
-  right: 3.15%;
-  top: 14.98%;
-  bottom: 82.65%;
-  transform: rotate(-180deg);
-}
-
-.is-3 {
-  left: 59.59%;
-  right: 35.19%;
-  top: 7.33%;
-  bottom: 91.12%;
-  transform: rotate(-180deg);
+.has-shadow {
+  box-shadow: 0px 0px 8px $gray-4;
 }
 </style>
