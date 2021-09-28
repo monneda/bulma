@@ -166,17 +166,17 @@
   <section class="section has-background-light">
     <div class="container">
       <div class="columns is-vcentered">
-        <!-- Image -->
-        <div class="column is-6">
+        <!-- Image desktop -->
+        <div class="column is-6 is-hidden-mobile">
           <figure class="image">
             <img src="@/assets/imgs/landing-2.png">
           </figure>
         </div>
 
-        <div class="column is-1"></div>
+        <div class="column is-1 is-hidden-mobile"></div>
 
         <!-- Text -->
-        <div class="column is-4 has-text-centered-mobile">
+        <div class="column is-5 has-text-centered-mobile">
           <span class="icon has-background-white has-text-primary has-shadow is-rounded is-96x96">
             <c-icon icon="users" />
           </span>
@@ -195,7 +195,14 @@
           </p>
         </div>
 
-        <div class="column is-1"></div>
+        <div class="column is-1 is-hidden-desktop"></div>
+
+        <!-- Image mobile -->
+        <div class="column is-6 is-hidden-desktop">
+          <figure class="image">
+            <img src="@/assets/imgs/landing-2.png">
+          </figure>
+        </div>
       </div>
     </div>
   </section>
@@ -203,10 +210,8 @@
   <section class="section has-background-light">
     <div class="container">
       <div class="columns is-vcentered">
-        <div class="column is-1"></div>
-
         <!-- Text -->
-        <div class="column is-4 has-text-centered-mobile">
+        <div class="column is-5 has-text-centered-mobile">
           <span class="icon has-background-white has-text-primary has-shadow is-rounded is-96x96">
             <c-icon icon="line-up" />
           </span>
@@ -240,17 +245,17 @@
   <section class="section has-background-light">
     <div class="container">
       <div class="columns is-vcentered">
-        <!-- Image -->
-        <div class="column is-6">
+        <!-- Image desktop -->
+        <div class="column is-6 is-hidden-mobile">
           <figure class="image">
             <img src="@/assets/imgs/landing-4.png">
           </figure>
         </div>
 
-        <div class="column is-1"></div>
+        <div class="column is-1 is-hidden-mobile"></div>
 
         <!-- Text -->
-        <div class="column is-4 has-text-centered-mobile">
+        <div class="column is-5 has-text-centered-mobile">
           <span class="icon has-background-white has-text-primary has-shadow is-rounded is-96x96">
             <c-icon icon="lock" />
           </span>
@@ -269,7 +274,14 @@
           </p>
         </div>
 
-        <div class="column is-1"></div>
+        <div class="column is-1 is-hidden-desktop"></div>
+
+        <!-- Image mobile -->
+        <div class="column is-6 is-hidden-desktop">
+          <figure class="image">
+            <img src="@/assets/imgs/landing-4.png">
+          </figure>
+        </div>
       </div>
     </div>
   </section>
