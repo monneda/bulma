@@ -1,6 +1,6 @@
 <template>
 <!--  Navbar -->
-<nav class="navbar is-fixed-top is-spaced has-background-gray-7">
+<nav class="navbar is-fixed-top is-spaced has-background-white-ter">
   <div class="container">
 
     <!-- Brand -->
@@ -26,7 +26,7 @@
     <div class="navbar-menu" ref="menu">
       <div class="navbar-end">
         <div class="navbar-item">
-          <button class="button is-outlined is-green-2">
+          <button class="button is-outlined is-primary-darker">
             <span class="p-4">login</span>
           </button>
         </div>
@@ -44,18 +44,18 @@
 <div class="container is-fluid p-0">
   <br class="is-hidden-desktop">
 
-  <section class="section is-medium has-background-light">
+  <section class="section is-medium has-background-grey-lighter">
     <div class="container">
       <div class="columns is-vcentered">
         <!-- Text -->
         <div class="column is-6 has-text-centered-mobile">
-          <h1 class="title is-size-2-mobile">
-            <span class="has-text-weight-normal">o seu network de</span>
+          <h1 class="title is-size-1 is-size-2-mobile">
+            <span class="has-text-weight-normal"> o seu network de </span>
             <br>
             valor está aqui
           </h1>
 
-          <p class="is-size-5">
+          <p class="is-size-5 has-text-grey-dark">
             A Cartera é uma rede social para investidores e futuros investidores.
             Conecte-se ao network que realmente tem valor para seus investimentos.
           </p>
@@ -63,7 +63,7 @@
           <br>
           <br>
 
-          <button class="button is-primary is-medium">
+          <button class="button is-primary is-large">
             <span class="has-text-weight-bold is-size-6 px-6">
               quero fazer parte!
             </span>
@@ -90,10 +90,10 @@
 
       <br>
 
-      <div class="level p-6 has-background-green-3" style="border-radius: 20px;">
+      <div class="level p-6 has-background-primary-dark" style="border-radius: 20px;">
         <div class="level-item">
           <div>
-            <span class="icon is-large has-background-green-2 has-text-light is-rounded is-96x96">
+            <span class="icon is-large has-background-primary-darker has-text-light is-rounded is-96x96">
               <c-icon icon="cartera-fill" />
             </span>
             <br>
@@ -109,7 +109,7 @@
 
         <div class="level-item">
           <div>
-            <span class="icon is-large has-background-green-2 has-text-light is-rounded is-96x96">
+            <span class="icon is-large has-background-primary-darker has-text-light is-rounded is-96x96">
               <c-icon icon="newspaper" />
             </span>
             <br>
@@ -125,7 +125,7 @@
 
         <div class="level-item">
           <div>
-            <span class="icon is-large has-background-green-2 has-text-light is-rounded is-96x96">
+            <span class="icon is-large has-background-primary-darker has-text-light is-rounded is-96x96">
               <c-icon icon="graph-pie" />
             </span>
             <br>
@@ -141,7 +141,7 @@
 
         <div class="level-item">
           <div>
-            <span class="icon is-large has-background-green-2 has-text-light is-rounded is-96x96">
+            <span class="icon is-large has-background-primary-darker has-text-light is-rounded is-96x96">
               <c-icon icon="compass" />
             </span>
             <br>
@@ -153,9 +153,10 @@
       </div>
 
       <br>
+      <br>
 
-      <button class="button is-white">
-        <span class="has-text-weight-bold p-6">
+      <button class="button is-white is-large">
+        <span class="has-text-weight-bold is-size-6 px-6">
           quero fazer parte!
         </span>
       </button>
@@ -183,11 +184,11 @@
           <br>
           <br>
 
-          <h3 class="title">
+          <h3 class="title is-size-3">
             interaja com investidores e fique por dentro
           </h3>
 
-          <p>
+          <p class="is-size-5 has-text-grey-dark">
             Saiba o que seus amigos estão investindo e
             intereja na sua posição de suas carteira: comente,
             curta ou indique "bear" ou "bull".
@@ -213,11 +214,11 @@
           <br>
           <br>
 
-          <h3 class="title">
+          <h3 class="title is-size-3">
             invista melhor o seu dinheiro
           </h3>
 
-          <p>
+          <p class="is-size-5 has-text-grey-dark">
             Veja as carteiras mais rentáveis do mês e
             as notícias impactantes do mercado, realocando
             assim seu dinheiro para as melhores posições.
@@ -257,11 +258,11 @@
           <br>
           <br>
 
-          <h3 class="title">
+          <h3 class="title is-size-3">
             segurança com os seus dados
           </h3>
 
-          <p>
+          <p class="is-size-5 has-text-grey-dark">
             Seus dados estão protegidos conosco, apenas
             você pode ver o valor da sua carteira. Seus
             amigos só veem a composição em %.
@@ -280,14 +281,23 @@
           <img src="@/assets/imgs/landing-5.png">
         </figure>
       </div>
+
       <br>
-      <h3 class="title">
+      <br>
+
+      <h3 class="title is-size-3">
         os melhores investidores estão aqui.
         <br>
         e você?
       </h3>
+
       <br>
-      <button class="button is-white is-large">quero fazer parte!</button>
+
+      <button class="button is-white is-large">
+        <span class="has-text-weight-bold is-size-6 px-6">
+          quero fazer parte!
+        </span>
+      </button>
     </div>
   </section>
 </div>
@@ -318,6 +328,10 @@ export default {
 <style lang="scss" scoped>
 .has-background-custom {
   background: linear-gradient(to top, $primary 0%, $primary 70%, $light 70%, $light 100%);
+
+  @include until($tablet) {
+    background: linear-gradient(to top, $primary 0%, $primary 80%, $light 80%, $light 100%);
+  }
 }
 
 .is-96x96 {
@@ -330,6 +344,6 @@ export default {
 }
 
 .has-shadow {
-  box-shadow: 0px 0px 8px $gray-4;
+  box-shadow: 0px 0px 8px $grey;
 }
 </style>

@@ -1,13 +1,109 @@
-@import url('https://fonts.googleapis.com/css?family=Tajawal:300,400,500,700');
-@import url('https://fonts.googleapis.com/css?family=Lato:300,400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Tajawal:300,400,500,600,700');
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,500,600,700');
+
+// Green
+$green-1:           #13AA69;
+$green-2:           #1ABE77;
+$green-3:           #29D385;
+$green-4:           #35E599;
+$green-5:           #4CF6AC;
+$green-6:           #B0FFDD;
+$green-7:           #C0FFE4;
+$green-8:           #DEFFF1;
+$green-9:           #F2FFF9;
+
+// Gray
+$grey-1:            #23252E;
+$grey-2:            #50525C;
+$grey-3:            #8A8A8A;
+$grey-4:            #DFDFDF;
+$grey-5:            #E8E8E8;
+$grey-6:            #F5F5F5;
+$grey-7:            #F6F9FC;
+
+// Red
+$red-1:             #FFA6A6;
+$red-2:             #FF6B6B;
+$red-3:             #EE5253;
+
+// Blue
+$blue-1:            #2E86DE;
+$blue-2:            #54A0FF;
+$blue-3:            #98C6FF;
+
+// Purple
+$purple-1:          #FF9FF3;
+$purple-2:          #F368E0;
+$purple-3:          #5F27CD;
+
+// Yellow
+$yellow-1:          #FFEFCD;
+$yellow-2:          #FF6B6B;
+$yellow-3:          #EE5253;
+
+// Orange
+$orange-1:          #EE5253;
+$orange-2:          #EE5253;
+
+// Magenta
+$magenta-1:         #F368E0;
+$magenta-2:         #FF9FF3;
+$magenta-3:         #FFC5F8;
+
+
+///////////
+// Bulma //
+///////////
+
+// Base color
+// $white:
+$orange:            $orange-1;
+$yellow:            $yellow-2;
+$green:             $green-4;
+// $turquoise:
+// $cyan:
+$blue:              $blue-2;
+$purple:            $purple-2;
+$red:               $red-2;
+
+$primary-darker:    $green-2;
+$primary-dark:      $green-3;
+$primary:           $green-4;
+$primary-light:     $green-5;
+$primary-lighter:   $green-6;
+
+$danger-dark:       $red-1;
+$danger:            $red-2;
+$danger-light:      $red-3;
+
+$success-dark:      $blue-1;
+$success:           $blue-2;
+$success-light:     $blue-3;
+
+$black-ter:         $grey-1;
+$grey-darker:       $grey-2;
+$grey-dark:         $grey-3;
+$grey:              $grey-4;
+$grey-light:        $grey-5;
+$grey-lighter:      $grey-6;
+$white-ter:         $grey-7;
+
+// Custom colors
+$custom-colors: (
+    "primary-darker":   ($primary-darker),
+    "primary-lighter":   ($primary-lighter),
+);
 
 // Radius
-$radius:            15px;
+$radius-small:      10px;
+$radius:            10px;
+$radius-large:      15px;
 
 // Fonts
 $family-primary:    'Lato';
 $family-secondary:  'Tajawal';
 $title-family:      'Tajawal';
+$text:              $black-ter;
 
 // Sizes
 $size-1:            4.000rem;  // h1 64px
@@ -20,54 +116,17 @@ $size-7:            0.875rem;  // paragraphs, buttons and links 14px
 $size-8:            0.813rem;  // details 13px
 $size-9:            0.688rem;  // menu, percentages 11px
 
-// Greens
-$green-1:           #13AA69;
-$green-2:           #1ABE77;
-$green-3:           #29D385;
-$green-4:           #35E599;
-$green-5:           #4CF6AC;
-$green-6:           #B0FFDD;
-$green-7:           #C0FFE4;
-$green-8:           #DEFFF1;
-$green-9:           #F2FFF9;
-
-// Grays
-$gray-1:            #23252E;
-$gray-2:            #50525C;
-$gray-3:            #8A8A8A;
-$gray-4:            #DFDFDF;
-$gray-5:            #E8E8E8;
-$gray-6:            #F5F5F5;
-$gray-7:            #F6F9FC;
-$gray-8:            #FFFFFF;
-
-/// Red
-$red:               #CE1B1B;
-
-// Bulma's palette
-$primary:           $green-4;
-$link:              $green-4;
-$light:             $gray-6;
-
-// Custom
-$custom-colors: (
-    "green-1":          ($green-1),
-    "green-2":          ($green-2),
-    "green-3":          ($green-3),
-    "green-4":          ($green-4),
-    "green-5":          ($green-5),
-    "green-6":          ($green-6),
-    "green-7":          ($green-7),
-    "green-8":          ($green-8),
-    "green-9":          ($green-9),
-    "gray-1":           ($gray-1),
-    "gray-2":           ($gray-2),
-    "gray-3":           ($gray-3),
-    "gray-4":           ($gray-4),
-    "gray-5":           ($gray-5),
-    "gray-6":           ($gray-6),
-    "gray-7":           ($gray-7),
-    "gray-8":           ($gray-8),
+// Custom sizes
+$sizes: (
+    $size-1,
+    $size-2,
+    $size-3,
+    $size-4,
+    $size-5,
+    $size-6,
+    $size-7,
+    $size-8,
+    $size-9,
 );
 
 @import '~bulma/sass/utilities/_all';
