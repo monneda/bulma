@@ -1,5 +1,5 @@
 <template>
-<div class="container is-fluid has-background-light has-text-centered">
+<div class="container is-fluid has-background-light">
   <div class="is-flex is-flex-direction-column is-align-items-center is-justify-content-space-around">
     <figure class="image">
       <img src="@/assets/imgs/logo-horizontal-fundo-claro.png" >
@@ -9,7 +9,7 @@
       <c-icon icon="cartera-404" />
     </span>
 
-    <div>
+    <div class="has-text-centered">
       <h4 class="title is-size-4">
         parece que essa página não está na nossa cartera!
       </h4>
@@ -28,30 +28,34 @@
         voltar para o site
       </span>
     </button>
+
+    <br>
   </div>
 </div>
+
+<Footer />
 </template>
 
 <script>
 import CIcon from '@/ui/CIcon'
+import Footer from '@/comps/Footer'
 
 export default {
   name: 'NotFound',
-  components: { CIcon }
+  components: {
+    CIcon,
+    Footer
+  }
 }
 </script>
 
 <style scoped>
-.container {
+.is-flex {
   height: 100vh;
 }
 
-.is-flex {
-  height: 100%;
-}
-
 img {
-  width: 150px;
+  width: 10rem;
   height: auto;
 }
 </style>
