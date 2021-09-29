@@ -1,5 +1,6 @@
 <template>
   <cartera      v-if="icon === 'cartera'"      />
+  <cartera-404  v-if="icon === 'cartera-404'"  />
   <cartera-fill v-if="icon === 'cartera-fill'" />
   <comment      v-if="icon === 'comment'"      />
   <compass      v-if="icon === 'compass'"      />
@@ -14,6 +15,7 @@
 
 <script>
 import Cartera from '@/ui/icons/Cartera'
+import Cartera404 from '@/ui/icons/Cartera404'
 import CarteraFill from '@/ui/icons/CarteraFill'
 import Comment from '@/ui/icons/Comment'
 import Compass from '@/ui/icons/Compass'
@@ -30,6 +32,7 @@ export default {
 
   components: {
     Cartera,
+    Cartera404,
     CarteraFill,
     Comment,
     Compass,

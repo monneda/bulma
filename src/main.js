@@ -1,11 +1,14 @@
 // Basics
 import { createApp } from 'vue'
-import App from './App.vue'
+import App from '@/App'
 
 // Vue stuff
-import store from './store'
-import router from './router'
-import './registerServiceWorker'
+import store from '@/store'
+import router from '@/router'
+import '@/registerServiceWorker'
+
+// SCSS
+import '@/assets/scss/index.scss'
 
 // Icons
 import registerIcons from '@/plugins/icons'
