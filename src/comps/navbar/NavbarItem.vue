@@ -1,21 +1,17 @@
 <template>
-<a :class="classes">
+<a class="navbar-item">
   <div class="is-flex is-flex-direction-column is-align-items-center">
-    <Icon class="fas fa-lg" :icon="icon" />
-    <span class="is-uppercase">{{ label }}</span>
+    <span class="icon is-small">
+      <font-awesome-icon :icon="icon" />
+    </span>
+    <span class="is-size-7"> {{ label }} </span>
   </div>
 </a>
 </template>
 
 <script>
-import Icon from '@/comps/Icon'
-
 export default {
   name: 'NavbarItem',
-
-  components: {
-    Icon
-  },
 
   props: {
     icon: {
@@ -25,20 +21,6 @@ export default {
     label: {
       type: String,
       required: true
-    },
-    isActive: {
-      type: Boolean,
-      default: false
-    }
-  },
-
-  computed: {
-    classes () {
-      return {
-        'navbar-item': true,
-        'is-tab': true,
-        'is-active': this.isActive
-      }
     }
   }
 }

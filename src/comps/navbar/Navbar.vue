@@ -1,52 +1,56 @@
 <template>
 <nav class="navbar">
-  <div class="navbar-brand">
-    <!-- Logo -->
-    <a class="navbar-item">
-      <img src="@/assets/imgs/logo-horizontal-fundo-claro.png">
-    </a>
+  <div class="container">
+    <!-- Brand -->
+    <div class="navbar-brand">
+      <!-- Logo -->
+      <a class="navbar-item">
+        <figure class="image">
+          <img class="is-radiusless is-hidden-touch" src="@/assets/imgs/logo-horizontal-fundo-claro.png">
+          <img class="is-radiusless is-hidden-desktop" src="@/assets/imgs/logo.png">
+        </figure>
+      </a>
 
-    <!-- Search -->
-    <div class="navbar-item">
-      <Search style="min-width: 12rem;" />
+      <!-- Search -->
+      <div class="navbar-item">
+        <navbar-search />
+      </div>
+
+      <!-- Burguer -->
+      <a class="navbar-burger has-text-primary" ref="burger" @click="toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
     </div>
 
-    <!-- Burguer -->
-    <a class="navbar-burger" ref="burger" @click="toggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </a>
-  </div>
+    <!-- Menu -->
+    <div class="navbar-menu" ref="menu">
+      <div class="navbar-end">
+        <navbar-item icon="home"    label="FEED"         />
+        <navbar-item icon="wallet"  label="CARTERAS"     />
+        <navbar-item icon="compass" label="DESCOBRIR"    />
+        <navbar-item icon="comment" label="CHAT"         />
+        <navbar-item icon="bell"    label="NOTIFICAÇÕES" />
 
-  <!-- Items -->
-  <div class="navbar-menu" ref="menu">
-    <div class="navbar-end">
-      <!-- Common items -->
-      <NavbarItem class="mx-3" icon="home" label="Feed" is-active />
-      <NavbarItem class="mx-3" icon="wallet" label="Carteras" />
-      <NavbarItem class="mx-3" icon="chart-line" label="Ativos" />
-      <NavbarItem class="mx-3" icon="compass" label="Descobrir" />
-      <NavbarItem class="mx-3" icon="envelope" label="Chat" />
-      <NavbarItem class="mx-3" icon="bell" label="Notificações" />
-      <!-- User -->
-      <NavbarItemUser class="mx-3" user="Roberta" />
+        <navbar-item-user />
+      </div>
     </div>
   </div>
 </nav>
 </template>
 
 <script>
-import Search from '@/comps/navbar/Search'
 import NavbarItem from '@/comps/navbar/NavbarItem'
+import NavbarSearch from '@/comps/navbar/NavbarSearch'
 import NavbarItemUser from '@/comps/navbar/NavbarItemUser'
 
 export default {
   name: 'Navbar',
 
   components: {
-    Search,
     NavbarItem,
+    NavbarSearch,
     NavbarItemUser
   },
 
@@ -57,11 +61,4 @@ export default {
     }
   }
 }
-
 </script>
-
-<style scoped>
-.navbar {
-  min-height: 5rem;
-}
-</style>

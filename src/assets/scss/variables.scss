@@ -79,4 +79,8 @@ $family-primary:    'Lato';
 $family-secondary:  'Tajawal';
 $title-family:      'Tajawal';
 
+// Navbar
+$navbar-item-hover-color:   $primary;
+$navbar-dropdown-arrow:     $primary;
+
 @import '~bulma/sass/utilities/_all';
