@@ -1,6 +1,6 @@
 <template>
 <!--  Navbar -->
-<nav class="navbar is-fixed-top is-spaced has-background-white-ter">
+<nav class="navbar is-fixed-top has-background-white">
   <div class="container">
 
     <!-- Brand -->
@@ -26,13 +26,13 @@
     <div class="navbar-menu" ref="menu">
       <div class="navbar-end">
         <div class="navbar-item">
-          <button class="button is-outlined is-primary-darker">
-            <span class="p-4">login</span>
+          <button class="button is-primary is-outlined">
+            <span class="p-4 has-text-weight-bold">login</span>
           </button>
         </div>
         <div class="navbar-item">
-          <button class="button is-primary has-text-weight-bold">
-            <span class="p-4">criar conta</span>
+          <button class="button is-primary">
+            <span class="p-4 has-text-weight-bold">criar conta</span>
           </button>
         </div>
       </div>
@@ -44,7 +44,7 @@
 <div class="container is-fluid p-0">
   <br class="is-hidden-desktop">
 
-  <section class="section is-medium has-background-grey-lighter">
+  <section class="section is-medium has-background-light">
     <div class="container">
       <div class="columns is-vcentered">
         <!-- Text -->
@@ -356,6 +356,6 @@ export default {
 }
 
 .has-shadow {
-  box-shadow: 0px 0px 8px $grey;
+  box-shadow: 0px 0px 8px $grey-lighter;
 }
 </style>

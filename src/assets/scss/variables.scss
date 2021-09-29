@@ -55,38 +55,13 @@ $magenta-3:         #FFC5F8;
 // Bulma //
 ///////////
 
-// Base color
-// $white:
-$orange:            $orange-1;
-$yellow:            $yellow-2;
 $green:             $green-4;
-// $turquoise:
-// $cyan:
-$blue:              $blue-2;
-$purple:            $purple-2;
-$red:               $red-2;
 
 $primary-darker:    $green-2;
 $primary-dark:      $green-3;
 $primary:           $green-4;
 $primary-light:     $green-5;
 $primary-lighter:   $green-6;
-
-$danger-dark:       $red-1;
-$danger:            $red-2;
-$danger-light:      $red-3;
-
-$success-dark:      $blue-1;
-$success:           $blue-2;
-$success-light:     $blue-3;
-
-$black-ter:         $grey-1;
-$grey-darker:       $grey-2;
-$grey-dark:         $grey-3;
-$grey:              $grey-4;
-$grey-light:        $grey-5;
-$grey-lighter:      $grey-6;
-$white-ter:         $grey-7;
 
 // Custom colors
 $custom-colors: (
@@ -103,30 +78,5 @@ $radius-large:      15px;
 $family-primary:    'Lato';
 $family-secondary:  'Tajawal';
 $title-family:      'Tajawal';
-$text:              $black-ter;
-
-// Sizes
-$size-1:            4.000rem;  // h1 64px
-$size-2:            3.250rem;  // h2 52px
-$size-3:            2.688rem;  // h3 43px
-$size-4:            1.500rem;  // h4 24px
-$size-5:            1.250rem;  // super title 20px
-$size-6:            1.000rem;  // title 16px
-$size-7:            0.875rem;  // paragraphs, buttons and links 14px
-$size-8:            0.813rem;  // details 13px
-$size-9:            0.688rem;  // menu, percentages 11px
-
-// Custom sizes
-$sizes: (
-    $size-1,
-    $size-2,
-    $size-3,
-    $size-4,
-    $size-5,
-    $size-6,
-    $size-7,
-    $size-8,
-    $size-9,
-);
 
 @import '~bulma/sass/utilities/_all';
