@@ -72,6 +72,12 @@
 
         <!-- Image -->
         <div class="column is-6">
+          <img src="@/assets/imgs/landing-bg-1.svg" class="is-hidden-mobile" style="position: absolute; z-index: 0; right: -5%; top: -15%; height: 50%">
+          <img src="@/assets/imgs/landing-bg-1.svg" class="is-hidden-tablet" style="position: absolute; z-index: 0; height: 25%; right: -10%; top: 350px">
+          <img src="@/assets/imgs/landing-bg-2.svg" class="is-hidden-mobile" style="position: absolute; z-index: 0; height: 20%; right: -3%; bottom: 0 ">
+          <img src="@/assets/imgs/landing-bg-2.svg" class="is-hidden-tablet" style="position: absolute; z-index: 0; height: 8%; right: 0; bottom: 0 ">
+          <img src="@/assets/imgs/landing-bg-3.svg" class="is-hidden-mobile" style="position: absolute; z-index: 0; left: 55%; top: 25%; height: 15%">
+          <img src="@/assets/imgs/landing-bg-3.svg" class="is-hidden-tablet" style="position: absolute; z-index: 0; left: 10%; bottom: 27%; height: 6%">
           <figure class="image">
             <img src="@/assets/imgs/landing-1.png">
           </figure>
