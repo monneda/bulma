@@ -68,6 +68,8 @@ import PostCreate from '@/comps/PostCreate'
 import Top5 from '../comps/Top5'
 
 export default {
+  name: 'Feed',
+
   components: {
     Top5,
     Post,

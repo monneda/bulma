@@ -8,8 +8,8 @@ const routes = [
   },
   {
     path: '/feed',
-    name: 'Home',
-    component: () => import('@/views/Home')
+    name: 'Feed',
+    component: () => import('@/views/Feed')
   },
   {
     path: '/c/:id',
