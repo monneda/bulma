@@ -1,6 +1,11 @@
 <template>
 <Navbar class="has-shadow" />
+
 <div class="container">
+  <!--
+    The class `mx-0` is here to avoid
+    some horizontall scrolling on mobile
+  -->
   <div class="columns mx-0">
     <div class="column is-3"></div>
     <div class="column is-6">
