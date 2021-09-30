@@ -1,10 +1,10 @@
 <template>
 <button class="button is-white is-transparent">
   <span class="icon-text">
-    <span class="icon has-text-primary">
-      <font-awesome-icon :icon="icon" size="lg" />
+    <span class="icon is-hidden-touch">
+      <font-awesome-icon v-if="icon" :icon="icon" size="lg" />
     </span>
-    <span class="has-text-grey has-text-weight-bold"> {{ label }} </span>
+    <span class="has-text-dark"> {{ label }} </span>
   </span>
 </button>
 </template>
@@ -20,7 +20,11 @@ export default {
     },
     icon: {
       type: String,
-      required: true
+      required: false
+    },
+    iconColor: {
+      type: String,
+      default: ''
     }
   }
 }

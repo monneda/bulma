@@ -6,34 +6,58 @@
     </figure>
 
     <div class="media-content my-auto" @click="toggle">
-      <textarea
-        class="textarea has-background-white-ter is-clickable is-clipped"
-        readonly
-        rows="1"
-      > Como estão seus investimentos hoje?
-      </textarea>
+      <input
+        type="text"
+        placeholder="Como estão seus investimentos hoje?"
+        class="input has-background-white-ter is-size-6 p-5 is-bordered"
+      >
     </div>
   </div>
 
-  <hr>
+  <hr class="is-hidden-touch">
 
-  <nav class="level has-text-grey">
-    <button class="level-item button is-primary is-inverted mx-2">
-      <Icon icon="image" label="Foto" />
-    </button>
-    |
-    <button class="level-item button is-primary is-inverted mx-2">
-      <Icon icon="video" label="Vídeo" />
-    </button>
-    |
-    <button class="level-item button is-primary is-inverted mx-2">
-      <Icon icon="poll" label="Enquete" />
-    </button>
-    |
-    <button class="level-item button is-primary is-inverted mx-2">
-      <Icon icon="file" label="Documento" />
-    </button>
-  </nav>
+  <div class="columns has-text-centered">
+    <div class="column">
+      <button class="button is-white">
+        <span class="has-background-primary-lighter has-text-primary-dark p-2">
+          <font-awesome-icon icon="image" size="lg" />
+        </span>
+        <span class="pl-3 has-text-grey has-text-weight-bold">
+          Foto
+        </span>
+      </button>
+    </div>
+    <div class="column">
+      <button class="button is-white">
+        <span class="has-background-primary-lighter has-text-primary-dark p-2">
+          <font-awesome-icon icon="video" size="lg" />
+        </span>
+        <span class="pl-3 has-text-grey has-text-weight-bold">
+          Vídeo
+        </span>
+      </button>
+    </div>
+    <div class="column">
+      <button class="button is-white">
+        <span class="has-background-primary-lighter has-text-primary-dark p-2">
+          <font-awesome-icon icon="poll" size="lg" />
+        </span>
+        <span class="pl-3 has-text-grey has-text-weight-bold">
+          Enquete
+        </span>
+      </button>
+    </div>
+    <div class="column">
+      <button class="button is-white">
+        <span class="has-background-primary-lighter has-text-primary-dark p-2">
+          <font-awesome-icon icon="file" size="lg" />
+        </span>
+        <span class="pl-3 has-text-grey has-text-weight-bold">
+          Documento
+        </span>
+      </button>
+    </div>
+  </div>
 
   <div class="modal" ref="modal">
     <div class="modal-background" @click="toggle"></div>
@@ -91,16 +115,20 @@ export default {
 
   methods: {
     toggle () {
-      this.$refs.modal.classList.toggle('is-active')
+      console.log(this.$refs)
+      // this.$refs.modal.classList.toggle('is-active')
     }
   }
 }
 </script>
 
-<style scoped>
-.media-content textarea {
-  resize: none;
+<style lang="scss" scoped>
+.input {
   border-radius: 25px;
+}
+
+.button > span {
+  border-radius: $radius;
 }
 
 .modal-card-body textarea {

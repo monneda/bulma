@@ -4,7 +4,7 @@
     <div class="level">
       <div class="level-item">
         <figure class="image">
-          <img class="is-32x32" src="https://placekitten.com/32/32">
+          <img class="is-32x32 is-rounded" src="https://placekitten.com/32/32">
         </figure>
       </div>
       <div class="level-item pl-3">

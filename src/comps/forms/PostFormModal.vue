@@ -18,10 +18,10 @@
     <footer class="modal-card-foot has-background-white">
       <nav class="level has-text-grey">
         <div class="level-left">
-          <post-form-modal-button class="level-item" icon="image" label="Foto" />
-          <post-form-modal-button class="level-item" icon="video" label="Vídeo" />
-          <post-form-modal-button class="level-item" icon="poll" label="Enquete" />
-          <post-form-modal-button class="level-item" icon="file" label="Poll" />
+          <post-form-modal-button class="level-item" icon="image" label="Foto"    />
+          <post-form-modal-button class="level-item" icon="video" label="Vídeo"   />
+          <post-form-modal-button class="level-item" icon="poll"  label="Enquete" />
+          <post-form-modal-button class="level-item" icon="file"  label="Poll"    />
         </div>
 
         <div class="level-right">
@@ -65,13 +65,5 @@ export default {
   outline: none;
   min-height: 100%;
   min-width: 100%;
-}
-
-nav {
-  min-width: 100%;
-}
-
-.modal-card {
-  width: 50vw;
 }
 </style>

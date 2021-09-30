@@ -8,7 +8,7 @@
     <div class="media-content my-auto">
       <span @click="toggle">
         <input
-          disabled
+          readonly
           type="text"
           placeholder="Como estão seus investimentos hoje?"
           class="input has-background-white-ter p-5 is-size-6"
@@ -20,6 +20,12 @@
 
   <hr class="is-hidden-touch">
 
+  <!--
+  For some reason, placing the modal here instead of the end of the div makes
+  so that it won't occupy any space. Moving it to the end add some blank space
+  -->
+  <post-form-modal :active="modal" @close="close" />
+
   <div class="level has-text-grey is-hidden-touch">
     <post-form-button class="level-item" icon="image" label="Foto" />
     |
@@ -29,8 +35,6 @@
     |
     <post-form-button class="level-item" icon="file" label="Documento" />
   </div>
-
-  <post-form-modal :active="modal" @close="close" />
 </article>
 </template>
 
