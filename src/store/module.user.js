@@ -5,14 +5,14 @@ import { LOGIN, LOGOUT } from '@/store/type.actions'
 import { SET_USER, SET_AUTH, SET_ERROR } from '@/store/type.mutations'
 
 const state = {
-  user: {},
+  profile: {},
   error: {},
   auth: false
 }
 
 const mutations = {
   [SET_USER] (state, user) {
-    state.user = user
+    state.profile = user
   },
 
   [SET_AUTH] (state, auth) {
@@ -30,7 +30,7 @@ const actions = {
   },
 
   async [LOGOUT] (ctx) {
-    client.setToken(null)
+    client.token = null
     ctx.commit(SET_USER, {})
     ctx.commit(SET_ERROR, {})
     ctx.commit(SET_AUTH, false)

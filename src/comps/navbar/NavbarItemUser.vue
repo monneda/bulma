@@ -4,16 +4,16 @@
     <span class="icon-text">
       <span class="icon is-medium">
         <figure class="image">
-          <img class="is-32x32 is-rounded" src="https://placekitten.com/32/32">
+          <img class="is-32x32 is-rounded" :src="$store.state.user.profile.picture">
         </figure>
       </span>
-      <span class="my-auto"> Roberta </span>
+      <span class="my-auto"> {{ $store.state.user.profile.givenName }} </span>
     </span>
   </a>
 
   <div class="navbar-dropdown">
     <!-- Profile -->
-    <router-link to="/u/nice" class="navbar-item">
+    <router-link :to="`/u/${$store.state.user.profile.username}`" class="navbar-item">
       <span class="icon is-small">
         <font-awesome-icon icon="user" />
       </span>
@@ -37,23 +37,29 @@
     </router-link>
 
     <!-- Logout -->
-    <router-link to="/logout" class="navbar-item">
+    <a @click="logout" class="navbar-item">
       <span class="icon is-small">
         <font-awesome-icon icon="sign-out-alt" />
       </span>
       <span class="is-size-7 pl-3"> Sair </span>
-    </router-link>
+    </a>
   </div>
 </div>
 </template>
 
 <script>
+import { LOGOUT } from '@/store/type.actions'
+
 export default {
   name: 'NavbarItemUser',
 
   methods: {
     toggle () {
       this.$refs.dropdown.classList.toggle('is-active')
+    },
+    logout () {
+      console.log('logout')
+      this.$store.dispatch(LOGOUT)
     }
   }
 }
