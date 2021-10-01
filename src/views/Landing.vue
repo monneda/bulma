@@ -2,8 +2,8 @@
 <Navbar class="has-shadow" />
 
 <!-- Content -->
-<div class="container is-fluid p-0">
-  <section class="section is-medium">
+<div class="container is-fluid px-0 is-clipped">
+  <section class="section">
     <div class="container">
       <div class="columns is-vcentered">
         <!-- Text -->
