@@ -14,14 +14,15 @@ export default async (to, from, next) => {
   }
 
   try {
-    const token = await auth0.getTokenSilently()
-    client.setToken(token)
-    const user = await client.users.fetchMyUser()
+    client.token = await auth0.getTokenSilently()
+    console.log(client)
+    const user = await client.profile.get()
     store.commit(SET_ERROR, {})
     store.commit(SET_USER, user)
     store.commit(SET_AUTH, true)
   } catch (e) {
-    client.setToken(null)
+    console.error(e)
+    client.token = null
     store.commit(SET_ERROR, e)
     store.commit(SET_USER, {})
     store.commit(SET_AUTH, false)

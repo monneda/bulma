@@ -1,6 +1,6 @@
 
-const BASE = 'https://monneda.herokuapp.com/api'
-// const BASE = 'http://localhost:8080/api'
+// const BASE = 'https://monneda.herokuapp.com/api'
+const BASE = 'http://localhost:8080/api'
 
 export default class {
   constructor (token) {
@@ -14,7 +14,7 @@ export default class {
       opts.headers = {}
     }
 
-    if (this.token) {
+    if (this.token !== null) {
       opts.headers.Authorization = `Bearer ${this.token}`
     }
 

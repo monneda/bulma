@@ -13,6 +13,9 @@ export default async (to, from, next) => {
     return
   }
 
+  console.log(to)
+  console.log(from)
+
   const { appState: { origin } } = await auth0.handleRedirectCallback()
 
   // Adapted from here
