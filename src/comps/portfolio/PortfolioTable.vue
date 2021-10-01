@@ -3,15 +3,15 @@
   <table class="table is-fullwidth is-hoverable is-striped">
     <thead>
       <tr>
-        <th> Nome     </th>
-        <th> Peso     </th>
-        <th> Preço    </th>
+        <th> Nome </th>
+        <th> Peso </th>
+        <th> Preço </th>
         <th> Variação </th>
       </tr>
     </thead>
 
     <tbody>
-      <AssetRow v-for="(item, i) of assets" :key="i" />
+      <asset-row v-for="item of assets" :key="item.ticker" :asset="item" />
     </tbody>
   </table>
 </article>

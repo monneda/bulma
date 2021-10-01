@@ -4,16 +4,14 @@
     <div class="level-left">
       <!-- Icon -->
       <div class="level-item">
-        <span class="icon is-large">
-          <font-awesome-icon icon="wallet" size="3x" />
-        </span>
+        <icon-ticker class="is-large" :ticker="asset.ticker" />
       </div>
 
       <!-- Asset name -->
       <div class="level-item">
         <div class="is-flex is-flex-direction-column">
-          <span> Petrobras S/A </span>
-          <strong> PETR3 </strong>
+          <span> {{ asset.name }} </span>
+          <strong> {{ asset.ticker }} </strong>
         </div>
       </div>
     </div>
@@ -27,7 +25,7 @@
       <div class="level-item px-2">
         <div class="is-flex is-flex-direction-column">
           <strong> Peso </strong>
-          <span> 100% </span>
+          <span> {{ asset.weight.toFixed(2) }}% </span>
         </div>
       </div>
 
@@ -35,7 +33,7 @@
       <div class="level-item px-2">
         <div class="is-flex is-flex-direction-column">
           <strong> Preço </strong>
-          <span> R$ 100,00 </span>
+          <span> R$ {{ asset.price.toFixed(2) }} </span>
         </div>
       </div>
 
@@ -43,7 +41,7 @@
       <div class="level-item px-2">
         <div class="is-flex is-flex-direction-column">
           <strong> Variação </strong>
-          <span> -10% </span>
+          <span> {{ asset.gain }}% </span>
         </div>
       </div>
     </div>
@@ -52,7 +50,20 @@
 </template>
 
 <script>
+import IconTicker from '@/comps/utils/IconTicker'
+
 export default {
-  name: 'AssetTile'
+  name: 'AssetTile',
+
+  components: {
+    IconTicker
+  },
+
+  props: {
+    asset: {
+      type: Object,
+      required: true
+    }
+  }
 }
 </script>

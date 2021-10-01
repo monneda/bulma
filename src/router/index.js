@@ -20,9 +20,9 @@ const routes = [
     component: () => import('@/views/Feed')
   },
   {
-    path: '/c/:',
-    name: 'Portfolio',
     props: true,
+    path: '/c/:id',
+    name: 'Portfolio',
     component: () => import('@/views/Portfolio')
   },
   {

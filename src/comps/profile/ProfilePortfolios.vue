@@ -43,7 +43,9 @@
   <!-- Portfolios -->
   <div class="columns is-flex-wrap-wrap">
     <div v-for="w of wallets" :key="w.id" class="column is-4">
-      <profile-portfolio-card :wallet="w" />
+      <router-link :to="`/c/${w.id}`">
+        <profile-portfolio-card :wallet="w" />
+      </router-link>
     </div>
   </div>
 </article>

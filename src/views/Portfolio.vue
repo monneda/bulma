@@ -20,18 +20,20 @@
         </ul>
       </div>
 
-      <PortfolioInputs @mode="updateMode" />
+      <portfolio-inputs @mode="e => mode = e" />
 
       <br>
 
-      <PortfolioTiles v-if="mode === 'tiles'" :assets="[1, 2, 3, 4, 5, 6]" />
-      <PortfolioTable v-if="mode === 'table'" :assets="[1, 2, 3, 4, 5, 6]" />
+      <portfolio-tiles v-if="mode === 'tiles'" :assets="wallet.assets" />
+      <portfolio-table v-if="mode === 'table'" :assets="wallet.assets" />
     </div>
   </div>
 </div>
 </template>
 
 <script>
+import client from '@/commons/client.api'
+
 import Navbar from '@/comps/navbar/Navbar'
 import PortfolioTiles from '@/comps/portfolio/PortfolioTiles'
 import PortfolioTable from '@/comps/portfolio/PortfolioTable'
@@ -57,13 +59,25 @@ export default {
   },
 
   data: () => ({
-    mode: 'tiles'
+    days: 7,
+    mode: 'tiles',
+    wallet: {}
   }),
 
   methods: {
-    updateMode (e) {
-      this.mode = e
+    async fetchWallet () {
+      this.wallet = await client.wallets.byId(this.id, this.days)
     }
+  },
+
+  watch: {
+    days () {
+      this.fetchWallet()
+    }
+  },
+
+  async created () {
+    this.fetchWallet()
   }
 }
 </script>

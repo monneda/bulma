@@ -1,8 +1,8 @@
 <template>
 <article>
   <div class="columns is-flex-wrap-wrap">
-    <div v-for="(item, i) of assets" :key="i" class="column is-6">
-      <AssetTile class="box" />
+    <div v-for="item of assets" :key="item.ticker" class="column is-6">
+      <asset-tile class="box" :asset="item" />
     </div>
   </div>
 </article>
