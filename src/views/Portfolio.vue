@@ -4,9 +4,29 @@
 <div class="columns is-centered mx-0">
   <div class="column is-three-quarters">
     <PortfolioBanner class="box" />
-    <PortfolioInputs class="box" @mode="updateMode" />
-    <PortfolioTiles v-if="isTiles" :assets="[1, 2, 3, 4, 5, 6]" />
-    <PortfolioTable v-if="isTable" class="box" :assets="[1, 2, 3, 4, 5, 6]" />
+
+    <div class="box">
+      <div class="tabs is-toggle is-fullwidth">
+        <ul>
+          <li class="is-active">
+            <a> Ativos </a>
+          </li>
+          <li>
+            <a> Composição </a>
+          </li>
+          <li>
+            <a> Histórico </a>
+          </li>
+        </ul>
+      </div>
+
+      <PortfolioInputs @mode="updateMode" />
+
+      <br>
+
+      <PortfolioTiles v-if="mode === 'tiles'" :assets="[1, 2, 3, 4, 5, 6]" />
+      <PortfolioTable v-if="mode === 'table'" :assets="[1, 2, 3, 4, 5, 6]" />
+    </div>
   </div>
 </div>
 </template>
@@ -39,15 +59,6 @@ export default {
   data: () => ({
     mode: 'tiles'
   }),
-
-  computed: {
-    isTable () {
-      return this.mode === 'table'
-    },
-    isTiles () {
-      return this.mode === 'tiles'
-    }
-  },
 
   methods: {
     updateMode (e) {
