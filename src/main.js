@@ -14,6 +14,8 @@ import '@/assets/scss/index.scss'
 import registerIcons from '@/plugins/icons'
 
 const app = createApp(App)
+window.app = app
+
 app.use(store)
 app.use(router)
 

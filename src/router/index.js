@@ -1,10 +1,18 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
+
+import UserGuard from '@/router/guard.user'
+import CallbackGuard from '@/router/guard.callback'
 
 const routes = [
   {
     path: '/',
     name: 'Landing',
     component: () => import('@/views/Landing')
+  },
+  {
+    path: '/callback',
+    name: 'Callback',
+    beforeEnter: CallbackGuard
   },
   {
     path: '/feed',
@@ -42,7 +50,11 @@ const routes = [
   }
 ]
 
-export default createRouter({
-  history: createWebHashHistory(),
+const router = createRouter({
+  history: createWebHistory(),
   routes
 })
+
+router.beforeEach(UserGuard)
+
+export default router

@@ -26,13 +26,13 @@
     <div class="navbar-menu" ref="menu">
       <div class="navbar-end">
         <div class="navbar-item">
-          <button class="button is-primary is-outlined">
-            <span class="p-4 has-text-weight-bold">login</span>
+          <button class="button is-primary is-outlined" @click="login">
+            login
           </button>
         </div>
         <div class="navbar-item">
-          <button class="button is-primary">
-            <span class="p-4 has-text-weight-bold">criar conta</span>
+          <button class="button is-primary" @click="login">
+            criar conta
           </button>
         </div>
       </div>
@@ -70,12 +70,36 @@
 
         <!-- Image -->
         <div class="column is-6">
-          <img src="@/assets/imgs/landing-bg-1.svg" class="is-hidden-mobile" style="position: absolute; z-index: 0; right: -5%; top: -15%; height: 50%">
-          <img src="@/assets/imgs/landing-bg-1.svg" class="is-hidden-tablet" style="position: absolute; z-index: 0; height: 25%; right: -10%; top: 350px">
-          <img src="@/assets/imgs/landing-bg-2.svg" class="is-hidden-mobile" style="position: absolute; z-index: 0; height: 20%; right: -3%; bottom: 0 ">
-          <img src="@/assets/imgs/landing-bg-2.svg" class="is-hidden-tablet" style="position: absolute; z-index: 0; height: 8%; right: 0; bottom: 0 ">
-          <img src="@/assets/imgs/landing-bg-3.svg" class="is-hidden-mobile" style="position: absolute; z-index: 0; left: 55%; top: 25%; height: 15%">
-          <img src="@/assets/imgs/landing-bg-3.svg" class="is-hidden-tablet" style="position: absolute; z-index: 0; left: 10%; bottom: 27%; height: 6%">
+          <img
+            src="@/assets/imgs/landing-bg-1.svg"
+            class="is-hidden-touch"
+            style="position: absolute; z-index: 0; right: -5%; top: -15%; height: 50%"
+          >
+          <img
+            src="@/assets/imgs/landing-bg-1.svg"
+            class="is-hidden-desktop"
+            style="position: absolute; z-index: 0; height: 25%; right: -10%; top: 350px"
+          >
+          <img
+            src="@/assets/imgs/landing-bg-2.svg"
+            class="is-hidden-touch"
+            style="position: absolute; z-index: 0; height: 20%; right: -3%; bottom: 0 "
+          >
+          <img
+            src="@/assets/imgs/landing-bg-2.svg"
+            class="is-hidden-desktop"
+            style="position: absolute; z-index: 0; height: 8%; right: 0; bottom: 0 "
+          >
+          <img
+            src="@/assets/imgs/landing-bg-3.svg"
+            class="is-hidden-touch"
+            style="position: absolute; z-index: 0; left: 55%; top: 25%; height: 15%"
+          >
+          <img
+            src="@/assets/imgs/landing-bg-3.svg"
+            class="is-hidden-desktop"
+            style="position: absolute; z-index: 0; left: 10%; bottom: 27%; height: 6%"
+          >
           <figure class="image">
             <img src="@/assets/imgs/landing-1.png">
           </figure>
@@ -325,6 +349,8 @@
 import CIcon from '@/ui/CIcon'
 import Footer from '@/comps/Footer'
 
+import { LOGIN } from '@/store/type.actions'
+
 export default {
   name: 'Landing',
 
@@ -337,6 +363,10 @@ export default {
     toggle () {
       this.$refs.menu.classList.toggle('is-active')
       this.$refs.burger.classList.toggle('is-active')
+    },
+
+    login () {
+      this.$store.dispatch(LOGIN, { origin: this.$route.path })
     }
   }
 }
