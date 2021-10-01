@@ -13,14 +13,12 @@ export default async (to, from, next) => {
     return
   }
 
-  console.log(to)
-  console.log(from)
-
   const { appState: { origin } } = await auth0.handleRedirectCallback()
 
+  // This is not neede when using `webHistory`
   // Adapted from here
   //    https://github.com/auth0/auth0-spa-js/issues/384#issuecomment-602586642
-  window.history.replaceState({}, document.title, window.location.pathname)
+  // window.history.replaceState({}, document.title, window.location.pathname)
 
   return next(origin)
 }
