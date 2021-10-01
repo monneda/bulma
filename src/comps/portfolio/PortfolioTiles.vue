@@ -1,6 +1,6 @@
 <template>
 <article>
-  <div class="columns is-multiline">
+  <div class="columns is-flex-wrap-wrap">
     <div v-for="(item, i) of assets" :key="i" class="column is-6">
       <AssetTile class="box" />
     </div>

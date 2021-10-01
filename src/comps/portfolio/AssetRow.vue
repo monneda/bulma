@@ -1,31 +1,33 @@
 <template>
-<tr>
+<tr class="px-0">
   <td>
-    <div class="level p-3 mb-1">
+    <div class="level is-mobile">
       <div class="level-left">
+        <!-- Icon -->
         <div class="level-item">
-          <Icon class="is-large fa-2x" icon="wallet" />
+          <span class="icon is-large">
+            <font-awesome-icon icon="wallet" size="2x" />
+          </span>
         </div>
-        <div class="level-item px-1">
+
+        <!-- Name -->
+        <div class="level-item">
           <div class="is-flex is-flex-direction-column">
-            <span>Petrobras S/A</span>
-            <strong>PETR3</strong>
+            <span> Petrobras S/A </span>
+            <strong> PETR3 </strong>
           </div>
         </div>
       </div>
     </div>
   </td>
-  <td class="is-vcentered">100%</td>
-  <td class="is-vcentered">R$ 110,00</td>
-  <td class="is-vcentered">-10%</td>
+  <td class="is-vcentered"> 100%      </td>
+  <td class="is-vcentered"> R$ 110,00 </td>
+  <td class="is-vcentered"> -10%      </td>
 </tr>
 </template>
 
 <script>
-import Icon from '@/comps/Icon'
-
 export default {
-  name: 'AssetRow',
-  components: { Icon }
+  name: 'AssetRow'
 }
 </script>

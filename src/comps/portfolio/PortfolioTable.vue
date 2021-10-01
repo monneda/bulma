@@ -1,12 +1,12 @@
 <template>
 <article>
-  <table class="table is-fullwidth is-hoverable">
-    <thead class="has-background-light">
+  <table class="table is-fullwidth is-hoverable is-striped">
+    <thead>
       <tr>
-        <th>Nome</th>
-        <th>Peso</th>
-        <th>Preço</th>
-        <th>Variação</th>
+        <th> Nome     </th>
+        <th> Peso     </th>
+        <th> Preço    </th>
+        <th> Variação </th>
       </tr>
     </thead>
 
@@ -35,3 +35,22 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+/*
+  Makes the table horizontally scrollable
+  when screen is too small, like in mobile
+*/
+article {
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+
+/*
+  Makes it big so text does not break inside
+  cells
+*/
+table {
+  min-width: 30rem;
+}
+</style>

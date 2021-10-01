@@ -1,14 +1,13 @@
 <template>
 <Navbar class="has-shadow" />
-<div class="columns py-4">
-  <div class="column is-2"></div>
-  <div class="column is-8">
+<br>
+<div class="columns is-centered mx-0">
+  <div class="column is-three-quarters">
     <PortfolioBanner class="box" />
     <PortfolioInputs class="box" @mode="updateMode" />
     <PortfolioTiles v-if="isTiles" :assets="[1, 2, 3, 4, 5, 6]" />
     <PortfolioTable v-if="isTable" class="box" :assets="[1, 2, 3, 4, 5, 6]" />
   </div>
-  <div class="column is-2"></div>
 </div>
 </template>
 

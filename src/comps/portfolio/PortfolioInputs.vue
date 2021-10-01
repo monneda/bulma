@@ -1,6 +1,7 @@
 <template>
 <article>
   <div class="level">
+    <!-- Buttons -->
     <div class="level-left">
       <div class="level-item">
         <div class="field has-addons">
@@ -14,6 +15,7 @@
       </div>
     </div>
 
+    <!-- Sectors -->
     <div class="level-right">
       <div class="level-item">
         <div class="select is-primary">
