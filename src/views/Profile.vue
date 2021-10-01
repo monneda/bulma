@@ -2,42 +2,49 @@
 <Navbar class="has-shadow" />
 
 <div class="container">
-  <section class="section">
-    <ProfileBanner class="box" />
-  </section>
+  <div class="columns is-centered mx-0">
+    <div class="column is-three-quarters">
+      <br>
 
-  <section class="section">
-    <ProfilePortfolios />
-  </section>
+      <profile-banner />
 
-  <section class="section">
-    <div class="columns">
-      <div class="column is-8">
-        <ProfilePosts class="box" />
-      </div>
+      <br>
+      <br>
 
-      <div class="column">
-        <ProfileSuggestions class="box" />
+      <profile-portfolios class="box" />
+
+      <br>
+
+      <h4 class="title is-4"> Publicações </h4>
+
+      <div class="columns">
+        <div class="column is-7">
+          <post class="box" />
+          <post class="box" />
+        </div>
+        <div class="column is-5 is-hidden-touch">
+          <profile-suggestions class="box" />
+        </div>
       </div>
     </div>
-  </section>
+  </div>
 </div>
 </template>
 
 <script>
+import Post from '@/comps/feed/Post'
 import Navbar from '@/comps/navbar/Navbar'
-import ProfilePosts from '@/comps/profile/ProfilePosts'
 import ProfileBanner from '@/comps/profile/ProfileBanner'
 import ProfilePortfolios from '@/comps/profile/ProfilePortfolios'
 import ProfileSuggestions from '@/comps/profile/ProfileSuggestions'
 
 export default {
   components: {
+    Post,
     Navbar,
-    ProfilePosts,
-    ProfileBanner,
     ProfilePortfolios,
-    ProfileSuggestions
+    ProfileSuggestions,
+    ProfileBanner
   }
 }
 </script>

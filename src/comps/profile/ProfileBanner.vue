@@ -1,15 +1,11 @@
 <template>
 <article>
-  <div class="columns is-vcentered">
+  <div class="columns">
     <!-- Image -->
-    <div class="column is-3">
-      <div class="level">
-        <div class="level-item">
-          <figure class="image">
-            <img class="is-rounded" src="http://placekitten.com/200/200">
-          </figure>
-        </div>
-      </div>
+    <div class="column is-one-fifth">
+      <figure class="image is-128x128 mx-auto">
+        <img class="is-rounded" src="http://placekitten.com/200/200">
+      </figure>
     </div>
 
     <div class="column">
@@ -17,9 +13,9 @@
         <!-- Name -->
         <div class="level-left">
           <div class="level-item">
-            <div class="content">
-              <p class="title is-4"> Roberta Heinrich </p>
-              <p class="subtitle is-6"> @heinrichroberta </p>
+            <div>
+              <h4 class="title is-size-4"> Roberta Heinrich </h4>
+              <p> @heinrichroberta </p>
             </div>
           </div>
         </div>
@@ -28,10 +24,12 @@
         <div class="level-right">
           <div class="level-item">
             <button class="button is-primary">
-              <span class="icon">
-                <font-awesome-icon icon="pen" />
+              <span class="icon-text">
+                <span class="icon">
+                  <font-awesome-icon icon="pen" />
+                </span>
+                <span> Editar perfil </span>
               </span>
-              <span> Editar perfil </span>
             </button>
           </div>
         </div>
@@ -39,42 +37,51 @@
 
       <hr>
 
-      <!-- Description -->
-      <div class="level">
-        <div class="level-left">
-          <div class="level-item">
-            <small>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            </small>
-          </div>
-        </div>
-      </div>
-
       <!-- Stats -->
-      <div class="level">
+      <div class="level is-mobile has-text-centered-touch">
         <div class="level-left">
           <!-- Wallets -->
           <div class="level-item">
             <p>
-              <strong class="has-text-primary"> 10 </strong> carteras
+              <strong class="has-text-primary"> 10 </strong>
+              <br class="is-hidden-desktop">
+              carteras
             </p>
           </div>
+
+          <div class="level-item"></div>
 
           <!-- Followers -->
           <div class="level-item">
             <p>
-              <strong class="has-text-primary"> 10 mil </strong> seguidores
+              <strong class="has-text-primary"> 10 mil </strong>
+              <br class="is-hidden-desktop">
+              seguidores
             </p>
           </div>
+
+          <div class="level-item"></div>
 
           <!-- Following -->
           <div class="level-item">
             <p>
-              <strong class="has-text-primary"> 105 </strong> seguindo
+              <strong class="has-text-primary"> 105 </strong>
+              <br class="is-hidden-desktop">
+              seguindo
             </p>
           </div>
         </div>
       </div>
+
+      <!-- Description -->
+      <p class="is-size-6">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
     </div>
   </div>
 </article>

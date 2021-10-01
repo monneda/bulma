@@ -6,14 +6,12 @@
     The class `mx-0` is here to avoid
     some horizontall scrolling on mobile
   -->
-  <div class="columns mx-0">
-    <div class="column is-3"></div>
-    <div class="column is-6">
+  <div class="columns is-centered mx-0">
+    <div class="column is-half">
       <br class="is-hidden-touch">
       <post-form class="box" />
       <post class="box" />
     </div>
-    <div class="column is-3"></div>
   </div>
 </div>
 </template>

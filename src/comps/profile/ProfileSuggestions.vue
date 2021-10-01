@@ -19,8 +19,9 @@
 
         <!-- Username -->
         <div class="level-item">
-          <div>
+          <div style="line-height: 110%">
             <p>@umnickname</p>
+            <p class="has-text-grey is-size-6">Rei dos ETF</p>
           </div>
         </div>
       </div>
@@ -28,7 +29,7 @@
       <!-- Button -->
       <div class="level-right">
         <div class="level-item">
-          <button class="button is-primary is-small">Seguir</button>
+          <button class="button is-primary is-light is-small">Seguir</button>
         </div>
       </div>
     </div>
