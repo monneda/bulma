@@ -14,16 +14,16 @@
         <!-- Button group -->
         <div class="field has-addons has-text-grey is-hidden-touch">
           <p class="control">
-            <button class="button" @click="() => days = 7"> 1 semana </button>
+            <button class="button" @click="days = 7"> 1 semana </button>
           </p>
           <p class="control">
-            <button class="button" @click="() => days = 30"> 1 mês </button>
+            <button class="button" @click="days = 30"> 1 mês </button>
           </p>
           <p class="control">
-            <button class="button" @click="() => days = 90"> 3 meses </button>
+            <button class="button" @click="days = 90"> 3 meses </button>
           </p>
           <p class="control">
-            <button class="button" @click="() => days = 360"> 1 ano </button>
+            <button class="button" @click="days = 360"> 1 ano </button>
           </p>
         </div>
 
