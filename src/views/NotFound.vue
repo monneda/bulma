@@ -23,7 +23,7 @@
       </p>
     </div>
 
-    <button class="button is-primary is-large">
+    <button class="button is-primary is-large" @click="back">
       <span class="has-text-weight-bold p-6">
         voltar para o site
       </span>
@@ -45,6 +45,12 @@ export default {
   components: {
     CIcon,
     Footer
+  },
+
+  methods: {
+    back () {
+      this.$router.back()
+    }
   }
 }
 </script>
