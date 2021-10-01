@@ -21,7 +21,7 @@
         </div>
 
         <!-- Button -->
-        <div class="level-right">
+        <div v-if="isSelf === true" class="level-right">
           <div class="level-item">
             <button class="button is-primary">
               <span class="icon-text">
@@ -102,6 +102,12 @@ export default {
   data: () => ({
     user: {}
   }),
+
+  computed: {
+    isSelf () {
+      return this.user.username === this.$store.state.user.profile.username
+    }
+  },
 
   async created () {
     this.user = await client.users.byUsername(this.username)

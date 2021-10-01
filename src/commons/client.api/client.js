@@ -8,10 +8,18 @@ export default class {
   }
 
   async request (meth, path, opts = {}, json = true) {
-    const url = [BASE, path].join('/')
+    let url = [BASE, path].join('/')
+    url = new URL(url)
 
     if (!opts.headers) {
       opts.headers = {}
+    }
+
+    if (opts.params) {
+      const entries = Object.entries(opts.params)
+      for (const [key, val] of entries) {
+        url.searchParams.append(key, val)
+      }
     }
 
     if (this.token !== null) {

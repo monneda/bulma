@@ -7,8 +7,10 @@
 
     <br>
 
-    <h6 class="title is-6 has-text-white-bis"> Minha cartera na clear </h6>
-    <p class="subtitle is-size-7 has-text-white-bis"> Criada em 2021-09-01 </p>
+    <h6 class="title is-6 has-text-white-bis"> {{ wallet.name }} </h6>
+    <p class="subtitle is-size-7 has-text-white-bis">
+      Criada em {{ new Date(wallet.createdAt).toLocaleDateString('pt-BR') }}
+    </p>
   </div>
 
   <div class="c-footer-background p-3">
@@ -21,7 +23,7 @@
           </span>
           <span class="my-auto is-size-7" style="line-height: 100%">
             <p class="has-text-weight-bold"> Variação: </p>
-            <p> 0.44% </p>
+            <p> {{ wallet.gain.toFixed(2) }}% </p>
           </span>
         </span>
       </div>
@@ -34,7 +36,7 @@
           </span>
           <span class="my-auto is-size-7" style="line-height: 100%">
             <p class="has-text-weight-bold"> Ativos: </p>
-            <p> 25 </p>
+            <p> {{ wallet.assets.length }} </p>
           </span>
         </span>
       </div>
@@ -47,18 +49,18 @@
 export default {
   name: 'ProfilePortfolioCard',
 
-  data: () => ({
-    name: 'Minha carteira na Clear',
-    gain: 12.5,
-    createdAt: new Date(),
-    assets: [1, 2, 3]
-  }),
+  props: {
+    wallet: {
+      type: Object,
+      required: true
+    }
+  },
 
   computed: {
     classes () {
       return {
-        'c-header-background-green': this.gain > 0,
-        'c-header-background-red': this.gain <= 0
+        'c-header-background-green': this.wallet.gain > 0,
+        'c-header-background-red': this.wallet.gain <= 0
       }
     }
   }

@@ -11,7 +11,7 @@
       <br>
       <br>
 
-      <profile-portfolios class="box" />
+      <profile-portfolios :username="username" class="box" />
 
       <br>
 
