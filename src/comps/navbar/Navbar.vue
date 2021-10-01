@@ -25,7 +25,7 @@
     </div>
 
     <!-- Menu -->
-    <div class="navbar-menu" ref="menu">
+    <div v-if="$store.state.user.auth" class="navbar-menu" ref="menu">
       <div class="navbar-end">
         <navbar-item to="/feed" icon="home" label="FEED" />
         <navbar-item to="/wallets" icon="wallet"  label="CARTERAS" />
@@ -33,6 +33,18 @@
         <navbar-item to="/chat" icon="comment" label="CHAT" />
         <navbar-item to="/notifications" icon="bell" label="NOTIFICAÇÕES" />
         <navbar-item-user />
+      </div>
+    </div>
+
+    <!-- Menu (anonymous) -->
+    <div v-else class="navbar-menu" ref="menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <button class="button is-primary is-light" @click="login"> Login </button>
+        </div>
+        <div class="navbar-item">
+          <button class="button is-primary" @click="login"> Criar conta </button>
+        </div>
       </div>
     </div>
   </div>
@@ -43,6 +55,8 @@
 import NavbarItem from '@/comps/navbar/NavbarItem'
 import NavbarSearch from '@/comps/navbar/NavbarSearch'
 import NavbarItemUser from '@/comps/navbar/NavbarItemUser'
+
+import { LOGIN } from '@/store/type.actions'
 
 export default {
   name: 'Navbar',
@@ -57,6 +71,10 @@ export default {
     toggle () {
       this.$refs.menu.classList.toggle('is-active')
       this.$refs.burger.classList.toggle('is-active')
+    },
+
+    login () {
+      this.$store.dispatch(LOGIN, { origin: this.$route.path })
     }
   }
 }

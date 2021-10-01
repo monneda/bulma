@@ -1,44 +1,5 @@
 <template>
-<!--  Navbar -->
-<nav class="navbar has-shadow">
-  <div class="container">
-
-    <!-- Brand -->
-    <div class="navbar-brand">
-      <!-- Logo -->
-      <div class="navbar-item">
-        <a>
-          <figure class="image">
-            <img src="@/assets/imgs/logo-horizontal.png" style="border-radius: 0px;">
-          </figure>
-        </a>
-      </div>
-
-      <!-- Buguer -->
-      <a class="navbar-burger has-text-primary" ref="burger" @click="toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </a>
-    </div>
-
-    <!-- Menu -->
-    <div class="navbar-menu" ref="menu">
-      <div class="navbar-end">
-        <div class="navbar-item">
-          <button class="button is-primary is-outlined" @click="login">
-            login
-          </button>
-        </div>
-        <div class="navbar-item">
-          <button class="button is-primary" @click="login">
-            criar conta
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</nav>
+<Navbar class="has-shadow" />
 
 <!-- Content -->
 <div class="container is-fluid p-0">
@@ -348,6 +309,7 @@
 <script>
 import CIcon from '@/ui/CIcon'
 import Footer from '@/comps/Footer'
+import Navbar from '@/comps/navbar/Navbar'
 
 import { LOGIN } from '@/store/type.actions'
 
@@ -356,7 +318,8 @@ export default {
 
   components: {
     CIcon,
-    Footer
+    Footer,
+    Navbar
   },
 
   methods: {
