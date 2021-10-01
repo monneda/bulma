@@ -1,5 +1,9 @@
 import auth0 from '@/commons/auth.api'
 
+/**
+ * Adapted from:
+ *     https://github.com/auth0-samples/auth0-vue-samples/blob/master/01-Login/src/auth/authWrapper.js#L74
+ */
 export default async (to, from, next) => {
   // Redirected back from auth0
   const hasCode = window.location.search.includes('code=')
