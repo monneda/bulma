@@ -9,7 +9,7 @@
       <div class="navbar-item">
         <a>
           <figure class="image">
-            <img src="@/assets/imgs/logo-horizontal-fundo-claro.png" style="border-radius: 0px;">
+            <img src="@/assets/imgs/logo-horizontal.png" style="border-radius: 0px;">
           </figure>
         </a>
       </div>

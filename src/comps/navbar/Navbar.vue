@@ -6,7 +6,7 @@
       <!-- Logo -->
       <router-link class="navbar-item" to="/feed">
         <figure class="image">
-          <img class="is-radiusless is-hidden-touch" src="@/assets/imgs/logo-horizontal-fundo-claro.png">
+          <img class="is-radiusless is-hidden-touch" src="@/assets/imgs/logo-horizontal.png">
           <img class="is-radiusless is-hidden-desktop" src="@/assets/imgs/logo.png">
         </figure>
       </router-link>
@@ -17,10 +17,10 @@
       </div>
 
       <!-- Burguer -->
-      <a class="navbar-burger has-text-primary" ref="burger" @click="toggle">
-        <span></span>
-        <span></span>
-        <span></span>
+      <a class="navbar-burger" ref="burger" @click="toggle">
+        <span style="height: 2px"></span>
+        <span style="height: 2px"></span>
+        <span style="height: 2px"></span>
       </a>
     </div>
 

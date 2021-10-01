@@ -2,7 +2,7 @@
 <div class="container is-fluid has-background-light">
   <div class="is-flex is-flex-direction-column is-align-items-center is-justify-content-space-around">
     <figure class="image">
-      <img src="@/assets/imgs/logo-horizontal-fundo-claro.png" >
+      <img src="@/assets/imgs/logo-horizontal.png" >
     </figure>
 
     <span class="has-text-primary">
