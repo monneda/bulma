@@ -16,17 +16,12 @@
 
     <!-- Buttons -->
     <footer class="modal-card-foot has-background-white">
-      <nav class="level has-text-grey">
-        <div class="level-left">
-          <post-form-modal-button class="level-item" icon="image" label="Foto"    />
-          <post-form-modal-button class="level-item" icon="video" label="Vídeo"   />
-          <post-form-modal-button class="level-item" icon="poll"  label="Enquete" />
-          <post-form-modal-button class="level-item" icon="file"  label="Poll"    />
-        </div>
-
-        <div class="level-right">
-          <button class="button is-dark"> Publicar </button>
-        </div>
+      <nav class="buttons has-text-grey">
+        <post-form-modal-button icon="image" label="Foto" />
+        <post-form-modal-button icon="video" label="Vídeo" />
+        <post-form-modal-button icon="poll" label="Enquete" />
+        <post-form-modal-button icon="file" label="Documento" />
+        <button class="button is-dark"> Publicar </button>
       </nav>
     </footer>
   </div>
