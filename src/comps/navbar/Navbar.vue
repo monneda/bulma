@@ -4,12 +4,12 @@
     <!-- Brand -->
     <div class="navbar-brand">
       <!-- Logo -->
-      <a class="navbar-item">
+      <router-link class="navbar-item" to="/feed">
         <figure class="image">
           <img class="is-radiusless is-hidden-touch" src="@/assets/imgs/logo-horizontal-fundo-claro.png">
           <img class="is-radiusless is-hidden-desktop" src="@/assets/imgs/logo.png">
         </figure>
-      </a>
+      </router-link>
 
       <!-- Search -->
       <div class="navbar-item">
@@ -27,12 +27,11 @@
     <!-- Menu -->
     <div class="navbar-menu" ref="menu">
       <div class="navbar-end">
-        <navbar-item icon="home"    label="FEED"         />
-        <navbar-item icon="wallet"  label="CARTERAS"     />
-        <navbar-item icon="compass" label="DESCOBRIR"    />
-        <navbar-item icon="comment" label="CHAT"         />
-        <navbar-item icon="bell"    label="NOTIFICAÇÕES" />
-
+        <navbar-item to="/feed" icon="home" label="FEED" />
+        <navbar-item to="/wallets" icon="wallet"  label="CARTERAS" />
+        <navbar-item to="/explore" icon="compass" label="DESCOBRIR" />
+        <navbar-item to="/chat" icon="comment" label="CHAT" />
+        <navbar-item to="/notifications" icon="bell" label="NOTIFICAÇÕES" />
         <navbar-item-user />
       </div>
     </div>

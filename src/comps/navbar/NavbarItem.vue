@@ -1,12 +1,12 @@
 <template>
-<a class="navbar-item">
+<router-link :to="to" class="navbar-item">
   <div class="is-flex is-flex-direction-column is-align-items-center">
     <span class="icon is-small">
       <font-awesome-icon :icon="icon" />
     </span>
     <span class="is-size-7"> {{ label }} </span>
   </div>
-</a>
+</router-link>
 </template>
 
 <script>
@@ -19,6 +19,10 @@ export default {
       required: false
     },
     label: {
+      type: String,
+      required: true
+    },
+    to: {
       type: String,
       required: true
     }
