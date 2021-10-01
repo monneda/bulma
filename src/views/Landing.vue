@@ -1,6 +1,6 @@
 <template>
 <!--  Navbar -->
-<nav class="navbar is-fixed-top has-background-white">
+<nav class="navbar has-shadow">
   <div class="container">
 
     <!-- Brand -->
@@ -42,9 +42,7 @@
 
 <!-- Content -->
 <div class="container is-fluid p-0">
-  <br class="is-hidden-desktop">
-
-  <section class="section is-medium has-background-light">
+  <section class="section is-medium">
     <div class="container">
       <div class="columns is-vcentered">
         <!-- Text -->
@@ -96,10 +94,10 @@
 
       <br>
 
-      <div class="level p-6 has-background-primary-dark" style="border-radius: 20px;">
+      <div class="level p-6" style="border-radius: 20px; background-color: #29D385;">
         <div class="level-item">
           <div>
-            <span class="icon is-large has-background-primary-darker has-text-light is-rounded is-96x96">
+            <span class="icon is-large has-text-light is-rounded is-96x96">
               <c-icon icon="cartera-fill" />
             </span>
             <br>
@@ -115,7 +113,7 @@
 
         <div class="level-item">
           <div>
-            <span class="icon is-large has-background-primary-darker has-text-light is-rounded is-96x96">
+            <span class="icon is-large has-text-light is-rounded is-96x96">
               <c-icon icon="newspaper" />
             </span>
             <br>
@@ -131,7 +129,7 @@
 
         <div class="level-item">
           <div>
-            <span class="icon is-large has-background-primary-darker has-text-light is-rounded is-96x96">
+            <span class="icon is-large has-text-light is-rounded is-96x96">
               <c-icon icon="graph-pie" />
             </span>
             <br>
@@ -147,7 +145,7 @@
 
         <div class="level-item">
           <div>
-            <span class="icon is-large has-background-primary-darker has-text-light is-rounded is-96x96">
+            <span class="icon is-large has-text-light is-rounded is-96x96">
               <c-icon icon="compass" />
             </span>
             <br>
@@ -169,7 +167,7 @@
     </div>
   </section>
 
-  <section class="section has-background-light">
+  <section class="section">
     <div class="container">
       <div class="columns is-vcentered">
         <!-- Image desktop -->
@@ -213,7 +211,7 @@
     </div>
   </section>
 
-  <section class="section has-background-light">
+  <section class="section">
     <div class="container">
       <div class="columns is-vcentered">
         <!-- Text -->
@@ -248,7 +246,7 @@
     </div>
   </section>
 
-  <section class="section has-background-light">
+  <section class="section">
     <div class="container">
       <div class="columns is-vcentered">
         <!-- Image desktop -->
@@ -355,6 +353,10 @@ export default {
 .is-96x96 {
   height: 96px;
   width: 96px;
+}
+
+.icon.is-96x96 {
+  background-color: #1ABE77;
 }
 
 .is-rounded {

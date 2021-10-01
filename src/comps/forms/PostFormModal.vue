@@ -25,7 +25,7 @@
         </div>
 
         <div class="level-right">
-          <button class="level-item button is-dark"> Publicar </button>
+          <button class="button is-dark"> Publicar </button>
         </div>
       </nav>
     </footer>

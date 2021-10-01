@@ -8,7 +8,7 @@
   -->
   <div class="columns is-centered mx-0">
     <div class="column is-half">
-      <br class="is-hidden-touch">
+      <br>
       <post-form class="box" />
       <post class="box" />
     </div>

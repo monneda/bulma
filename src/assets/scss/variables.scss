@@ -13,13 +13,13 @@ $green-8:           #DEFFF1;
 $green-9:           #F2FFF9;
 
 // Gray
-$grey-1:            #23252E;
-$grey-2:            #50525C;
-$grey-3:            #8A8A8A;
-$grey-4:            #DFDFDF;
-$grey-5:            #E8E8E8;
-$grey-6:            #F5F5F5;
-$grey-7:            #F6F9FC;
+$gray-1:            #23252E;
+$gray-2:            #50525C;
+$gray-3:            #8A8A8A;
+$gray-4:            #DFDFDF;
+$gray-5:            #E8E8E8;
+$gray-6:            #F5F5F5;
+$gray-7:            #F6F9FC;
 
 // Red
 $red-1:             #FFA6A6;
@@ -55,19 +55,12 @@ $magenta-3:         #FFC5F8;
 // Bulma //
 ///////////
 
-$green:             $green-4;
+$light:                 $gray-7;
+$green:                 $green-4;
+$primary:               $green;
 
-$primary-darker:    $green-2;
-$primary-dark:      $green-3;
-$primary:           $green-4;
-$primary-light:     $green-5;
-$primary-lighter:   $green-6;
-
-// Custom colors
-$custom-colors: (
-    "primary-darker":   ($primary-darker),
-    "primary-lighter":   ($primary-lighter),
-);
+// Background
+$body-background-color: $light;
 
 // Radius
 $radius-small:      05px;
