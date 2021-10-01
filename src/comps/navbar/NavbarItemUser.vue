@@ -58,7 +58,6 @@ export default {
       this.$refs.dropdown.classList.toggle('is-active')
     },
     logout () {
-      console.log('logout')
       this.$store.dispatch(LOGOUT)
     }
   }

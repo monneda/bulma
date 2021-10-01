@@ -15,7 +15,6 @@ export default async (to, from, next) => {
 
   try {
     client.token = await auth0.getTokenSilently()
-    console.log(client)
     const user = await client.profile.get()
     store.commit(SET_ERROR, {})
     store.commit(SET_USER, user)

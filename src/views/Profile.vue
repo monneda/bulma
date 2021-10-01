@@ -6,7 +6,7 @@
     <div class="column is-three-quarters">
       <br>
 
-      <profile-banner />
+      <profile-banner :username="username" />
 
       <br>
       <br>
@@ -45,6 +45,13 @@ export default {
     ProfilePortfolios,
     ProfileSuggestions,
     ProfileBanner
+  },
+
+  props: {
+    username: {
+      type: String,
+      required: true
+    }
   }
 }
 </script>

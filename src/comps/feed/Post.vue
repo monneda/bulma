@@ -96,7 +96,6 @@ export default {
 
   methods: {
     newComment (text) {
-      console.log(text)
     }
   }
 }

@@ -4,7 +4,7 @@
     <!-- Image -->
     <div class="column is-one-fifth">
       <figure class="image is-128x128 mx-auto">
-        <img class="is-rounded" src="http://placekitten.com/200/200">
+        <img class="is-rounded" :src="user.picture">
       </figure>
     </div>
 
@@ -14,8 +14,8 @@
         <div class="level-left">
           <div class="level-item">
             <div>
-              <h4 class="title is-size-4"> Roberta Heinrich </h4>
-              <p> @heinrichroberta </p>
+              <h4 class="title is-size-4"> {{ user.name }} </h4>
+              <p> @{{ user.username }} </p>
             </div>
           </div>
         </div>
@@ -54,7 +54,7 @@
           <!-- Followers -->
           <div class="level-item">
             <p>
-              <strong class="has-text-primary"> 10 mil </strong>
+              <strong class="has-text-primary"> {{ user.followersCount }} </strong>
               <br class="is-hidden-desktop">
               seguidores
             </p>
@@ -65,7 +65,7 @@
           <!-- Following -->
           <div class="level-item">
             <p>
-              <strong class="has-text-primary"> 105 </strong>
+              <strong class="has-text-primary"> {{ user.followingCount }} </strong>
               <br class="is-hidden-desktop">
               seguindo
             </p>
@@ -74,13 +74,12 @@
       </div>
 
       <!-- Description -->
-      <p class="is-size-6">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <!--
+        Style added to allow rendering of new lines `\n`. Adapted from:
+          https://stackoverflow.com/a/22896536
+      -->
+      <p class="is-size-6" style="white-space:pre-wrap;">
+        {{ user.description }}
       </p>
     </div>
   </div>
@@ -88,7 +87,24 @@
 </template>
 
 <script>
+import client from '@/commons/client.api'
+
 export default {
-  name: 'ProfileBanner'
+  name: 'ProfileBanner',
+
+  props: {
+    username: {
+      type: String,
+      required: true
+    }
+  },
+
+  data: () => ({
+    user: {}
+  }),
+
+  async created () {
+    this.user = await client.users.byUsername(this.username)
+  }
 }
 </script>

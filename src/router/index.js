@@ -20,15 +20,15 @@ const routes = [
     component: () => import('@/views/Feed')
   },
   {
-    path: '/c/:id',
+    path: '/c/:',
     name: 'Portfolio',
     props: true,
     component: () => import('@/views/Portfolio')
   },
   {
-    path: '/u/:id',
-    name: 'Profile',
     props: true,
+    name: 'Profile',
+    path: '/u/:username',
     component: () => import('@/views/Profile')
   },
   {
