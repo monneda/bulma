@@ -4,7 +4,9 @@
     <div class="level-left">
       <!-- Icon -->
       <div class="level-item">
-        <icon-ticker class="is-large" :ticker="asset.ticker" />
+        <span class="icon is-large">
+          <IconTicker :ticker="asset.ticker" />
+        </span>
       </div>
 
       <!-- Asset name -->
