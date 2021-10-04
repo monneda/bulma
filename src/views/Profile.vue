@@ -2,16 +2,17 @@
 <Navbar class="has-shadow" />
 
 <div class="container">
+  <!-- The class `mx-0` is here to avoid some horizontall scrolling on mobile -->
   <div class="columns is-centered mx-0">
     <div class="column is-three-quarters">
       <br>
 
-      <profile-banner :username="username" />
+      <ProfileBanner :username="username" />
 
       <br>
       <br>
 
-      <profile-portfolios :username="username" class="box" />
+      <ProfilePortfolios :username="username" class="box" />
 
       <br>
 
@@ -19,11 +20,11 @@
 
       <div class="columns">
         <div class="column is-7">
-          <post class="box" />
-          <post class="box" />
+          <FeedItem v-for="i of items" :key="i.id" :item="i" class="box" />
         </div>
+
         <div class="column is-5 is-hidden-touch">
-          <profile-suggestions class="box" />
+          <ProfileSuggestions class="box" />
         </div>
       </div>
     </div>
@@ -32,16 +33,18 @@
 </template>
 
 <script>
-import Post from '@/comps/feed/Post'
+import client from '@/commons/client.api'
+
 import Navbar from '@/comps/navbar/Navbar'
+import FeedItem from '@/comps/feed/FeedItem'
 import ProfileBanner from '@/comps/profile/ProfileBanner'
 import ProfilePortfolios from '@/comps/profile/ProfilePortfolios'
 import ProfileSuggestions from '@/comps/profile/ProfileSuggestions'
 
 export default {
   components: {
-    Post,
     Navbar,
+    FeedItem,
     ProfilePortfolios,
     ProfileSuggestions,
     ProfileBanner
@@ -52,6 +55,14 @@ export default {
       type: String,
       required: true
     }
+  },
+
+  data: () => ({
+    items: []
+  }),
+
+  async created () {
+    this.items = await client.feed.get(5)
   }
 }
 </script>

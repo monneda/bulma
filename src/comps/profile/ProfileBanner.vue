@@ -13,7 +13,7 @@
         <!-- Name -->
         <div class="level-left">
           <div class="level-item">
-            <div>
+            <div class="has-text-centered-mobile">
               <h4 class="title is-size-4"> {{ user.name }} </h4>
               <p> @{{ user.username }} </p>
             </div>
@@ -21,7 +21,7 @@
         </div>
 
         <!-- Button -->
-        <div v-if="isSelf === true" class="level-right">
+        <div v-if="isSelf" class="level-right">
           <div class="level-item">
             <button class="button is-primary">
               <span class="icon-text">
@@ -41,7 +41,7 @@
       <div class="level is-mobile has-text-centered-touch">
         <div class="level-left">
           <!-- Wallets -->
-          <div class="level-item">
+          <div class="level-item px-2">
             <p>
               <strong class="has-text-primary"> 10 </strong>
               <br class="is-hidden-desktop">
@@ -49,10 +49,8 @@
             </p>
           </div>
 
-          <div class="level-item"></div>
-
           <!-- Followers -->
-          <div class="level-item">
+          <div class="level-item px-2">
             <p>
               <strong class="has-text-primary"> {{ user.followersCount }} </strong>
               <br class="is-hidden-desktop">
@@ -60,10 +58,8 @@
             </p>
           </div>
 
-          <div class="level-item"></div>
-
           <!-- Following -->
-          <div class="level-item">
+          <div class="level-item px-2">
             <p>
               <strong class="has-text-primary"> {{ user.followingCount }} </strong>
               <br class="is-hidden-desktop">
@@ -78,7 +74,7 @@
         Style added to allow rendering of new lines `\n`. Adapted from:
           https://stackoverflow.com/a/22896536
       -->
-      <p class="is-size-6" style="white-space:pre-wrap;">
+      <p class="is-size-6" style="white-space: pre-wrap;">
         {{ user.description }}
       </p>
     </div>
