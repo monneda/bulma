@@ -2,7 +2,7 @@
 <article>
   <div class="media">
     <figure class="media-left image is-64x64">
-      <img class="is-rounded" src="http://placekitten.com/64/64">
+      <img class="is-rounded" :src="$store.state.user.profile.picture">
     </figure>
 
     <div class="media-content my-auto">
