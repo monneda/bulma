@@ -3,7 +3,7 @@
   <!-- Image -->
   <figure class="media-left">
     <figure class="image is-48x48">
-      <img class="is-rounded" src="https://placekitten.com/64/64">
+      <img class="is-rounded" :src="$store.state.user.profile.picture">
     </figure>
   </figure>
 
@@ -15,8 +15,7 @@
         v-model="text"
         @keyup.enter.prevent="submit"
         placeholder="Escreva um comentário"
-        class="input has-background-white-ter is-size-6"
-        style="border-radius: 25px;"
+        class="input is-primary has-background-white-ter"
       >
       <span class="icon is-right">
         <font-awesome-icon icon="smile" />
@@ -41,3 +40,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.input {
+  border-radius: 25px;
+}
+</style>
