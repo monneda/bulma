@@ -2,14 +2,11 @@
 <Navbar class="has-shadow" />
 
 <div class="container">
-  <!--
-    The class `mx-0` is here to avoid
-    some horizontall scrolling on mobile
-  -->
+  <!-- The class `mx-0` is here to avoid some horizontall scrolling on mobile -->
   <div class="columns is-centered mx-0">
     <div class="column is-half">
       <br>
-      <post-form class="box" />
+      <PostForm class="box" />
       <FeedItem v-for="i of items" :key="i.id" :item="i" class="box" />
     </div>
   </div>

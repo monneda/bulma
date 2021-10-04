@@ -25,7 +25,7 @@
 
 <script>
 export default {
-  name: 'CommentForm',
+  name: 'ItemCommentForm',
 
   data: () => ({
     text: ''

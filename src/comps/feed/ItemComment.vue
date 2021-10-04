@@ -1,5 +1,5 @@
 <template>
-<article class="media my-0">
+<article class="media">
   <!-- Image -->
   <figure class="media-left image is-48x48">
     <img class="is-rounded" :src="comment.user.picture">
@@ -19,18 +19,8 @@
         </div>
       </div>
 
-     <!--
-        Comment
-
-        Style added to allow rendering of new lines `\n`. Adapted from:
-          https://stackoverflow.com/a/22896536
-
-        Added the style based on the following link:
-          https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Text/Wrapping_Text#breaking_long_words
-      -->
-      <p
-        class="has-text-justified"
-        style="line-height: 125%; overflow-wrap: break-word; white-space:pre-wrap;">
+      <!-- Comment -->
+      <p class="has-text-justified">
         <Linkify :text="comment.text" />
       </p>
     </div>
@@ -73,7 +63,7 @@ import Linkify from '@/comps/utils/Linkify'
 import TimeAgo from '@/comps/utils/TimeAgo'
 
 export default {
-  name: 'Comment',
+  name: 'ItemComment',
 
   components: {
     Linkify,
@@ -96,7 +86,20 @@ export default {
 }
 
 /* Hide border colors */
-article .media {
+.media {
   border: 0px transparent;
+}
+
+/*
+Style added to allow rendering of new lines `\n`. Adapted from:
+  https://stackoverflow.com/a/22896536
+
+Added the style based on the following link:
+  https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Text/Wrapping_Text#breaking_long_words
+*/
+p {
+  line-height: 125%;
+  overflow-wrap: break-word;
+  white-space:pre-wrap;
 }
 </style>
