@@ -1,10 +1,8 @@
 <template>
 <article class="media">
   <!-- Image -->
-  <figure class="media-left">
-    <figure class="image is-48x48">
-      <img class="is-rounded" :src="$store.state.user.profile.picture">
-    </figure>
+  <figure class="media-left image is-48x48">
+    <img class="is-rounded" :src="$store.state.user.profile.picture">
   </figure>
 
   <!-- Input -->
@@ -41,7 +39,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .input {
   border-radius: 25px;
 }
