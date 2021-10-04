@@ -12,7 +12,7 @@
 import AssetTile from '@/comps/portfolio/AssetTile'
 
 export default {
-  name: 'PortfolioTiles',
+  name: 'PortfolioTileList',
 
   components: {
     AssetTile

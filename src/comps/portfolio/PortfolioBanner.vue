@@ -11,7 +11,7 @@
 
       <!-- Name -->
       <div class="level-item">
-        <div class="is-flex is-flex-direction-column">
+        <div class="is-flex is-flex-direction-column has-text-centered-mobile">
           <span>Cartera de</span>
           <strong>Joao</strong>
         </div>

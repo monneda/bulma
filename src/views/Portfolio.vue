@@ -1,6 +1,8 @@
 <template>
 <Navbar class="has-shadow" />
+
 <br>
+
 <div class="columns is-centered mx-0">
   <div class="column is-three-quarters">
     <PortfolioBanner class="box" />
@@ -8,24 +10,18 @@
     <div class="box">
       <div class="tabs is-toggle is-fullwidth">
         <ul>
-          <li class="is-active">
-            <a> Ativos </a>
-          </li>
-          <li>
-            <a> Composição </a>
-          </li>
-          <li>
-            <a> Histórico </a>
-          </li>
+          <li class="is-active"><a> Ativos </a></li>
+          <li><a> Composição </a></li>
+          <li><a> Histórico </a></li>
         </ul>
       </div>
 
-      <portfolio-inputs @mode="e => mode = e" />
+      <PortfolioInputs @mode="e => mode = e" />
 
       <br>
 
-      <portfolio-tiles v-if="mode === 'tiles'" :assets="wallet.assets" />
-      <portfolio-table v-if="mode === 'table'" :assets="wallet.assets" />
+      <PortfolioTileList v-if="mode === 'tiles'" :assets="wallet.assets" />
+      <PortfolioTable v-if="mode === 'table'" :assets="wallet.assets" />
     </div>
   </div>
 </div>
@@ -35,7 +31,7 @@
 import client from '@/commons/client.api'
 
 import Navbar from '@/comps/navbar/Navbar'
-import PortfolioTiles from '@/comps/portfolio/PortfolioTiles'
+import PortfolioTileList from '@/comps/portfolio/PortfolioTileList'
 import PortfolioTable from '@/comps/portfolio/PortfolioTable'
 import PortfolioInputs from '@/comps/portfolio/PortfolioInputs'
 import PortfolioBanner from '@/comps/portfolio/PortfolioBanner'
@@ -45,7 +41,7 @@ export default {
 
   components: {
     Navbar,
-    PortfolioTiles,
+    PortfolioTileList,
     PortfolioTable,
     PortfolioInputs,
     PortfolioBanner
