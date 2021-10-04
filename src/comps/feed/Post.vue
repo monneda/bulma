@@ -5,15 +5,17 @@
     <div class="level-left">
       <div class="level-item is-m">
         <figure class="image is-48x48">
-          <img class="is-rounded" src="http://placekitten.com/64/64">
+          <img class="is-rounded" :src="post.owner.picture">
         </figure>
       </div>
 
       <!-- Info -->
       <div class="level-item">
         <div>
-          <p><strong>bueno</strong></p>
-          <p><small>31m</small></p>
+          <p><strong>  @{{ post.owner.username }} </strong></p>
+          <p><small>
+            <TimeAgo :time="post.timestamp" />
+          </small></p>
         </div>
       </div>
     </div>
@@ -21,24 +23,26 @@
 
   <!-- Post -->
   <div class="is-size-6">
-    <p class="has-text-justified has-text-grey-darker">
-      A Amazon e a Shopee estão na reta final para locar a maior parte do Faria Lima Plaza, transformando o edifício do Largo da Batata num verdadeiro polo do ecommerce brasileiro.
-      <br>
-      <br>
-      A locação é uma boa notícia para o XP Properties ($XPPR11), um fundo imobiliário da XP  que em setembro comprou 40% do edifício e que apanhou muito na pandemia por conta do home office parecer que veio para ficar.
-      <br>
-      <br>
-      Eai, será que vai ficar ou todo mundo ta louco pra voltar pro escritório?
-      <br>
-      <br>
-      Fonte: https://cutt.ly/Pm7a4lU
+    <!--
+      Style added to allow rendering of new lines `\n`. Adapted from:
+        https://stackoverflow.com/a/22896536
+
+      Added the style based on the following link:
+        https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Text/Wrapping_Text#breaking_long_words
+    -->
+    <p
+      class="has-text-justified has-text-grey-darker"
+      style="overflow-wrap: break-word; white-space:pre-wrap;">
+      <Linkify :text="post.data.text" />
     </p>
 
-    <br>
+    <div v-if="post.data.picture">
+      <br>
 
-    <figure class="image">
-      <img style="border-radius: 25px;" src="https://placekitten.com/400/200">
-    </figure>
+      <figure class="image">
+        <img alt="Post image" :src="post.data.picture" style="border-radius: 25px;">
+      </figure>
+    </div>
   </div>
 
   <br>
@@ -51,21 +55,27 @@
           <span class="icon has-text-primary">
             <font-awesome-icon icon="heart" />
           </span>
-          <span>5,8 mil curtidas</span>
+          <span> {{ post.likeCount }} curtida(s) </span>
         </span>
       </div>
     </div>
 
     <div class="level-right is-hidden-touch">
-      <span class="level-item">5 comentários</span>
-      <span class="level-item">11 compartilhamentos</span>
+      <span class="level-item"> {{ post.commentCount }} comentário(s) </span>
+      <!-- TODO -->
+      <!-- <span class="level-item"> 11 compartilhamentos </span> -->
     </div>
   </nav>
 
   <!-- Buttons -->
   <hr class="my-1">
   <div class="level is-mobile my-0">
-    <post-button class="px-0 level-item has-text-primary" icon="heart" label="Curtir" />
+    <post-button
+      class="px-0 level-item"
+      :class="{ 'has-text-primary': post.like }"
+      icon="heart"
+      label="Curtir"
+    />
     <post-button class="px-0 level-item" icon="comment" label="Comentar" />
     <post-button class="px-0 level-item" icon="share" label="Compartilhar" />
     <post-button class="px-0 level-item" icon="paper-plane" label="Enviar" />
@@ -74,14 +84,20 @@
 
   <br>
 
-  <comment-form class="my-0" @submit="newComment" />
-  <comment class="c-is-borderless my-0" />
-  <comment class="c-is-borderless my-0" />
+  <comment-form class="my-0" />
+
+  <br>
+
+  <CommentList :id="post.id" />
 </article>
 </template>
 
 <script>
-import Comment from '@/comps/feed/Comment'
+import client from '@/commons/client.api'
+
+import Linkify from '@/comps/utils/Linkify'
+import TimeAgo from '@/comps/utils/TimeAgo'
+import CommentList from '@/comps/feed/CommentList'
 import PostButton from '@/comps/feed/PostButton'
 import CommentForm from '@/comps/forms/CommentForm'
 
@@ -89,14 +105,22 @@ export default {
   name: 'Post',
 
   components: {
-    Comment,
+    Linkify,
+    TimeAgo,
+    CommentList,
     PostButton,
     CommentForm
   },
 
-  methods: {
-    newComment (text) {
+  props: {
+    post: {
+      type: Object,
+      required: true
     }
+  },
+
+  async created () {
+    this.comments = await client.comments.byPostId(this.post.id)
   }
 }
 </script>

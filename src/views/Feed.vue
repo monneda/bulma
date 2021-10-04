@@ -10,24 +10,34 @@
     <div class="column is-half">
       <br>
       <post-form class="box" />
-      <post class="box" />
+      <FeedItem v-for="i of items" :key="i.id" :item="i" class="box" />
     </div>
   </div>
 </div>
 </template>
 
 <script>
-import Post from '@/comps/feed/Post'
+import client from '@/commons/client.api'
+
 import Navbar from '@/comps/navbar/Navbar'
+import FeedItem from '@/comps/feed/FeedItem'
 import PostForm from '@/comps/forms/PostForm'
 
 export default {
   name: 'Feed',
 
   components: {
-    Post,
     Navbar,
+    FeedItem,
     PostForm
+  },
+
+  data: () => ({
+    items: []
+  }),
+
+  async created () {
+    this.items = await client.feed.get()
   }
 }
 </script>

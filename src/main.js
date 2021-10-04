@@ -10,7 +10,7 @@ import '@/registerServiceWorker'
 // SCSS
 import '@/assets/scss/index.scss'
 
-// Icons
+// Plugins
 import registerIcons from '@/plugins/icons'
 
 const app = createApp(App)
