@@ -5,22 +5,22 @@
       <!-- Image -->
       <div class="level-item">
         <figure class="image is-48x48">
-          <img class="is-rounded" src="http://placekitten.com/128/128">
+          <img class="is-rounded" :src="user.picture">
         </figure>
       </div>
 
       <!-- Name -->
       <div class="level-item">
         <div class="is-flex is-flex-direction-column has-text-centered-mobile">
-          <span>Cartera de</span>
-          <strong>Joao</strong>
+          <span> Cartera de </span>
+          <strong> @{{ user.username }} </strong>
         </div>
       </div>
     </div>
 
     <div class="level-right">
       <!-- Edit -->
-      <div class="level-item">
+      <div v-if="isSelf" class="level-item">
         <button class="button is-primary">
           <span class="icon-text">
             <span class="icon">
@@ -56,7 +56,7 @@
 
       <!-- Wallet name -->
       <div class="level-item">
-        <h4 class="title is-4"> À prova de balas </h4>
+        <h4 class="title is-4"> {{ wallet.name }} </h4>
       </div>
     </div>
 
@@ -64,11 +64,11 @@
       <div class="level-item">
         <!-- Input -->
         <div class="select is-primary">
-          <select v-model="selected">
-            <option> 7 dias  </option>
-            <option> 1 mês   </option>
-            <option> 3 meses </option>
-            <option> YTD     </option>
+          <select v-model="selected" @change="change">
+            <option value="7">7 dias</option>
+            <option value="30">1 mês</option>
+            <option value="90">3 meses</option>
+            <option value="360">1 ano</option>
           </select>
         </div>
       </div>
@@ -81,7 +81,7 @@
           </span>
           <span class="my-auto">
             <p class="has-text-weight-bold"> Variação {{ selected }}: </p>
-            <p> 10% </p>
+            <p> {{ gain.toFixed(2) }}% </p>
           </span>
         </span>
       </div>
@@ -91,26 +91,56 @@
   <hr>
 
   <!-- Description -->
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  </p>
+  <p class="description"> {{ wallet.description }} </p>
 </article>
 </template>
 
 <script>
-const OPTIONS = ['7 dias', '1 mês', '3 meses', 'YTD']
-
 export default {
   name: 'PortfolioBanner',
 
+  props: {
+    wallet: {
+      type: Object,
+      required: true
+    },
+    user: {
+      type: Object,
+      required: true
+    }
+  },
+
   data: () => ({
-    options: OPTIONS,
-    selected: OPTIONS[0]
-  })
+    selected: '7 dias'
+  }),
+
+  computed: {
+    isSelf () {
+      return this.user.username === this.$store.state.user.profile.username
+    },
+    gain () {
+      return this.wallet.gain || 0
+    }
+  },
+
+  methods: {
+    change (e) {
+      console.log(e.target.innerText)
+    }
+  }
 }
 </script>
+
+<style scoped>
+/*
+  Style added to allow rendering of new lines `\n`. Adapted from:
+    https://stackoverflow.com/a/22896536
+
+  Added the style based on the following link:
+    https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Text/Wrapping_Text#breaking_long_words
+ */
+.description {
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+}
+</style>

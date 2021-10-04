@@ -5,17 +5,10 @@
 
 <div class="columns is-centered mx-0">
   <div class="column is-three-quarters">
-    <PortfolioBanner class="box" />
+
+    <PortfolioBanner :wallet="wallet" :user="user" @period="period" class="box" />
 
     <div class="box">
-      <div class="tabs is-toggle is-fullwidth">
-        <ul>
-          <li class="is-active"><a> Ativos </a></li>
-          <li><a> Composição </a></li>
-          <li><a> Histórico </a></li>
-        </ul>
-      </div>
-
       <PortfolioInputs @mode="e => mode = e" />
 
       <br>
@@ -55,25 +48,20 @@ export default {
   },
 
   data: () => ({
-    days: 7,
     mode: 'tiles',
-    wallet: {}
+    wallet: {},
+    user: {}
   }),
 
   methods: {
-    async fetchWallet () {
-      this.wallet = await client.wallets.byId(this.id, this.days)
-    }
-  },
-
-  watch: {
-    days () {
-      this.fetchWallet()
+    async period (days) {
+      this.wallet = await client.wallets.byId(this.id, days)
     }
   },
 
   async created () {
-    this.fetchWallet()
+    this.wallet = await client.wallets.byId(this.id, 7)
+    this.user = await client.users.byUsername(this.wallet.username)
   }
 }
 </script>
