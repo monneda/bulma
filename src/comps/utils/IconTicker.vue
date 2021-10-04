@@ -1,10 +1,8 @@
 <template>
-<span class="icon">
   <figure v-if="found" class="image">
-    <img :src="url" @error="found = false">
+    <img :src="url" @error="found = false" style="border-radius: 5px">
   </figure>
-  <font-awesome-icon v-else icon="wallet" size="3x" />
-</span>
+  <font-awesome-icon v-else icon="wallet" :size="size" />
 </template>
 
 <script>
@@ -21,6 +19,10 @@ export default {
     radius: {
       type: String,
       default: '5px'
+    },
+    size: {
+      type: String,
+      default: '3x'
     }
   },
 
@@ -35,9 +37,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-img {
-  border-radius: v-bind(radius);
-}
-</style>

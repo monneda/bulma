@@ -3,7 +3,7 @@
   <ItemInfo :item="item" />
 
   <Post v-if="item.type === 'TEXT_POST_CREATED'" :post="item" />
-  <span v-else> {{ item.type }} </span>
+  <Edit v-if="item.type === 'WALLET_ASSETS_EDIT'" :edit="item" />
 
   <br>
 
@@ -25,6 +25,7 @@
 
 <script>
 import Post from './Post'
+import Edit from './Edit'
 import ItemButtonList from './ItemButtonList'
 import ItemCommentList from './ItemCommentList'
 import ItemCommentForm from './ItemCommentForm'
@@ -36,6 +37,7 @@ export default {
 
   components: {
     Post,
+    Edit,
     ItemButtonList,
     ItemCommentList,
     ItemCommentForm,
