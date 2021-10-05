@@ -76,5 +76,6 @@ $title-family:      'Tajawal';
 $navbar-item-hover-color:   $primary;
 $navbar-dropdown-arrow:     $primary;
 $navbar-burger-color:       $primary;
+$navbar-dropdown-z:         50;
 
 @import '~bulma/sass/utilities/_all';
