@@ -6,7 +6,7 @@
 </template>
 
 <script>
-const BASE = 'https://raw.githubusercontent.com/monneda/B3-Assets-Images/main/imgs'
+const BASE = 'https://cdn.jsdelivr.net/gh/monneda/B3-Assets-Images/imgs'
 
 export default {
   name: 'IconTicker',
