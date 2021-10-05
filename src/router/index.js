@@ -20,6 +20,11 @@ const routes = [
     component: () => import('@/views/Feed')
   },
   {
+    path: '/wallets',
+    name: 'Wallets',
+    component: () => import('@/views/Wallets')
+  },
+  {
     props: true,
     path: '/c/:id',
     name: 'Portfolio',
