@@ -25,6 +25,11 @@ const routes = [
     component: () => import('@/views/Wallets')
   },
   {
+    path: '/notifications',
+    name: 'Notifications',
+    component: () => import('@/views/Notifications')
+  },
+  {
     props: true,
     path: '/c/:id',
     name: 'Portfolio',
