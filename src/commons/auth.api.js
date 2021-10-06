@@ -7,7 +7,7 @@ const clientId = process.env.NODE_ENV === 'production'
   : 'LMFDlOJhgdnFEvXK45rcd3M489fXnYFU' // dev
 
 const redirectUri = process.env.NODE_ENV === 'production'
-  ? 'https://monneda.github.io/bulma/callback'
+  ? 'https://monneda.github.io/bulma/#/callback'
   : `${window.location.origin}/callback`
 
 const auth0 = new Auth0Client({
