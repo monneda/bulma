@@ -8,4 +8,8 @@ export default class extends Base {
   byId (id, days = 30) {
     return this.request('GET', `wallets/${id}`, { params: { days } })
   }
+
+  fetchHistory (id) {
+    return this.request('GET', `wallets/${id}/history`)
+  }
 }

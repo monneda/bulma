@@ -43,7 +43,7 @@
       <div class="level-item px-2">
         <div class="is-flex is-flex-direction-column">
           <strong> Variação </strong>
-          <span> {{ asset.gain }}% </span>
+          <span> {{ asset.gain.toFixed(2) }}% </span>
         </div>
       </div>
     </div>

@@ -9,12 +9,16 @@
     <PortfolioBanner :wallet="wallet" :user="user" @period="period" class="box" />
 
     <div class="box">
-      <PortfolioInputs @mode="e => mode = e" />
+      <!-- Tabs -->
+      <div class="tabs is-fullwidth">
+        <ul>
+          <li><a @click="tab = 'PortfolioAssets'">Ativos</a></li>
+          <li><a @click="tab = 'PortfolioComposition'">Composição</a></li>
+          <li><a @click="tab = 'PortfolioHistory'">Histórico</a></li>
+        </ul>
+      </div>
 
-      <br>
-
-      <PortfolioTileList v-if="mode === 'tiles'" :assets="wallet.assets" />
-      <PortfolioTable v-if="mode === 'table'" :assets="wallet.assets" />
+      <component :is="tab" :wallet="wallet" />
     </div>
   </div>
 </div>
@@ -24,20 +28,20 @@
 import client from '@/commons/client.api'
 
 import Navbar from '@/comps/navbar/Navbar'
-import PortfolioTileList from '@/comps/portfolio/PortfolioTileList'
-import PortfolioTable from '@/comps/portfolio/PortfolioTable'
-import PortfolioInputs from '@/comps/portfolio/PortfolioInputs'
 import PortfolioBanner from '@/comps/portfolio/PortfolioBanner'
+import PortfolioAssets from '@/comps/portfolio/PortfolioAssets'
+import PortfolioHistory from '@/comps/portfolio/PortfolioHistory'
+import PortfolioComposition from '@/comps/portfolio/PortfolioComposition'
 
 export default {
   name: 'Portfolio',
 
   components: {
     Navbar,
-    PortfolioTileList,
-    PortfolioTable,
-    PortfolioInputs,
-    PortfolioBanner
+    PortfolioBanner,
+    PortfolioAssets,
+    PortfolioHistory,
+    PortfolioComposition
   },
 
   props: {
@@ -48,9 +52,9 @@ export default {
   },
 
   data: () => ({
-    mode: 'tiles',
+    user: {},
     wallet: {},
-    user: {}
+    tab: 'PortfolioAssets'
   }),
 
   methods: {
