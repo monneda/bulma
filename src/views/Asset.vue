@@ -6,40 +6,16 @@
 <div class="container">
   <div class="columns is-centered mx-0">
     <div class="column is-three-fifths">
-      <!-- Graph -->
       <article class="box">
-        <!-- Banner -->
-        <div class="level is-mobile">
-          <div class="level-left">
-            <div class="level-item">
-              <span class="icon is-large">
-                <IconTicker :ticker="ticker" />
-              </span>
-            </div>
-            <div class="level-item">
-              <span class="is-flex">
-                {{ asset.name }}
-                <br>
-                {{ asset.price }}
-              </span>
-            </div>
-          </div>
-          <div class="level-right"></div>
-        </div>
-
-        <div class="tabs is-fullwidth">
-          <ul>
-            <li><a @click="fetchData(7)">1 semana</a></li>
-            <li><a @click="fetchData(30)">1 mês</a></li>
-            <li><a @click="fetchData(90)">3 meses</a></li>
-            <li><a @click="fetchData(360)">1 ano</a></li>
-          </ul>
-        </div>
-
+        <AssetBanner v-if="asset" :asset="asset" />
+        <br>
+        <AssetTabs class="is-fullwidth is-toggle" @update="fetchData($event)" />
         <AssetHistoryChart :labels="labels" :data="data" />
       </article>
     </div>
-    <div class="column is-two-fifths">Right</div>
+
+    <!-- TODO -->
+    <!-- <div class="column is-two-fifths">Right</div> -->
   </div>
 </div>
 </template>
@@ -48,8 +24,9 @@
 import client from '@/commons/client.api'
 
 import Navbar from '@/comps/navbar/Navbar'
-import IconTicker from '@/comps/utils/IconTicker'
 
+import AssetTabs from '@/comps/asset/AssetTabs'
+import AssetBanner from '@/comps/asset/AssetBanner'
 import AssetHistoryChart from '@/comps/asset/AssetHistoryChart'
 
 export default {
@@ -57,7 +34,8 @@ export default {
 
   components: {
     Navbar,
-    IconTicker,
+    AssetTabs,
+    AssetBanner,
     AssetHistoryChart
   },
 
@@ -69,11 +47,9 @@ export default {
   },
 
   data: () => ({
-    asset: {},
     period: 7,
-    history: {
-      prices: []
-    }
+    asset: null,
+    history: { prices: [] }
   }),
 
   computed: {

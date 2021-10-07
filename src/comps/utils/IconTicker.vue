@@ -14,6 +14,7 @@ export default {
   props: {
     ticker: {
       type: String,
+      default: '',
       required: true
     },
     radius: {
