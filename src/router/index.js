@@ -56,6 +56,12 @@ const routes = [
     component: () => import('@/views/Follows')
   },
   {
+    props: true,
+    name: 'Asset',
+    path: '/a/:ticker',
+    component: () => import('@/views/Asset')
+  },
+  {
     path: '/about',
     name: 'About',
     component: () => import('@/views/About')
