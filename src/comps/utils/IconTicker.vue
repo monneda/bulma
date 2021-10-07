@@ -32,7 +32,8 @@ export default {
 
   computed: {
     url () {
-      return `${BASE}/${this.ticker}.png`
+      const ticker = this.ticker.toUpperCase()
+      return `${BASE}/${ticker}.png`
     }
   }
 }
