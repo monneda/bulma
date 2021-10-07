@@ -13,7 +13,7 @@
 
       <!-- Search -->
       <div class="navbar-item">
-        <navbar-search />
+        <NavbarSearch />
       </div>
 
       <!-- Burguer -->

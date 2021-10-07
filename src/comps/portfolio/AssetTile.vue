@@ -24,7 +24,7 @@
   <div class="level is-mobile">
     <div class="level-left">
       <!-- Weight -->
-      <div class="level-item px-2">
+      <div class="level-item">
         <div class="is-flex is-flex-direction-column">
           <strong> Peso </strong>
           <span> {{ asset.weight.toFixed(2) }}% </span>
@@ -32,7 +32,7 @@
       </div>
 
       <!-- Price -->
-      <div class="level-item px-2">
+      <div class="level-item">
         <div class="is-flex is-flex-direction-column">
           <strong> Preço </strong>
           <span> R$ {{ asset.price.toFixed(2) }} </span>
@@ -40,7 +40,7 @@
       </div>
 
       <!-- Performance -->
-      <div class="level-item px-2">
+      <div class="level-item">
         <div class="is-flex is-flex-direction-column">
           <strong> Variação </strong>
           <span> {{ asset.gain.toFixed(2) }}% </span>

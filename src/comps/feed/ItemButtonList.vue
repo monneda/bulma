@@ -10,16 +10,6 @@
     </span>
   </button>
 
-  <!-- Comment -->
-  <button class="level-item button is-white is-transparent px-0" @click="$emit('comment')">
-    <span class="icon-text">
-      <span class="icon is-hidden-touch">
-        <font-awesome-icon icon="comment" size="lg" />
-      </span>
-      <span class="has-text-dark"> Comentar </span>
-    </span>
-  </button>
-
   <!-- Share -->
   <button class="level-item button is-white is-transparent px-0" @click="$emit('share')">
     <span class="icon-text">
