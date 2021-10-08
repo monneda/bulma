@@ -1,6 +1,6 @@
 <template>
 <div class="column is-three-fifths">
-  <article v-bind="$attrs">
+  <article class="box">
     <h4 class="title is-4 my-0"> Sobre sua Cartera </h4>
 
     <hr class="my-2">
@@ -36,7 +36,6 @@
 
 <script>
 export default {
-  name: 'WalletsNewStep1',
-  inheritAttrs: false
+  name: 'WalletsNewAbout'
 }
 </script>
