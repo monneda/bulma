@@ -1,8 +1,12 @@
 <template>
 <Navbar class="has-shadow" />
+
+<!-- Navigation -->
 <WalletsNewNavigation
   class="has-background-white p-2"
+  v-if="step !== 3"
   v-model="step"
+  @finish="create"
 />
 
 <br>
@@ -10,17 +14,22 @@
 <div class="container">
   <div class="columns is-centered mx-0">
     <!-- Step 1 (about) -->
-    <WalletsNewStep1
-      class="box"
+    <WalletsNewAbout
+      v-if="step === 1"
       v-model:name="name"
       v-model:description="description"
-      v-if="step === 1"
     />
 
     <!-- Step 2 (assets) -->
-    <WalletsNewStep2
-      v-model="assets"
+    <WalletsNewAssets
       v-if="step === 2"
+      v-model:assets="assets"
+    />
+
+    <!-- Step 3 (completed) -->
+    <WalletsNewCompleted
+      v-if="step === 3 && wallet"
+      :wallet="wallet"
     />
   </div>
 </div>
@@ -29,8 +38,9 @@
 <script>
 import Navbar from '@/comps/navbar/Navbar'
 
-import WalletsNewStep1 from '@/comps/walletsnew/WalletsNewStep1'
-import WalletsNewStep2 from '@/comps/walletsnew/WalletsNewStep2'
+import WalletsNewAbout from '@/comps/walletsnew/WalletsNewAbout'
+import WalletsNewAssets from '@/comps/walletsnew/WalletsNewAssets'
+import WalletsNewCompleted from '@/comps/walletsnew/WalletsNewCompleted'
 import WalletsNewNavigation from '@/comps/walletsnew/WalletsNewNavigation'
 
 export default {
@@ -38,8 +48,9 @@ export default {
 
   components: {
     Navbar,
-    WalletsNewStep1,
-    WalletsNewStep2,
+    WalletsNewAbout,
+    WalletsNewAssets,
+    WalletsNewCompleted,
     WalletsNewNavigation
   },
 
@@ -47,7 +58,15 @@ export default {
     step: 1,
     name: '',
     description: '',
-    assets: []
-  })
+    assets: [],
+    wallet: null
+  }),
+
+  methods: {
+    create () {
+      // TODO
+      this.wallet = { name: this.name }
+    }
+  }
 }
 </script>

@@ -1,9 +1,9 @@
 <template>
-<button class="button">
+<button class="button" :class="{ 'is-loading': loading }">
   <span class="icon-text">
     <!-- Left -->
     <span v-if="left && icon" class="icon">
-      <font-awesome-icon v-if="icon" :icon="icon" />
+      <font-awesome-icon :icon="icon" />
     </span>
 
     <!-- Center -->
@@ -13,7 +13,7 @@
 
     <!-- Right -->
     <span v-if="right && icon" class="icon">
-      <font-awesome-icon v-if="icon" :icon="icon" />
+      <font-awesome-icon :icon="icon" />
     </span>
   </span>
 </button>
@@ -26,7 +26,8 @@ export default {
   props: {
     icon: { type: String, default: '' },
     left: { type: Boolean, default: false },
-    right: { type: Boolean, default: false }
+    right: { type: Boolean, default: false },
+    loading: { type: Boolean, default: false }
   }
 }
 </script>

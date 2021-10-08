@@ -12,6 +12,7 @@ import '@/assets/scss/index.scss'
 
 // Plugins
 import registerIcons from '@/plugins/icons'
+import registerUi from '@/plugins/ui'
 
 const app = createApp(App)
 window.app = app
@@ -19,7 +20,7 @@ window.app = app
 app.use(store)
 app.use(router)
 
-// Register plugins
 registerIcons(app)
+registerUi(app)
 
 app.mount('#app')
