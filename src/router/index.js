@@ -30,6 +30,12 @@ const routes = [
     component: () => import('@/views/WalletsNew')
   },
   {
+    props: true,
+    path: '/wallets/:id/edit',
+    name: 'WalletsEdit',
+    component: () => import('@/views/WalletsEdit')
+  },
+  {
     path: '/notifications',
     name: 'Notifications',
     component: () => import('@/views/Notifications')
