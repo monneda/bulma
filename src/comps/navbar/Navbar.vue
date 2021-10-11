@@ -1,13 +1,12 @@
 <template>
-<nav class="navbar">
+<nav class="navbar navbar-size navbar-size-touch">
   <div class="container">
     <!-- Brand -->
     <div class="navbar-brand">
       <!-- Logo -->
-      <router-link class="navbar-item" to="/feed">
+      <router-link class="navbar-item is-hidden-touch" to="/feed">
         <figure class="image">
-          <img class="is-radiusless is-hidden-touch" src="@/assets/imgs/logo-horizontal.png">
-          <img class="is-radiusless is-hidden-desktop" src="@/assets/imgs/logo.png">
+          <img class="is-radiusless" src="@/assets/imgs/logo-horizontal.png" style="width: 125px">
         </figure>
       </router-link>
 
@@ -79,3 +78,14 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.navbar-size {
+  height: 75px;
+}
+@media screen and (max-width: 1023px) {
+  .navbar-size-touch {
+    height: 60px;
+  }
+}
+</style>

@@ -50,22 +50,22 @@
           </div>
 
           <!-- Followers -->
-          <div class="level-item px-2">
+          <router-link :to="'/u/'+ this.user.username +'/followers'" class="level-item px-2">
             <p>
               <strong class="has-text-primary"> {{ user.followersCount }} </strong>
               <br class="is-hidden-desktop">
               seguidores
             </p>
-          </div>
+          </router-link>
 
           <!-- Following -->
-          <div class="level-item px-2">
+          <router-link :to="'/u/'+ this.user.username +'/following'" class="level-item px-2">
             <p>
               <strong class="has-text-primary"> {{ user.followingCount }} </strong>
               <br class="is-hidden-desktop">
               seguindo
             </p>
-          </div>
+          </router-link>
         </div>
       </div>
 
