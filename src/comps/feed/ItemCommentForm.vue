@@ -7,7 +7,7 @@
 
   <!-- Input -->
   <div class="media-content my-auto">
-    <p class="control has-icons-right">
+    <div class="control has-icons-right">
       <input
         type="text"
         v-model="text"
@@ -18,7 +18,7 @@
       <span class="icon is-right">
         <font-awesome-icon icon="smile" />
       </span>
-    </p>
+    </div>
   </div>
 </article>
 </template>
@@ -34,6 +34,7 @@ export default {
   methods: {
     post () {
       this.$emit('post', this.text)
+      this.text = ''
     }
   }
 }

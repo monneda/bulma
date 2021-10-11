@@ -7,7 +7,7 @@
     <div class="column is-three-fifths">
       <br>
       <PostForm class="box" />
-      <FeedItem class="box" v-for="i of items" :key="i.id" :item="i" />
+      <FeedItem class="box" v-for="i of events" :key="i.id" :item="i" />
     </div>
     <div class="column is-two-fifths is-hidden-touch">
       <br>
@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import { FEED_FETCH } from '@/store/type.actions'
+import { FEED_FETCH_EVENTS } from '@/store/type.actions'
 
 import Navbar from '@/comps/navbar/Navbar'
 import FeedItem from '@/comps/feed/FeedItem'
@@ -36,15 +36,13 @@ export default {
   },
 
   computed: {
-    items () {
-      return Object.values(this.$store.state.feed.items)
-        .sort((a, b) => a.timestamp.localeCompare(b.timestamp))
-        .reverse()
+    events () {
+      return this.$store.getters.events
     }
   },
 
   created () {
-    this.$store.dispatch(FEED_FETCH)
+    this.$store.dispatch(FEED_FETCH_EVENTS)
   }
 }
 </script>
