@@ -15,10 +15,27 @@ const mutations = {
 
   [MUTATIONS.DELETE_EVENT] (state, item) {
     delete state.events[item.id]
+
+    for (const i of Object.values(state.comments)) {
+      if (i.eventId === i.id) {
+        delete state.comments[i.id]
+      }
+    }
   },
 
   [MUTATIONS.REPLACE_COMMENT] (state, comment) {
     state.comments[comment.id] = comment
+  },
+
+  [MUTATIONS.DELETE_COMMENT] (state, comment) {
+    delete state.comments[comment.id]
+
+    for (const i of Object.values(state.events)) {
+      if (i.id === comment.eventId) {
+        i.commentCount--
+        state.events[i.id] = i
+      }
+    }
   }
 }
 
@@ -74,6 +91,15 @@ const actions = {
     const item = Object.values(ctx.state.events).find(i => i.id === eventId)
     item.commentCount++
     ctx.commit(MUTATIONS.REPLACE_EVENT, item)
+  },
+
+  async [ACTIONS.FEED_COMMENT_DELETE] (ctx, item) {
+    await client.comments.deleteComment(item.eventId, item.id)
+    ctx.commit(MUTATIONS.DELETE_COMMENT, item)
+
+    Object.values(ctx.state.events)
+      .filter(i => item.eventId === i.id)
+      .forEach(i => ctx.commit(MUTATIONS.DELETE_COMMENT, i))
   },
 
   async [ACTIONS.FEED_FETCH_COMMENTS] (ctx, itemId) {

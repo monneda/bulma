@@ -6,4 +6,5 @@ export const SET_ERROR = 'setError'
 // Feed module
 export const DELETE_EVENT = 'deleteEvent'
 export const REPLACE_EVENT = 'replaceEvent'
+export const DELETE_COMMENT = 'deleteComment'
 export const REPLACE_COMMENT = 'replaceComment'

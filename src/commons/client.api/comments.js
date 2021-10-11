@@ -16,4 +16,8 @@ export default class extends Base {
     }
     return this.request('POST', `events/${itemId}/comments`, options)
   }
+
+  deleteComment (itemId, commentId) {
+    return this.request('DELETE', `events/${itemId}/comments/${commentId}`, {}, false)
+  }
 }

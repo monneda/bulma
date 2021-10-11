@@ -13,9 +13,28 @@
           <strong class="level-item"> @{{ comment.user.username }} </strong>
         </div>
         <div class="level-right">
-          <small class="level-item has-text-grey">
-            <TimeAgo :time="comment.createdAt" />
-          </small>
+          <div class="level-item">
+            <small class="has-text-grey">
+              <TimeAgo :time="comment.createdAt" />
+            </small>
+          </div>
+
+          <div class="level-item" v-if="isSelf">
+            <div class="dropdown is-right'" :class="{ 'is-active': active }">
+              <div class="dropdown-trigger">
+                <button class="button is-light is-small" @click="active = !active">
+                  <span class="icon">
+                    <font-awesome-icon :icon="['fa', 'ellipsis-v']" />
+                  </span>
+                </button>
+              </div>
+              <div class="dropdown-menu">
+                <div class="dropdown-content">
+                  <a class="dropdown-item" @click="remove"> Deletar </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -59,6 +78,8 @@
 </template>
 
 <script>
+import { FEED_COMMENT_DELETE } from '@/store/type.actions'
+
 import Linkify from '@/comps/utils/Linkify'
 import TimeAgo from '@/comps/utils/TimeAgo'
 
@@ -74,6 +95,26 @@ export default {
     comment: {
       type: Object,
       required: true
+    }
+  },
+
+  data: () => ({
+    active: false
+  }),
+
+  computed: {
+    isSelf () {
+      console.log('nice')
+      console.log('nice')
+      console.log('nice')
+      return this.$store.state.user.profile.username === this.comment.user.username
+    }
+  },
+
+  methods: {
+    remove () {
+      this.$store.dispatch(FEED_COMMENT_DELETE, this.comment)
+      this.active = false
     }
   }
 }
