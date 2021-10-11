@@ -18,14 +18,11 @@
             </button>
 
             <!-- User picture -->
-            <IconUser :src="user.picture" class="mx-4"/>
+            <IconUser v-if="username" :src="user.picture" class="mx-4"/>
 
             <!-- Text -->
             <span class="is-size-5">
-              {{ $route.meta.followers === true
-                    ? 'Seguidores(as) de'
-                    : 'Seguidos(as) por'
-              }}
+              {{ this.title }}
               <span class="has-text-weight-bold"> {{ user.name }} </span>
             </span>
           </div>
@@ -89,20 +86,32 @@ export default {
   props: {
     username: {
       type: String,
-      required: true
+      required: false
     }
   },
 
   data: () => ({
     user: {},
-    followers: [],
+    users: [],
     search: ''
   }),
 
   computed: {
     searched () {
       const re = new RegExp(this.search)
-      return this.followers.filter(i => i.name.match(re) || i.username.match(re))
+      return this.users.filter(i => i.name.match(re) || i.username.match(re))
+    },
+    title () {
+      switch (this.$route.meta.page) {
+        case 'followers':
+          return 'Seguidores(as) de'
+        case 'following':
+          return 'Seguidos(as) por'
+        case 'suggestions':
+          return 'Sugestão de investidores'
+        default:
+          return ''
+      }
     }
   },
 
@@ -119,9 +128,19 @@ export default {
 
   async created () {
     client.users.byUsername(this.username).then(u => { this.user = u })
-    this.$route.meta.followers === true
-      ? client.users.fetchFollowers(this.username).then(f => { this.followers = f })
-      : client.users.fetchFollowing(this.username).then(f => { this.followers = f })
+    switch (this.$route.meta.page) {
+      case 'followers':
+        client.users.fetchFollowers(this.username).then(f => { this.users = f })
+        break
+      case 'following':
+        client.users.fetchFollowing(this.username).then(f => { this.users = f })
+        break
+      case 'suggestions':
+        client.profile.getSuggestedFriends(50).then(f => { this.users = f })
+        break
+      default:
+        break
+    }
   }
 }
 </script>

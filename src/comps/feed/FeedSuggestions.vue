@@ -20,7 +20,7 @@
         <span class="level-item has-text-weight-bold is-subtitle-size has-text-gray-2">Sugestão de investidores</span>
       </div>
       <div class="level-right">
-        <a class="level-item is-subtitle-size has-text-green-2 has-text-weight-bold">Ver todas</a>
+        <router-link to="/suggestions" class="level-item is-subtitle-size has-text-green-2 has-text-weight-bold">Ver todas</router-link>
       </div>
     </div>
   </div>

@@ -56,14 +56,21 @@ const routes = [
     props: true,
     name: 'Following',
     path: '/u/:username/following',
-    meta: { followers: false },
+    meta: { page: 'following' },
     component: () => import('@/views/Follows')
   },
   {
     props: true,
     name: 'Followers',
     path: '/u/:username/followers',
-    meta: { followers: true },
+    meta: { page: 'followers' },
+    component: () => import('@/views/Follows')
+  },
+  {
+    props: true,
+    name: 'Suggestions',
+    path: '/suggestions',
+    meta: { page: 'suggestions' },
     component: () => import('@/views/Follows')
   },
   {
