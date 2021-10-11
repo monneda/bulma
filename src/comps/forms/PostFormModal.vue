@@ -1,17 +1,22 @@
 <template>
 <div class="modal" :class="{ 'is-active': active }">
-  <div class="modal-background" @click="close"></div>
+  <div class="modal-background" @click="$emit('close')"></div>
   <div class="modal-card">
 
     <!-- Title -->
     <header class="modal-card-head has-background-white">
       <p class="modal-card-title"> Criar publicação </p>
-      <button class="delete is-large" @click="close"></button>
+      <button class="delete is-large" @click="$emit('close')"></button>
     </header>
 
     <!-- Form -->
     <section class="modal-card-body is-clipped">
-      <textarea class="is-size-5" placeholder="Como estão seus investimentos hoje?" rows="10" />
+      <textarea
+        class="is-size-5"
+        placeholder="Como estão seus investimentos hoje?"
+        rows="10"
+        v-model="text"
+      />
     </section>
 
     <!-- Buttons -->
@@ -21,7 +26,7 @@
         <post-form-modal-button icon="video" label="Vídeo" />
         <post-form-modal-button icon="poll" label="Enquete" />
         <post-form-modal-button icon="file" label="Documento" />
-        <button class="button is-dark"> Publicar </button>
+        <button class="button is-dark" @click="post"> Publicar </button>
       </nav>
     </footer>
   </div>
@@ -45,9 +50,14 @@ export default {
     }
   },
 
+  data: () => ({
+    text: ''
+  }),
+
   methods: {
-    close () {
-      this.$emit('close', this)
+    post () {
+      this.$emit('post', { text: this.text })
+      this.text = ''
     }
   }
 }

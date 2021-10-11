@@ -6,6 +6,15 @@ export default class extends Base {
     return this.request('GET', 'feed', { params })
   }
 
+  createEvent (item) {
+    const options = {
+      body: JSON.stringify(item),
+      headers: { 'Content-Type': 'application/json' },
+      params: { type: 'text' }
+    }
+    return this.request('POST', 'posts', options)
+  }
+
   deleteEvent (id) {
     return this.request('DELETE', `events/${id}`, {}, false)
   }

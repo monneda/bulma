@@ -6,7 +6,7 @@
     </figure>
 
     <div class="media-content my-auto">
-      <span @click="toggle">
+      <span @click="modal = true">
         <input
           readonly
           type="text"
@@ -24,7 +24,11 @@
   For some reason, placing the modal here instead of the end of the div makes
   so that it won't occupy any space. Moving it to the end add some blank space
   -->
-  <post-form-modal :active="modal" @close="close" />
+  <post-form-modal
+    :active="modal"
+    @close="modal = false"
+    @post="post"
+  />
 
   <div class="level has-text-grey is-hidden-touch">
     <post-form-button class="level-item" icon="image" label="Foto" />
@@ -39,6 +43,8 @@
 </template>
 
 <script>
+import { FEED_EVENT_CREATE } from '@/store/type.actions'
+
 import PostFormModal from '@/comps/forms/PostFormModal'
 import PostFormButton from '@/comps/forms/PostFormButton'
 
@@ -55,10 +61,8 @@ export default {
   }),
 
   methods: {
-    toggle () {
-      this.modal = !this.modal
-    },
-    close () {
+    async post (item) {
+      await this.$store.dispatch(FEED_EVENT_CREATE, item)
       this.modal = false
     }
   }

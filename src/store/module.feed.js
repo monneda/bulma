@@ -62,6 +62,11 @@ const actions = {
     ctx.commit(MUTATIONS.DELETE_EVENT, item)
   },
 
+  async [ACTIONS.FEED_EVENT_CREATE] (ctx, item) {
+    const event = await client.feed.createEvent(item)
+    ctx.commit(MUTATIONS.REPLACE_EVENT, event)
+  },
+
   async [ACTIONS.FEED_COMMENT] (ctx, { eventId, text }) {
     const comment = await client.comments.postComment(eventId, text)
     ctx.commit(MUTATIONS.REPLACE_COMMENT, comment)
