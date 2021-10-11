@@ -20,7 +20,7 @@
           </div>
 
           <div class="level-item" v-if="isSelf">
-            <div class="dropdown is-right'" :class="{ 'is-active': active }">
+            <div class="dropdown is-right" :class="{ 'is-active': active }">
               <div class="dropdown-trigger">
                 <button class="button is-light is-small" @click="active = !active">
                   <span class="icon">
