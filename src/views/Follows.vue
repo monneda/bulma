@@ -5,7 +5,7 @@
 
 <div class="container">
   <div class="columns is-centered mx-0">
-    <div class="column is-two-thirds">
+    <div class="column is-four-fifths">
       <div class="box">
         <!-- Header -->
         <header class="is-flex is-align-items-center is-justify-content-space-between">
@@ -44,7 +44,7 @@
         <br class="is-hidden-desktop">
 
         <!-- Search (mobile) -->
-        <div class="field is-hidden-desktop">
+        <div class="field is-hidden-desktop pb-2">
           <p class="control has-icons-left">
             <input v-model="search" class="input" type="text" placeholder="Pesquisar...">
             <span class="icon is-left has-text-primary">
@@ -56,10 +56,12 @@
         <hr class="is-hidden-touch">
 
         <!-- Followers -->
-        <div class="columns is-flex-wrap-wrap">
-          <div v-for="(user, i) of searched" :key="i" class="column is-half">
-            <FollowTile :user="user" />
-          </div>
+        <div class="columns is-flex-wrap-wrap is-justify-content-space-between">
+          <template v-for="(user, i) of searched" :key="i">
+            <div class="column is-half">
+              <SimpleFollowCard class="p-3 border-desktop borderless-mobile" :user="user" @follow="follow" @unfollow="unfollow"/>
+            </div>
+          </template>
         </div>
       </div>
     </div>
@@ -73,15 +75,15 @@ import client from '@/commons/client.api'
 import Navbar from '@/comps/navbar/Navbar'
 import IconUser from '@/comps/utils/IconUser'
 
-import FollowTile from '@/comps/follows/FollowTile'
+import SimpleFollowCard from '../comps/utils/SimpleFollowCard'
 
 export default {
   name: 'Followers',
 
   components: {
+    SimpleFollowCard,
     Navbar,
-    IconUser,
-    FollowTile
+    IconUser
   },
 
   props: {
@@ -104,6 +106,17 @@ export default {
     }
   },
 
+  methods: {
+    async follow (user) {
+      await client.users.follow(user.username)
+      user.following = true
+    },
+    async unfollow (user) {
+      await client.users.unfollow(user.username)
+      user.following = false
+    }
+  },
+
   async created () {
     client.users.byUsername(this.username).then(u => { this.user = u })
     this.$route.meta.followers === true
@@ -112,3 +125,17 @@ export default {
   }
 }
 </script>
+<style lang="scss" scoped>
+.border-desktop {
+  border-width: 1px;
+  border-style: solid;
+  border-color: $gray-5;
+  border-radius: $radius;
+}
+@media screen and (max-width: 768px) {
+  .borderless-mobile {
+    border-style: none;
+    padding: 0 !important;
+  }
+}
+</style>

@@ -1,10 +1,10 @@
 <template>
-    <div class="level">
-      <router-link :to="'/u/'+user.username" style="overflow: hidden">
+    <div class="level is-mobile">
+      <router-link :to="'/u/'+user.username" class="is-overflow-hidden">
         <div class="level-left has-text-gray-1">
           <!-- Image -->
           <div class="level-item">
-            <span class="icon is-35x35">
+            <span class="icon is-45x45">
               <IconUser :src="user.picture" size="sm"/>
             </span>
           </div>
@@ -22,9 +22,10 @@
       <div class="level-right">
         <div class="level-item">
           <button
-            class="button is-primary is-small has-text-weight-bold"
-            :class="user.following ? 'is-active has-text-white' : 'is-light'"
-            style="width: 90px;"
+            v-if="!isSelf"
+            class="button is-small has-text-weight-bold has-background-green-1"
+            :class="user.following ? 'is-active has-text-white' : 'is-light has-text-green-2 is-primary'"
+            style="width: 90px; height: 35px; border-style: none"
             @click="clicked()"
           >
             <span>{{ user.following ? 'Seguindo' : 'Seguir' }}</span>
@@ -52,6 +53,12 @@ export default {
     }
   },
 
+  computed: {
+    isSelf () {
+      return this.user.username === this.$store.state.user.profile.username
+    }
+  },
+
   methods: {
     follow () {
       this.$emit('follow', this.user)
@@ -71,9 +78,9 @@ export default {
   height: 60px;
   width: 60px;
 }
-.is-35x35 {
-  height: 35px;
-  width: 35px;
+.is-45x45 {
+  height: 45px;
+  width: 45px;
 }
 .is-subtitle-size {
   font-size: 0.875rem;
@@ -88,6 +95,12 @@ export default {
   color: $gray-2;
 }
 .has-text-green-2 {
-  color: $green-2;
+  color: $green-2 !important;
+}
+.has-background-green-1 {
+  background-color: $green-1;
+}
+.is-overflow-hidden {
+  overflow: hidden;
 }
 </style>
