@@ -56,7 +56,7 @@ export default {
 
   methods: {
     post (text) {
-      this.$store.dispatch(FEED_COMMENT, { id: this.item.id, text })
+      this.$store.dispatch(FEED_COMMENT, { eventId: this.item.id, text })
     }
   }
 }

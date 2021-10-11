@@ -7,7 +7,12 @@
     <div class="column is-three-fifths">
       <br>
       <PostForm class="box" />
-      <FeedItem class="box" v-for="i of events" :key="i.id" :item="i" />
+      <FeedItem
+        class="box"
+        v-for="i of $store.getters.events"
+        :key="i.id"
+        :item="i"
+    />
     </div>
     <div class="column is-two-fifths is-hidden-touch">
       <br>
@@ -33,12 +38,6 @@ export default {
     FeedItem,
     PostForm,
     FeedSuggestions
-  },
-
-  computed: {
-    events () {
-      return this.$store.getters.events
-    }
   },
 
   created () {

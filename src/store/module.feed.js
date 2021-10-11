@@ -19,7 +19,7 @@ const mutations = {
 }
 
 const getters = {
-  events ({ events }) {
+  events ({ events }, getters) {
     return Object.values(events)
       .sort((a, b) => a.timestamp.localeCompare(b.timestamp))
       .reverse()
@@ -53,11 +53,11 @@ const actions = {
     events.forEach(i => ctx.commit(MUTATIONS.REPLACE_EVENT, i))
   },
 
-  async [ACTIONS.FEED_COMMENT] (ctx, { itemId, text }) {
-    const comment = await client.comments.postComment(itemId, text)
+  async [ACTIONS.FEED_COMMENT] (ctx, { eventId, text }) {
+    const comment = await client.comments.postComment(eventId, text)
     ctx.commit(MUTATIONS.REPLACE_COMMENT, comment)
 
-    const item = Object.values(ctx.state.events).find(i => i.id === itemId)
+    const item = Object.values(ctx.state.events).find(i => i.id === eventId)
     item.commentCount++
     ctx.commit(MUTATIONS.REPLACE_EVENT, item)
   },

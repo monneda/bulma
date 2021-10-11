@@ -1,6 +1,11 @@
 <template>
 <div>
-  <ItemComment v-for="c of paged" :key="c.id" :comment="c" class="py-0" />
+  <ItemComment
+    class="py-0"
+    v-for="c of paged"
+    :key="c.id"
+    :comment="c"
+  />
 
   <br v-if="hasMore">
   <a v-if="hasMore" @click="show += 2">
