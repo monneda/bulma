@@ -33,7 +33,7 @@ export default {
 
   methods: {
     post () {
-      this.$emit('post', this.text)
+      this.$emit('post', { text: this.text })
       this.text = ''
     }
   }

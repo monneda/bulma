@@ -9,9 +9,9 @@
       <PostForm class="box" />
       <FeedItem
         class="box"
-        v-for="i of $store.getters.events"
-        :key="i.id"
-        :item="i"
+        v-for="(val, key) of $store.state.feed.events"
+        :key="key"
+        :item="val"
     />
     </div>
     <div class="column is-two-fifths is-hidden-touch">

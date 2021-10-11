@@ -1,21 +1,46 @@
 import Base from './client'
 
 export default class extends Base {
-  get (size = 20, beforeId) {
+  fetchEvents (size = 100, beforeId) {
     const params = beforeId ? { size, before_id: beforeId } : { size }
     return this.request('GET', 'feed', { params })
   }
 
-  createEvent (item) {
+  reactEvent (id) {
+    return this.request('POST', `events/${id}/reactions`, {}, false)
+  }
+
+  unreactEvent (id) {
+    return this.request('DELETE', `events/${id}/reactions`, {}, false)
+  }
+
+  createEvent (event) {
     const options = {
-      body: JSON.stringify(item),
-      headers: { 'Content-Type': 'application/json' },
-      params: { type: 'text' }
+      params: { type: 'text' },
+      body: JSON.stringify(event),
+      headers: { 'Content-Type': 'application/json' }
     }
     return this.request('POST', 'posts', options)
   }
 
   deleteEvent (id) {
     return this.request('DELETE', `events/${id}`, {}, false)
+  }
+
+  fetchComments (id, size = 100, beforeId) {
+    const params = beforeId ? { size, before_id: beforeId } : { size }
+    return this.request('GET', `events/${id}/comments`, { params })
+  }
+
+  createComment (id, comment) {
+    const options = {
+      body: JSON.stringify(comment),
+      headers: { 'Content-Type': 'application/json' }
+    }
+    return this.request('POST', `events/${id}/comments`, options)
+  }
+
+  deleteComment (id, cId) {
+    return this.request('DELETE', `events/${id}/comments/${cId}`, {}, false)
   }
 }

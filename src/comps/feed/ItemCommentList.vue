@@ -39,7 +39,9 @@ export default {
 
   computed: {
     comments () {
-      return this.$store.getters.comments(this.item.id)
+      return Object.values(this.item.comments)
+        .sort((a, b) => a.createdAt.localeCompare(b.createdAt))
+        .reverse()
     },
 
     paged () {

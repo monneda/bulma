@@ -104,9 +104,6 @@ export default {
 
   computed: {
     isSelf () {
-      console.log('nice')
-      console.log('nice')
-      console.log('nice')
       return this.$store.state.user.profile.username === this.comment.user.username
     }
   },

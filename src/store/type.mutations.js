@@ -4,7 +4,7 @@ export const SET_AUTH = 'setAuth'
 export const SET_ERROR = 'setError'
 
 // Feed module
-export const DELETE_EVENT = 'deleteEvent'
-export const REPLACE_EVENT = 'replaceEvent'
-export const DELETE_COMMENT = 'deleteComment'
-export const REPLACE_COMMENT = 'replaceComment'
+export const FEED_COMMENT_REMOVE = 'feedCommentRemove'
+export const FEED_COMMENT_REPLACE = 'feedCommentReplace'
+export const FEED_EVENT_REMOVE = 'feedEventRemove'
+export const FEED_EVENT_REPLACE = 'feedEventReplace'

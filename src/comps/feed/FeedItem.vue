@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import { FEED_COMMENT } from '@/store/type.actions'
+import { FEED_COMMENT_CREATE } from '@/store/type.actions'
 
 import Post from './Post'
 import Edit from './Edit'
@@ -55,8 +55,8 @@ export default {
   },
 
   methods: {
-    post (text) {
-      this.$store.dispatch(FEED_COMMENT, { eventId: this.item.id, text })
+    post (item) {
+      this.$store.dispatch(FEED_COMMENT_CREATE, { id: this.item.id, item })
     }
   }
 }

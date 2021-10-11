@@ -8,7 +8,7 @@
     <span class="icon-text">
       <span
         class="icon is-hidden-touch"
-        :class="{ 'has-text-primary': item.liked }"
+        :class="{ 'has-text-primary': item.like }"
       >
         <font-awesome-icon icon="heart" size="lg" />
       </span>
@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import { FEED_REACT, FEED_UNREACT } from '@/store/type.actions'
+import { FEED_EVENT_REACT, FEED_EVENT_UNREACT } from '@/store/type.actions'
 
 export default {
   name: 'ItemButtonList',
@@ -53,10 +53,10 @@ export default {
 
   methods: {
     react () {
-      if (this.item.liked === true) {
-        return this.$store.dispatch(FEED_UNREACT, this.item)
+      if (this.item.like === true) {
+        return this.$store.dispatch(FEED_EVENT_UNREACT, this.item)
       }
-      return this.$store.dispatch(FEED_REACT, this.item)
+      return this.$store.dispatch(FEED_EVENT_REACT, this.item)
     }
   }
 }
