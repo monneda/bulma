@@ -1,6 +1,6 @@
 <template>
 <div>
-  <ItemInfo :item="item" />
+  <ItemInfo :item="item" @remove="removePost" />
 
   <Post v-if="item.type === 'TEXT_POST_CREATED'" :post="item" />
   <Edit v-if="item.type === 'WALLET_ASSETS_EDIT'" :edit="item" />
@@ -10,12 +10,17 @@
   <ItemShareInfo :item="item" />
 
   <hr class="my-1">
-  <ItemButtonList class="my-0" :item="item" />
+  <ItemButtonList
+    class="my-0"
+    :item="item"
+    @react="reactEvent"
+    @unreact="unreactEvent"
+  />
   <hr class="my-1">
 
   <br>
 
-  <ItemCommentForm @post="post" />
+  <ItemCommentForm @create="createComment" />
 
   <br>
 
@@ -24,7 +29,13 @@
 </template>
 
 <script>
-import { FEED_COMMENT_CREATE } from '@/store/type.actions'
+import {
+  FEED_COMMENT_CREATE,
+  FEED_COMMENT_DELETE,
+  FEED_EVENT_DELETE,
+  FEED_EVENT_REACT,
+  FEED_EVENT_UNREACT
+} from '@/store/type.actions'
 
 import Post from './Post'
 import Edit from './Edit'
@@ -55,8 +66,24 @@ export default {
   },
 
   methods: {
-    post (item) {
+    createComment (item) {
       this.$store.dispatch(FEED_COMMENT_CREATE, { id: this.item.id, item })
+    },
+
+    removePost (item) {
+      this.$store.dispatch(FEED_EVENT_DELETE, item)
+    },
+
+    removeComment (item) {
+      this.$store.dispatch(FEED_COMMENT_DELETE, item)
+    },
+
+    reactEvent (item) {
+      this.$store.dispatch(FEED_EVENT_REACT, item)
+    },
+
+    unreactEvent (item) {
+      this.$store.dispatch(FEED_EVENT_UNREACT, item)
     }
   }
 }

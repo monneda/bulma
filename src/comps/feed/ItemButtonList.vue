@@ -3,7 +3,7 @@
   <!-- Like -->
   <button
     class="level-item button is-white is-transparent px-0"
-    @click="react"
+    @click="item.like ? $emit('unreact', item) : $emit('react', item)"
   >
     <span class="icon-text">
       <span
@@ -17,7 +17,10 @@
   </button>
 
   <!-- Share -->
-  <button class="level-item button is-white is-transparent px-0">
+  <button
+    class="level-item button is-white is-transparent px-0"
+    @click="$emit('share', item)"
+  >
     <span class="icon-text">
       <span class="icon is-hidden-touch">
         <font-awesome-icon icon="share" size="lg" />
@@ -27,7 +30,10 @@
   </button>
 
   <!-- Send -->
-  <button class="level-item button is-white is-transparent px-0">
+  <button
+    class="level-item button is-white is-transparent px-0"
+    @click="$emit('send', item)"
+  >
     <span class="icon-text">
       <span class="icon is-hidden-touch">
         <font-awesome-icon icon="paper-plane" size="lg" />
@@ -39,8 +45,6 @@
 </template>
 
 <script>
-import { FEED_EVENT_REACT, FEED_EVENT_UNREACT } from '@/store/type.actions'
-
 export default {
   name: 'ItemButtonList',
 
@@ -48,15 +52,6 @@ export default {
     item: {
       type: Object,
       required: true
-    }
-  },
-
-  methods: {
-    react () {
-      if (this.item.like === true) {
-        return this.$store.dispatch(FEED_EVENT_UNREACT, this.item)
-      }
-      return this.$store.dispatch(FEED_EVENT_REACT, this.item)
     }
   }
 }

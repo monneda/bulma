@@ -50,8 +50,6 @@
 </template>
 
 <script>
-import { FEED_EVENT_DELETE } from '@/store/type.actions'
-
 import TimeAgo from '@/comps/utils/TimeAgo'
 
 export default {
@@ -79,8 +77,9 @@ export default {
   },
 
   methods: {
-    remove () {
-      this.$store.dispatch(FEED_EVENT_DELETE, this.item)
+    async remove () {
+      this.$emit('remove', this.item)
+      this.active = false
     }
   }
 }

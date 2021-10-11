@@ -4,8 +4,7 @@ import * as ACTIONS from '@/store/type.actions'
 import * as MUTATIONS from '@/store/type.mutations'
 
 const state = {
-  events: {},
-  comments: {}
+  events: {}
 }
 
 const mutations = {
@@ -41,21 +40,6 @@ const mutations = {
   }
 }
 
-const getters = {
-  events (state, getters) {
-    const events = Object.values(state.events)
-      .sort((a, b) => a.timestamp.localeCompare(b.timestamp))
-      .reverse()
-
-    for (const i of events) {
-      i.comments = Object.values(i.comments)
-      i.comments.sort((a, b) => a.createdAt.localeCompare(b.createdAt))
-    }
-
-    return events
-  }
-}
-
 const actions = {
   async [ACTIONS.FEED_FETCH_EVENTS] (ctx) {
     const events = await client.feed.fetchEvents(20)
@@ -65,14 +49,14 @@ const actions = {
   async [ACTIONS.FEED_EVENT_REACT] (ctx, item) {
     await client.feed.reactEvent(item.id)
     item.likeCount++
-    item.liked = true
+    item.like = true
     ctx.commit(MUTATIONS.FEED_EVENT_REPLACE, item)
   },
 
   async [ACTIONS.FEED_EVENT_UNREACT] (ctx, item) {
     await client.feed.unreactEvent(item.id)
     item.likeCount--
-    item.liked = false
+    item.like = false
     ctx.commit(MUTATIONS.FEED_EVENT_REPLACE, item)
   },
 
@@ -104,7 +88,6 @@ const actions = {
 
 export default {
   state,
-  getters,
   actions,
   mutations
 }

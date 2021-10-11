@@ -11,7 +11,7 @@
       <input
         type="text"
         v-model="text"
-        @keyup.enter.prevent="post"
+        @keyup.enter.prevent="create"
         placeholder="Escreva um comentário"
         class="input is-primary has-background-white-ter"
       >
@@ -32,8 +32,8 @@ export default {
   }),
 
   methods: {
-    post () {
-      this.$emit('post', { text: this.text })
+    create () {
+      this.$emit('create', { text: this.text })
       this.text = ''
     }
   }

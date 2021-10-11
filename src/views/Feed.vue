@@ -1,22 +1,23 @@
 <template>
 <Navbar class="has-shadow" />
 
+<br>
+
 <div class="container">
-  <!-- The class `mx-0` is here to avoid some horizontal scrolling on mobile -->
   <div class="columns is-centered mx-0">
     <div class="column is-three-fifths">
-      <br>
       <PostForm class="box" />
+
       <FeedItem
         class="box"
-        v-for="(val, key) of $store.state.feed.events"
+        v-for="(val, key) of events"
         :key="key"
         :item="val"
-    />
+      />
     </div>
+
     <div class="column is-two-fifths is-hidden-touch">
-      <br>
-      <FeedSuggestions/>
+      <FeedSuggestions />
     </div>
   </div>
 </div>
@@ -38,6 +39,14 @@ export default {
     FeedItem,
     PostForm,
     FeedSuggestions
+  },
+
+  computed: {
+    events () {
+      return Object.values(this.$store.state.feed.events)
+        .sort((a, b) => a.timestamp.localeCompare(b.timestamp))
+        .reverse()
+    }
   },
 
   created () {
