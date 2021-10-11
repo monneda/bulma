@@ -25,7 +25,7 @@
     </div>
   </div>
 
-  <template v-for="user in items" :key="user">
+  <template v-for="user in users" :key="user">
     <SimpleFollowCard @follow="follow" @unfollow="unfollow" :user="user" />
   </template>
 </article>
@@ -40,19 +40,19 @@ export default {
   name: 'FeedSuggestions',
   components: { SimpleFollowCard, IconUser },
   data: () => ({
-    items: []
+    users: []
   }),
 
   async created () {
-    this.items = await client.profile.getSuggestedFriends()
+    this.users = await client.profile.getSuggestedFriends()
   },
   methods: {
-    follow (user) {
-      console.log(user)
+    async follow (user) {
+      await client.users.follow(user.username)
       user.following = true
     },
-    unfollow (user) {
-      console.log(user)
+    async unfollow (user) {
+      await client.users.unfollow(user.username)
       user.following = false
     }
   }
