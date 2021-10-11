@@ -8,4 +8,12 @@ export default class extends Base {
     }
     return this.request('GET', `events/${id}/comments`, { params })
   }
+
+  postComment (itemId, comment) {
+    const options = {
+      body: JSON.stringify({ text: comment }),
+      headers: { 'Content-Type': 'application/json' }
+    }
+    return this.request('POST', `events/${itemId}/comments`, options)
+  }
 }

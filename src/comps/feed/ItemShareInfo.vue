@@ -8,14 +8,14 @@
           <span class="icon has-text-primary">
             <font-awesome-icon icon="heart" />
           </span>
-          <span> {{ likes }} curtida(s) </span>
+          <span> {{ item.likeCount }} curtida(s) </span>
         </span>
       </div>
     </div>
 
     <div class="level-right is-hidden-touch">
       <!-- Comments -->
-      <span class="level-item"> {{ comments }} comentário(s) </span>
+      <span class="level-item"> {{ item.commentCount }} comentário(s) </span>
 
       <!-- TODO: Shares -->
       <!-- <span class="level-item"> 11 compartilhamentos </span> -->
@@ -28,17 +28,9 @@ export default {
   name: 'ItemShareInfo',
 
   props: {
-    likes: {
-      type: Number,
-      default: 0
-    },
-    comments: {
-      type: Number,
-      default: 0
-    },
-    shares: {
-      type: Number,
-      default: 0
+    item: {
+      type: Object,
+      required: true
     }
   }
 }

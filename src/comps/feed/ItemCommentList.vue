@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import client from '@/commons/client.api'
+import { COMMENTS_FETCH } from '@/store/type.actions'
 
 import ItemComment from '@/comps/feed/ItemComment'
 
@@ -23,18 +23,24 @@ export default {
   },
 
   props: {
-    id: {
-      type: String,
+    item: {
+      type: Object,
       required: true
     }
   },
 
   data: () => ({
-    comments: [],
     show: 2
   }),
 
   computed: {
+    comments () {
+      return Object.values(this.$store.state.feed.comments)
+        .filter(i => i.eventId === this.item.id)
+        .sort((a, b) => a.createdAt.localeCompare(b.createdAt))
+        .reverse()
+    },
+
     paged () {
       const totalComments = Math.min(this.show, this.comments.length)
       return this.comments.slice(0, totalComments)
@@ -44,8 +50,8 @@ export default {
     }
   },
 
-  async created () {
-    this.comments = await client.comments.byPostId(this.id)
+  created () {
+    this.$store.dispatch(COMMENTS_FETCH, this.item.id)
   }
 }
 </script>

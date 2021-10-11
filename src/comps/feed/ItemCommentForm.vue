@@ -11,7 +11,7 @@
       <input
         type="text"
         v-model="text"
-        @keyup.enter.prevent="submit"
+        @keyup.enter.prevent="post"
         placeholder="Escreva um comentário"
         class="input is-primary has-background-white-ter"
       >
@@ -32,8 +32,8 @@ export default {
   }),
 
   methods: {
-    submit () {
-      this.$emit('submit', this.text)
+    post () {
+      this.$emit('post', this.text)
     }
   }
 }

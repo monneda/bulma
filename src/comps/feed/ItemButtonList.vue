@@ -1,9 +1,15 @@
 <template>
 <nav class="level is-mobile">
   <!-- Like -->
-  <button class="level-item button is-white is-transparent px-0" @click="like">
+  <button
+    class="level-item button is-white is-transparent px-0"
+    @click="react"
+  >
     <span class="icon-text">
-      <span class="icon is-hidden-touch" :class="{ 'has-text-primary': liked }">
+      <span
+        class="icon is-hidden-touch"
+        :class="{ 'has-text-primary': item.liked }"
+      >
         <font-awesome-icon icon="heart" size="lg" />
       </span>
       <span class="has-text-dark"> Curtir </span>
@@ -11,7 +17,7 @@
   </button>
 
   <!-- Share -->
-  <button class="level-item button is-white is-transparent px-0" @click="$emit('share')">
+  <button class="level-item button is-white is-transparent px-0">
     <span class="icon-text">
       <span class="icon is-hidden-touch">
         <font-awesome-icon icon="share" size="lg" />
@@ -21,7 +27,7 @@
   </button>
 
   <!-- Send -->
-  <button class="level-item button is-white is-transparent px-0" @click="$emit('send')">
+  <button class="level-item button is-white is-transparent px-0">
     <span class="icon-text">
       <span class="icon is-hidden-touch">
         <font-awesome-icon icon="paper-plane" size="lg" />
@@ -33,22 +39,24 @@
 </template>
 
 <script>
+import { FEED_REACT, FEED_UNREACT } from '@/store/type.actions'
+
 export default {
   name: 'ItemButtonList',
 
   props: {
-    liked: {
-      type: Boolean,
-      default: false
+    item: {
+      type: Object,
+      required: true
     }
   },
 
   methods: {
-    like () {
-      if (this.liked === true) {
-        return this.$emit('unlike')
+    react () {
+      if (this.item.liked === true) {
+        return this.$store.dispatch(FEED_UNREACT, this.item)
       }
-      return this.$emit('like')
+      return this.$store.dispatch(FEED_REACT, this.item)
     }
   }
 }

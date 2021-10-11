@@ -3,6 +3,7 @@ import Comments from './comments'
 import Feed from './feed'
 import Notifications from './notifications'
 import Profile from './profile'
+import Reactions from './reactions'
 import Users from './users'
 import Wallets from './wallets'
 
@@ -13,6 +14,7 @@ class Client {
     this.feed = new Feed(token)
     this.notifications = new Notifications(token)
     this.profile = new Profile(token)
+    this.reactions = new Reactions(token)
     this.users = new Users(token)
     this.wallets = new Wallets(token)
   }
@@ -23,6 +25,7 @@ class Client {
     this.feed.token = token
     this.notifications.token = token
     this.profile.token = token
+    this.reactions.token = token
     this.users.token = token
     this.wallets.token = token
   }

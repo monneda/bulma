@@ -7,23 +7,25 @@
 
   <br>
 
-  <ItemShareInfo :likes="item.likeCount" :comments="item.commentCount" />
+  <ItemShareInfo :item="item" />
 
   <hr class="my-1">
-  <ItemButtonList class="my-0" @like="like" />
+  <ItemButtonList class="my-0" :item="item" />
   <hr class="my-1">
 
   <br>
 
-  <ItemCommentForm @submit="submit" />
+  <ItemCommentForm @post="post" />
 
   <br>
 
-  <ItemCommentList :id="item.id" />
+  <ItemCommentList :item="item" />
 </div>
 </template>
 
 <script>
+import { FEED_COMMENT } from '@/store/type.actions'
+
 import Post from './Post'
 import Edit from './Edit'
 import ItemButtonList from './ItemButtonList'
@@ -53,11 +55,8 @@ export default {
   },
 
   methods: {
-    like () {
-      console.log('Liked:', this.item.id)
-    },
-    submit () {
-      console.log('Commented:', this.item.id)
+    post (text) {
+      this.$store.dispatch(FEED_COMMENT, { id: this.item.id, text })
     }
   }
 }

@@ -7,7 +7,7 @@
     <div class="column is-three-fifths">
       <br>
       <PostForm class="box" />
-      <FeedItem v-for="i of items" :key="i.id" :item="i" class="box" />
+      <FeedItem class="box" v-for="i of items" :key="i.id" :item="i" />
     </div>
     <div class="column is-two-fifths is-hidden-touch">
       <br>
@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import client from '@/commons/client.api'
+import { FEED_FETCH } from '@/store/type.actions'
 
 import Navbar from '@/comps/navbar/Navbar'
 import FeedItem from '@/comps/feed/FeedItem'
@@ -35,12 +35,16 @@ export default {
     FeedSuggestions
   },
 
-  data: () => ({
-    items: []
-  }),
+  computed: {
+    items () {
+      return Object.values(this.$store.state.feed.items)
+        .sort((a, b) => a.timestamp.localeCompare(b.timestamp))
+        .reverse()
+    }
+  },
 
-  async created () {
-    this.items = await client.feed.get()
+  created () {
+    this.$store.dispatch(FEED_FETCH)
   }
 }
 </script>
