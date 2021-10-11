@@ -19,23 +19,21 @@ const mutations = {
 
   [MUTATIONS.FEED_COMMENT_REPLACE] (state, item) {
     const event = state.events[item.eventId]
-
-    if (!(item.id in event.comments)) {
-      event.commentCount++
-    }
-
     event.comments[item.id] = item
     state.events[item.eventId] = event
   },
 
   [MUTATIONS.FEED_COMMENT_REMOVE] (state, item) {
     const event = state.events[item.eventId]
-
-    if (item.id in event.comments) {
-      event.commentCount--
-    }
-
+    event.commentCount--
     delete event.comments[item.id]
+    state.events[item.eventId] = event
+  },
+
+  [MUTATIONS.FEED_COMMENT_ADD] (state, item) {
+    const event = state.events[item.eventId]
+    event.commentCount++
+    event.comments[item.id] = item
     state.events[item.eventId] = event
   }
 }
@@ -77,7 +75,7 @@ const actions = {
 
   async [ACTIONS.FEED_COMMENT_CREATE] (ctx, { id, item }) {
     const comment = await client.feed.createComment(id, item)
-    ctx.commit(MUTATIONS.FEED_COMMENT_REPLACE, comment)
+    ctx.commit(MUTATIONS.FEED_COMMENT_ADD, comment)
   },
 
   async [ACTIONS.FEED_COMMENT_DELETE] (ctx, item) {

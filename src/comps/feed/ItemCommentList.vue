@@ -41,7 +41,6 @@ export default {
     comments () {
       return Object.values(this.item.comments)
         .sort((a, b) => a.createdAt.localeCompare(b.createdAt))
-        .reverse()
     },
 
     paged () {
