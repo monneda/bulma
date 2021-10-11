@@ -13,6 +13,10 @@ const mutations = {
     state.events[item.id] = item
   },
 
+  [MUTATIONS.DELETE_EVENT] (state, item) {
+    delete state.events[item.id]
+  },
+
   [MUTATIONS.REPLACE_COMMENT] (state, comment) {
     state.comments[comment.id] = comment
   }
@@ -51,6 +55,11 @@ const actions = {
   async [ACTIONS.FEED_FETCH_EVENTS] (ctx) {
     const events = await client.feed.get()
     events.forEach(i => ctx.commit(MUTATIONS.REPLACE_EVENT, i))
+  },
+
+  async [ACTIONS.FEED_EVENT_DELETE] (ctx, item) {
+    await client.feed.deleteEvent(item.id)
+    ctx.commit(MUTATIONS.DELETE_EVENT, item)
   },
 
   async [ACTIONS.FEED_COMMENT] (ctx, { eventId, text }) {
