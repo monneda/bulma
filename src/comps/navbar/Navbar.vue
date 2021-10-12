@@ -52,7 +52,7 @@
     </div>
 
     <!-- Menu (anonymous) -->
-    <div v-else class="navbar-menu" ref="menu">
+    <div v-else class="navbar-menu navbar-menu-right" ref="menu">
       <div class="navbar-end">
         <!-- login desktop -->
         <div class="navbar-item is-hidden-touch">
@@ -142,7 +142,7 @@ export default {
 .login-button-touch {
   margin-right: auto;
   margin-left: auto;
-  width: 75%;
+  width: 80%;
   bottom: 0;
 }
 </style>
