@@ -33,7 +33,7 @@
     </div>
 
     <!-- Menu logged -->
-    <div v-if="$store.state.user.auth" class="navbar-menu" ref="menu">
+    <div v-if="$store.state.user.auth" class="navbar-menu navbar-menu-touch" ref="menu">
       <!-- icons navbar desktop -->
       <div class="navbar-end is-hidden-touch">
         <navbar-item to="/feed" icon="home" label="FEED" />
@@ -52,7 +52,7 @@
     </div>
 
     <!-- Menu (anonymous) -->
-    <div v-else class="navbar-menu navbar-menu-right" ref="menu">
+    <div v-else class="navbar-menu" ref="menu">
       <div class="navbar-end">
         <!-- login desktop -->
         <div class="navbar-item is-hidden-touch">
@@ -123,10 +123,13 @@ export default {
     height: 60px;
   }
 }
-.navbar-menu {
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto
+
+@media screen and (max-width: 1023px) {
+  .navbar-menu-touch {
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+  }
 }
 .custom-burger {
   height: 1.0875rem;
