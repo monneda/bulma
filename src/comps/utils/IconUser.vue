@@ -1,6 +1,6 @@
 <template>
   <figure v-if="found" class="image">
-    <img class="is-rounded" :src="src" @error="found = false">
+    <img class="is-rounded max-size-icon-user" :src="src" @error="found = false">
   </figure>
   <font-awesome-icon v-else icon="user" :size="size" />
 </template>
@@ -26,3 +26,9 @@ export default {
   })
 }
 </script>
+
+<style scoped>
+.max-size-icon-user {
+  max-height: none;
+}
+</style>

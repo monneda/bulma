@@ -323,11 +323,6 @@ export default {
   },
 
   methods: {
-    toggle () {
-      this.$refs.menu.classList.toggle('is-active')
-      this.$refs.burger.classList.toggle('is-active')
-    },
-
     login () {
       this.$store.dispatch(LOGIN, { origin: this.$route.path })
     }

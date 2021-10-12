@@ -2,64 +2,43 @@
 <div class="navbar-item has-dropdown" ref="dropdown" @click="toggle">
   <a class="navbar-link">
     <span class="icon-text">
-      <span class="icon is-medium">
-        <figure class="image">
-          <img class="is-32x32 is-rounded" :src="$store.state.user.profile.picture">
-        </figure>
+      <span class="icon is-medium is-30x30">
+        <IconUser :src="$store.state.user.profile.picture"/>
       </span>
-      <span class="my-auto"> {{ $store.state.user.profile.givenName }} </span>
+      <span v-if="!simple" class="my-auto"> {{ $store.state.user.profile.givenName }} </span>
     </span>
   </a>
 
-  <div class="navbar-dropdown">
-    <!-- Profile -->
-    <router-link :to="`/u/${$store.state.user.profile.username}`" class="navbar-item">
-      <span class="icon is-small">
-        <font-awesome-icon icon="user" />
-      </span>
-      <span class="is-size-7 pl-3"> Perfil </span>
-    </router-link>
-
-    <!-- Edit profile -->
-    <router-link to="/u/nice/edit" class="navbar-item">
-      <span class="icon is-small">
-        <font-awesome-icon icon="pen" />
-      </span>
-      <span class="is-size-7 pl-3"> Editar perfil </span>
-    </router-link>
-
-    <!-- Change password -->
-    <router-link to="/u/nice/password" class="navbar-item">
-      <span class="icon is-small">
-        <font-awesome-icon icon="lock" />
-      </span>
-      <span class="is-size-7 pl-3"> Trocar senha </span>
-    </router-link>
-
-    <!-- Logout -->
-    <a @click="logout" class="navbar-item">
-      <span class="icon is-small">
-        <font-awesome-icon icon="sign-out-alt" />
-      </span>
-      <span class="is-size-7 pl-3"> Sair </span>
-    </a>
-  </div>
+  <NavbarItemUserDropdown v-if="!simple"/>
 </div>
 </template>
 
 <script>
-import { LOGOUT } from '@/store/type.actions'
+import NavbarItemUserDropdown from './NavbarItemUserDropdown'
+import IconUser from '../utils/IconUser'
 
 export default {
   name: 'NavbarItemUser',
+  components: { IconUser, NavbarItemUserDropdown },
+  props: {
+    simple: {
+      required: false,
+      default: false
+    }
+  },
 
   methods: {
     toggle () {
       this.$refs.dropdown.classList.toggle('is-active')
-    },
-    logout () {
-      this.$store.dispatch(LOGOUT)
+      this.$emit('toggle')
     }
   }
 }
 </script>
+
+<style scoped>
+.is-30x30 {
+  height: 30px;
+  width: 30px;
+}
+</style>
