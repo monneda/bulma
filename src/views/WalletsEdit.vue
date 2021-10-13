@@ -6,7 +6,14 @@
   <div class="container p-3">
     <div class="is-flex is-justify-content-space-between">
       <h4 class="is-size-5 has-text-weight-bold"> Editar sua Cartera </h4>
-      <c-button class="is-primary" right icon="arrow-down"> Salvar </c-button>
+      <c-button
+        class="is-primary"
+        right
+        icon="arrow-down"
+        @click="update"
+      >
+        Salvar
+      </c-button>
     </div>
   </div>
 </div>
@@ -15,7 +22,7 @@
 
 <div class="container">
   <div class="columns is-centered mx-0">
-    <div class="column is-three-fifths">
+    <div class="column is-four-fifths">
       <!-- About -->
       <article class="box">
         <h4 class="title is-4"> Sobre sua Cartera </h4>
@@ -119,6 +126,7 @@ export default {
     remove ({ ticker }) {
       this.wallet.assets = this.wallet.assets.filter(i => i.ticker !== ticker)
     },
+
     async add () {
       const asset = await client.assets.fetchAsset(this.ticker)
       asset.amount = this.amount
@@ -133,11 +141,23 @@ export default {
 
       this.amount = ''
       this.ticker = ''
+    },
+
+    async update () {
+      const assets = this.wallet.assets
+        .map(({ ticker, amount }) => ({ ticker, amount }))
+      const wallet = {
+        assets,
+        name: this.wallet.name,
+        description: this.wallet.description
+      }
+      this.wallet = await client.wallets.update(this.wallet.id, wallet)
+      this.$router.push(`/c/${this.wallet.id}`)
     }
   },
 
   async created () {
-    this.wallet = await client.wallets.byId(this.id)
+    this.wallet = await client.wallets.byId(this.id, 30, 'raw')
   }
 }
 </script>
