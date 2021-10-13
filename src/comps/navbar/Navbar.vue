@@ -77,6 +77,13 @@
     </div>
   </div>
 </nav>
+<nav v-if="$store.state.user.auth" class="navbar is-fixed-bottom is-hidden-desktop is-inline-flex is-justify-content-space-around is-align-items-center">
+  <navbar-item to="/feed" icon="home" class="fa-lg" />
+  <navbar-item to="/c" icon="wallet" class="fa-lg" />
+  <navbar-item to="/explore" icon="compass" class="fa-lg" />
+  <navbar-item to="/chat" icon="comment" class="fa-lg" />
+  <navbar-item to="/notifications" icon="bell" class="fa-lg" />
+</nav>
 </template>
 
 <script>

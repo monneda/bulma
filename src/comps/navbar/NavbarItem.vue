@@ -4,7 +4,7 @@
     <span class="icon">
       <font-awesome-icon :icon="icon" />
     </span>
-    <span class="is-size-7"> {{ label }} </span>
+    <span v-if="label" class="is-size-7"> {{ label }} </span>
   </div>
 </router-link>
 </template>
