@@ -14,13 +14,40 @@
       </article>
     </div>
 
-    <!-- TODO -->
-    <!-- <div class="column is-two-fifths">Right</div> -->
+    <div class="column is-two-fifths" v-if="asset">
+      <article class="box">
+        <h4 class="title is-4"> Sobre a {{ asset.ticker }} </h4>
+
+        <hr>
+
+        <div class="columns">
+          <!-- Sector -->
+          <div class="column is-one-third">
+            <h5 class="title is-5"> Setor </h5>
+            <p class="subtitle is-7"> {{ sector.sector }} </p>
+          </div>
+
+          <!-- Subsector -->
+          <div class="column is-one-third">
+            <h5 class="title is-5"> Subsetor </h5>
+            <p class="subtitle is-7"> {{ sector.subsector }} </p>
+          </div>
+
+          <!-- Segment -->
+          <div class="column is-one-third">
+            <h5 class="title is-5"> Segmento </h5>
+            <p class="subtitle is-7"> {{ sector.segment }} </p>
+          </div>
+        </div>
+      </article>
+    </div>
   </div>
 </div>
 </template>
 
 <script>
+import SECTORS from '@/assets/sectors.json'
+
 import client from '@/commons/client.api'
 
 import Navbar from '@/comps/navbar/Navbar'
@@ -60,6 +87,9 @@ export default {
       return this.history.prices
         .map(i => new Date(i.date))
         .map(i => i.toLocaleDateString('pt-BR'))
+    },
+    sector () {
+      return SECTORS[this.asset.ticker]
     }
   },
 
