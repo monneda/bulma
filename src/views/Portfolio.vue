@@ -6,7 +6,13 @@
 <div class="columns is-centered mx-0">
   <div class="column is-three-quarters">
 
-    <PortfolioBanner :wallet="wallet" :user="user" @period="period" class="box" />
+    <PortfolioBanner
+        class="box"
+        v-if="user && wallet"
+        :wallet="wallet"
+        :user="user"
+        @period="period"
+    />
 
     <div class="box">
       <!-- Tabs -->
@@ -18,7 +24,7 @@
         </ul>
       </div>
 
-      <component :is="tab" :wallet="wallet" />
+      <component v-if="wallet" :is="tab" :wallet="wallet" />
     </div>
   </div>
 </div>
@@ -52,8 +58,8 @@ export default {
   },
 
   data: () => ({
-    user: {},
-    wallet: {},
+    user: null,
+    wallet: null,
     tab: 'PortfolioAssets'
   }),
 

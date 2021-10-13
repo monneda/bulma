@@ -65,10 +65,9 @@
         <!-- Input -->
         <div class="select is-primary">
           <select v-model="selected" @change="change">
-            <option value="7">7 dias</option>
-            <option value="30">1 mês</option>
-            <option value="90">3 meses</option>
-            <option value="360">1 ano</option>
+            <option v-for="(text, days) of OPTIONS" :key="days" :value="days">
+              {{ text }}
+            </option>
           </select>
         </div>
       </div>
@@ -80,8 +79,8 @@
             <font-awesome-icon icon="wallet" size="lg" />
           </span>
           <span class="my-auto">
-            <p class="has-text-weight-bold"> Variação {{ selected }}: </p>
-            <p> {{ gain.toFixed(2) }}% </p>
+            <p class="has-text-weight-bold"> Variação {{ text }}: </p>
+            <p> {{ wallet.gain.toFixed(2) }}% </p>
           </span>
         </span>
       </div>
@@ -111,21 +110,28 @@ export default {
   },
 
   data: () => ({
-    selected: '7 dias'
+    selected: 7,
+    OPTIONS: {
+      7: '7 dias',
+      30: '1 mês',
+      90: '3 meses',
+      360: '1 ano'
+    }
   }),
 
   computed: {
+    text () {
+      return this.OPTIONS[this.selected]
+    },
+
     isSelf () {
       return this.user.username === this.$store.state.user.profile.username
-    },
-    gain () {
-      return this.wallet.gain || 0
     }
   },
 
   methods: {
     change (e) {
-      console.log(e.target.innerText)
+      this.$emit('period', this.selected)
     }
   }
 }
