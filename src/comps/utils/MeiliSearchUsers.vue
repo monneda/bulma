@@ -25,23 +25,24 @@
 
   <!-- Hits -->
   <!--
-    I had to add this height 0px here to
-    avoid some whitespace below the input
+    I added the position absolute in order to remove the item from the flexbox
+    layout. Adapted from:
+        https://stackoverflow.com/a/39930550
   -->
-  <ais-hits style="height: 0px;">
-    <template v-slot="{ items }">
-      <div class="dropdown" :class="{ 'is-active': input && items.length > 0 }">
-        <div class="dropdown-menu">
-          <div class="dropdown-content">
+  <div class="dropdown" :class="{ 'is-active': input }" style="position: absolute;">
+    <div class="dropdown-menu">
+      <div class="dropdown-content">
+        <ais-hits>
+          <template v-slot="{ items }">
             <router-link
               class="dropdown-item"
               v-for="item of items"
               :key="item.objectID"
               :to="`/u/${item.username}`"
             >
-              <div class="is-flex p-3">
+              <div class="is-flex is-align-items-center p-3">
                 <!-- Picture -->
-                <figure class="image is-48x48">
+                <figure class="image">
                   <img class="is-rounded" :src="item.picture">
                 </figure>
 
@@ -52,11 +53,11 @@
                 </div>
               </div>
             </router-link>
-          </div>
-        </div>
+          </template>
+        </ais-hits>
       </div>
-    </template>
-  </ais-hits>
+    </div>
+  </div>
 </ais-instant-search>
 </template>
 

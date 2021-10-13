@@ -17,7 +17,7 @@
       </router-link>
 
       <!-- Search -->
-      <div v-if="$store.state.user.auth" class="navbar-item">
+      <div class="navbar-item" v-if="$store.state.user.auth">
         <MeiliSearchUsers />
       </div>
 
