@@ -1,7 +1,24 @@
 <template>
 <article>
-  <AssetChart style="width: 100%; height: 30rem" :labels="assetLabels" :data="assetData" />
-  <AssetChart style="width: 100%; height: 30rem" :labels="sectorLabels" :data="sectorData" />
+  <h4 class="title is-4 has-text-centered">
+    Composição por ativo
+  </h4>
+  <AssetChart
+    style="width: 100%; height: 30rem"
+    :labels="assetLabels"
+    :data="assetData"
+  />
+
+  <hr>
+
+  <h4 class="title is-4 has-text-centered">
+    Composição por setor
+  </h4>
+  <AssetChart
+    style="width: 100%; height: 30rem"
+    :labels="sectorLabels"
+    :data="sectorData"
+  />
 </article>
 </template>
 
