@@ -6,6 +6,10 @@ export default class extends Base {
     return this.request('GET', 'feed', { params })
   }
 
+  fetchUserEvents (username) {
+    return this.request('GET', `users/${username}/events`)
+  }
+
   reactEvent (id) {
     return this.request('POST', `events/${id}/reactions`, {}, false)
   }

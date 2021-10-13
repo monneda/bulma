@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import client from '@/commons/client.api'
+import { FEED_FETCH_EVENTS_FOR_USER } from '@/store/type.actions'
 
 import Navbar from '@/comps/navbar/Navbar'
 import FeedItem from '@/comps/feed/FeedItem'
@@ -57,12 +57,14 @@ export default {
     }
   },
 
-  data: () => ({
-    items: []
-  }),
+  computed: {
+    items () {
+      return this.$store.state.feed.events
+    }
+  },
 
-  async created () {
-    this.items = await client.feed.get(5)
+  created () {
+    this.$store.dispatch(FEED_FETCH_EVENTS_FOR_USER, this.username)
   }
 }
 </script>

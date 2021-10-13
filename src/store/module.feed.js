@@ -8,6 +8,10 @@ const state = {
 }
 
 const mutations = {
+  [MUTATIONS.FEED_PURGE] (state) {
+    state.events = {}
+  },
+
   [MUTATIONS.FEED_EVENT_REPLACE] (state, item) {
     item.comments = item.comments || {}
     state.events[item.id] = item
@@ -42,6 +46,16 @@ const actions = {
   async [ACTIONS.FEED_FETCH_EVENTS] (ctx) {
     const events = await client.feed.fetchEvents(20)
     events.forEach(i => ctx.commit(MUTATIONS.FEED_EVENT_REPLACE, i))
+  },
+
+  async [ACTIONS.FEED_FETCH_EVENTS_FOR_USER] (ctx, username) {
+    ctx.commit(MUTATIONS.FEED_PURGE)
+    const user = await client.users.byUsername(username)
+    const events = await client.feed.fetchUserEvents(username)
+    for (const e of events) {
+      e.owner = user
+      ctx.commit(MUTATIONS.FEED_EVENT_REPLACE, e)
+    }
   },
 
   async [ACTIONS.FEED_EVENT_REACT] (ctx, item) {
