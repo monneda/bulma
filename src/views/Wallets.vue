@@ -34,7 +34,9 @@
         <div class="columns">
           <template v-for="w of wallets" :key="w.id">
             <div class="column is-one-third">
-              <WalletsTile :wallet="w" />
+              <router-link :to="`/c/${w.id}`" >
+                <WalletsTile :wallet="w" />
+              </router-link>
             </div>
           </template>
         </div>
