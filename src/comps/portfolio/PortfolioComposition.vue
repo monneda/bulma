@@ -1,11 +1,14 @@
 <template>
 <article>
-  <AssetChart :labels="labels" :data="data" />
+  <AssetChart style="width: 100%; height: 30rem" :labels="assetLabels" :data="assetData" />
+  <AssetChart style="width: 100%; height: 30rem" :labels="sectorLabels" :data="sectorData" />
 </article>
 </template>
 
 <script>
 import AssetChart from './AssetChart'
+
+import SECTORS from '@/assets/sectors.json'
 
 export default {
   name: 'PortfolioComposition',
@@ -22,12 +25,40 @@ export default {
   },
 
   computed: {
-    labels () {
-      return ['a', 'b', 'c']
+    sectorLabels () {
+      const sectors = this.wallet.assets
+        .filter(i => i.ticker in SECTORS)
+        .map(i => SECTORS[i.ticker].sector)
+
+      const set = new Set()
+      sectors.forEach(i => set.add(i))
+
+      return Array.from(set).sort()
     },
 
-    data () {
-      return [1, 2, 3]
+    sectorData () {
+      const table = {}
+      const assets = this.wallet.assets.filter(i => i.ticker in SECTORS)
+
+      for (const { ticker } of assets) {
+        const { sector } = SECTORS[ticker]
+        table[sector] = 0
+      }
+
+      for (const { ticker, weight } of assets) {
+        const { sector } = SECTORS[ticker]
+        table[sector] += weight
+      }
+
+      return this.sectorLabels.map(i => table[i].toFixed(2))
+    },
+
+    assetLabels () {
+      return this.wallet.assets.map(i => i.ticker)
+    },
+
+    assetData () {
+      return this.wallet.assets.map(i => i.weight.toFixed(2))
     }
   }
 }

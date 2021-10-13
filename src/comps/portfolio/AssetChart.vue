@@ -1,5 +1,7 @@
 <template>
-<canvas ref="chart"></canvas>
+<div>
+  <canvas ref="chart"></canvas>
+</div>
 </template>
 
 <script>
@@ -12,7 +14,8 @@ const OPTIONS = {
     colorschemes: {
       scheme: Tableau20
     }
-  }
+  },
+  maintainAspectRatio: false
 }
 
 export default {
