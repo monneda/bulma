@@ -44,6 +44,7 @@ const mutations = {
 
 const actions = {
   async [ACTIONS.FEED_FETCH_EVENTS] (ctx) {
+    ctx.commit(MUTATIONS.FEED_PURGE)
     const events = await client.feed.fetchEvents(20)
     events.forEach(i => ctx.commit(MUTATIONS.FEED_EVENT_REPLACE, i))
   },
