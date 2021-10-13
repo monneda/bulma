@@ -18,7 +18,7 @@
 
       <!-- Search -->
       <div v-if="$store.state.user.auth" class="navbar-item">
-        <NavbarSearch />
+        <MeiliSearchUsers />
       </div>
 
       <!-- Burger -->
@@ -90,9 +90,10 @@
 
 <script>
 import NavbarItem from '@/comps/navbar/NavbarItem'
-import NavbarSearch from '@/comps/navbar/NavbarSearch'
 import NavbarItemUser from '@/comps/navbar/NavbarItemUser'
 import NavbarItemUserDropdown from '@/comps/navbar/NavbarItemUserDropdown'
+
+import MeiliSearchUsers from '@/comps/utils/MeiliSearchUsers'
 
 import { LOGIN } from '@/store/type.actions'
 
@@ -100,8 +101,8 @@ export default {
   name: 'Navbar',
 
   components: {
+    MeiliSearchUsers,
     NavbarItem,
-    NavbarSearch,
     NavbarItemUser,
     NavbarItemUserDropdown
   },

@@ -24,9 +24,13 @@
   </ais-search-box>
 
   <!-- Hits -->
-  <ais-hits>
+  <!--
+    I had to add this height 0px here to
+    avoid some whitespace below the input
+  -->
+  <ais-hits style="height: 0px;">
     <template v-slot="{ items }">
-      <div class="dropdown" :class="{ 'is-active': input.length && items.length > 0 }">
+      <div class="dropdown" :class="{ 'is-active': input && items.length > 0 }">
         <div class="dropdown-menu">
           <div class="dropdown-content">
             <router-link
