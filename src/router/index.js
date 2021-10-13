@@ -20,31 +20,31 @@ const routes = [
     component: () => import('@/views/Feed')
   },
   {
-    path: '/wallets',
-    name: 'Wallets',
+    path: '/c',
+    name: 'Carteras',
     component: () => import('@/views/Wallets')
   },
   {
-    path: '/wallets/new',
-    name: 'WalletsNew',
+    path: '/c/new',
+    name: 'CarterasNew',
     component: () => import('@/views/WalletsNew')
   },
   {
     props: true,
-    path: '/wallets/:id/edit',
-    name: 'WalletsEdit',
+    path: '/c/:id/edit',
+    name: 'CarterasEdit',
     component: () => import('@/views/WalletsEdit')
+  },
+  {
+    props: true,
+    path: '/c/:id',
+    name: 'Cartera',
+    component: () => import('@/views/Portfolio')
   },
   {
     path: '/notifications',
     name: 'Notifications',
     component: () => import('@/views/Notifications')
-  },
-  {
-    props: true,
-    path: '/c/:id',
-    name: 'Portfolio',
-    component: () => import('@/views/Portfolio')
   },
   {
     props: true,
