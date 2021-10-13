@@ -21,14 +21,9 @@
     <div class="level-right">
       <!-- Edit -->
       <div v-if="isSelf" class="level-item">
-        <button class="button is-primary">
-          <span class="icon-text">
-            <span class="icon">
-              <font-awesome-icon icon="pen" />
-            </span>
-            <span> Editar cartera </span>
-          </span>
-        </button>
+        <router-link :to="`/c/${wallet.id}/edit`">
+          <c-button class="is-primary" left icon="pen"> Editar cartera </c-button>
+        </router-link>
       </div>
 
       <!-- Share -->
