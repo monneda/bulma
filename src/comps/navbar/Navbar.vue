@@ -29,7 +29,7 @@
         </figure>
       </a>
 
-      <navbar-item-user style="margin-left: auto" v-else :simple="true" class="is-hidden-desktop" @toggle="toggle"/>
+      <navbar-item-user v-else :simple="true" class="is-hidden-desktop ml-auto mr-2" @toggle="toggle"/>
     </div>
 
     <!-- Menu logged -->
@@ -52,7 +52,7 @@
     </div>
 
     <!-- Menu (anonymous) -->
-    <div v-else class="navbar-menu navbar-menu-right" ref="menu">
+    <div v-else class="navbar-menu navbar-menu-size ml-auto" ref="menu">
       <div class="navbar-end">
         <!-- login desktop -->
         <div class="navbar-item is-hidden-touch">
@@ -123,7 +123,6 @@ export default {
     height: 60px;
   }
 }
-
 @media screen and (max-width: 1023px) {
   .navbar-menu-touch {
     width: 90%;
@@ -134,10 +133,9 @@ export default {
 .custom-burger {
   height: 1.0875rem;
 }
-.navbar-menu-right {
+.navbar-menu-size {
   width: 75%;
   height: 100%;
-  margin-left: auto
 }
 .login-button-touch {
   margin-right: auto;

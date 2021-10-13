@@ -1,7 +1,7 @@
 <template>
 <div class="field">
   <p class="control has-icons-left">
-    <input class="input" type="text" placeholder="Pesquisar investidores">
+    <input class="input input-size" type="text" placeholder="Pesquisar investidores">
     <span class="icon is-left has-text-primary">
       <font-awesome-icon icon="search" />
     </span>
@@ -16,4 +16,8 @@ export default {
 </script>
 
 <style scoped>
+.input-size {
+  height: 40px;
+  font-size: 14px;
+}
 </style>

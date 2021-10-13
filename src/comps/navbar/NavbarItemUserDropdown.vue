@@ -66,7 +66,6 @@ export default {
   width: 60px;
 }
 .navbar-divider {
-  height: 1px;
   display: block;
 }
 .has-text-gray-3 {

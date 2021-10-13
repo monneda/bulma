@@ -3,7 +3,7 @@
   <a class="navbar-link">
     <span class="icon-text">
       <span class="icon is-medium is-30x30">
-        <IconUser :src="$store.state.user.profile.picture"/>
+        <IconUser :src="$store.state.user.profile.picture" size="1x"/>
       </span>
       <span v-if="!simple" class="my-auto"> {{ $store.state.user.profile.givenName }} </span>
     </span>
