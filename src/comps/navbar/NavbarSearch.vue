@@ -16,8 +16,10 @@ export default {
 </script>
 
 <style scoped>
-.input-size {
-  height: 40px;
-  font-size: 14px;
+@media screen and (max-width: 350px) {
+  .input-size {
+    height: 40px;
+    font-size: 14px;
+  }
 }
 </style>

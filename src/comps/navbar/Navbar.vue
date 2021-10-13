@@ -4,12 +4,12 @@
     <!-- Brand -->
     <div class="navbar-brand navbar-size-touch">
       <!-- Logo desktop width 125px -->
-      <router-link class="navbar-item is-hidden-touch" to="/feed">
+      <router-link class="navbar-item is-hidden-mobile" to="/feed">
         <figure class="image">
           <img class="is-radiusless" src="@/assets/imgs/logo-horizontal.png" style="width: 7.8125rem">
         </figure>
       </router-link>
-      <!-- Logo mobile height 25px -->
+      <!-- Logo mobile when not logged height 25px -->
       <router-link v-if="!$store.state.user.auth" class="navbar-item is-hidden-desktop" to="/feed">
         <figure class="image">
             <img class="is-radiusless" src="@/assets/imgs/logo-horizontal.png" style="height: 1.5625rem; width: 8.125rem">
@@ -38,6 +38,7 @@
       <div class="navbar-end is-hidden-touch">
         <navbar-item to="/feed" icon="home" label="FEED" />
         <navbar-item to="/c" icon="wallet"  label="CARTERAS" />
+        <navbar-item to="/a" icon="chart-line" label="ATIVOS" />
         <navbar-item to="/explore" icon="compass" label="DESCOBRIR" />
         <navbar-item to="/chat" icon="comment" label="CHAT" />
         <navbar-item to="/notifications" icon="bell" label="NOTIFICAÇÕES" />
@@ -80,6 +81,7 @@
 <nav v-if="$store.state.user.auth" class="navbar is-fixed-bottom is-hidden-desktop is-inline-flex is-justify-content-space-around is-align-items-center">
   <navbar-item to="/feed" icon="home" class="fa-lg" />
   <navbar-item to="/c" icon="wallet" class="fa-lg" />
+  <navbar-item to="/a" icon="chart-line" class="fa-lg" />
   <navbar-item to="/explore" icon="compass" class="fa-lg" />
   <navbar-item to="/chat" icon="comment" class="fa-lg" />
   <navbar-item to="/notifications" icon="bell" class="fa-lg" />
