@@ -12,7 +12,7 @@
       <!-- Logo mobile height 25px -->
       <router-link v-if="!$store.state.user.auth" class="navbar-item is-hidden-desktop ml-3" to="/feed">
         <figure class="image">
-            <img class="is-radiusless" src="@/assets/imgs/logo-horizontal.png" style="height: 1.5625rem">
+            <img class="is-radiusless" src="@/assets/imgs/logo-horizontal.png" style="height: 1.5625rem; width: 8.125rem">
         </figure>
       </router-link>
 
