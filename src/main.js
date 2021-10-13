@@ -13,6 +13,7 @@ import '@/assets/scss/index.scss'
 // Plugins
 import registerIcons from '@/plugins/icons'
 import registerUi from '@/plugins/ui'
+import registerMeili from '@/plugins/meili'
 
 const app = createApp(App)
 window.app = app
@@ -22,5 +23,6 @@ app.use(router)
 
 registerIcons(app)
 registerUi(app)
+registerMeili(app)
 
 app.mount('#app')
