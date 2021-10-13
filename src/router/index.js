@@ -54,6 +54,12 @@ const routes = [
   },
   {
     props: true,
+    name: 'ProfileEdit',
+    path: '/u/:username/edit',
+    component: () => import('@/views/ProfileEdit')
+  },
+  {
+    props: true,
     name: 'Following',
     path: '/u/:username/following',
     meta: { page: 'following' },
