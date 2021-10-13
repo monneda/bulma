@@ -20,7 +20,7 @@
     <!-- <c-button class="is-primary"> Compartilhar </c-button> -->
     <!-- <br> -->
 
-    <router-link to="/wallets">
+    <router-link to="/c">
       <c-button class="is-light">
         Voltar para Carteras
       </c-button>

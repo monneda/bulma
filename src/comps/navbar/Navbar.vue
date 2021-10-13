@@ -37,7 +37,7 @@
       <!-- icons navbar desktop -->
       <div class="navbar-end is-hidden-touch">
         <navbar-item to="/feed" icon="home" label="FEED" />
-        <navbar-item to="/wallets" icon="wallet"  label="CARTERAS" />
+        <navbar-item to="/c" icon="wallet"  label="CARTERAS" />
         <navbar-item to="/explore" icon="compass" label="DESCOBRIR" />
         <navbar-item to="/chat" icon="comment" label="CHAT" />
         <navbar-item to="/notifications" icon="bell" label="NOTIFICAÇÕES" />
