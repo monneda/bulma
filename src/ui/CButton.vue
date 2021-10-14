@@ -7,7 +7,7 @@
     </span>
 
     <!-- Center -->
-    <span>
+    <span v-if="hasSlot">
       <slot></slot>
     </span>
 
@@ -28,6 +28,12 @@ export default {
     left: { type: Boolean, default: false },
     right: { type: Boolean, default: false },
     loading: { type: Boolean, default: false }
+  },
+
+  computed: {
+    hasSlot () {
+      return !!this.$slots.default
+    }
   }
 }
 </script>

@@ -3,17 +3,13 @@
   <div class="level-left">
     <!-- User image -->
     <div class="level-item">
-      <figure class="image is-48x48">
-        <img class="is-rounded" :src="item.owner.picture">
-      </figure>
+      <c-avatar :src="item.owner.picture" round />
     </div>
 
     <div class="level-item">
       <div class="is-flex is-flex-direction-column">
         <!-- Username -->
-        <strong>
-          @{{ item.owner.username }}
-        </strong>
+        <strong> @{{ item.owner.username }} </strong>
 
         <!-- Created at -->
         <small>
@@ -29,11 +25,13 @@
       <div class="dropdown is-right" :class="{ 'is-active': active }">
         <!-- Ellipsis -->
         <div class="dropdown-trigger">
-          <button class="button is-white" v-if="isSelf">
-            <span class="icon is-small" @click="active = !active">
-              <font-awesome-icon :icon="['fa', 'ellipsis-v']" />
-            </span>
-          </button>
+          <c-button
+            class="is-white"
+            v-if="isSelf"
+            left
+            :icon="['fa', 'ellipsis-v']"
+            @click="active = !active"
+          />
         </div>
 
         <!-- Content -->
@@ -45,7 +43,6 @@
       </div>
     </div>
   </div>
-
 </div>
 </template>
 
