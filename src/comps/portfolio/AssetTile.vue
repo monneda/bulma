@@ -1,21 +1,13 @@
 <template>
 <article>
-  <div class="level is-mobile">
-    <div class="level-left">
-      <!-- Icon -->
-      <div class="level-item">
-        <span class="icon is-large">
-          <IconTicker :ticker="asset.ticker" />
-        </span>
-      </div>
+  <div class="is-flex">
+    <!-- Icon -->
+    <c-ticker :ticker="asset.ticker" />
 
-      <!-- Asset name -->
-      <div class="level-item">
-        <div class="is-flex is-flex-direction-column">
-          <span> {{ asset.name }} </span>
-          <strong> {{ asset.ticker }} </strong>
-        </div>
-      </div>
+    <!-- Asset name -->
+    <div class="is-flex is-flex-direction-column pl-3">
+      <span> {{ asset.name }} </span>
+      <strong> {{ asset.ticker }} </strong>
     </div>
   </div>
 
@@ -52,14 +44,8 @@
 </template>
 
 <script>
-import IconTicker from '@/comps/utils/IconTicker'
-
 export default {
   name: 'AssetTile',
-
-  components: {
-    IconTicker
-  },
 
   props: {
     asset: {
