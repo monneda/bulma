@@ -17,7 +17,7 @@
       </router-link>
 
       <!-- Search -->
-      <div class="navbar-item" v-if="$store.state.user.auth">
+      <div class="navbar-item" style="max-width: 75%" v-if="$store.state.user.auth">
         <MeiliSearchUsers />
       </div>
 

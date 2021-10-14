@@ -18,15 +18,7 @@
 
       <h4 class="title is-4"> Publicações </h4>
 
-      <div class="columns">
-        <div class="column is-7">
-          <FeedItem v-for="i of items" :key="i.id" :item="i" class="box" />
-        </div>
-
-        <div class="column is-5 is-hidden-touch">
-          <ProfileSuggestions class="box" />
-        </div>
-      </div>
+      <FeedItem v-for="i of items" :key="i.id" :item="i" class="box" />
     </div>
   </div>
 </div>
@@ -39,14 +31,12 @@ import Navbar from '@/comps/navbar/Navbar'
 import FeedItem from '@/comps/feed/FeedItem'
 import ProfileBanner from '@/comps/profile/ProfileBanner'
 import ProfilePortfolios from '@/comps/profile/ProfilePortfolios'
-import ProfileSuggestions from '@/comps/profile/ProfileSuggestions'
 
 export default {
   components: {
     Navbar,
     FeedItem,
     ProfilePortfolios,
-    ProfileSuggestions,
     ProfileBanner
   },
 

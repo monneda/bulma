@@ -4,6 +4,7 @@
 
   <Post v-if="item.type === 'TEXT_POST_CREATED'" :post="item" />
   <Edit v-if="item.type === 'WALLET_ASSETS_EDIT'" :edit="item" />
+  <NewCartera v-if="item.type === 'NEW_WALLET'" :edit="item" />
 
   <br>
 
@@ -39,6 +40,7 @@ import {
 
 import Post from './Post'
 import Edit from './Edit'
+import NewCartera from './NewCartera'
 import ItemButtonList from './ItemButtonList'
 import ItemCommentList from './ItemCommentList'
 import ItemCommentForm from './ItemCommentForm'
@@ -55,7 +57,8 @@ export default {
     ItemCommentList,
     ItemCommentForm,
     ItemShareInfo,
-    ItemInfo
+    ItemInfo,
+    NewCartera
   },
 
   props: {
