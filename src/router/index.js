@@ -1,7 +1,8 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 
-import UserGuard from '@/router/guard.user'
-import CallbackGuard from '@/router/guard.callback'
+import UserGuard from './guard.user'
+import OwnerGuard from './guard.owner'
+import CallbackGuard from './guard.callback'
 
 const routes = [
   {
@@ -56,6 +57,7 @@ const routes = [
     props: true,
     name: 'ProfileEdit',
     path: '/u/:username/edit',
+    beforeEnter: OwnerGuard,
     component: () => import('@/views/ProfileEdit')
   },
   {
