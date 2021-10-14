@@ -1,5 +1,5 @@
 <template>
-<Navbar class="has-shadow" />
+<Navbar />
 
 <!-- Content -->
 <div class="container is-fluid px-0 is-clipped">
@@ -304,12 +304,14 @@
 </div>
 
 <Footer />
+<NavbarBottom/>
 </template>
 
 <script>
 import CIcon from '@/ui/CIcon'
 import Footer from '@/comps/Footer'
 import Navbar from '@/comps/navbar/Navbar'
+import NavbarBottom from '@/comps/navbar/NavbarBottom'
 
 import { LOGIN } from '@/store/type.actions'
 
@@ -319,7 +321,8 @@ export default {
   components: {
     CIcon,
     Footer,
-    Navbar
+    Navbar,
+    NavbarBottom
   },
 
   methods: {

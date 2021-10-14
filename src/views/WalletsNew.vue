@@ -33,6 +33,8 @@
     />
   </div>
 </div>
+
+<NavbarBottom/>
 </template>
 
 <script>
@@ -42,11 +44,13 @@ import WalletsNewAbout from '@/comps/walletsnew/WalletsNewAbout'
 import WalletsNewAssets from '@/comps/walletsnew/WalletsNewAssets'
 import WalletsNewCompleted from '@/comps/walletsnew/WalletsNewCompleted'
 import WalletsNewNavigation from '@/comps/walletsnew/WalletsNewNavigation'
+import NavbarBottom from '../comps/navbar/NavbarBottom'
 
 export default {
   name: 'WalletsNew',
 
   components: {
+    NavbarBottom,
     Navbar,
     WalletsNewAbout,
     WalletsNewAssets,

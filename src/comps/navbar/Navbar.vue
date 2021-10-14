@@ -1,5 +1,6 @@
 <template>
-<nav class="navbar navbar-size navbar-size-touch">
+<section class="has-navbar-fixed-top has-navbar-fixed-top-touch">
+<nav class="navbar is-fixed-top navbar-size navbar-size-touch">
   <div class="container">
     <!-- Brand -->
     <div class="navbar-brand navbar-size-touch">
@@ -78,18 +79,7 @@
     </div>
   </div>
 </nav>
-<nav
-  v-if="$store.state.user.auth"
-  class="navbar is-fixed-bottom is-hidden-desktop is-inline-flex is-justify-content-space-around is-align-items-center"
-  style="padding-bottom: env(safe-area-inset-bottom)"
->
-  <navbar-item to="/feed" icon="home" class="fa-lg" />
-  <navbar-item to="/c" icon="wallet" class="fa-lg" />
-  <navbar-item to="/a" icon="chart-line" class="fa-lg" />
-  <navbar-item to="/explore" icon="compass" class="fa-lg" />
-  <navbar-item to="/chat" icon="comment" class="fa-lg" />
-  <navbar-item to="/notifications" icon="bell" class="fa-lg" />
-</nav>
+</section>
 </template>
 
 <script>
@@ -132,9 +122,15 @@ export default {
 .navbar-size {
   height: 70px;
 }
+.has-navbar-fixed-top {
+  padding-top: 70px;
+}
 @media screen and (max-width: 1023px) {
   .navbar-size-touch {
     height: 60px;
+  }
+  .has-navbar-fixed-top-touch {
+    padding-top: 60px;
   }
 }
 @media screen and (max-width: 1023px) {

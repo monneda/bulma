@@ -28,6 +28,8 @@
     </div>
   </div>
 </div>
+
+<NavbarBottom/>
 </template>
 
 <script>
@@ -38,11 +40,13 @@ import PortfolioBanner from '@/comps/portfolio/PortfolioBanner'
 import PortfolioAssets from '@/comps/portfolio/PortfolioAssets'
 import PortfolioHistory from '@/comps/portfolio/PortfolioHistory'
 import PortfolioComposition from '@/comps/portfolio/PortfolioComposition'
+import NavbarBottom from '../comps/navbar/NavbarBottom'
 
 export default {
   name: 'Portfolio',
 
   components: {
+    NavbarBottom,
     Navbar,
     PortfolioBanner,
     PortfolioAssets,

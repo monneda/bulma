@@ -43,6 +43,7 @@
     </div>
   </div>
 </div>
+<NavbarBottom/>
 </template>
 
 <script>
@@ -51,6 +52,7 @@ import SECTORS from '@/assets/sectors.json'
 import client from '@/commons/client.api'
 
 import Navbar from '@/comps/navbar/Navbar'
+import NavbarBottom from '@/comps/navbar/NavbarBottom'
 
 import AssetTabs from '@/comps/asset/AssetTabs'
 import AssetBanner from '@/comps/asset/AssetBanner'
@@ -63,7 +65,8 @@ export default {
     Navbar,
     AssetTabs,
     AssetBanner,
-    AssetHistoryChart
+    AssetHistoryChart,
+    NavbarBottom
   },
 
   props: {

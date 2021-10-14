@@ -20,12 +20,14 @@
     </div>
   </div>
 </div>
+<navbar-bottom/>
 </template>
 
 <script>
 import client from '@/commons/client.api'
 
 import Navbar from '@/comps/navbar/Navbar'
+import NavbarBottom from '@/comps/navbar/NavbarBottom'
 
 import Notification from '@/comps/notifications/Notification'
 
@@ -34,7 +36,8 @@ export default {
 
   components: {
     Navbar,
-    Notification
+    Notification,
+    NavbarBottom
   },
 
   data: () => ({

@@ -89,6 +89,7 @@
       </div>
     </div>
   </div>
+  <NavbarBottom/>
 </div>
 </template>
 
@@ -98,11 +99,13 @@ import client from '@/commons/client.api'
 import Navbar from '@/comps/navbar/Navbar'
 
 import WalletsEditAssetRow from '@/comps/walletsedit/WalletsEditAssetRow'
+import NavbarBottom from '../comps/navbar/NavbarBottom'
 
 export default {
   name: 'WalletsEdit',
 
   components: {
+    NavbarBottom,
     Navbar,
     WalletsEditAssetRow
   },

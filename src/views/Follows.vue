@@ -64,6 +64,8 @@
     </div>
   </div>
 </div>
+
+<NavbarBottom/>
 </template>
 
 <script>
@@ -73,6 +75,7 @@ import Navbar from '@/comps/navbar/Navbar'
 import IconUser from '@/comps/utils/IconUser'
 
 import SimpleFollowCard from '../comps/utils/SimpleFollowCard'
+import NavbarBottom from '../comps/navbar/NavbarBottom'
 
 export default {
   name: 'Followers',
@@ -80,7 +83,8 @@ export default {
   components: {
     SimpleFollowCard,
     Navbar,
-    IconUser
+    IconUser,
+    NavbarBottom
   },
 
   props: {

@@ -22,12 +22,15 @@
     </div>
   </div>
 </div>
+
+<NavbarBottom/>
 </template>
 
 <script>
 import { FEED_FETCH_EVENTS_FOR_USER } from '@/store/type.actions'
 
 import Navbar from '@/comps/navbar/Navbar'
+import NavbarBottom from '@/comps/navbar/NavbarBottom'
 import FeedItem from '@/comps/feed/FeedItem'
 import ProfileBanner from '@/comps/profile/ProfileBanner'
 import ProfilePortfolios from '@/comps/profile/ProfilePortfolios'
@@ -37,7 +40,8 @@ export default {
     Navbar,
     FeedItem,
     ProfilePortfolios,
-    ProfileBanner
+    ProfileBanner,
+    NavbarBottom
   },
 
   props: {

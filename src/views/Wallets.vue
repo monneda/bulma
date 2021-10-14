@@ -45,6 +45,7 @@
   </div>
 </div>
 
+<NavbarBottom/>
 </template>
 
 <script>
@@ -53,11 +54,13 @@ import client from '@/commons/client.api'
 import Navbar from '@/comps/navbar/Navbar'
 import WalletsTile from '@/comps/wallets/WalletsTile'
 import WalletsRank from '@/comps/wallets/WalletsRank'
+import NavbarBottom from '../comps/navbar/NavbarBottom'
 
 export default {
   name: 'Wallets',
 
   components: {
+    NavbarBottom,
     Navbar,
     WalletsTile,
     WalletsRank

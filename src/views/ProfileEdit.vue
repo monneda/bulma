@@ -72,15 +72,19 @@
     </div>
   </div>
 </div>
+
+<NavbarBottom/>
 </template>
 
 <script>
 import client from '@/commons/client.api'
 
 import Navbar from '@/comps/navbar/Navbar'
+import NavbarBottom from '../comps/navbar/NavbarBottom'
 
 export default {
   components: {
+    NavbarBottom,
     Navbar
   },
 

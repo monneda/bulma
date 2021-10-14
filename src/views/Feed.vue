@@ -1,8 +1,6 @@
 <template>
-<Navbar class="has-shadow" />
-
+<Navbar/>
 <br>
-
 <div class="container">
   <div class="columns is-centered mx-0">
     <div class="column is-three-fifths">
@@ -21,6 +19,7 @@
     </div>
   </div>
 </div>
+<NavbarBottom />
 </template>
 
 <script>
@@ -30,11 +29,13 @@ import Navbar from '@/comps/navbar/Navbar'
 import FeedItem from '@/comps/feed/FeedItem'
 import FeedSuggestions from '@/comps/feed/FeedSuggestions'
 import PostForm from '@/comps/forms/PostForm'
+import NavbarBottom from '../comps/navbar/NavbarBottom'
 
 export default {
   name: 'Feed',
 
   components: {
+    NavbarBottom,
     Navbar,
     FeedItem,
     PostForm,
