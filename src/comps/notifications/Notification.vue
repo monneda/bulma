@@ -3,7 +3,7 @@
   <div class="is-flex is-align-items-center p-1">
     <!-- Picture -->
     <span class="icon is-large mx-2">
-      <IconUser :src="notification.user.picture" />
+      <c-avatar :src="notification.user.picture" />
     </span>
 
     <!-- Notification -->
@@ -30,7 +30,6 @@
 
 <script>
 import TimeAgo from '@/comps/utils/TimeAgo'
-import IconUser from '@/comps/utils/IconUser'
 
 const TEXT = {
   USER_COMMENT_EVENT: 'comentou na sua postagem',
@@ -43,8 +42,7 @@ export default {
   name: 'Notification',
 
   components: {
-    TimeAgo,
-    IconUser
+    TimeAgo
   },
 
   props: {
