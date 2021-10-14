@@ -2,9 +2,7 @@
 <article>
   <p v-if="edit.data.type === 'UPDATE'">
     Atualizei minha carteira:
-    <router-link :to="`/c/${wallet.id}`">
-      {{ wallet.name }}
-    </router-link>
+    <router-link :to="`/c/${wallet.id}`"> {{ wallet.name }} </router-link>
   </p>
 
   <br>
@@ -21,13 +19,9 @@
     </span>
 
     <div v-for="c of start" :key="c.ticker" class="px-2 has-text-centered">
-      <span class="icon is-large">
-        <IconTicker :ticker="c.ticker"/>
-      </span>
+      <c-ticker :ticker="c.ticker" />
       <br>
-      <span>
-        {{ c.ticker }}
-      </span>
+      <span> {{ c.ticker }} </span>
     </div>
   </div>
   <br v-if="start.length > 0">
@@ -44,13 +38,9 @@
     </span>
 
     <div v-for="c of end" :key="c.ticker" class="px-2 has-text-centered">
-      <span class="icon is-large">
-        <IconTicker :ticker="c.ticker"/>
-      </span>
+      <c-ticker :ticker="c.ticker" />
       <br>
-      <span>
-        {{ c.ticker }}
-      </span>
+      <span> {{ c.ticker }} </span>
     </div>
   </div>
   <br v-if="end.length > 0">
@@ -67,13 +57,9 @@
     </span>
 
     <div v-for="c of dec" :key="c.ticker" class="px-2 has-text-centered">
-      <span class="icon is-large">
-        <IconTicker :ticker="c.ticker"/>
-      </span>
+      <c-ticker :ticker="c.ticker" />
       <br>
-      <span>
-        {{ c.ticker }}
-      </span>
+      <span> {{ c.ticker }} </span>
     </div>
   </div>
   <br v-if="dec.length > 0">
@@ -90,13 +76,9 @@
     </span>
 
     <div v-for="c of inc" :key="c.ticker" class="px-2 has-text-centered">
-      <span class="icon is-large">
-        <IconTicker :ticker="c.ticker"/>
-      </span>
+      <c-ticker :ticker="c.ticker" />
       <br>
-      <span>
-        {{ c.ticker }}
-      </span>
+      <span> {{ c.ticker }} </span>
     </div>
   </div>
   <br v-if="inc.length > 0">
@@ -106,14 +88,8 @@
 <script>
 import client from '@/commons/client.api'
 
-import IconTicker from '@/comps/utils/IconTicker'
-
 export default {
   name: 'Edit',
-
-  components: {
-    IconTicker
-  },
 
   props: {
     edit: {

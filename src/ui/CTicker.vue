@@ -1,12 +1,12 @@
 <template>
-<div>
-  <span v-if="error || !src" class="icon">
-    <font-awesome-icon :icon="icon" size="xs" />
+<router-link :to="`/a/${this.upper}`">
+  <span class="icon">
+    <font-awesome-icon v-if="error || !src" :icon="icon" />
+    <figure v-else class="image">
+      <img :src="src" @error="error = true" />
+    </figure>
   </span>
-  <figure v-else class="image">
-    <img :src="src" @error="error = true" />
-  </figure>
-</div>
+</router-link>
 </template>
 
 <script>
@@ -27,9 +27,12 @@ export default {
   }),
 
   computed: {
+    upper () {
+      return this.ticker.toUpperCase()
+    },
+
     src () {
-      const ticker = this.ticker.toUpperCase()
-      return `${BASE}/${ticker}.png`
+      return `${BASE}/${this.upper}.png`
     }
   }
 }
@@ -47,7 +50,7 @@ img {
 .icon {
   width: v-bind(size);
   height: v-bind(size);
-  font-size: calc(v-bind(size) * 0.7);
+  font-size: v-bind(size);
   border-radius: v-bind(radius);
 }
 </style>
