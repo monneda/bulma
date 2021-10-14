@@ -1,9 +1,7 @@
 <template>
 <article class="media">
   <!-- Image -->
-  <figure class="media-left image is-48x48">
-    <img class="is-rounded" :src="comment.user.picture">
-  </figure>
+  <c-avatar class="media-left" :src="comment.user.picture" round />
 
   <div class="media-content">
     <div class="comment has-background-light p-5">
@@ -22,11 +20,12 @@
           <div class="level-item" v-if="isSelf">
             <div class="dropdown is-right" :class="{ 'is-active': active }">
               <div class="dropdown-trigger">
-                <button class="button is-light is-small" @click="active = !active">
-                  <span class="icon">
-                    <font-awesome-icon :icon="['fa', 'ellipsis-v']" />
-                  </span>
-                </button>
+                <c-button
+                  class="is-light is-small"
+                  @click="active = !active"
+                  left
+                  :icon="['fa', 'ellipsis-v']"
+                />
               </div>
               <div class="dropdown-menu">
                 <div class="dropdown-content">
