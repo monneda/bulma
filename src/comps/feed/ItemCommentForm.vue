@@ -1,9 +1,7 @@
 <template>
 <article class="media">
   <!-- Image -->
-  <figure class="media-left image is-48x48">
-    <img class="is-rounded" :src="$store.state.user.profile.picture">
-  </figure>
+  <c-avatar class="media-left" :src="$store.state.user.profile.picture" round />
 
   <!-- Input -->
   <div class="media-content my-auto">
