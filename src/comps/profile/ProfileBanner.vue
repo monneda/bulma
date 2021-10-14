@@ -2,10 +2,8 @@
 <article>
   <div class="columns">
     <!-- Image -->
-    <div class="column is-one-fifth">
-      <figure class="image is-128x128 mx-auto">
-        <img class="is-rounded" :src="user.picture">
-      </figure>
+    <div class="column is-one-fifth is-flex is-justify-content-center is-align-items-center">
+      <c-avatar :src="user.picture" round size="9rem" />
     </div>
 
     <div class="column">
@@ -14,7 +12,7 @@
         <div class="level-left">
           <div class="level-item">
             <div class="has-text-centered-mobile">
-              <h4 class="title is-size-4"> {{ user.name }} </h4>
+              <h4 class="title is-4"> {{ user.name }} </h4>
               <p> @{{ user.username }} </p>
             </div>
           </div>
@@ -47,22 +45,26 @@
           </div>
 
           <!-- Followers -->
-          <router-link :to="'/u/'+ this.user.username +'/followers'" class="level-item px-2">
-            <p>
-              <strong class="has-text-primary"> {{ user.followersCount }} </strong>
-              <br class="is-hidden-desktop">
-              seguidores
-            </p>
-          </router-link>
+          <div class="level-item px-2">
+            <router-link :to="`/u/${this.user.username}/followers`">
+              <p>
+                <strong class="has-text-primary"> {{ user.followersCount }} </strong>
+                <br class="is-hidden-desktop">
+                seguidores
+              </p>
+            </router-link>
+          </div>
 
           <!-- Following -->
-          <router-link :to="'/u/'+ this.user.username +'/following'" class="level-item px-2">
-            <p>
-              <strong class="has-text-primary"> {{ user.followingCount }} </strong>
-              <br class="is-hidden-desktop">
-              seguindo
-            </p>
-          </router-link>
+          <div class="level-item">
+            <router-link :to="`/u/${this.user.username}/following`">
+              <p>
+                <strong class="has-text-primary"> {{ user.followingCount }} </strong>
+                <br class="is-hidden-desktop">
+                seguindo
+              </p>
+            </router-link>
+          </div>
         </div>
       </div>
 

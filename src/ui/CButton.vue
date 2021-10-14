@@ -24,7 +24,7 @@ export default {
   name: 'CButton',
 
   props: {
-    icon: { type: String, default: '' },
+    icon: { type: [String, Array], default: '' },
     left: { type: Boolean, default: false },
     right: { type: Boolean, default: false },
     loading: { type: Boolean, default: false }
