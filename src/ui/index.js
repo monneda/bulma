@@ -1,11 +1,9 @@
 import CAvatar from './CAvatar'
 import CButton from './CButton'
-import CMenuDesktop from './CMenuDesktop'
-import CMenuLoggedOut from './CMenuLoggedOut'
+import CTicker from './CTicker'
 
 export {
   CAvatar,
   CButton,
-  CMenuDesktop,
-  CMenuLoggedOut
+  CTicker
 }

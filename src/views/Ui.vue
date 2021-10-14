@@ -1,22 +1,12 @@
 <template>
-<c-menu-desktop
-  class="is-hidden-touch"
-  :user="$store.state.user.profile"
-  @logout="logout"
-/>
-<c-menu-logged-out />
+  <c-ticker ticker="petr4" size="3rem" />
+  <c-ticker ticker="MGLu3" size="1rem" />
+  <c-ticker ticker="lol34" size="10rem" />
 </template>
 
 <script>
-import { LOGOUT } from '@/store/type.actions'
 
 export default {
-  name: 'Ui',
-
-  methods: {
-    logout () {
-      this.$store.dispatch(LOGOUT)
-    }
-  }
+  name: 'Ui'
 }
 </script>
