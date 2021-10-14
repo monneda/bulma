@@ -1,9 +1,12 @@
 <template>
 <article>
   <div class="media">
-    <figure class="media-left image is-50x50">
-      <img class="is-rounded" :src="$store.state.user.profile.picture">
-    </figure>
+    <c-avatar
+      class="media-left"
+      :src="$store.state.user.profile.picture"
+      round
+      size="4rem"
+    />
 
     <div class="media-content my-auto">
       <span @click="modal = true">
