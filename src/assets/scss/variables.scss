@@ -78,4 +78,8 @@ $navbar-burger-color:       $primary;
 $navbar-dropdown-z:         50;
 $navbar-divider-height: 1px;
 
+// Input
+$input-focus-border-color: $green-3;
+$input-focus-box-shadow-size: 0;
+
 @import '~bulma/sass/utilities/_all';

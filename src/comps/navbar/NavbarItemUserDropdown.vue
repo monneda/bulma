@@ -15,7 +15,7 @@
   </router-link>
   <hr class="navbar-divider">
   <!-- Edit profile -->
-  <router-link to="/u/nice/edit" class="navbar-item">
+  <router-link :to="`/u/${$store.state.user.profile.username}/edit`" class="navbar-item">
     <span class="icon is-small">
       <font-awesome-icon icon="pen" />
     </span>
