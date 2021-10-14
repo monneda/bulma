@@ -96,6 +96,11 @@ const routes = [
     component: () => import('@/views/Test')
   },
   {
+    path: '/ui',
+    name: 'Ui',
+    component: () => import('@/views/Ui')
+  },
+  {
     // Adapted from:
     //  https://next.router.vuejs.org/guide/essentials/dynamic-matching.html
     path: '/:pathMatch(.*)*',
