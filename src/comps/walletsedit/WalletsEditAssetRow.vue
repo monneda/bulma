@@ -6,52 +6,46 @@
       <div class="level-item">
         <span class="icon-text">
           <!-- Icon -->
-          <span class="icon is-large">
-            <IconTicker :ticker="asset.ticker" />
-          </span>
+          <c-ticker :ticker="asset.ticker" />
 
           <!-- Name + ticker -->
           <div class="is-flex is-flex-direction-column is-justify-content-center pl-3">
-            <span><strong>{{ asset.name }}</strong></span>
+            <strong>{{ asset.name }}</strong>
             <span>{{ asset.ticker }}</span>
           </div>
         </span>
       </div>
     </div>
 
-    <!-- Spacing -->
-    <div class="level-item is-hidden-touch"></div>
-    <div class="level-item is-hidden-touch"></div>
-
-    <!-- Desktop -->
-
-    <!-- Amount -->
-    <div class="level-item is-hidden-touch">
-      <div class="is-flex is-flex-direction-column">
-        <span><strong> Qtd. </strong></span>
-        <span>{{ asset.amount }}</span>
+    <div class="level-right">
+      <!-- Amount -->
+      <div class="level-item is-hidden-touch px-4">
+        <div class="is-flex is-flex-direction-column">
+          <strong> Qtd. </strong>
+          <span>{{ asset.amount }}</span>
+        </div>
       </div>
-    </div>
 
-    <!-- Price -->
-    <div class="level-item is-hidden-touch">
-      <div class="is-flex is-flex-direction-column">
-        <span><strong> Preço </strong></span>
-        <span>{{ asset.price }}</span>
+      <!-- Price -->
+      <div class="level-item is-hidden-touch px-4">
+        <div class="is-flex is-flex-direction-column">
+          <strong> Preço </strong>
+          <span>{{ asset.price }}</span>
+        </div>
       </div>
-    </div>
 
-    <!-- Gain -->
-    <div class="level-item is-hidden-touch">
-      <div class="is-flex is-flex-direction-column">
-        <span><strong> Variação </strong></span>
-        <span>{{ asset.gain.toFixed(2) }}</span>
+      <!-- Gain -->
+      <div class="level-item is-hidden-touch px-4">
+        <div class="is-flex is-flex-direction-column">
+          <strong> Variação </strong>
+          <span> %{{ asset.gain.toFixed(2) }} </span>
+        </div>
       </div>
-    </div>
 
-    <div class="level-item is-hidden-touch">
       <!-- Delete -->
-      <button class="button delete is-danger" @click="remove"></button>
+      <div class="level-item is-hidden-touch px-4">
+        <button class="button delete is-danger" @click="remove"></button>
+      </div>
     </div>
   </div>
 
@@ -62,7 +56,7 @@
     <!-- Amount -->
     <div class="level-item">
       <div class="is-flex is-flex-direction-column">
-        <span><strong> Qtd. </strong></span>
+        <strong> Qtd. </strong>
         <span>{{ asset.amount }}</span>
       </div>
     </div>
@@ -70,7 +64,7 @@
     <!-- Price -->
     <div class="level-item">
       <div class="is-flex is-flex-direction-column">
-        <span><strong> Preço </strong></span>
+        <strong> Preço </strong>
         <span>{{ asset.price }}</span>
       </div>
     </div>
@@ -78,7 +72,7 @@
     <!-- Gain -->
     <div class="level-item">
       <div class="is-flex is-flex-direction-column">
-        <span><strong> Variação </strong></span>
+        <strong> Variação </strong>
         <span>{{ asset.gain.toFixed(2) }}</span>
       </div>
     </div>
@@ -92,14 +86,8 @@
 </template>
 
 <script>
-import IconTicker from '@/comps/utils/IconTicker'
-
 export default {
   name: 'WalletEditAssetRow',
-
-  components: {
-    IconTicker
-  },
 
   props: {
     asset: {

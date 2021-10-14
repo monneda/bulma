@@ -1,10 +1,8 @@
 <template>
 <div class="is-flex is-flex-wrap-wrap is-justify-content-space-between">
-  <div class="is-flex is-align-items-center">
+  <div class="is-flex">
     <!-- Icon -->
-    <span class="icon is-large">
-      <IconTicker :ticker="asset.ticker" />
-    </span>
+    <c-ticker :ticker="asset.ticker" />
 
     <!-- Name + ticker -->
     <div class="is-flex is-flex-direction-column is-justify-content-center pl-3">
@@ -21,14 +19,8 @@
 </template>
 
 <script>
-import IconTicker from '@/comps/utils/IconTicker'
-
 export default {
   name: 'AssetBanner',
-
-  components: {
-    IconTicker
-  },
 
   props: {
     asset: {
