@@ -1,44 +1,53 @@
 <template>
 <article class="box">
-  <router-link :to="'/u/'+$store.state.user.profile.username">
-    <div class="has-text-centered">
-      <span class="icon is-60x60">
-        <IconUser :src="$store.state.user.profile.picture"/>
-      </span>
-      <br>
-      <span class="title is-size-6"> {{ $store.state.user.profile.name }} </span>
-      <br>
-      <span class="subtitle is-subtitle-size"> @{{ $store.state.user.profile.username }} </span>
-    </div>
-  </router-link>
+  <!-- User -->
+  <div class="is-flex is-flex-direction-column is-align-items-center">
+    <router-link :to="`/u/${$store.state.user.profile.username}`">
+      <c-avatar size="8rem" :src="$store.state.user.profile.picture" round />
+    </router-link>
 
-  <hr class="my-3">
+    <br>
 
-  <div class="pb-4">
-    <div class="level">
-      <div class="level-left">
-        <span class="level-item has-text-weight-bold is-subtitle-size has-text-gray-2">Sugestão de investidores</span>
-      </div>
-      <div class="level-right">
-        <router-link to="/suggestions" class="level-item is-subtitle-size has-text-green-2 has-text-weight-bold">Ver todas</router-link>
-      </div>
+    <h5 class="title is-5"> {{ $store.state.user.profile.name }} </h5>
+    <p class="subtitle is-size-6"> @{{ $store.state.user.profile.username }} </p>
     </div>
+
+  <hr>
+
+  <!-- Title -->
+  <div class="is-flex is-justify-content-space-between">
+    <span class="has-text-weight-bold has-text-gray-2">
+      Sugestão de investidores
+    </span>
+    <router-link class="has-text-weight-bold has-text-green-2" to="/suggestions">
+      ver todas
+    </router-link>
   </div>
 
+  <br>
+
   <template v-for="user in users" :key="user">
-    <SimpleFollowCard @follow="follow" @unfollow="unfollow" :user="user" />
+    <SimpleFollowCard
+      @follow="follow"
+      @unfollow="unfollow"
+      :user="user"
+      class="py-3"
+    />
   </template>
 </article>
 </template>
 
 <script>
-import IconUser from '../utils/IconUser'
 import client from '../../commons/client.api'
 import SimpleFollowCard from '../utils/SimpleFollowCard'
 
 export default {
   name: 'FeedSuggestions',
-  components: { SimpleFollowCard, IconUser },
+
+  components: {
+    SimpleFollowCard
+  },
+
   data: () => ({
     users: []
   }),

@@ -1,50 +1,40 @@
 <template>
-    <div class="level is-mobile">
-      <router-link :to="'/u/'+user.username" class="is-overflow-hidden">
-        <div class="level-left has-text-gray-1">
-          <!-- Image -->
-          <div class="level-item">
-            <span class="icon is-45x45">
-              <IconUser :src="user.picture" size="sm"/>
-            </span>
-          </div>
+<div class="is-flex is-justify-content-space-between is-align-items-center">
+  <!-- User -->
+  <router-link :to="`/u/${user.username}`" class="is-clipped">
+    <div class="is-flex is-align-items-center">
+      <!-- Image -->
+      <c-avatar class="px-3" :src="user.picture" round size="3rem" />
 
-          <!-- Username -->
-          <div class="level-item">
-            <div style="line-height: 110%">
-              <span class="is-subtitle-size has-text-weight-bold">@{{user.username}}</span>
-              <p class="has-text-grey is-subtitle-size2">{{user.name}}</p>
-            </div>
-          </div>
-        </div>
-      </router-link>
-      <!-- Button -->
-      <div class="level-right">
-        <div class="level-item">
-          <button
-            v-if="!isSelf"
-            class="button is-small has-text-weight-bold has-background-green-1"
-            :class="user.following ? 'is-active has-text-white' : 'is-light has-text-green-2 is-primary'"
-            style="width: 90px; height: 35px; border-style: none"
-            @click="clicked()"
-          >
-            <span>{{ user.following ? 'Seguindo' : 'Seguir' }}</span>
-            <span v-if="user.following" class="icon is-small">
-              <font-awesome-icon icon="check" size="1x"></font-awesome-icon>
-            </span>
-          </button>
-        </div>
+      <!-- Username -->
+      <div class="has-text-dark">
+        <p class="has-text-weight-bold is-size-6"> @{{ user.username }} </p>
+        <p class="is-size-7"> {{ user.name }} </p>
       </div>
     </div>
+  </router-link>
+
+  <!-- Follow button -->
+  <button
+    class="button is-small is-primary has-text-weight-bold"
+    style="width: 6rem;"
+    @click="clicked"
+    :class="{
+      'has-text-white has-background-primary-dark': user.following,
+      'is-light': !user.following
+    }"
+  >
+    <span> {{ user.following ? 'Seguindo' : 'Seguir' }} </span>
+    <span v-if="user.following" class="icon is-small">
+      <font-awesome-icon icon="check" />
+    </span>
+  </button>
+</div>
 </template>
 
 <script>
-import IconUser from './IconUser'
 export default {
   name: 'SimpleFollowCard',
-  components: {
-    IconUser
-  },
 
   props: {
     user: {
@@ -60,47 +50,18 @@ export default {
   },
 
   methods: {
-    follow () {
-      this.$emit('follow', this.user)
-    },
-    unfollow () {
-      this.$emit('unfollow', this.user)
-    },
     clicked () {
-      this.user.following ? this.$emit('unfollow', this.user) : this.$emit('follow', this.user)
+      if (this.user.following) {
+        return this.$emit('unfollow', this.user)
+      }
+      return this.$emit('follow', this.user)
     }
   }
 }
 </script>
 
 <style scoped lang="scss">
-.is-60x60 {
-  height: 60px;
-  width: 60px;
-}
-.is-45x45 {
-  height: 45px;
-  width: 45px;
-}
-.is-subtitle-size {
-  font-size: 0.875rem;
-}
-.is-subtitle-size2 {
-  font-size: 0.8125rem;
-}
-.has-text-gray-1 {
-  color: $gray-1;
-}
-.has-text-gray-2 {
-  color: $gray-2;
-}
 .has-text-green-2 {
   color: $green-2 !important;
-}
-.has-background-green-1 {
-  background-color: $green-1;
-}
-.is-overflow-hidden {
-  overflow: hidden;
 }
 </style>
