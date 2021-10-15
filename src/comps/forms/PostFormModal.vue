@@ -22,7 +22,7 @@
     <!-- Buttons -->
     <footer class="modal-card-foot has-background-white">
       <nav class="buttons has-text-grey">
-        <post-form-modal-button icon="image" label="Foto" />
+        <post-form-modal-button icon="image" label="Foto" @click="imageModal = true" />
         <!-- <post-form-modal-button icon="video" label="Vídeo" /> -->
         <!-- <post-form-modal-button icon="poll" label="Enquete" /> -->
         <!-- <post-form-modal-button icon="file" label="Documento" /> -->
@@ -30,16 +30,24 @@
       </nav>
     </footer>
   </div>
+
+  <PostImageModal
+    :active="imageModal"
+    v-model="picture"
+    @close="imageModal = false"
+  />
 </div>
 </template>
 
 <script>
+import PostImageModal from '@/comps/forms/PostImageModal'
 import PostFormModalButton from '@/comps/forms/PostFormModalButton'
 
 export default {
   name: 'PostFormModal',
 
   components: {
+    PostImageModal,
     PostFormModalButton
   },
 
@@ -51,12 +59,14 @@ export default {
   },
 
   data: () => ({
-    text: ''
+    text: '',
+    picture: '',
+    imageModal: false
   }),
 
   methods: {
     post () {
-      this.$emit('post', { text: this.text })
+      this.$emit('post', { text: this.text, picture: this.picture })
       this.text = ''
     }
   }
