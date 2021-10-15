@@ -13,9 +13,10 @@
         placeholder="Escreva um comentário"
         class="input is-primary has-background-white-ter"
       >
-      <span class="icon is-right">
+      <!-- TODO: emoji support (?) -->
+      <!-- <span class="icon is-right">
         <font-awesome-icon icon="smile" />
-      </span>
+      </span> -->
     </div>
   </div>
 </article>
