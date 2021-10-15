@@ -35,14 +35,15 @@
       <!-- Stats -->
       <div class="level is-mobile has-text-centered-touch">
         <div class="level-left">
+          <!-- TODO -->
           <!-- Wallets -->
-          <div class="level-item px-2">
+          <!-- <div class="level-item px-2">
             <p>
               <strong class="has-text-primary"> 10 </strong>
               <br class="is-hidden-desktop">
               carteras
             </p>
-          </div>
+          </div> -->
 
           <!-- Followers -->
           <div class="level-item px-2">
