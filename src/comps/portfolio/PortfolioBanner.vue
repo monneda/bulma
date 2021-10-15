@@ -4,9 +4,7 @@
     <div class="level-left">
       <!-- Image -->
       <div class="level-item">
-        <figure class="image is-48x48">
-          <img class="is-rounded" :src="user.picture">
-        </figure>
+        <c-avatar :src="user.picture" round size="3rem" />
       </div>
 
       <!-- Name -->
@@ -26,8 +24,9 @@
         </router-link>
       </div>
 
+      <!-- TODO -->
       <!-- Share -->
-      <div class="level-item">
+      <!-- <div class="level-item">
         <button class="button is-primary is-light">
           <span class="icon-text">
             <span class="icon">
@@ -36,7 +35,7 @@
             <span> Compartilhar </span>
           </span>
         </button>
-      </div>
+      </div> -->
     </div>
   </div>
 
