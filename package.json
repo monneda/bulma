@@ -24,13 +24,13 @@
     "timeago.js": "^4.0.2",
     "vue": "^3.2.20",
     "vue-instantsearch": "^4.0.1",
-    "vue-router": "^4.0.11",
+    "vue-router": "^4.0.12",
     "vuex": "^4.0.0-0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
-    "@vue/cli-plugin-pwa": "~4.5.0",
+    "@vue/cli-plugin-pwa": "~4.5.14",
     "@vue/cli-plugin-router": "~4.5.0",
     "@vue/cli-plugin-unit-jest": "~4.5.0",
     "@vue/cli-plugin-vuex": "~4.5.0",
