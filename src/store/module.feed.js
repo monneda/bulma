@@ -45,7 +45,13 @@ const mutations = {
 const actions = {
   async [ACTIONS.FEED_FETCH_EVENTS] (ctx) {
     ctx.commit(MUTATIONS.FEED_PURGE)
-    const events = await client.feed.fetchEvents(20)
+    const events = await client.feed.fetchEvents(10)
+    events.forEach(i => ctx.commit(MUTATIONS.FEED_EVENT_REPLACE, i))
+  },
+
+  async [ACTIONS.FEED_FETCH_EVENTS_NEXT_PAGE] (ctx) {
+    const last = Object.keys(ctx.state.events).sort().shift()
+    const events = await client.feed.fetchEvents(5, last)
     events.forEach(i => ctx.commit(MUTATIONS.FEED_EVENT_REPLACE, i))
   },
 

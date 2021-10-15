@@ -12,6 +12,8 @@
         :key="key"
         :item="val"
       />
+
+      <c-view @show="nextPage" />
     </div>
 
     <div class="column is-two-fifths is-hidden-touch">
@@ -23,7 +25,10 @@
 </template>
 
 <script>
-import { FEED_FETCH_EVENTS } from '@/store/type.actions'
+import {
+  FEED_FETCH_EVENTS,
+  FEED_FETCH_EVENTS_NEXT_PAGE
+} from '@/store/type.actions'
 
 import Navbar from '@/comps/navbar/Navbar'
 import FeedItem from '@/comps/feed/FeedItem'
@@ -47,6 +52,12 @@ export default {
       return Object.values(this.$store.state.feed.events)
         .sort((a, b) => a.timestamp.localeCompare(b.timestamp))
         .reverse()
+    }
+  },
+
+  methods: {
+    nextPage () {
+      this.$store.dispatch(FEED_FETCH_EVENTS_NEXT_PAGE)
     }
   },
 
