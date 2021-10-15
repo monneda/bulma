@@ -39,11 +39,14 @@ export default {
 </script>
 
 <style scoped>
-img {
+.image {
   width: v-bind(size);
   height: v-bind(size);
   min-width: v-bind(size);
   min-height: v-bind(size);
+}
+
+img {
   border-radius: v-bind(radius);
 }
 

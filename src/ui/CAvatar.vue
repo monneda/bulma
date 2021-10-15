@@ -1,12 +1,10 @@
 <template>
-<div>
-  <span v-if="error || !src" class="icon has-background-white">
-    <font-awesome-icon :icon="icon" size="xs" />
-  </span>
+<span class="icon">
+  <font-awesome-icon v-if="error || !src" :icon="icon" />
   <figure v-else class="image">
     <img :src="src" :class="{ 'is-rounded': round }" @error="error = true" />
   </figure>
-</div>
+</span>
 </template>
 
 <script>
@@ -15,7 +13,7 @@ export default {
 
   props: {
     src: { type: String, default: '' },
-    round: { type: Boolean, default: true },
+    round: { type: Boolean, default: false },
     icon: { type: String, default: 'user' },
     size: { type: String, default: '3rem' }
   },
@@ -27,7 +25,7 @@ export default {
 </script>
 
 <style scoped>
-img {
+.image {
   width: v-bind(size);
   height: v-bind(size);
   min-width: v-bind(size);
@@ -37,7 +35,6 @@ img {
 .icon {
   width: v-bind(size);
   height: v-bind(size);
-  font-size: calc(v-bind(size) * 0.7);
-  border-radius: 9999px;
+  font-size: v-bind(size);
 }
 </style>
