@@ -30,9 +30,9 @@
       <font-awesome-icon icon="lock" />
     </span>
     <span class="pl-3"> Trocar senha </span>
+  <hr class="navbar-divider">
   </router-link> -->
 
-  <hr class="navbar-divider">
   <!-- Logout -->
   <a @click="logout" class="navbar-item">
     <span class="icon is-small">
