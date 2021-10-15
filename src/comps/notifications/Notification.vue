@@ -3,7 +3,7 @@
   <div class="is-flex is-align-items-center p-1">
     <!-- Picture -->
     <span class="icon is-large mx-2">
-      <c-avatar :src="notification.user.picture" />
+      <c-avatar :src="notification.user.picture" round />
     </span>
 
     <!-- Notification -->
