@@ -39,9 +39,9 @@
       <div class="navbar-end is-hidden-touch">
         <navbar-item to="/feed" icon="home" label="FEED" />
         <navbar-item to="/c" icon="wallet"  label="CARTERAS" />
-        <navbar-item to="/a" icon="chart-line" label="ATIVOS" />
-        <navbar-item to="/explore" icon="compass" label="DESCOBRIR" />
-        <navbar-item to="/chat" icon="comment" label="CHAT" />
+        <!-- <navbar-item to="/a" icon="chart-line" label="ATIVOS" /> -->
+        <!-- <navbar-item to="/explore" icon="compass" label="DESCOBRIR" /> -->
+        <!-- <navbar-item to="/chat" icon="comment" label="CHAT" /> -->
         <navbar-item to="/notifications" icon="bell" label="NOTIFICAÇÕES" />
         <navbar-item-user />
       </div>
