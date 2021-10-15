@@ -5,12 +5,12 @@
     class="navbar is-fixed-bottom is-inline-flex is-justify-content-space-around is-align-items-center"
     style="padding-bottom: env(safe-area-inset-bottom)"
   >
-    <navbar-item to="/feed" icon="home" class="fa-lg" />
-    <navbar-item to="/c" icon="wallet" class="fa-lg" />
-    <navbar-item to="/a" icon="chart-line" class="fa-lg" />
-    <navbar-item to="/explore" icon="compass" class="fa-lg" />
-    <navbar-item to="/chat" icon="comment" class="fa-lg" />
-    <navbar-item to="/notifications" icon="bell" class="fa-lg" />
+    <navbar-item to="/feed" icon="home" label="" class="fa-lg" />
+    <navbar-item to="/c" icon="wallet" label="" class="fa-lg" />
+    <navbar-item to="/a" icon="chart-line" label="" class="fa-lg" />
+    <navbar-item to="/explore" icon="compass" label="" class="fa-lg" />
+    <navbar-item to="/chat" icon="comment" label="" class="fa-lg" />
+    <navbar-item to="/notifications" icon="bell" label="" class="fa-lg" />
   </nav>
   </section>
 </template>
