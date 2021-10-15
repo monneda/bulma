@@ -18,8 +18,9 @@
     </button>
   </div>
 
+  <!-- TODO -->
   <!-- Share -->
-  <div class="level-item">
+  <!-- <div class="level-item">
     <button
       class="button is-white is-transparent is-fullwidth"
       @click="$emit('share', item)"
@@ -31,10 +32,11 @@
         <span class="has-text-dark"> Compartilhar </span>
       </span>
     </button>
-  </div>
+  </div> -->
 
+  <!-- TODO -->
   <!-- Send -->
-  <div class="level-item">
+  <!-- <div class="level-item">
     <button
       class="button is-white is-transparent is-fullwidth"
       @click="$emit('send', item)"
@@ -46,7 +48,7 @@
         <span class="has-text-dark"> Enviar </span>
       </span>
     </button>
-  </div>
+  </div> -->
 </nav>
 </template>
 
