@@ -34,13 +34,13 @@
   />
 
   <div class="level has-text-grey is-hidden-touch">
-    <post-form-button class="level-item" icon="image" label="Foto" />
+    <post-form-button class="level-item" icon="image" label="Foto" @click="modal = true" />
+    <!-- |
+    <post-form-button class="level-item" icon="video" label="Vídeo" @click="modal = true" />
     |
-    <post-form-button class="level-item" icon="video" label="Vídeo" />
+    <post-form-button class="level-item" icon="poll" label="Enquete" @click="modal = true" />
     |
-    <post-form-button class="level-item" icon="poll" label="Enquete" />
-    |
-    <post-form-button class="level-item" icon="file" label="Documento" />
+    <post-form-button class="level-item" icon="file" label="Documento" @click="modal = true" /> -->
   </div>
 </article>
 </template>

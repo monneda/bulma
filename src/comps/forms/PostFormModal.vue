@@ -23,9 +23,9 @@
     <footer class="modal-card-foot has-background-white">
       <nav class="buttons has-text-grey">
         <post-form-modal-button icon="image" label="Foto" />
-        <post-form-modal-button icon="video" label="Vídeo" />
-        <post-form-modal-button icon="poll" label="Enquete" />
-        <post-form-modal-button icon="file" label="Documento" />
+        <!-- <post-form-modal-button icon="video" label="Vídeo" /> -->
+        <!-- <post-form-modal-button icon="poll" label="Enquete" /> -->
+        <!-- <post-form-modal-button icon="file" label="Documento" /> -->
         <button class="button is-dark" @click="post"> Publicar </button>
       </nav>
     </footer>
