@@ -14,7 +14,8 @@
       </article>
     </div>
 
-    <div class="column is-two-fifths" v-if="asset">
+    <!-- Avoid glitching out when we do not have the sector of the ticker -->
+    <div class="column is-two-fifths" v-if="asset && sector">
       <article class="box">
         <h4 class="title is-4"> Sobre a {{ asset.ticker }} </h4>
 
