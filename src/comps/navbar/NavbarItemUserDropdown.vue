@@ -23,13 +23,14 @@
   </router-link>
   <hr class="navbar-divider">
 
+  <!-- TODO -->
   <!-- Change password -->
-  <router-link to="/u/nice/password" class="navbar-item">
+  <!-- <router-link to="/u/nice/password" class="navbar-item">
     <span class="icon is-small">
       <font-awesome-icon icon="lock" />
     </span>
     <span class="pl-3"> Trocar senha </span>
-  </router-link>
+  </router-link> -->
 
   <hr class="navbar-divider">
   <!-- Logout -->
