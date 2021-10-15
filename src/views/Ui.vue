@@ -1,4 +1,5 @@
 <template>
+
 <section class="section">
   <h1 class="title is-1"> CButton </h1>
 
@@ -40,11 +41,17 @@
   <br>
   <c-avatar src="https://placekitten.com/100/100" size="10rem" /> Variable size (10rem)
 </section>
+
+<c-view @show="show" @hide="hide" />
 </template>
 
 <script>
 
 export default {
-  name: 'Ui'
+  name: 'Ui',
+  methods: {
+    show () { console.log('show') },
+    hide () { console.log('hide') }
+  }
 }
 </script>
