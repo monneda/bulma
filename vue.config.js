@@ -18,21 +18,29 @@ module.exports = {
   },
 
   /**
-   * Pwa
+   * Pwa configurations
+   *
+   * See here for more info:
+   *     https://github.com/vuejs/vue-cli/tree/HEAD/packages/@vue/cli-plugin-pwa
    */
   pwa: {
     name: 'cartera',
     shortName: 'cartera',
     themeColor: '#35E599', // No effect on apple devices
-    display: 'standalone',
     scope: 'www.cartera.com.br',
     appleMobileWebAppCapable: 'yes',
+
+    /**
+     * Used to create manifest.json file
+     */
     manifestOptions: {
       lang: 'pt',
+      display: 'standalone',
       background_color: '#35E599', // Used by android splash screens
       description: 'A rede social de investidores para você ver e acompanhar as carteiras de ações dos seus amigos',
       categories: ['financas', 'investimentos', 'finances', 'investments', 'b3', 'ações']
     },
+
     iconPaths: {
       favicon32: 'img/icons/favicon-32x32.png',
       favicon16: 'img/icons/favicon-16x16.png',
