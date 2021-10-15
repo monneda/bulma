@@ -4,10 +4,10 @@
   <router-link :to="`/u/${user.username}`" class="is-clipped">
     <div class="is-flex is-align-items-center">
       <!-- Image -->
-      <c-avatar class="px-3" :src="user.picture" round size="3rem" />
+      <c-avatar :src="user.picture" round size="3rem" />
 
       <!-- Username -->
-      <div class="has-text-dark">
+      <div class="has-text-dark pl-3">
         <p class="has-text-weight-bold is-size-6"> @{{ user.username }} </p>
         <p class="is-size-7"> {{ user.name }} </p>
       </div>
