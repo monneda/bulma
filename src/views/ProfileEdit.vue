@@ -28,7 +28,8 @@
         <figure class="image is-128x128 m-5" v-if="user">
           <img class="is-rounded" :src="user.picture">
         </figure>
-        <c-button class="is-primary is-fullwidth">Adicionar foto</c-button>
+        <!-- TODO -->
+        <!-- <c-button class="is-primary is-fullwidth">Adicionar foto</c-button> -->
       </article>
     </div>
 
