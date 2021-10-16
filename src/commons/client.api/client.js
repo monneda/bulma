@@ -1,7 +1,8 @@
 
-const BASE = process.env.NODE_ENV === 'production'
-  ? 'https://monneda.herokuapp.com/api' // prd
-  : 'http://localhost:8080/api' // dev
+const BASE = 'https://monneda.herokuapp.com/api'
+// const BASE = process.env.NODE_ENV === 'production'
+//  ? 'https://monneda.herokuapp.com/api' // prd
+//  : 'http://localhost:8080/api' // dev
 
 export default class {
   constructor (token) {
