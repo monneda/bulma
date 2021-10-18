@@ -30,11 +30,17 @@ export default {
   height: v-bind(size);
   min-width: v-bind(size);
   min-height: v-bind(size);
+  max-width: v-bind(size);
+  max-height: v-bind(size);
 }
 
 .icon {
+  font-size: v-bind(size);
   width: v-bind(size);
   height: v-bind(size);
-  font-size: v-bind(size);
+  min-width: v-bind(size);
+  min-height: v-bind(size);
+  max-width: v-bind(size);
+  max-height: v-bind(size);
 }
 </style>

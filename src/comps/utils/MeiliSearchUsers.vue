@@ -41,11 +41,9 @@
               :to="`/u/${item.username}`"
               @click="input = ''"
             >
-              <div class="is-flex is-align-items-center p-3">
+              <div class="is-flex is-align-items-center py-1">
                 <!-- Picture -->
-                <figure class="image">
-                  <img class="is-rounded" :src="item.picture">
-                </figure>
+                <c-avatar :src="item.picture" round size="3rem" />
 
                 <!-- Name + username -->
                 <div class="is-flex is-flex-direction-column pl-3">
