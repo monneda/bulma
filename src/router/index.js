@@ -83,6 +83,12 @@ const routes = [
   },
   {
     props: true,
+    name: 'Post',
+    path: '/p/:id',
+    component: () => import('@/views/Post')
+  },
+  {
+    props: true,
     name: 'Asset',
     path: '/a/:ticker',
     component: () => import('@/views/Asset')

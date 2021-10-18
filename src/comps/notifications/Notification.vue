@@ -1,10 +1,10 @@
 <template>
 <article :class="{'notification-new': !isViewed}">
-  <div class="is-flex is-align-items-center p-1">
+  <div class="is-flex is-align-items-center p-1 has-text-grey-dark">
     <!-- Picture -->
-    <span class="icon is-large mx-2">
+    <router-link :to="`/u/${notification.user.username}`" class="icon is-large mx-2">
       <c-avatar :src="notification.user.picture" round />
-    </span>
+    </router-link>
 
     <!-- Notification -->
     <div class="mx-2">
