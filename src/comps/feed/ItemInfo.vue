@@ -2,14 +2,16 @@
 <div class="level is-mobile">
   <div class="level-left">
     <!-- User image -->
-    <div class="level-item">
+    <router-link :to="`/u/${item.owner.username}`" class="level-item">
       <c-avatar :src="item.owner.picture" round />
-    </div>
+    </router-link>
 
     <div class="level-item">
       <div class="is-flex is-flex-direction-column">
         <!-- Username -->
-        <strong> @{{ item.owner.username }} </strong>
+        <router-link :to="`/u/${item.owner.username}`" class="has-text-gray-1 has-text-weight-bold">
+          @{{ item.owner.username }}
+        </router-link>
 
         <!-- Created at -->
         <small>
@@ -81,3 +83,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.has-text-gray-1 {
+  color: $gray-1;
+}
+</style>
