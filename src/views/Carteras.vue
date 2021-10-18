@@ -30,22 +30,24 @@
 
     <div class="column is-three-quarters">
       <div class="is-flex is-flex-direction-column">
-        <div class="is-flex is-justify-content-space-between">
 
-          <!-- Select periods -->
-          <div class="is-flex is-align-self-flex-end">
-            <div class="select">
-              <select v-model="period">
-                <option value="7">1 semana</option>
-                <option value="30">1 mês</option>
-                <option value="90">3 meses</option>
-                <option value="360">1 ano</option>
-              </select>
-            </div>
-          </div>
+        <!-- Periods -->
+        <div class="tabs is-toggle is-fullwidth">
+          <ul class="has-background-white">
+            <li :class="{ 'is-active': period == 7 }">
+              <a @click="period = 7">1 semana</a>
+            </li>
+            <li :class="{ 'is-active': period == 30 }">
+              <a @click="period = 30">1 mês</a>
+            </li>
+            <li :class="{ 'is-active': period == 90 }">
+              <a @click="period = 90">3 meses</a>
+            </li>
+            <li :class="{ 'is-active': period == 360 }">
+              <a @click="period = 360">1 ano</a>
+            </li>
+          </ul>
         </div>
-
-        <br>
 
         <!-- Wallet tiles -->
         <div class="columns">
@@ -84,7 +86,7 @@ export default {
   },
 
   data: () => ({
-    period: '7',
+    period: 7,
     wallets: []
   }),
 
@@ -108,7 +110,7 @@ export default {
   },
 
   watch: {
-    period (val) {
+    period () {
       this.fetchWallets()
     }
   },
