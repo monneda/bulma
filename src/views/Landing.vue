@@ -7,8 +7,8 @@
     <div class="container">
       <div class="columns is-vcentered">
         <!-- Text -->
-        <div class="column is-6 has-text-centered-mobile">
-          <h1 class="title is-size-1 is-size-2-mobile">
+        <div class="column is-6 has-text-centered-touch">
+          <h1 class="title is-1 is-size-2-touch">
             <span class="has-text-weight-normal"> o seu network de </span>
             <br>
             valor está aqui
@@ -22,7 +22,7 @@
           <br>
           <br>
 
-          <button class="button is-primary is-large">
+          <button class="button is-primary is-large" @click="login">
             <span class="has-text-weight-bold is-size-6 px-6">
               quero fazer parte!
             </span>
@@ -71,7 +71,7 @@
 
   <section class="section is-medium has-background-primary">
     <div class="container has-text-centered">
-      <h2 class="title is-size-2 is-size-3-mobile">
+      <h2 class="title is-2 is-size-3-touch">
         suas oportunidades sobre
         <br>
         investimentos em um único lugar
@@ -144,28 +144,29 @@
       <br>
       <br>
 
-      <button class="button is-white is-large">
+      <button class="button is-white is-large" @click="login">
         <span class="has-text-weight-bold is-size-6 px-6">
           quero fazer parte!
         </span>
       </button>
     </div>
+
   </section>
 
   <section class="section">
     <div class="container">
       <div class="columns is-vcentered">
         <!-- Image desktop -->
-        <div class="column is-6 is-hidden-mobile">
+        <div class="column is-6 is-hidden-touch">
           <figure class="image">
             <img src="@/assets/imgs/landing-2.png">
           </figure>
         </div>
 
-        <div class="column is-1 is-hidden-mobile"></div>
+        <div class="column is-1 is-hidden-touch"></div>
 
         <!-- Text -->
-        <div class="column is-5 has-text-centered-mobile">
+        <div class="column is-5 has-text-centered-touch">
           <span class="icon has-background-white has-text-primary has-shadow is-rounded is-96x96">
             <c-icon icon="users" />
           </span>
@@ -173,7 +174,7 @@
           <br>
           <br>
 
-          <h3 class="title is-size-3">
+          <h3 class="title is-3">
             interaja com investidores e fique por dentro
           </h3>
 
@@ -200,7 +201,7 @@
     <div class="container">
       <div class="columns is-vcentered">
         <!-- Text -->
-        <div class="column is-5 has-text-centered-mobile">
+        <div class="column is-5 has-text-centered-touch">
           <span class="icon has-background-white has-text-primary has-shadow is-rounded is-96x96">
             <c-icon icon="line-up" />
           </span>
@@ -208,7 +209,7 @@
           <br>
           <br>
 
-          <h3 class="title is-size-3">
+          <h3 class="title is-3">
             invista melhor o seu dinheiro
           </h3>
 
@@ -235,16 +236,16 @@
     <div class="container">
       <div class="columns is-vcentered">
         <!-- Image desktop -->
-        <div class="column is-6 is-hidden-mobile">
+        <div class="column is-6 is-hidden-touch">
           <figure class="image">
             <img src="@/assets/imgs/landing-4.png">
           </figure>
         </div>
 
-        <div class="column is-1 is-hidden-mobile"></div>
+        <div class="column is-1 is-hidden-touch"></div>
 
         <!-- Text -->
-        <div class="column is-5 has-text-centered-mobile">
+        <div class="column is-5 has-text-centered-touch">
           <span class="icon has-background-white has-text-primary has-shadow is-rounded is-96x96">
             <c-icon icon="lock" />
           </span>
@@ -252,7 +253,7 @@
           <br>
           <br>
 
-          <h3 class="title is-size-3">
+          <h3 class="title is-3">
             segurança com os seus dados
           </h3>
 
@@ -286,7 +287,7 @@
       <br>
       <br>
 
-      <h3 class="title is-size-3">
+      <h3 class="title is-3">
         os melhores investidores estão aqui.
         <br>
         e você?
@@ -294,7 +295,7 @@
 
       <br>
 
-      <button class="button is-white is-large">
+      <button class="button is-white is-large" @click="login">
         <span class="has-text-weight-bold is-size-6 px-6">
           quero fazer parte!
         </span>
@@ -327,7 +328,7 @@ export default {
 
   methods: {
     login () {
-      this.$store.dispatch(LOGIN, { origin: this.$route.path })
+      this.$store.dispatch(LOGIN, { origin: '/feed' })
     }
   }
 }
