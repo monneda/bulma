@@ -1,6 +1,18 @@
 <template>
 <Navbar />
 
+<c-menu>
+  <h4 class="title is-4">Minhas Carteras</h4>
+
+  <template #right>
+    <router-link to="/c/new">
+      <c-button class="is-primary has-text-weight-bold" right icon="plus">
+        Criar Cartera
+      </c-button>
+    </router-link>
+  </template>
+</c-menu>
+
 <br>
 
 <div class="container">
@@ -16,15 +28,18 @@
 
     <div class="column is-three-quarters">
       <div class="is-flex is-flex-direction-column">
-        <!-- Select periods -->
-        <div class="is-flex is-align-self-flex-end">
-          <div class="select">
-            <select v-model="period">
-              <option value="7">1 semana</option>
-              <option value="30">1 mês</option>
-              <option value="90">3 meses</option>
-              <option value="360">1 ano</option>
-            </select>
+        <div class="is-flex is-justify-content-space-between">
+
+          <!-- Select periods -->
+          <div class="is-flex is-align-self-flex-end">
+            <div class="select">
+              <select v-model="period">
+                <option value="7">1 semana</option>
+                <option value="30">1 mês</option>
+                <option value="90">3 meses</option>
+                <option value="360">1 ano</option>
+              </select>
+            </div>
           </div>
         </div>
 
