@@ -7,7 +7,7 @@
   <h4 class="title is-4">Minhas Carteras</h4>
 
   <template #right>
-    <router-link to="/c/new">
+    <router-link to="/c/create">
       <c-button class="is-primary has-text-weight-bold" right icon="plus">
         Criar Cartera
       </c-button>
