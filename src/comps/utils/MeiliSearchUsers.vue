@@ -39,6 +39,7 @@
               v-for="item of items"
               :key="item.objectID"
               :to="`/u/${item.username}`"
+              @click="input = ''"
             >
               <div class="is-flex is-align-items-center p-3">
                 <!-- Picture -->
