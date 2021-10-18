@@ -1,4 +1,15 @@
 <template>
+<c-menu>
+  <template #left>
+    <c-button left icon="angle-left"> Back </c-button>
+  </template>
+
+  <h1 class="title is-3"> CMenu </h1>
+
+  <template #right>
+    <c-button right icon="angle-right"> Next </c-button>
+  </template>
+</c-menu>
 
 <section class="section">
   <h1 class="title is-1"> CButton </h1>
@@ -55,3 +66,11 @@ export default {
   }
 }
 </script>
+
+<style>
+p {
+  border-style: dotted;
+  border-color: red;
+  border-width: 1px;
+}
+</style>
