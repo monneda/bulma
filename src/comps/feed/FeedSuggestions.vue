@@ -3,7 +3,7 @@
   <!-- User -->
   <div class="is-flex is-flex-direction-column is-align-items-center">
     <router-link :to="`/u/${$store.state.user.profile.username}`">
-      <c-avatar size="8rem" :src="$store.state.user.profile.picture" round />
+      <c-avatar size="3.75rem" :src="$store.state.user.profile.picture" round />
     </router-link>
 
     <br>

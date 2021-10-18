@@ -3,7 +3,7 @@
   <div class="columns">
     <!-- Image -->
     <div class="column is-one-fifth is-flex is-justify-content-center is-align-items-center">
-      <c-avatar :src="user.picture" round size="9rem" />
+      <c-avatar :src="user.picture" round size="10.625rem" />
     </div>
 
     <div class="column">

@@ -4,7 +4,7 @@
   <router-link :to="`/u/${user.username}`" class="is-clipped">
     <div class="is-flex is-align-items-center">
       <!-- Image -->
-      <c-avatar :src="user.picture" round size="3rem" />
+      <c-avatar :src="user.picture" round size="2.1875rem" />
 
       <!-- Username -->
       <div class="has-text-dark pl-3">

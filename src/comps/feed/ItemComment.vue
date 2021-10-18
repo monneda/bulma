@@ -1,7 +1,7 @@
 <template>
 <article class="media">
   <!-- Image -->
-  <c-avatar class="media-left" :src="comment.user.picture" round />
+  <c-avatar class="media-left" size="2.5rem" :src="comment.user.picture" round />
 
   <div class="media-content">
     <div class="comment has-background-light p-5">
