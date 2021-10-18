@@ -1,15 +1,16 @@
 <template>
 <article class="media">
   <!-- Image -->
-  <c-avatar class="media-left" size="2.5rem" :src="comment.user.picture" round />
-
+  <router-link :to="`/u/${comment.user.username}`">
+    <c-avatar class="media-left" size="2.5rem" :src="comment.user.picture" round />
+  </router-link>
   <div class="media-content">
     <div class="comment has-background-light p-5">
       <!-- User -->
       <div class="level is-mobile mb-2">
-        <div class="level-left">
-          <strong class="level-item"> @{{ comment.user.username }} </strong>
-        </div>
+        <router-link :to="`/u/${comment.user.username}`" class="level-left">
+          <strong class="level-item has-text-gray-1"> @{{ comment.user.username }} </strong>
+        </router-link>
         <div class="level-right">
           <div class="level-item">
             <small class="has-text-grey">
@@ -120,6 +121,10 @@ export default {
 .comment {
   line-height: 90%;
   border-radius: $radius-small $radius-large $radius-large $radius-large;
+}
+
+.has-text-gray-1 {
+  color: $gray-1;
 }
 
 /* Hide border colors */
