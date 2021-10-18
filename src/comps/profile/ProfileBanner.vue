@@ -105,6 +105,12 @@ export default {
     }
   },
 
+  watch: {
+    async username () {
+      this.user = await client.users.byUsername(this.username)
+    }
+  },
+
   async created () {
     this.user = await client.users.byUsername(this.username)
   }

@@ -88,6 +88,10 @@ export default {
   watch: {
     days (val) {
       this.fetchWallets()
+    },
+
+    username () {
+      this.fetchWallets()
     }
   },
 

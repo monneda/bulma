@@ -57,6 +57,12 @@ export default {
     }
   },
 
+  watch: {
+    username () {
+      this.$store.dispatch(FEED_FETCH_EVENTS_FOR_USER, this.username)
+    }
+  },
+
   created () {
     this.$store.dispatch(FEED_FETCH_EVENTS_FOR_USER, this.username)
   }
