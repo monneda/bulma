@@ -56,7 +56,7 @@
         <div class="columns is-flex-wrap-wrap is-justify-content-space-between">
           <template v-for="(user, i) of searched" :key="i">
             <div class="column is-half">
-              <SimpleFollowCard class="p-3 border-desktop borderless-mobile" :user="user" @follow="follow" @unfollow="unfollow"/>
+              <SimpleFollowCard class="p-3 border-desktop borderless-mobile" size="2.8125rem" :user="user" @follow="follow" @unfollow="unfollow"/>
             </div>
           </template>
         </div>

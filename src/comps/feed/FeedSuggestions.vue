@@ -31,6 +31,7 @@
       @follow="follow"
       @unfollow="unfollow"
       :user="user"
+      size="2.1875rem"
       class="py-3"
     />
   </template>

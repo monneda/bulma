@@ -4,7 +4,7 @@
   <router-link :to="`/u/${user.username}`" class="is-clipped">
     <div class="is-flex is-align-items-center">
       <!-- Image -->
-      <c-avatar :src="user.picture" round size="2.1875rem" />
+      <c-avatar :src="user.picture" round :size="this.size" />
 
       <!-- Username -->
       <div class="has-text-dark pl-3">
@@ -40,6 +40,11 @@ export default {
     user: {
       required: true,
       type: Object
+    },
+    size: {
+      required: false,
+      type: String,
+      default: '3rem'
     }
   },
 
