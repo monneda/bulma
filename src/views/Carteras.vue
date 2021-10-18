@@ -1,6 +1,8 @@
 <template>
 <Navbar />
 
+<hr class="m-0">
+
 <c-menu>
   <h4 class="title is-4">Minhas Carteras</h4>
 
