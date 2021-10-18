@@ -2,10 +2,10 @@
 <span>
   <template v-for="({ text, tag }, i) of tags" :key="i">
     <!-- Common links -->
-    <a v-if="tag === 'link'" :href="text">{{ text }}</a>
+    <a v-if="tag === 'link'" :href="text"> {{ text }} </a>
 
     <!-- Cash tags -->
-    <router-link v-else-if="tag === 'cash'" :to="`/assets/${text.toUpperCase()}`">${{ text.toUpperCase() }}</router-link>
+    <router-link v-else-if="tag === 'cash'" :to="`/a/${text.toUpperCase()}`">${{ text.toUpperCase() }}</router-link>
 
     <!-- Mentions -->
     <router-link v-else-if="tag === 'mention'" :to="`/u/${text.toLowerCase()}`">@{{ text }}</router-link>
