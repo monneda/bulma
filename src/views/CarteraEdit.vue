@@ -102,7 +102,7 @@ import WalletsEditAssetRow from '@/comps/walletsedit/WalletsEditAssetRow'
 import NavbarBottom from '../comps/navbar/NavbarBottom'
 
 export default {
-  name: 'WalletsEdit',
+  name: 'CarteraEdit',
 
   components: {
     NavbarBottom,

@@ -47,7 +47,7 @@ import WalletsNewNavigation from '@/comps/walletsnew/WalletsNewNavigation'
 import NavbarBottom from '../comps/navbar/NavbarBottom'
 
 export default {
-  name: 'WalletsNew',
+  name: 'CarteraCreate',
 
   components: {
     NavbarBottom,

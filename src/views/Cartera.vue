@@ -43,7 +43,7 @@ import PortfolioComposition from '@/comps/portfolio/PortfolioComposition'
 import NavbarBottom from '../comps/navbar/NavbarBottom'
 
 export default {
-  name: 'Portfolio',
+  name: 'Cartera',
 
   components: {
     NavbarBottom,

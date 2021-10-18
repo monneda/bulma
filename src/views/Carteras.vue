@@ -72,7 +72,7 @@ import WalletsRank from '@/comps/wallets/WalletsRank'
 import NavbarBottom from '../comps/navbar/NavbarBottom'
 
 export default {
-  name: 'Wallets',
+  name: 'Carteras',
 
   components: {
     NavbarBottom,

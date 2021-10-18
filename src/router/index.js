@@ -23,24 +23,24 @@ const routes = [
   {
     path: '/c',
     name: 'Carteras',
-    component: () => import('@/views/Wallets')
+    component: () => import('@/views/Carteras')
   },
   {
-    path: '/c/new',
-    name: 'CarterasNew',
-    component: () => import('@/views/WalletsNew')
+    path: '/c/create',
+    name: 'CarteraNew',
+    component: () => import('@/views/CarteraCreate')
   },
   {
     props: true,
     path: '/c/:id/edit',
-    name: 'CarterasEdit',
-    component: () => import('@/views/WalletsEdit')
+    name: 'CarteraEdit',
+    component: () => import('@/views/CarteraEdit')
   },
   {
     props: true,
     path: '/c/:id',
     name: 'Cartera',
-    component: () => import('@/views/Portfolio')
+    component: () => import('@/views/Cartera')
   },
   {
     path: '/notifications',
