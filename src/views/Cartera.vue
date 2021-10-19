@@ -19,8 +19,8 @@
       <div class="tabs is-fullwidth">
         <ul>
           <li><a @click="tab = 'PortfolioAssets'">Ativos</a></li>
-          <li><a @click="tab = 'PortfolioComposition'">Composição</a></li>
-          <li><a @click="tab = 'PortfolioHistory'">Histórico</a></li>
+          <li><a @click="tab = 'PortfolioComposition'">Gráficos</a></li>
+          <li><a @click="tab = 'PortfolioHistory'">Movimentações</a></li>
         </ul>
       </div>
 
