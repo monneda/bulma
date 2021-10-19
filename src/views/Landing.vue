@@ -9,14 +9,14 @@
         <!-- Text -->
         <div class="column is-6 has-text-centered-touch">
           <h1 class="title is-1 is-size-2-touch">
-            <span class="has-text-weight-normal"> o seu network de </span>
-            <br>
-            valor está aqui
+            <span class="has-text-weight-normal">
+              Acompanhe as carteiras de ações e cripto de amigos e profissionais
+            </span>
           </h1>
 
           <p class="is-size-5 has-text-grey-dark">
-            A Cartera é uma rede social para investidores e futuros investidores.
-            Conecte-se ao network que realmente tem valor para seus investimentos.
+            A Cartera facilita que você compartilhe sua carteira de
+            investimentos com amigos e siga carteiras de outros investidores.
           </p>
 
           <br>
@@ -72,9 +72,9 @@
   <section class="section is-medium has-background-primary">
     <div class="container has-text-centered">
       <h2 class="title is-2 is-size-3-touch">
-        suas oportunidades sobre
+        Descubra, acompanhe e discuta
         <br>
-        investimentos em um único lugar
+        investimentos em um só lugar!
       </h2>
 
       <br>
@@ -103,8 +103,8 @@
             </span>
             <br>
             <br>
-            <p class="title is-3"> notícias </p>
-            <p class="title is-5"> sobre a bolsa </p>
+            <p class="title is-3"> novidades </p>
+            <p class="title is-5"> do mercado </p>
           </div>
         </div>
 
@@ -120,7 +120,7 @@
             <br>
             <br>
             <p class="title is-3"> ativos </p>
-            <p class="title is-5"> saiba o que está em alta </p>
+            <p class="title is-5"> de maior retorno </p>
           </div>
         </div>
 
@@ -136,7 +136,7 @@
             <br>
             <br>
             <p class="title is-3"> descubra </p>
-            <p class="title is-5"> o que está em alta </p>
+            <p class="title is-5"> oportunidades </p>
           </div>
         </div>
       </div>

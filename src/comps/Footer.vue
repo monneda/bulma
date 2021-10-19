@@ -12,7 +12,7 @@
         <div class="level-item">
           <div class="has-text-centered-mobile">
             <p class="title is-spaced">cartera</p>
-            <p class="subtitle">O seu network de valor</p>
+            <p class="subtitle">Acompanhe carteiras de amigos</p>
           </div>
         </div>
       </div>
