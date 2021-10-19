@@ -1,6 +1,6 @@
 <template>
 <span class="icon">
-  <font-awesome-icon v-if="error || !src" :icon="icon" />
+  <font-awesome-icon v-if="error || !src" :icon="icon"/>
   <figure v-else class="image">
     <img :src="src" :class="{ 'is-rounded': round }" @error="error = true" />
   </figure>
@@ -25,6 +25,11 @@ export default {
 </script>
 
 <style scoped>
+/*
+  causing bug on MeiliSearchUsers, where image gets distorted (size not working properly).
+  Also, this class only works because it extends bulma's image class,
+  meaning that if another name was used, it wouldn't work.
+*/
 .image {
   width: v-bind(size);
   height: v-bind(size);
