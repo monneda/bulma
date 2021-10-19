@@ -18,7 +18,7 @@
             </button>
 
             <!-- User picture -->
-            <IconUser v-if="username" :src="user.picture" class="mx-4"/>
+            <CAvatar v-if="username" :src="user.picture" round size="4.375rem" class="mr-3"/>
 
             <!-- Text -->
             <span class="is-size-5">
@@ -72,18 +72,18 @@
 import client from '@/commons/client.api'
 
 import Navbar from '@/comps/navbar/Navbar'
-import IconUser from '@/comps/utils/IconUser'
 
 import SimpleFollowCard from '../comps/utils/SimpleFollowCard'
 import NavbarBottom from '../comps/navbar/NavbarBottom'
+import CAvatar from '../ui/CAvatar'
 
 export default {
   name: 'Followers',
 
   components: {
+    CAvatar,
     SimpleFollowCard,
     Navbar,
-    IconUser,
     NavbarBottom
   },
 

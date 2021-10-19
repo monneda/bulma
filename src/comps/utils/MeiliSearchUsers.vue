@@ -43,7 +43,7 @@
             >
               <div class="is-flex is-align-items-center py-0">
                 <!-- Picture -->
-                <c-avatar :src="item.picture" round size="2rem" />
+                <c-avatar :src="item.picture" round size="2.1875rem" />
 
                 <!-- Name + username -->
                 <div class="is-flex is-flex-direction-column pl-3">

@@ -3,7 +3,7 @@
   <a class="navbar-link">
     <span class="icon-text">
       <span class="icon is-medium is-30x30">
-        <IconUser :src="$store.state.user.profile.picture" size="1x"/>
+        <CAvatar :src="$store.state.user.profile.picture" round size="1.875rem"/>
       </span>
       <span v-if="!simple" class="my-auto"> {{ $store.state.user.profile.givenName }} </span>
     </span>
@@ -15,11 +15,11 @@
 
 <script>
 import NavbarItemUserDropdown from './NavbarItemUserDropdown'
-import IconUser from '../utils/IconUser'
+import CAvatar from '../../ui/CAvatar'
 
 export default {
   name: 'NavbarItemUser',
-  components: { IconUser, NavbarItemUserDropdown },
+  components: { CAvatar, NavbarItemUserDropdown },
   props: {
     simple: {
       required: false,

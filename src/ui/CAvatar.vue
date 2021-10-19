@@ -2,7 +2,7 @@
 <span class="icon">
   <font-awesome-icon v-if="error || !src" :icon="icon"/>
   <figure v-else class="image">
-    <img :src="src" :class="{ 'is-rounded': round }" @error="error = true" />
+    <img class="max-height-none" :src="src" :class="{ 'is-rounded': round }" @error="error = true" />
   </figure>
 </span>
 </template>
@@ -30,6 +30,9 @@ export default {
   Also, this class only works because it extends bulma's image class,
   meaning that if another name was used, it wouldn't work.
 */
+.max-height-none {
+  max-height: none;
+}
 .image {
   width: v-bind(size);
   height: v-bind(size);

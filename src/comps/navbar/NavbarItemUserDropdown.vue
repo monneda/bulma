@@ -4,7 +4,7 @@
   <router-link :to="`/u/${$store.state.user.profile.username}`" class="navbar-item">
     <div class="is-flex is-flex-wrap-nowrap is-align-items-center">
       <span class="icon is-60x60">
-        <IconUser :src="$store.state.user.profile.picture"/>
+        <CAvatar :src="$store.state.user.profile.picture" round size="3.75rem"/>
       </span>
       <div class="ml-3">
         <span class="is-size-6 has-text-weight-bold"> {{ $store.state.user.profile.name }} </span>
@@ -45,12 +45,12 @@
 
 <script>
 import { LOGOUT } from '@/store/type.actions'
-import IconUser from '../utils/IconUser'
+import CAvatar from '../../ui/CAvatar'
 
 export default {
   name: 'NavbarItemUserDropdown',
   components: {
-    IconUser
+    CAvatar
   },
 
   methods: {
