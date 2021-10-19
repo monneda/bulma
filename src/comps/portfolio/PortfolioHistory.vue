@@ -48,7 +48,7 @@ const TEXT = {
 const COLORS = {
   START: 'has-text-info',
   INC: 'has-text-primary-dark',
-  DEC: 'has-text-warning',
+  DEC: 'has-text-warning-dark',
   END: 'has-text-danger'
 }
 
