@@ -5,6 +5,7 @@
   <Post v-if="item.type === 'TEXT_POST_CREATED'" :post="item" />
   <Edit v-if="item.type === 'WALLET_ASSETS_EDIT'" :edit="item" />
   <NewCartera v-if="item.type === 'NEW_WALLET'" :event="item" />
+  <NewAccount v-if="item.type === 'USER_CREATED'" :event="item" />
 
   <br>
 
@@ -46,11 +47,13 @@ import ItemCommentList from './ItemCommentList'
 import ItemCommentForm from './ItemCommentForm'
 import ItemShareInfo from './ItemShareInfo'
 import ItemInfo from './ItemInfo'
+import NewAccount from './UserCreated'
 
 export default {
   name: 'FeedItem',
 
   components: {
+    NewAccount,
     Post,
     Edit,
     ItemButtonList,

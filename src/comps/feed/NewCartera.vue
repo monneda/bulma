@@ -33,7 +33,7 @@
 import client from '@/commons/client.api'
 
 export default {
-  name: 'New Cartera',
+  name: 'NewCartera',
 
   props: {
     event: {
