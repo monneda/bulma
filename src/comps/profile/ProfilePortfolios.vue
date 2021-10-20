@@ -23,7 +23,7 @@
             <button class="button" @click="days = 90"> 3 meses </button>
           </p>
           <p class="control">
-            <button class="button" @click="days = 360"> 1 ano </button>
+            <button class="button" @click="days = daysInYear()"> YTD </button>
           </p>
         </div>
 
@@ -33,7 +33,7 @@
             <option value="7"> 1 semana </option>
             <option value="30"> 1 mês </option>
             <option value="90"> 3 meses </option>
-            <option value="360"> 1 ano </option>
+            <option :value="daysInYear()"> YTD </option>
           </select>
         </div>
       </div>
@@ -82,6 +82,13 @@ export default {
       for (const { id } of wallets) {
         client.wallets.byId(id, this.days).then(w => this.wallets.push(w))
       }
+    },
+    daysInYear () {
+      const now = new Date()
+      const start = new Date(now.getFullYear(), 0, 0)
+      const diff = (now - start) + ((start.getTimezoneOffset() - now.getTimezoneOffset()) * 60 * 1000)
+      const oneDay = 1000 * 60 * 60 * 24
+      return Math.floor(diff / oneDay)
     }
   },
 
