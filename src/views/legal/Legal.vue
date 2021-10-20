@@ -1,4 +1,10 @@
 <template>
+<div class="box has-background-secondary-light" style="max-width: 100%">
+  <router-link to="/feed">
+    <font-awesome-icon icon="arrow-left" size="lg" />
+  </router-link>
+  <br>
+  <br>
   <div class="control has-icons-left">
     <div class="select">
       <select v-model="selectedLanguage">
@@ -11,10 +17,10 @@
     </div>
   </div>
   <!-- Tabs -->
-  <div class="tabs is-fullwidth">
+  <div class="tabs">
     <ul v-if="selectedLanguage==='PT-BR'">
       <li class="is-active"><a @click="tab = 'PrivacyPolicyPT'">Política de Privacidade</a></li>
-      <li><a @click="tab = 'TermsPT'">Termos de Uso</a></li>
+      <li><a @click="tab = 'TermsPT'">Termo de Uso</a></li>
     </ul>
     <ul v-if="selectedLanguage==='EN-US'">
       <li class="is-active"><a @click="tab = 'PrivacyPolicyEN'">Privacy Policy</a></li>
@@ -22,6 +28,7 @@
     </ul>
   </div>
   <component :is="tab" />
+</div>
 </template>
 
 <script>
