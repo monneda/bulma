@@ -8,7 +8,16 @@
 
       <FeedItem
         class="box"
-        v-for="(val, key) of events"
+        v-for="(val, key) of events.slice(0,3)"
+        :key="key"
+        :item="val"
+      />
+
+      <FeedSuggestions horizontal />
+
+      <FeedItem
+        class="box"
+        v-for="(val, key) of events.slice(3)"
         :key="key"
         :item="val"
       />

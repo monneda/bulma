@@ -9,7 +9,7 @@ export default class extends Base {
     return this.request('GET', 'profile')
   }
 
-  getSuggestedFriends (size = 5, page = 0) {
+  getSuggestedFriends (size = 15, page = 0) {
     return this.request('GET', `profile/suggestions?size=${size}&page=${page}`)
   }
 
