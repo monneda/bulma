@@ -1,10 +1,10 @@
 <template>
 <article>
   <!-- Inputs -->
-  <div class="level">
-    <div class="level-left">
-      <div class="level-item">
-        <div class="field has-addons">
+<!--  <div class="level">-->
+<!--    <div class="level-left">-->
+<!--      <div class="level-item">-->
+        <div class="field has-addons is-hidden-touch">
           <!-- Block -->
           <div class="control">
             <button
@@ -27,11 +27,11 @@
             </button>
           </div>
         </div>
-      </div>
-    </div>
+<!--      </div>-->
+<!--    </div>-->
 
-    <div class="level-right">
-      <!-- Sectors -->
+<!--    <div class="level-right">
+      &lt;!&ndash; Sectors &ndash;&gt;
       <div class="level-item">
         <div class="select is-primary">
           <select v-model="sector">
@@ -42,7 +42,7 @@
         </div>
       </div>
 
-      <!-- Segments -->
+      &lt;!&ndash; Segments &ndash;&gt;
       <div class="level-item">
         <div class="select is-primary">
           <select v-model="segment">
@@ -53,7 +53,7 @@
         </div>
       </div>
 
-      <!-- Type -->
+      &lt;!&ndash; Type &ndash;&gt;
       <div class="level-item">
         <div class="select is-primary">
           <select v-model="type">
@@ -64,7 +64,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <AssetTiles v-if="component === 'AssetTiles'" :assets="wallet.assets" />
   <AssetTable v-if="component === 'AssetTable'" :assets="wallet.assets" />
