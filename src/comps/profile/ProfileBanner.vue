@@ -28,6 +28,23 @@
             </router-link>
           </div>
         </div>
+
+        <div v-if="!isSelf" class="level-right">
+          <div class="level-item">
+            <c-button class="button is-primary" @click="this.user.following ? unfollow() : follow()"
+            >
+              <span class="icon-text">
+                <span v-if="!user.following" class="icon">
+                  <font-awesome-icon icon="plus"/>
+                </span>
+                <span v-if="user.following" class="icon">
+                  <font-awesome-icon icon="check"/>
+                </span>
+                <span> {{ user.following ? 'Seguindo' : 'Seguir' }} </span>
+              </span>
+            </c-button>
+          </div>
+        </div>
       </div>
 
       <hr>
@@ -87,7 +104,6 @@ import client from '@/commons/client.api'
 
 export default {
   name: 'ProfileBanner',
-
   props: {
     username: {
       type: String,
@@ -108,6 +124,17 @@ export default {
   watch: {
     async username () {
       this.user = await client.users.byUsername(this.username)
+    }
+  },
+
+  methods: {
+    async follow () {
+      await client.users.follow(this.user.username)
+      this.user.following = true
+    },
+    async unfollow () {
+      await client.users.unfollow(this.user.username)
+      this.user.following = false
     }
   },
 
