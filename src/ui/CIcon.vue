@@ -11,6 +11,7 @@
   <lock         v-if="icon === 'lock'"         />
   <newspaper    v-if="icon === 'newspaper'"    />
   <users        v-if="icon === 'users'"        />
+  <trophy       v-if="icon === 'trophy'"        />
 </template>
 
 <script>
@@ -26,6 +27,7 @@ import LineUp from '@/ui/icons/LineUp'
 import Lock from '@/ui/icons/Lock'
 import Newspaper from '@/ui/icons/Newspaper'
 import Users from '@/ui/icons/Users'
+import Trophy from '@/ui/icons/Trophy'
 
 export default {
   name: 'CIcon',
@@ -42,7 +44,8 @@ export default {
     LineUp,
     Lock,
     Newspaper,
-    Users
+    Users,
+    Trophy
   },
 
   props: {

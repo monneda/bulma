@@ -20,13 +20,22 @@
 <div class="container">
   <div class="columns mx-0 is-centered">
     <!-- Top wallets -->
-    <div class="column is-one-quarter is-hidden-touch">
+<!--<div class="column is-one-quarter is-hidden-touch">
       <div class="box is-flex is-flex-direction-column">
+        <div class="level">
+          <div class="level-left">
+            <strong class="level-item"> Top Carteras </strong>
+          </div>
+          <div class="level-right">
+            <CIcon icon="trophy" />
+          </div>
+        </div>
+        <hr class="my-0">
         <template v-for="(w, i) of ranked" :key="w.id">
           <WalletsRank :rank="i + 1" :wallet="w" class="p-2 my-2" />
         </template>
       </div>
-    </div>
+    </div>-->
 
     <div class="column is-three-quarters">
       <div class="is-flex is-flex-direction-column">
@@ -34,17 +43,17 @@
         <!-- Periods -->
         <div class="tabs is-toggle is-fullwidth">
           <ul class="has-background-white">
-            <li :class="{ 'is-active': period == 7 }">
+            <li :class="{ 'is-active': period === 7 }">
               <a @click="period = 7">1 semana</a>
             </li>
-            <li :class="{ 'is-active': period == 30 }">
+            <li :class="{ 'is-active': period === 30 }">
               <a @click="period = 30">1 mês</a>
             </li>
-            <li :class="{ 'is-active': period == 90 }">
+            <li :class="{ 'is-active': period === 90 }">
               <a @click="period = 90">3 meses</a>
             </li>
-            <li :class="{ 'is-active': period == 360 }">
-              <a @click="period = 360">1 ano</a>
+            <li :class="{ 'is-active': period === daysInYear() }">
+              <a @click="period = daysInYear()">YTD</a>
             </li>
           </ul>
         </div>
@@ -72,17 +81,19 @@ import client from '@/commons/client.api'
 
 import Navbar from '@/comps/navbar/Navbar'
 import WalletsTile from '@/comps/wallets/WalletsTile'
-import WalletsRank from '@/comps/wallets/WalletsRank'
+// import WalletsRank from '@/comps/wallets/WalletsRank'
 import NavbarBottom from '../comps/navbar/NavbarBottom'
+// import CIcon from '../ui/CIcon'
 
 export default {
   name: 'Carteras',
 
   components: {
+    // CIcon,
     NavbarBottom,
     Navbar,
-    WalletsTile,
-    WalletsRank
+    // WalletsRank,
+    WalletsTile
   },
 
   data: () => ({
@@ -106,6 +117,13 @@ export default {
       for (const w of wallets) {
         client.wallets.byId(w.id, this.period).then(w => this.wallets.push(w))
       }
+    },
+    daysInYear () {
+      const now = new Date()
+      const start = new Date(now.getFullYear(), 0, 0)
+      const diff = (now - start) + ((start.getTimezoneOffset() - now.getTimezoneOffset()) * 60 * 1000)
+      const oneDay = 1000 * 60 * 60 * 24
+      return Math.floor(diff / oneDay)
     }
   },
 
