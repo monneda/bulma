@@ -4,14 +4,18 @@
     <div class="level-left">
       <!-- Image -->
       <div class="level-item">
-        <c-avatar :src="user.picture" round size="3rem" />
+        <router-link :to="`/u/${user.username}`">
+          <c-avatar :src="user.picture" round size="3rem" />
+        </router-link>
       </div>
 
       <!-- Name -->
       <div class="level-item">
         <div class="is-flex is-flex-direction-column has-text-centered-mobile">
           <span> Cartera de </span>
-          <strong> @{{ user.username }} </strong>
+          <router-link :to="`/u/${user.username}`">
+            <strong class="has-text-grey-darker"> @{{ user.username }} </strong>
+          </router-link>
         </div>
       </div>
     </div>
