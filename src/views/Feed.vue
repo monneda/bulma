@@ -6,21 +6,14 @@
     <div class="column is-three-fifths">
       <PostForm class="box" />
 
-      <FeedItem
-        class="box"
-        v-for="(val, key) of events.slice(0,3)"
-        :key="key"
-        :item="val"
-      />
-
-      <FeedSuggestions horizontal />
-
-      <FeedItem
-        class="box"
-        v-for="(val, key) of events.slice(3)"
-        :key="key"
-        :item="val"
-      />
+      <div v-for="(val, key) of events" :key="key" :item="val">
+        <FeedItem
+          class="box my-5"
+          :key="key"
+          :item="val"
+        />
+        <FeedSuggestions horizontal v-if="key % 4 === 1"/>
+      </div>
 
       <c-view @show="nextPage" />
     </div>
