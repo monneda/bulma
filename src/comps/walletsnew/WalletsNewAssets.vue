@@ -15,6 +15,8 @@
           placeholder="Digite o código..."
           class="input has-background-white-ter is-size-6"
           v-model="ticker"
+          @input="ticker = $event.target.value.toUpperCase()"
+          @keyup.enter="add"
         >
       </div>
     </div>
@@ -25,6 +27,7 @@
         <label class="label"> Quantidade </label>
         <input
           type="number"
+          min="1"
           placeholder="Digite a quantidade..."
           class="input has-background-white-ter is-size-6"
           v-model="amount"
@@ -38,7 +41,7 @@
 <!-- Added assets -->
 <div class="column is-three-fifths" v-bind="$attrs">
   <h4 class="title is-4 mb-2 p-3"> Seus ativos </h4>
-  <Step2AssetRow v-for="a of assets" :key="a.ticker" :asset="a" class="box" />
+  <Step2AssetRow v-for="a of assets" :key="a.ticker" :asset="a" class="box" @remove="remove" />
 </div>
 </template>
 
@@ -62,13 +65,23 @@ export default {
 
   methods: {
     async add () {
-      const asset = await client.assets.fetchAsset(this.ticker)
+      // asset exist?
+      let asset
+      try {
+        asset = await client.assets.fetchAsset(this.ticker)
+      } catch (e) {
+        return
+      }
+      // amount exist?
+      if (this.amount <= 0) {
+        return
+      }
       asset.amount = this.amount
 
       // Replace if already in the list
       const index = this.assets.findIndex(i => i.ticker === this.ticker)
       if (index === -1) {
-        this.assets.push(asset)
+        this.assets.unshift(asset)
       } else {
         this.assets[index] = asset
       }
@@ -77,6 +90,10 @@ export default {
 
       this.ticker = ''
       this.amount = null
+    },
+    async remove ({ ticker }) {
+      this.assets = this.assets.filter(i => i.ticker !== ticker)
+      this.$emit('update:assets', this.assets)
     }
   }
 }

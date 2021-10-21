@@ -17,7 +17,12 @@
         </span>
       </div>
     </div>
-
+    <!-- Delete -->
+    <div class="level-right">
+      <div class="level-item is-hidden-desktop">
+        <button class="button delete is-danger" @click="remove"></button>
+      </div>
+    </div>
     <!-- Spacing -->
     <div class="level-item is-hidden-touch"></div>
     <div class="level-item is-hidden-touch"></div>
@@ -46,6 +51,10 @@
         <span><strong> Variação </strong></span>
         <span>{{ asset.gain.toFixed(2) }}</span>
       </div>
+    </div>
+    <!-- Delete -->
+    <div class="level-item is-hidden-touch">
+      <button class="button delete is-danger" @click="remove"></button>
     </div>
   </div>
 
@@ -94,6 +103,12 @@ export default {
     asset: {
       type: Object,
       required: true
+    }
+  },
+
+  methods: {
+    remove () {
+      this.$emit('remove', this.asset)
     }
   }
 }
