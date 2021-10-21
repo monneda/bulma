@@ -93,6 +93,7 @@
 </template>
 
 <script>
+import { getDaysInYear } from '@/utils.js'
 export default {
   name: 'PortfolioBanner',
 
@@ -130,17 +131,10 @@ export default {
   methods: {
     change (e) {
       if (this.selected === 'ytd') {
-        this.$emit('period', this.daysInYear())
+        this.$emit('period', getDaysInYear())
       } else {
         this.$emit('period', this.selected)
       }
-    },
-    daysInYear () {
-      const now = new Date()
-      const start = new Date(now.getFullYear(), 0, 0)
-      const diff = (now - start) + ((start.getTimezoneOffset() - now.getTimezoneOffset()) * 60 * 1000)
-      const oneDay = 1000 * 60 * 60 * 24
-      return Math.floor(diff / oneDay)
     }
   }
 }

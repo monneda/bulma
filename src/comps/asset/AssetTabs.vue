@@ -11,11 +11,13 @@
 </template>
 
 <script>
+import { getDaysInYear } from '@/utils.js'
+
 const ITEMS = [
   { days: 7, text: '1 semana' },
   { days: 30, text: '1 mês' },
   { days: 90, text: '3 meses' },
-  { days: 360, text: '1 ano' }
+  { days: getDaysInYear(), text: 'YTD' }
 ]
 
 export default {
