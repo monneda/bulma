@@ -73,7 +73,7 @@ export default {
         this.assets[index] = asset
       }
 
-      this.$emit('update:modelValue', this.assets)
+      this.$emit('update:assets', this.assets)
 
       this.ticker = ''
       this.amount = null
