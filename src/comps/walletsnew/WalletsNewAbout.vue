@@ -13,15 +13,16 @@
           type="text"
           placeholder="Digite um nome..."
           class="input has-background-white-ter is-size-6"
+          :value="name"
           @input="updateName"
-          :class="this.name.length < 3 ? 'is-danger' : 'is-success'"
+          :class="!this.validName ? 'is-danger' : 'is-success'"
         >
         <span class="icon is-small is-right">
-          <font-awesome-icon v-if="this.name.length >= 3" icon="check" />
-          <font-awesome-icon v-if="this.name.length < 3" icon="exclamation-triangle" />
+          <font-awesome-icon v-if="validName" icon="check" />
+          <font-awesome-icon v-if="!validName" icon="exclamation-triangle" />
         </span>
       </div>
-      <p v-if="this.name.length < 3" class="help is-danger"> Precisa ter pelo menos 3 letras </p>
+      <p v-if="!validName" class="help is-danger"> Precisa ter pelo menos 3 letras </p>
     </div>
 
     <!-- Description -->
@@ -30,6 +31,7 @@
         <label class="label"> Descrição </label>
         <textarea
           type="text"
+          :value="description"
           class="textarea has-background-white-ter is-size-6"
           placeholder="Explique um pouco da sua Cartera: estratégia, objetivos, ..."
           @input="e => $emit('update:description', e.target.value)"
@@ -44,13 +46,20 @@
 export default {
   name: 'WalletsNewAbout',
 
-  data: () => ({
-    name: ''
-  }),
+  props: {
+    validName: {
+      type: Boolean
+    },
+    name: {
+      type: String
+    },
+    description: {
+      type: String
+    }
+  },
 
   methods: {
     updateName (e) {
-      this.name = e.target.value
       this.$emit('update:name', e.target.value)
     }
   }

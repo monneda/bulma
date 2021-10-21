@@ -6,6 +6,7 @@
   class="has-background-white p-2"
   v-if="step !== 3"
   v-model="step"
+  :valid="allValid"
   @finish="create"
 />
 
@@ -18,6 +19,7 @@
       v-if="step === 1"
       v-model:name="name"
       v-model:description="description"
+      :validName="validName"
     />
 
     <!-- Step 2 (assets) -->
@@ -71,8 +73,19 @@ export default {
   methods: {
     async create () {
       this.wallet = { name: this.name, description: this.description, assets: this.assets }
-      const resp = await client.wallets.create(this.wallet)
-      console.log(resp)
+      await client.wallets.create(this.wallet)
+    }
+  },
+
+  computed: {
+    validName () {
+      return this.name.length > 2
+    },
+    validAssets () {
+      return this.assets.length !== 0
+    },
+    allValid () {
+      return this.validName && this.validAssets
     }
   }
 }

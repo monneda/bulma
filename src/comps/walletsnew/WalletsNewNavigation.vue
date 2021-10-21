@@ -38,6 +38,7 @@
               right
               icon="angle-right"
               @click="next"
+              :disabled="!valid && modelValue >= 2"
             >
               {{ modelValue >= 2 ? 'Finalizar' : 'Continuar' }}
             </c-button>
@@ -57,6 +58,10 @@ export default {
     modelValue: {
       type: Number,
       required: true
+    },
+    valid: {
+      type: Boolean,
+      required: false
     }
   },
 
