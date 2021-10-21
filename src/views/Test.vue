@@ -1,15 +1,12 @@
 <template>
-<Navbar />
-<NavbarBottom/>
+<div>
+  <MeiliSearchAssets />
+</div>
 </template>
 <script>
-import Navbar from '@/comps/navbar/Navbar.vue'
-import NavbarBottom from '../comps/navbar/NavbarBottom'
+import MeiliSearchAssets from '@/comps/utils/MeiliSearchAssets'
 
 export default {
-  components: {
-    NavbarBottom,
-    Navbar
-  }
+  components: { MeiliSearchAssets }
 }
 </script>

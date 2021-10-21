@@ -13,7 +13,7 @@
       :type="type"
       :placeholder="placeholder"
       :class="{ 'is-danger': invalid }"
-      @input="$emit('update:modelValue', $event.target.value)"
+      @input="input"
     >
 
     <span v-if="left" class="icon is-small is-left">
@@ -52,6 +52,13 @@ export default {
   computed: {
     invalid () {
       return !this.validator(this.modelValue)
+    }
+  },
+
+  methods: {
+    input (e) {
+      this.$emit('input', e)
+      this.$emit('update:modelValue', e.target.value)
     }
   }
 }
