@@ -37,7 +37,7 @@
 
 <!-- Added assets -->
 <div class="column is-three-fifths" v-bind="$attrs">
-  <h4 class="title is-4 mb-2 p-3"> Assets </h4>
+  <h4 class="title is-4 mb-2 p-3"> Seus ativos </h4>
   <Step2AssetRow v-for="a of assets" :key="a.ticker" :asset="a" class="box" />
 </div>
 </template>
