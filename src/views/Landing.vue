@@ -61,8 +61,11 @@
             class="is-hidden-desktop"
             style="position: absolute; z-index: 0; left: 10%; bottom: 27%; height: 6%"
           >
-          <figure class="image">
-            <img src="@/assets/imgs/landing-1.png">
+          <figure class="image is-hidden-touch">
+            <img src="@/assets/imgs/portfolioupdate_desktop.png">
+          </figure>
+          <figure class="image is-hidden-desktop">
+            <img src="@/assets/imgs/portfolioupdate_touch2.png">
           </figure>
         </div>
       </div>
@@ -159,7 +162,7 @@
         <!-- Image desktop -->
         <div class="column is-6 is-hidden-touch">
           <figure class="image">
-            <img src="@/assets/imgs/landing-2.png">
+            <img src="@/assets/imgs/assetpage.png">
           </figure>
         </div>
 
@@ -190,7 +193,7 @@
         <!-- Image mobile -->
         <div class="column is-6 is-hidden-desktop">
           <figure class="image">
-            <img src="@/assets/imgs/landing-2.png">
+            <img src="@/assets/imgs/assetpage.png">
           </figure>
         </div>
       </div>
