@@ -57,8 +57,16 @@
       <!-- Links -->
       <div class="level-right">
         <a class="level-item"> Home </a>
-        <a class="level-item"> Política de privacidade </a>
-        <a class="level-item"> Termos de uso </a>
+        <a class="level-item">
+          <router-link to="/settings">
+            Política de privacidade
+          </router-link>
+        </a>
+        <a class="level-item">
+          <router-link to="/settings">
+            Termos de uso
+          </router-link>
+        </a>
         <a class="level-item"> Contato </a>
       </div>
     </div>
