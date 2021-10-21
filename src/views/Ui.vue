@@ -83,6 +83,27 @@
   </c-modal-card>
 </section>
 
+<section class="section">
+  <h1 class="title is-1"> CInput </h1>
+
+  <c-input
+    v-model="text"
+    type="search"
+    label="Search here"
+    left icon="search"
+    :validator="text => text.length <= 10"
+    error="Input has more than 10 chars"
+    placeholder="Type here..."
+  />
+  <p> {{ text }} </p>
+
+  <c-input label="Custom placeholder" placeholder="Something something" />
+  <br>
+  <c-input label="Custom icon" left icon="user" />
+  <br>
+  <c-input placeholder="no label" />
+</section>
+
 <c-view @show="show" @hide="hide" />
 </template>
 
@@ -92,6 +113,7 @@ export default {
   name: 'Ui',
 
   data: () => ({
+    text: '',
     modal: false,
     modalCard: false
   }),

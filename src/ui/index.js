@@ -5,6 +5,7 @@ import CView from './CView'
 import CMenu from './CMenu'
 import CModal from './CModal'
 import CModalCard from './CModalCard'
+import CInput from './CInput'
 
 export {
   CAvatar,
@@ -13,5 +14,6 @@ export {
   CView,
   CMenu,
   CModal,
-  CModalCard
+  CModalCard,
+  CInput
 }
