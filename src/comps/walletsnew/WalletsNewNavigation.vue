@@ -17,7 +17,7 @@
               class="is-light is-fullwidth"
               left
               icon="angle-left"
-              :disabled="modelValue <= 1"
+              v-if="modelValue > 1"
               @click="prev"
             >
               Voltar

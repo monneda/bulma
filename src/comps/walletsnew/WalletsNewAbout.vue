@@ -11,7 +11,7 @@
         <label class="label"> Nome </label>
         <input
           type="text"
-          placeholder="Digite o nome..."
+          placeholder="Digite um nome..."
           class="input has-background-white-ter is-size-6"
           @input="e => $emit('update:name', e.target.value)"
         >
@@ -24,8 +24,8 @@
         <label class="label"> Descrição </label>
         <textarea
           type="text"
-          placeholder="Digite sua descrição..."
           class="textarea has-background-white-ter is-size-6"
+          placeholder="Explique um pouco da sua Cartera: estratégia, objetivos, ..."
           @input="e => $emit('update:description', e.target.value)"
         />
       </div>
