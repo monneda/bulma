@@ -21,4 +21,12 @@ export default class extends Base {
     }
     return this.request('PUT', `wallets/${id}`, options)
   }
+
+  create (data) {
+    const options = {
+      body: JSON.stringify(data),
+      headers: { 'Content-Type': 'application/json' }
+    }
+    return this.request('POST', 'wallets', options)
+  }
 }

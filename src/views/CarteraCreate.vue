@@ -38,6 +38,8 @@
 </template>
 
 <script>
+import client from '@/commons/client.api'
+
 import Navbar from '@/comps/navbar/Navbar'
 
 import WalletsNewAbout from '@/comps/walletsnew/WalletsNewAbout'
@@ -67,9 +69,10 @@ export default {
   }),
 
   methods: {
-    create () {
-      // TODO
-      this.wallet = { name: this.name }
+    async create () {
+      this.wallet = { name: this.name, description: this.description, assets: this.assets }
+      const resp = await client.wallets.create(this.wallet)
+      console.log(resp)
     }
   }
 }
