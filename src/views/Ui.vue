@@ -53,6 +53,36 @@
   <c-avatar src="https://placekitten.com/100/100" size="10rem" /> Variable size (10rem)
 </section>
 
+<section class="section">
+  <h1 class="title is-1"> CModal </h1>
+
+  <button class="button" @click="modal = true"> Show </button>
+  <c-modal :active="modal" @close="modal = false" clipped>
+    <div class="has-background-white">
+      <h1 class="title is-1"> This is a modal </h1>
+    </div>
+  </c-modal>
+</section>
+
+<section class="section">
+  <h1 class="title is-1"> CModalCard </h1>
+
+  <button class="button" @click="modalCard = true"> Show </button>
+  <c-modal-card :active="modalCard" @close="modalCard = false" clipped>
+    <template #title> This is a title </template>
+
+    <template #header>
+      <button class="delete is-large" @click="modalCard = false"/>
+    </template>
+
+    Place some content here
+
+    <template #footer>
+      <button class="button" @click="modalCard = false"> Close </button>
+    </template>
+  </c-modal-card>
+</section>
+
 <c-view @show="show" @hide="hide" />
 </template>
 
@@ -60,17 +90,15 @@
 
 export default {
   name: 'Ui',
+
+  data: () => ({
+    modal: false,
+    modalCard: false
+  }),
+
   methods: {
-    show () { console.log('show') },
-    hide () { console.log('hide') }
+    show () { console.log('you arrived at the bottom') },
+    hide () { console.log('you left the bottom') }
   }
 }
 </script>
-
-<style>
-p {
-  border-style: dotted;
-  border-color: red;
-  border-width: 1px;
-}
-</style>
