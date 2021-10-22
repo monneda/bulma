@@ -14,7 +14,7 @@ export default {
 
   props: {
     options: { type: Array, default: () => [] },
-    modelValue: { type: String, default: '' }
+    modelValue: { type: [String, Number], default: '' }
   }
 }
 </script>

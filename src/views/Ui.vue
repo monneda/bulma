@@ -118,10 +118,17 @@
   <span> Selected: {{ select.selected }} </span>
 </section>
 
+<section class="section">
+  <h1 class="title is-1"> CTable </h1>
+
+  <c-table :data="table.data" sortable />
+</section>
+
 <c-view @show="show" @hide="hide" />
 </template>
 
 <script>
+import client from '@/commons/client.api'
 
 export default {
   name: 'Ui',
@@ -138,12 +145,21 @@ export default {
         { label: 'second', value: 2 },
         { label: 'third', value: 3 }
       ]
+    },
+
+    table: {
+      data: []
     }
   }),
 
   methods: {
     show () { console.log('you arrived at the bottom') },
     hide () { console.log('you left the bottom') }
+  },
+
+  async created () {
+    const wallet = await client.wallets.byId('6073e39242cb2b06e78c1cb1')
+    this.table.data = wallet.assets
   }
 }
 </script>

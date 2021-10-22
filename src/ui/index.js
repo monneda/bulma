@@ -7,6 +7,7 @@ import CModal from './CModal'
 import CModalCard from './CModalCard'
 import CInput from './CInput'
 import CSelect from './CSelect'
+import CTable from './CTable'
 
 export {
   CAvatar,
@@ -17,5 +18,6 @@ export {
   CModal,
   CModalCard,
   CInput,
-  CSelect
+  CSelect,
+  CTable
 }
