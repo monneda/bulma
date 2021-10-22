@@ -8,9 +8,11 @@
   <br v-if="post.data.picture">
 
   <!-- Image -->
-  <figure v-if="post.data.picture" class="image">
-    <img :src="post.data.picture">
-  </figure>
+  <div class="container is-fluid">
+    <figure v-if="post.data.picture" class="image">
+      <img :src="post.data.picture" class="mx-auto" style="max-height: 60vh; width: auto">
+    </figure>
+  </div>
 </article>
 </template>
 
