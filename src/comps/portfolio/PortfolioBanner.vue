@@ -4,42 +4,44 @@
     <div class="level-left">
       <!-- Image -->
       <div class="level-item">
-        <router-link :to="`/u/${user.username}`">
-          <c-avatar :src="user.picture" round size="3rem" />
-        </router-link>
+        <div class="is-flex is-flex-direction-column is-justify-content-center">
+          <router-link :to="`/u/${user.username}`">
+            <c-avatar :src="user.picture" round size="3rem" />
+          </router-link>
+        </div>
       </div>
 
       <!-- Name -->
       <div class="level-item">
-        <div class="is-flex is-flex-direction-column has-text-centered-mobile">
+        <div class="is-flex is-flex-direction-column has-text-centered-touch">
           <span> Cartera de </span>
           <router-link :to="`/u/${user.username}`">
-            <strong class="has-text-grey-darker"> @{{ user.username }} </strong>
+            <span class="has-text-grey-darker">
+              <strong > @{{ user.username }} </strong>
+            </span>
           </router-link>
         </div>
       </div>
     </div>
 
     <div class="level-right">
-      <!-- Edit -->
-      <div v-if="isSelf" class="level-item">
-        <router-link :to="`/c/${wallet.id}/edit`">
-          <c-button class="is-primary" left icon="pen"> Editar cartera </c-button>
-        </router-link>
-      </div>
+      <template v-if="isSelf">
+        <!-- Edit -->
+        <div class="level-item">
+          <router-link :to="`/c/${wallet.id}/edit`">
+            <c-button class="is-primary" left icon="pen">
+              Editar cartera
+            </c-button>
+          </router-link>
+        </div>
 
-      <!-- TODO -->
-      <!-- Share -->
-      <!-- <div class="level-item">
-        <button class="button is-primary is-light">
-          <span class="icon-text">
-            <span class="icon">
-              <font-awesome-icon icon="share" />
-            </span>
-            <span> Compartilhar </span>
-          </span>
-        </button>
-      </div> -->
+        <!-- Delete -->
+        <div class="level-item">
+          <c-button class="is-danger is-light" left icon="trash" @click="remove">
+            Deletar
+          </c-button>
+        </div>
+      </template>
     </div>
   </div>
 
@@ -93,19 +95,16 @@
 </template>
 
 <script>
+import client from '@/commons/client.api'
+
 import { getDaysInYear } from '@/utils.js'
+
 export default {
   name: 'PortfolioBanner',
 
   props: {
-    wallet: {
-      type: Object,
-      required: true
-    },
-    user: {
-      type: Object,
-      required: true
-    }
+    wallet: { type: Object, required: true },
+    user: { type: Object, required: true }
   },
 
   data: () => ({
@@ -114,7 +113,7 @@ export default {
       7: '7 dias',
       30: '1 mês',
       90: '3 meses',
-      ytd: 'YTD'
+      [getDaysInYear()]: 'YTD'
     }
   }),
 
@@ -130,11 +129,12 @@ export default {
 
   methods: {
     change (e) {
-      if (this.selected === 'ytd') {
-        this.$emit('period', getDaysInYear())
-      } else {
-        this.$emit('period', this.selected)
-      }
+      this.$emit('period', this.selected)
+    },
+
+    async remove () {
+      await client.wallets.delete(this.wallet.id)
+      this.$router.push('/c')
     }
   }
 }

@@ -29,4 +29,8 @@ export default class extends Base {
     }
     return this.request('POST', 'wallets', options)
   }
+
+  delete (id) {
+    return this.request('DELETE', `wallets/${id}`, {}, false)
+  }
 }
