@@ -129,7 +129,7 @@ export default {
 
   async created () {
     const { counter } = await client.notifications.fetchUnreadCount()
-    this.totalNotifications = counter + 3
+    this.totalNotifications = counter
   }
 }
 </script>
