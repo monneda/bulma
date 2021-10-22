@@ -10,17 +10,46 @@
     <div class="field">
       <div class="control">
         <label class="label"> Código </label>
-        <input
-          type="text"
-          placeholder="Digite o código..."
-          class="input has-background-white-ter is-size-6"
-          v-model="ticker"
-          @input="ticker = $event.target.value.toUpperCase()"
-          @keyup.enter="add"
-        >
+        <ais-instant-search :search-client="client" index-name="assets">
+          <!-- Configuration -->
+          <ais-configure :hits-per-page.camel="5" />
+          <!-- Input -->
+          <ais-search-box>
+            <template v-slot="{ refine }">
+              <input
+                type="text"
+                placeholder="Procure por código ou nome..."
+                class="input has-background-white-ter is-size-6"
+                v-model="ticker"
+                @input="refine($event.target.value); clicked = false; ticker = ticker.toUpperCase()"
+                @keyup.enter="add"
+              >
+            </template>
+          </ais-search-box>
+          <div class="dropdown" :class="{ 'is-active': ticker && !clicked }" style="position: absolute">
+            <div class="dropdown-menu">
+              <div class="dropdown-content">
+                <ais-hits>
+                  <template v-slot="{ items }">
+                    <template v-for="item of items" :key="item.objectID">
+                      <div class="dropdown-item" @click="dropdownItemClicked(item.codneg)" style="width: 15rem">
+                        <div class="is-flex">
+                          <icon-ticker :ticker="item.codneg"  />
+                          <div class="pl-3 is-flex is-flex-direction-column is-justify-content-center">
+                            <strong> {{ item.codneg }} </strong>
+                            <span> {{ item.nomres }} </span>
+                          </div>
+                        </div>
+                      </div>
+                    </template>
+                  </template>
+                </ais-hits>
+              </div>
+            </div>
+          </div>
+        </ais-instant-search>
       </div>
     </div>
-
     <!-- Amount -->
     <div class="field">
       <div class="control">
@@ -28,7 +57,7 @@
         <input
           type="number"
           min="1"
-          placeholder="Digite a quantidade..."
+          placeholder="Quantas unidades você tem?"
           class="input has-background-white-ter is-size-6"
           v-model="amount"
           @keyup.enter="add"
@@ -47,14 +76,17 @@
 
 <script>
 import client from '@/commons/client.api'
+import meili from '@/commons/meili.api'
 
 import Step2AssetRow from './Step2AssetRow'
+import IconTicker from '@/comps/utils/IconTicker'
 
 export default {
   name: 'WalletsNewStep2',
 
   components: {
-    Step2AssetRow
+    Step2AssetRow,
+    IconTicker
   },
 
   props: {
@@ -65,7 +97,9 @@ export default {
 
   data: () => ({
     ticker: '',
-    amount: null
+    amount: null,
+    client: meili(),
+    clicked: false
   }),
 
   methods: {
@@ -96,6 +130,10 @@ export default {
     },
     async remove ({ ticker }) {
       this.$emit('removeAsset', ticker)
+    },
+    dropdownItemClicked (codneg) {
+      this.ticker = codneg
+      this.clicked = true
     }
   }
 }
