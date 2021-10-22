@@ -1,14 +1,25 @@
 <template>
 <Navbar />
-<FeedItem class="box" v-if="post" :item="post"/>
+
+<br>
+
+<div class="container">
+  <div class="columns is-centered mx-0">
+    <div class="column is-three-fifths">
+      <FeedItem class="box" v-if="post" :item="post" />
+    </div>
+  </div>
+</div>
+
 <NavbarBottom/>
 </template>
-<script>
-import Navbar from '@/comps/navbar/Navbar.vue'
-import NavbarBottom from '../comps/navbar/NavbarBottom'
-import FeedItem from '@/comps/feed/FeedItem'
 
-import client from '@/commons/client.api'
+<script>
+import { FEED_FETCH_EVENT } from '@/store/type.actions'
+
+import FeedItem from '@/comps/feed/FeedItem'
+import Navbar from '@/comps/navbar/Navbar'
+import NavbarBottom from '@/comps/navbar/NavbarBottom'
 
 export default {
   name: 'Post',
@@ -26,12 +37,14 @@ export default {
     }
   },
 
-  data: () => ({
-    post: null
-  }),
+  computed: {
+    post () {
+      return this.$store.state.feed.events[this.id]
+    }
+  },
 
   async created () {
-    this.post = await client.feed.fetchEvent(this.id)
+    this.$store.dispatch(FEED_FETCH_EVENT, this.id)
   }
 }
 </script>

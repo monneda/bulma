@@ -49,6 +49,11 @@ const actions = {
     events.forEach(i => ctx.commit(MUTATIONS.FEED_EVENT_REPLACE, i))
   },
 
+  async [ACTIONS.FEED_FETCH_EVENT] (ctx, id) {
+    const event = await client.feed.fetchEvent(id)
+    ctx.commit(MUTATIONS.FEED_EVENT_REPLACE, event)
+  },
+
   async [ACTIONS.FEED_FETCH_EVENTS_NEXT_PAGE] (ctx) {
     const last = Object.keys(ctx.state.events).sort().shift()
     const events = await client.feed.fetchEvents(5, last)
