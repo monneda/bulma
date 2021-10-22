@@ -1,9 +1,5 @@
 module.exports = {
-  /**
-   * Allows the application to be hosted in github pages. Need to remove when
-   * deploying it to cartera.com.br
-   */
-  publicPath: process.env.NODE_ENV === 'production' ? '/bulma/' : '/',
+  publicPath: '/',
 
   /**
    * Injects our variables.scss file on top of all components so we can use

@@ -6,9 +6,7 @@ const clientId = process.env.NODE_ENV === 'production'
   ? 'rD7cai4xl9436V3RPJvGC7lQpe6HQQfR' // prd
   : 'LMFDlOJhgdnFEvXK45rcd3M489fXnYFU' // dev
 
-const redirectUri = process.env.NODE_ENV === 'production'
-  ? 'https://monneda.github.io/bulma/#/callback'
-  : `${window.location.origin}/#/callback`
+const redirectUri = `${window.location.origin}/#/callback`
 
 const auth0 = new Auth0Client({
   domain: 'cartera.us.auth0.com',
