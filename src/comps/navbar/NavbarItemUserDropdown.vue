@@ -1,5 +1,5 @@
 <template>
-<div class="navbar-dropdown" style="left: -50%">
+<div class="navbar-dropdown is-right">
   <!-- Profile -->
   <router-link :to="`/u/${$store.state.user.profile.username}`" class="navbar-item">
     <div class="is-flex is-flex-wrap-nowrap is-align-items-center">
