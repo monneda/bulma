@@ -7,23 +7,21 @@
     </router-link>
 
     <!-- Notification -->
-    <div class="mx-2">
+    <router-link :to="`/p/${notification.data.eventId}`" class="mx-2">
       <p>
-        <span class="has-text-weight-bold">
-          <router-link :to="`/u/${notification.user.username}`">
-            @{{ notification.user.username }}
-          </router-link>
-        </span>
-        <span class="pl-1">
-          {{ message }}
-        </span>
+        <router-link :to="`/u/${notification.user.username}`">
+          <strong> @{{ notification.user.username }} </strong>
+        </router-link>
+        <span class="has-text-dark pl-1"> {{ message }} </span>
       </p>
 
       <!-- Time -->
       <small>
-        <TimeAgo :time="notification.createdAt" />
+        <router-link :to="`/p/${notification.data.eventId}`">
+          <TimeAgo class="has-text-dark" :time="notification.createdAt" />
+        </router-link>
       </small>
-    </div>
+    </router-link>
   </div>
 </article>
 </template>
