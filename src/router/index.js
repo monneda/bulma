@@ -129,9 +129,8 @@ const router = createRouter({
 
 router.beforeEach(UserGuard)
 
-router.afterEach((to, from, next) => {
+router.afterEach((to, from) => {
   window.scrollTo(0, 0)
-  next()
 })
 
 export default router
