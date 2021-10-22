@@ -178,13 +178,12 @@
           <br>
 
           <h3 class="title is-3">
-            interaja com investidores e fique por dentro
+            Descubra que ativos seus amigos investem
           </h3>
 
           <p class="is-size-5 has-text-grey-dark">
-            Saiba o que seus amigos estão investindo e
-            intereja na sua posição de suas carteira: comente,
-            curta ou indique "bear" ou "bull".
+            Encontre seus amigos e interaja em cada movimentação de compra/venda.
+            Comente, curta e discuta estratégias.
           </p>
         </div>
 
@@ -213,7 +212,7 @@
           <br>
 
           <h3 class="title is-3">
-            invista melhor o seu dinheiro
+            Invista melhor o seu dinheiro
           </h3>
 
           <p class="is-size-5 has-text-grey-dark">
@@ -257,7 +256,7 @@
           <br>
 
           <h3 class="title is-3">
-            segurança com os seus dados
+            Segurança com os seus dados
           </h3>
 
           <p class="is-size-5 has-text-grey-dark">
