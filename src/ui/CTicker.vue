@@ -1,12 +1,12 @@
 <template>
-<router-link :to="`/a/${this.upper}`">
+<component :is="comp" :to="`/a/${this.upper}`">
   <span class="icon">
     <font-awesome-icon v-if="error || !src" :icon="icon" />
     <figure v-else class="image">
       <img :src="src" @error="error = true" />
     </figure>
   </span>
-</router-link>
+</component>
 </template>
 
 <script>
@@ -19,7 +19,8 @@ export default {
     ticker: { type: String, default: '' },
     icon: { type: String, default: 'wallet' },
     size: { type: String, default: '3rem' },
-    radius: { type: String, default: '5px' }
+    radius: { type: String, default: '5px' },
+    nolink: { type: Boolean, default: false }
   },
 
   data: () => ({
@@ -33,6 +34,10 @@ export default {
 
     src () {
       return `${BASE}/${this.upper}.png`
+    },
+
+    comp () {
+      return this.nolink === true ? 'span' : 'router-link'
     }
   }
 }

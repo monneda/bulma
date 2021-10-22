@@ -37,6 +37,8 @@
   <c-ticker ticker="mglu3" size="10rem" /> Variable size (10rem)
   <br>
   <c-ticker ticker="aapl34" radius="0px" /> Variable radius (0px)
+  <br>
+  <c-ticker ticker="vale3" nolink /> Not clickable
 </section>
 
 <section class="section">
