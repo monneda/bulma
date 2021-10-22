@@ -49,11 +49,14 @@
     </div>
 
     <!-- Edit -->
-    <button class="button is-small is-light is-overlayed-white">
-      <span class="has-text-white-bis has-text-weight-bold">
-        Editar informações
-      </span>
-    </button>
+    <router-link :to="`/c/${wallet.id}/edit`" class="has-text-centered">
+      <button class="button is-small is-light is-overlayed-white" style="width: 100%">
+        <span class="has-text-white-bis has-text-weight-bold">
+          Editar informações
+        </span>
+      </button>
+    </router-link>
+
   </div>
 </article>
 </template>
