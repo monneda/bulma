@@ -1,6 +1,6 @@
 <template>
 <div>
-  <ItemComment
+  <FeedItemComment
     class="py-0"
     v-for="c of paged"
     :key="c.id"
@@ -17,13 +17,13 @@
 <script>
 import { FEED_FETCH_COMMENTS } from '@/store/type.actions'
 
-import ItemComment from '@/comps/feed/ItemComment'
+import FeedItemComment from '@/comps/feed/FeedItemComment'
 
 export default {
   name: 'ItemCommentList',
 
   components: {
-    ItemComment
+    FeedItemComment
   },
 
   props: {
