@@ -16,6 +16,7 @@
 
   <!-- Follow button -->
   <button
+    v-if="!isSelf"
     class="button is-small is-primary has-text-weight-bold"
     style="width: 6rem;"
     @click="clicked"
