@@ -42,7 +42,12 @@
         <!-- <navbar-item to="/a" icon="chart-line" label="ATIVOS" /> -->
         <!-- <navbar-item to="/explore" icon="compass" label="DESCOBRIR" /> -->
         <!-- <navbar-item to="/chat" icon="comment" label="CHAT" /> -->
-        <navbar-item to="/notifications" icon="bell" label="NOTIFICAÇÕES" />
+        <navbar-item
+          to="/notifications"
+          icon="bell"
+          label="NOTIFICAÇÕES"
+          :counter="totalNotifications"
+        />
         <navbar-item-user />
       </div>
       <!-- dropdown mobile -->
@@ -83,6 +88,8 @@
 </template>
 
 <script>
+import client from '@/commons/client.api'
+
 import NavbarItem from '@/comps/navbar/NavbarItem'
 import NavbarItemUser from '@/comps/navbar/NavbarItemUser'
 import NavbarItemUserDropdown from '@/comps/navbar/NavbarItemUserDropdown'
@@ -101,6 +108,10 @@ export default {
     NavbarItemUserDropdown
   },
 
+  data: () => ({
+    totalNotifications: 0
+  }),
+
   methods: {
     toggle () {
       this.$refs.menu.classList.toggle('is-active')
@@ -114,6 +125,11 @@ export default {
     login () {
       this.$store.dispatch(LOGIN, { origin: this.$route.path })
     }
+  },
+
+  async created () {
+    const { counter } = await client.notifications.fetchUnreadCount()
+    this.totalNotifications = counter + 3
   }
 }
 </script>

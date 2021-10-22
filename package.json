@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@auth0/auth0-spa-js": "^1.19.2",
+    "@creativebulma/bulma-badge": "^1.0.1",
     "@fortawesome/fontawesome-free": "^5.15.4",
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
     "@fortawesome/free-regular-svg-icons": "^5.15.4",

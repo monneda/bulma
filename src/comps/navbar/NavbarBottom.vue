@@ -13,24 +13,44 @@
           </span>
         </button>
       </router-link>
+
+      <router-link to="/notifications" >
+        <button class="button is-white">
+          <span class="icon is-large has-text-grey-dark is-relative">
+            <span v-if="counter > 0" class="badge"> {{ counter }} </span>
+            <font-awesome-icon icon="bell" size="lg" />
+          </span>
+        </button>
+      </router-link>
     </div>
   </nav>
 </section>
 </template>
 
 <script>
+import client from '@/commons/client.api'
+
 const ITEMS = [
   { link: '/feed', icon: 'home' },
-  { link: '/c', icon: 'wallet' },
+  { link: '/c', icon: 'wallet' }
   // { link: '/a', icon: 'chart-line' },
   // { link: '/explore', icon: 'compass' },
   // { link: '/chat', icon: 'comment' },
-  { link: '/notifications', icon: 'bell' }
+  // { link: '/notifications', icon: 'bell' }
 ]
 
 export default {
   name: 'NavbarBottom',
-  data: () => ({ ITEMS })
+
+  data: () => ({
+    ITEMS,
+    counter: 0
+  }),
+
+  async created () {
+    const { counter } = await client.notifications.fetchUnreadCount()
+    this.counter = counter
+  }
 }
 </script>
 
