@@ -1,13 +1,13 @@
 <template>
 <article :class="{'notification-new': !isViewed}">
-  <div class="is-flex is-align-items-center p-1 has-text-grey-dark">
+  <a class="is-flex is-align-items-center p-1 has-text-grey-dark" @click="router">
     <!-- Picture -->
     <router-link :to="`/u/${notification.user.username}`" class="icon is-large mx-2">
       <c-avatar :src="notification.user.picture" round />
     </router-link>
 
     <!-- Notification -->
-    <router-link :to="`/p/${notification.data.eventId}`" class="mx-2">
+    <div class="mx-2">
       <p>
         <router-link :to="`/u/${notification.user.username}`">
           <strong> @{{ notification.user.username }} </strong>
@@ -17,12 +17,10 @@
 
       <!-- Time -->
       <small>
-        <router-link :to="`/p/${notification.data.eventId}`">
-          <TimeAgo class="has-text-dark" :time="notification.createdAt" />
-        </router-link>
+        <TimeAgo class="has-text-dark" :time="notification.createdAt" />
       </small>
-    </router-link>
-  </div>
+    </div>
+  </a>
 </article>
 </template>
 
@@ -56,6 +54,27 @@ export default {
     },
     isViewed () {
       return this.notification.viewedAt !== null
+    }
+  },
+
+  methods: {
+    router () {
+      switch (this.notification.type) {
+        case 'USER_COMMENT_EVENT':
+          this.$router.push(`/p/${this.notification.data.eventId}`)
+          break
+        case 'USER_LIKE_EVENT':
+          this.$router.push(`/p/${this.notification.data.eventId}`)
+          break
+        case 'USER_TAGGED_COMMENT_EVENT':
+          this.$router.push(`/p/${this.notification.data.eventId}`)
+          break
+        case 'USER_FOLLOWED':
+          this.$router.push(`/u/${this.notification.user.username}`)
+          break
+        default:
+          this.$router.push(`/u/${this.notification.user.username}`)
+      }
     }
   }
 }
