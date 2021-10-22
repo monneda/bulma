@@ -22,7 +22,7 @@
           <br>
           <br>
 
-          <button class="button is-primary is-large" @click="login">
+          <button class="button is-primary is-large" @click="login" style="z-index: 1;">
             <span class="has-text-weight-bold is-size-6 px-6">
               quero fazer parte!
             </span>
