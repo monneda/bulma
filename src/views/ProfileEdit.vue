@@ -25,11 +25,11 @@
     <!-- Image -->
     <div class="column is-one-third">
       <article class="box is-flex is-flex-direction-column is-align-items-center">
-        <figure class="image is-128x128 m-5" v-if="user">
-          <img class="is-rounded" :src="user.picture">
-        </figure>
-        <!-- TODO -->
-        <!-- <c-button class="is-primary is-fullwidth">Adicionar foto</c-button> -->
+        <c-avatar v-if="user" :src="user.picture" round size="10rem" />
+        <br>
+        <c-button class="is-primary is-fullwidth" @click="modal = true">
+          Adicionar foto
+        </c-button>
       </article>
     </div>
 
@@ -71,6 +71,22 @@
         />
       </div>
     </div>
+
+    <!-- Picture modal -->
+    <teleport to="body">
+      <c-modal-card :active="modal" @close="modal = false">
+        <template #title> Inserir nova foto (URL) </template>
+        <c-input
+          placeholder="Inserir URL da foto"
+          left
+          icon="image"
+          v-model="user.picture"
+        />
+        <template #footer>
+          <c-button @click="modal = false"> Ok </c-button>
+        </template>
+      </c-modal-card>
+    </teleport>
   </div>
 </div>
 
@@ -97,7 +113,8 @@ export default {
   },
 
   data: () => ({
-    user: null
+    user: null,
+    modal: false
   }),
 
   methods: {
