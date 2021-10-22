@@ -57,10 +57,15 @@ export default {
     Step2AssetRow
   },
 
+  props: {
+    assets: {
+      type: Object
+    }
+  },
+
   data: () => ({
     ticker: '',
-    amount: null,
-    assets: []
+    amount: null
   }),
 
   methods: {
@@ -81,19 +86,16 @@ export default {
       // Replace if already in the list
       const index = this.assets.findIndex(i => i.ticker === this.ticker)
       if (index === -1) {
-        this.assets.unshift(asset)
+        this.$emit('addAsset', asset)
       } else {
-        this.assets[index] = asset
+        this.$emit('replaceAsset', { index, asset })
       }
-
-      this.$emit('update:assets', this.assets)
 
       this.ticker = ''
       this.amount = null
     },
     async remove ({ ticker }) {
-      this.assets = this.assets.filter(i => i.ticker !== ticker)
-      this.$emit('update:assets', this.assets)
+      this.$emit('removeAsset', ticker)
     }
   }
 }

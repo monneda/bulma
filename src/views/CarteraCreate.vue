@@ -26,6 +26,9 @@
     <WalletsNewAssets
       v-if="step === 2"
       v-model:assets="assets"
+      @addAsset="addAsset"
+      @removeAsset="removeAsset"
+      @replaceAsset="replaceAsset"
     />
 
     <!-- Step 3 (completed) -->
@@ -74,6 +77,15 @@ export default {
     async create () {
       this.wallet = { name: this.name, description: this.description, assets: this.assets }
       await client.wallets.create(this.wallet)
+    },
+    async addAsset (asset) {
+      this.assets.unshift(asset)
+    },
+    async removeAsset (ticker) {
+      this.assets = this.assets.filter(i => i.ticker !== ticker)
+    },
+    async replaceAsset ({ index, asset }) {
+      this.assets[index] = asset
     }
   },
 
