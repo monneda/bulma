@@ -19,24 +19,6 @@
 
 <div class="container">
   <div class="columns mx-0 is-centered">
-    <!-- Top wallets -->
-<!--<div class="column is-one-quarter is-hidden-touch">
-      <div class="box is-flex is-flex-direction-column">
-        <div class="level">
-          <div class="level-left">
-            <strong class="level-item"> Top Carteras </strong>
-          </div>
-          <div class="level-right">
-            <CIcon icon="trophy" />
-          </div>
-        </div>
-        <hr class="my-0">
-        <template v-for="(w, i) of ranked" :key="w.id">
-          <WalletsRank :rank="i + 1" :wallet="w" class="p-2 my-2" />
-        </template>
-      </div>
-    </div>-->
-
     <div class="column is-three-quarters">
       <div class="is-flex is-flex-direction-column">
 
@@ -59,7 +41,7 @@
         </div>
 
         <!-- Wallet tiles -->
-        <div class="columns">
+        <div class="columns is-flex-wrap-wrap">
           <template v-for="w of wallets" :key="w.id">
             <div class="column is-one-third">
               <router-link :to="`/c/${w.id}`" >
