@@ -18,7 +18,7 @@
     "@fortawesome/vue-fontawesome": "^3.0.0-5",
     "@meilisearch/instant-meilisearch": "^0.5.8",
     "bulma": "^0.9.3",
-    "chart.js": "^2.9.4",
+    "chart.js": "^3.6.0",
     "chartjs-plugin-colorschemes": "^0.4.0",
     "core-js": "^3.18.3",
     "register-service-worker": "^1.7.1",
