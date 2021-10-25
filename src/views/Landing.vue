@@ -10,13 +10,13 @@
         <div class="column is-6 has-text-centered-touch">
           <h1 class="title is-1 is-size-2-touch">
             <span class="has-text-weight-normal">
-              Acompanhe as carteiras de ações e cripto de amigos e profissionais
+              <span class="has-text-weight-bold"> Descubra </span> no que seus amigos estão investindo
             </span>
           </h1>
 
           <p class="is-size-5 has-text-grey-dark">
-            A Cartera facilita que você compartilhe sua carteira de
-            investimentos com amigos e siga carteiras de outros investidores.
+            Na Cartera você segue amigos e profissionais e fica ligado em cada movimentação de compra/venda de ações
+            e cripto. Conecte-se com quem você confia e não perca oportunidades!
           </p>
 
           <br>
