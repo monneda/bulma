@@ -7,13 +7,13 @@
       <!-- Logo desktop width 125px -->
       <router-link class="navbar-item is-hidden-mobile" to="/feed">
         <figure class="image">
-          <img class="is-radiusless" src="@/assets/imgs/logo-horizontal.png" style="width: 7.8125rem">
+          <img class="is-radiusless" src="@/assets/svgs/logo.svg">
         </figure>
       </router-link>
       <!-- Logo mobile when not logged height 25px -->
       <router-link v-if="!$store.state.user.auth" class="navbar-item is-hidden-desktop" to="/feed">
         <figure class="image">
-            <img class="is-radiusless" src="@/assets/imgs/logo-horizontal.png" style="height: 1.5625rem; width: 8.125rem">
+            <img class="is-radiusless" src="@/assets/svgs/logo.svg" style="height: 1.5625rem; width: 8.125rem">
         </figure>
       </router-link>
 
