@@ -13,40 +13,36 @@
         <ais-instant-search :search-client="client" index-name="assets">
           <!-- Configuration -->
           <ais-configure :hits-per-page.camel="5" />
+
           <!-- Input -->
           <ais-search-box>
             <template v-slot="{ refine }">
               <input
                 type="text"
                 placeholder="Procure por código ou nome..."
-                class="input has-background-white-ter is-size-6"
+                class="input has-background-white-ter"
                 v-model="ticker"
                 @input="refine($event.target.value); clicked = false; ticker = ticker.toUpperCase()"
                 @keyup.enter="add"
               >
             </template>
           </ais-search-box>
-          <div class="dropdown" :class="{ 'is-active': ticker && !clicked }" style="position: absolute">
-            <div class="dropdown-menu">
-              <div class="dropdown-content">
-                <ais-hits>
-                  <template v-slot="{ items }">
-                    <template v-for="item of items" :key="item.objectID">
-                      <div class="dropdown-item" @click="dropdownItemClicked(item.codneg)" style="width: 15rem">
-                        <div class="is-flex">
-                          <icon-ticker :ticker="item.codneg"  />
-                          <div class="pl-3 is-flex is-flex-direction-column is-justify-content-center">
-                            <strong> {{ item.codneg }} </strong>
-                            <span> {{ item.nomres }} </span>
-                          </div>
-                        </div>
-                      </div>
-                    </template>
-                  </template>
-                </ais-hits>
-              </div>
-            </div>
-          </div>
+
+          <ais-hits>
+            <template v-slot="{ items }">
+              <c-dropdown :items="items" :active="items.length > 0 && !clicked">
+                <template v-slot:item="{ item: { codneg, nomres } }">
+                  <div class="is-flex" @click="dropdownItemClicked(codneg)">
+                    <c-ticker :ticker="codneg" class="pr-3"/>
+                    <div class="is-flex is-flex-direction-column is-justify-content-center">
+                      <strong> {{ codneg }} </strong>
+                      <small> {{ nomres }} </small>
+                    </div>
+                  </div>
+                </template>
+              </c-dropdown>
+            </template>
+          </ais-hits>
         </ais-instant-search>
       </div>
     </div>
@@ -79,14 +75,12 @@ import client from '@/commons/client.api'
 import meili from '@/commons/meili.api'
 
 import Step2AssetRow from './Step2AssetRow'
-import IconTicker from '@/comps/utils/IconTicker'
 
 export default {
   name: 'WalletsNewStep2',
 
   components: {
-    Step2AssetRow,
-    IconTicker
+    Step2AssetRow
   },
 
   props: {
@@ -128,9 +122,11 @@ export default {
       this.ticker = ''
       this.amount = null
     },
+
     async remove ({ ticker }) {
       this.$emit('removeAsset', ticker)
     },
+
     dropdownItemClicked (codneg) {
       this.ticker = codneg
       this.clicked = true
