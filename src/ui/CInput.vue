@@ -11,8 +11,10 @@
     <input
       class="input"
       :type="type"
+      v-bind="$attrs"
       :placeholder="placeholder"
       :class="{ 'is-danger': invalid }"
+      :value="modelValue"
       @input="input"
     >
 
@@ -31,10 +33,11 @@
 <script>
 export default {
   name: 'CInput',
+  inheritAttrs: false,
 
   props: {
     // Form
-    modelValue: { type: String, default: '' },
+    modelValue: { type: [String, Number], default: '' },
     label: { type: String, default: null },
     type: { type: String, default: 'text' },
     placeholder: { type: String, default: '' },
