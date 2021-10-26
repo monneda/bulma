@@ -62,10 +62,10 @@
             style="position: absolute; z-index: 0; left: 10%; bottom: 27%; height: 6%"
           >
           <figure class="image is-hidden-touch">
-            <img src="@/assets/imgs/portfolioupdate_desktop.png">
+            <img src="@/assets/imgs/dantas.png" class="mx-auto" style="height: 80vh; width: auto">
           </figure>
           <figure class="image is-hidden-desktop">
-            <img src="@/assets/imgs/portfolioupdate_touch2.png">
+            <img src="@/assets/imgs/dantas.png" class="mx-auto" style="max-height: 70vh; width: auto">
           </figure>
         </div>
       </div>
@@ -330,7 +330,6 @@ export default {
 
   methods: {
     login () {
-      window.fbq('track', 'signup')
       this.$store.dispatch(LOGIN, { origin: '/feed' })
     }
   }
