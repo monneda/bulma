@@ -6,12 +6,7 @@
   <div class="container p-3">
     <div class="is-flex is-justify-content-space-between">
       <h4 class="is-size-5 has-text-weight-bold"> Editar Perfil </h4>
-      <c-button
-        class="is-primary"
-        right
-        icon="arrow-down"
-        @click="update"
-      >
+      <c-button class="is-primary" right icon="arrow-down" @click="update">
         Salvar
       </c-button>
     </div>
@@ -94,6 +89,8 @@
 </template>
 
 <script>
+import { SET_USER } from '@/store/type.mutations'
+
 import client from '@/commons/client.api'
 
 import Navbar from '@/comps/navbar/Navbar'
@@ -125,7 +122,8 @@ export default {
         { op: 'replace', path: '/description', value: this.user.description },
         { op: 'replace', path: '/picture', value: this.user.picture }
       ]
-      this.user = await client.profile.update(patch)
+      const user = await client.profile.update(patch)
+      this.$store.commit(SET_USER, user)
       this.$router.push(`/u/${this.user.username}`)
     }
   },
