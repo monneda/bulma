@@ -2,7 +2,7 @@
 <article>
   <div class="is-flex">
     <!-- Icon -->
-    <c-ticker :ticker="asset.ticker" />
+    <c-ticker :ticker="asset.ticker" :type="asset.type" />
 
     <!-- Asset name -->
     <div class="is-flex is-flex-direction-column pl-3">
