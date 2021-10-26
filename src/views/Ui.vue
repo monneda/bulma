@@ -124,6 +124,42 @@
   <c-table :data="table.data" sortable />
 </section>
 
+<section class="section">
+  <h1 class="title is-1"> CDropdown </h1>
+
+  <div class="columns">
+    <div class="column is-2">
+      <p> No trigger button </p>
+      <c-dropdown active :items="dropdown.items">
+        <template v-slot:item="{ item, index }">
+          <div class="is-flex is-justify-content-space-between">
+            <span> {{ index }} - {{ item }} </span>
+          </div>
+        </template>
+      </c-dropdown>
+    </div>
+
+    <div>
+      <p> Trigger button </p>
+      <c-dropdown :active="dropdown.active" :items="dropdown.items">
+        <template #trigger>
+          <c-button
+            right
+            icon="angle-down"
+            @click="dropdown.active = !dropdown.active"
+          >
+            Trigger
+          </c-button>
+        </template>
+
+        <template v-slot:item="{ item, index }">
+          <span> {{ index }} - {{ item }} </span>
+        </template>
+      </c-dropdown>
+    </div>
+  </div>
+</section>
+
 <c-view @show="show" @hide="hide" />
 </template>
 
@@ -149,6 +185,11 @@ export default {
 
     table: {
       data: []
+    },
+
+    dropdown: {
+      active: false,
+      items: ['first', 'second', 'third']
     }
   }),
 
