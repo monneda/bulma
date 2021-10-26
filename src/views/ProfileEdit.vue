@@ -75,6 +75,7 @@
           placeholder="Inserir URL da foto"
           left
           icon="image"
+          v-if="user"
           v-model="user.picture"
         />
         <template #footer>
