@@ -6,12 +6,7 @@
   <div class="container p-3">
     <div class="is-flex is-justify-content-space-between">
       <h4 class="is-size-5 has-text-weight-bold"> Editar sua Cartera </h4>
-      <c-button
-        class="is-primary"
-        right
-        icon="arrow-down"
-        @click="update"
-      >
+      <c-button class="is-primary" right icon="arrow-down" @click="update">
         Salvar
       </c-button>
     </div>
@@ -45,46 +40,17 @@
         </div>
       </article>
 
-      <!-- Assets -->
       <div class="columns">
-        <!-- Input -->
+        <!-- Asset form -->
         <div class="column is-one-third">
-          <article class="box">
-            <h4 class="title is-4"> Adicionar ativos </h4>
-            <hr>
-
-            <!-- Ticker -->
-            <div class="field">
-              <div class="control">
-                <label class="label"> Código </label>
-                <input class="input" type="text" v-model="ticker" >
-              </div>
-            </div>
-
-            <!-- Amount -->
-            <div class="field">
-              <div class="control">
-                <label class="label"> Quantidade </label>
-                <input
-                  class="input"
-                  type="number"
-                  v-model="amount"
-                  @keyup.enter="add"
-                >
-              </div>
-            </div>
-          </article>
+          <AssetForm class="box" @submit="add" />
         </div>
 
-        <!-- List -->
+        <!-- Asset list -->
         <div class="column is-two-thirds">
-          <WalletsEditAssetRow
-            class="box"
-            v-for="item of wallet.assets"
-            :key="item.ticker"
-            :asset="item"
-            @remove="remove"
-          />
+          <template v-for="item of wallet.assets" :key="item.ticker">
+            <WalletsEditAssetRow class="box" :asset="item" @remove="remove" />
+          </template>
         </div>
       </div>
     </div>
@@ -97,17 +63,18 @@
 import client from '@/commons/client.api'
 
 import Navbar from '@/comps/navbar/Navbar'
-
-import WalletsEditAssetRow from '@/comps/walletsedit/WalletsEditAssetRow'
 import NavbarBottom from '../comps/navbar/NavbarBottom'
+import AssetForm from '@/comps/forms/AssetForm'
+import WalletsEditAssetRow from '@/comps/walletsedit/WalletsEditAssetRow'
 
 export default {
   name: 'CarteraEdit',
 
   components: {
-    NavbarBottom,
     Navbar,
-    WalletsEditAssetRow
+    NavbarBottom,
+    WalletsEditAssetRow,
+    AssetForm
   },
 
   props: {
@@ -118,8 +85,6 @@ export default {
   },
 
   data: () => ({
-    amount: '',
-    ticker: '',
     wallet: {
       assets: []
     }
@@ -130,20 +95,12 @@ export default {
       this.wallet.assets = this.wallet.assets.filter(i => i.ticker !== ticker)
     },
 
-    async add () {
-      const asset = await client.assets.fetchAsset(this.ticker)
-      asset.amount = this.amount
+    async add ({ ticker, amount }) {
+      const asset = await client.assets.fetchAsset(ticker)
+      asset.amount = amount
 
-      // Replace if already in the list
-      const index = this.wallet.assets.findIndex(i => i.ticker === this.ticker)
-      if (index === -1) {
-        this.wallet.assets.push(asset)
-      } else {
-        this.wallet.assets[index] = asset
-      }
-
-      this.amount = ''
-      this.ticker = ''
+      this.wallet.assets = this.wallet.assets.filter(i => i.ticker !== ticker)
+      this.wallet.assets.push(asset)
     },
 
     async update () {
