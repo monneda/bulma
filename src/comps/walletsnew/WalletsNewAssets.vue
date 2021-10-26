@@ -9,7 +9,7 @@
   <h4 class="title is-4 mb-2 p-3"> Seus ativos </h4>
 
   <template v-for="a of assets" :key="a.ticker">
-    <Step2AssetRow :asset="a" class="box" @remove="remove" />
+    <Step2AssetRow :asset="a" class="box" @remove="$emit('remove', $event)" />
   </template>
 </div>
 </template>
@@ -50,10 +50,6 @@ export default {
       asset.amount = amount
 
       this.$emit('add', asset)
-    },
-
-    remove ({ ticker }) {
-      this.$emit('remove', { ticker })
     }
   }
 }

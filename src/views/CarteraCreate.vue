@@ -81,7 +81,7 @@ export default {
       this.removeAsset(asset.ticker)
       this.assets.unshift(asset)
     },
-    async removeAsset (ticker) {
+    async removeAsset ({ ticker }) {
       this.assets = this.assets.filter(i => i.ticker !== ticker)
     }
   },
