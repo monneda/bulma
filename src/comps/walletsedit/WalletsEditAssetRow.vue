@@ -38,7 +38,7 @@
       <div class="level-item is-hidden-touch px-4">
         <div class="is-flex is-flex-direction-column">
           <strong> Variação </strong>
-          <span> %{{ asset.gain.toFixed(2) }} </span>
+          <span> {{ asset.gain.toFixed(2) }}% </span>
         </div>
       </div>
 
