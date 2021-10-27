@@ -123,6 +123,7 @@ export default {
     },
 
     login () {
+      window.fbq('track', 'Lead')
       this.$store.dispatch(LOGIN, { origin: this.$route.path })
     }
   },
