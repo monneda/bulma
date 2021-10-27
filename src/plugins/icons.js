@@ -12,8 +12,10 @@ library.add(fas)
 library.add(fab)
 library.add(far)
 
-export default app => {
-  app.component('font-awesome-icon', FontAwesomeIcon)
-  app.component('font-awesome-layers', FontAwesomeLayers)
-  app.component('font-awesome-layers-text', FontAwesomeLayersText)
+export default {
+  install (app) {
+    app.component('font-awesome-icon', FontAwesomeIcon)
+    app.component('font-awesome-layers', FontAwesomeLayers)
+    app.component('font-awesome-layers-text', FontAwesomeLayersText)
+  }
 }

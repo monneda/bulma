@@ -11,10 +11,10 @@ import '@/registerServiceWorker'
 import '@/assets/scss/index.scss'
 
 // Plugins
-import registerUi from '@/plugins/ui'
-import registerGTag from '@/plugins/gtag'
-import registerIcons from '@/plugins/icons'
-import registerMeili from '@/plugins/meili'
+import ui from '@/plugins/ui'
+import gtag from '@/plugins/gtag'
+import icons from '@/plugins/icons'
+import meili from '@/plugins/meili'
 
 const app = createApp(App)
 window.app = app
@@ -22,12 +22,12 @@ window.app = app
 app.use(store)
 app.use(router)
 
-registerUi(app)
-registerIcons(app)
-registerMeili(app)
+app.use(ui)
+app.use(icons)
+app.use(meili)
 
 if (process.env.NODE_ENV === 'production') {
-  registerGTag(app, router)
+  app.use(gtag, { router })
 }
 
 app.mount('#app')
