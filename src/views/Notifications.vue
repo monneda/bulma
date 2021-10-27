@@ -14,13 +14,16 @@
 
         <!-- Content -->
         <template v-for="n of notifications" :key="n.id">
-        <Notification :notification="n" class="mt-3 p-2" />
+          <Notification :notification="n" class="mt-3 p-2" />
         </template>
       </div>
     </div>
   </div>
 </div>
-<navbar-bottom/>
+
+<c-view v-if="notifications.length > 0" @show="page" />
+
+<NavbarBottom />
 </template>
 
 <script>
@@ -43,6 +46,14 @@ export default {
   data: () => ({
     notifications: []
   }),
+
+  methods: {
+    async page () {
+      const last = this.notifications[this.notifications.length - 1]
+      const page = await client.notifications.fetchPage(10, last.id)
+      this.notifications.push(...page)
+    }
+  },
 
   async created () {
     this.notifications = await client.notifications.fetchPage()
