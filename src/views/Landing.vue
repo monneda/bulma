@@ -330,6 +330,7 @@ export default {
 
   methods: {
     login () {
+      window.fbq('track', 'Lead')
       this.$store.dispatch(LOGIN, { origin: '/feed' })
     }
   }
