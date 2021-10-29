@@ -24,21 +24,27 @@
             <p class="has-text-centered-mobile has-text-weight-bold">
               Siga-nos
             </p>
-            <span class="icon is-large">
-              <font-awesome-icon :icon="['fab', 'facebook']" />
-            </span>
-            <span class="icon is-large">
-              <font-awesome-icon :icon="['fab', 'instagram']" />
-            </span>
-            <span class="icon is-large">
-              <font-awesome-icon :icon="['fab', 'linkedin']" />
-            </span>
-            <span class="icon is-large">
+            <a href="https://www.facebook.com/cartera.com.br" class="has-text-grey-dark">
+              <span class="icon is-large">
+                <font-awesome-icon :icon="['fab', 'facebook']" />
+              </span>
+            </a>
+            <a href="https://www.instagram.com/cartera.com.br/" class="has-text-grey-dark">
+              <span class="icon is-large">
+                <font-awesome-icon :icon="['fab', 'instagram']" />
+              </span>
+            </a>
+            <a href="https://www.linkedin.com/company/acartera/" class="has-text-grey-dark">
+              <span class="icon is-large">
+                <font-awesome-icon :icon="['fab', 'linkedin']" />
+              </span>
+            </a>
+<!--        <span class="icon is-large">
               <font-awesome-icon :icon="['fab', 'twitter']" />
             </span>
             <span class="icon is-large">
               <font-awesome-icon :icon="['fab', 'youtube']" />
-            </span>
+            </span>-->
           </div>
         </div>
       </div>
@@ -67,7 +73,7 @@
             Termos de uso
           </router-link>
         </a>
-        <a class="level-item"> Contato </a>
+        <a href="https://www.linkedin.com/in/gmbueno/" class="level-item"> Contato </a>
       </div>
     </div>
   </div>
