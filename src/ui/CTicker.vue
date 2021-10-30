@@ -10,15 +10,13 @@
 </template>
 
 <script>
-const BASE_B3 = 'https://cdn.jsdelivr.net/gh/monneda/B3-Assets-Images/imgs'
-const BASE_CRYPTO = 'https://raw.githubusercontent.com/monneda/crypto-logos/main/imgs'
+const BASE = 'https://cdn.jsdelivr.net/gh/monneda/B3-Assets-Images/imgs'
 
 export default {
   name: 'CTicker',
 
   props: {
     ticker: { type: String, default: '' },
-    type: { type: String, default: 'B3' },
     icon: { type: String, default: 'wallet' },
     size: { type: String, default: '3rem' },
     radius: { type: String, default: '5px' },
@@ -35,17 +33,7 @@ export default {
     },
 
     src () {
-      if (!this.ticker) {
-        return null
-      }
-      let base = BASE_B3
-      let fileType = 'png'
-      if (this.type === 'CRYPTO') {
-        base = BASE_CRYPTO
-        fileType = 'svg'
-      }
-      const ticker = this.ticker.toUpperCase()
-      return `${base}/${ticker}.${fileType}`
+      return `${BASE}/${this.upper}.png`
     },
 
     comp () {

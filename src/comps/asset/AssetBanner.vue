@@ -2,7 +2,7 @@
 <div class="is-flex is-flex-wrap-wrap is-justify-content-space-between">
   <div class="is-flex">
     <!-- Icon -->
-    <c-ticker :ticker="asset.ticker" :type="asset.type" />
+    <c-ticker :ticker="asset.ticker" />
 
     <!-- Name + ticker -->
     <div class="is-flex is-flex-direction-column is-justify-content-center pl-3">

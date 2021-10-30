@@ -6,7 +6,7 @@
       <div class="level-item">
         <span class="icon-text">
           <!-- Icon -->
-          <c-ticker :ticker="asset.ticker" :type="asset.type" />
+          <c-ticker :ticker="asset.ticker" />
 
           <!-- Name + ticker -->
           <div class="is-flex is-flex-direction-column is-justify-content-center pl-3">

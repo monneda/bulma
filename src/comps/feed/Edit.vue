@@ -19,7 +19,7 @@
     </span>
 
     <div v-for="c of start" :key="c.ticker" class="px-2 has-text-centered">
-      <c-ticker :ticker="c.ticker" :type="c.type" />
+      <c-ticker :ticker="c.ticker" />
       <br>
       <span> {{ c.ticker }} </span>
     </div>
@@ -38,7 +38,7 @@
     </span>
 
     <div v-for="c of end" :key="c.ticker" class="px-2 has-text-centered">
-      <c-ticker :ticker="c.ticker" :type="c.type" />
+      <c-ticker :ticker="c.ticker" />
       <br>
       <span> {{ c.ticker }} </span>
     </div>
@@ -57,7 +57,7 @@
     </span>
 
     <div v-for="c of dec" :key="c.ticker" class="px-2 has-text-centered">
-      <c-ticker :ticker="c.ticker" :type="c.type" />
+      <c-ticker :ticker="c.ticker" />
       <br>
       <span> {{ c.ticker }} </span>
     </div>
@@ -76,7 +76,7 @@
     </span>
 
     <div v-for="c of inc" :key="c.ticker" class="px-2 has-text-centered">
-      <c-ticker :ticker="c.ticker" :type="c.type" />
+      <c-ticker :ticker="c.ticker" />
       <br>
       <span> {{ c.ticker }} </span>
     </div>

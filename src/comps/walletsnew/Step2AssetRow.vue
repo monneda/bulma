@@ -6,7 +6,7 @@
         <span class="icon-text">
           <!-- Icon -->
           <span class="icon is-large">
-            <IconTicker :ticker="asset.ticker" :type="asset.type" />
+            <IconTicker :ticker="asset.ticker" />
           </span>
 
           <!-- Name + ticker -->
