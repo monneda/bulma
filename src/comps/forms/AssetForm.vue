@@ -18,7 +18,7 @@
           placeholder="Procure por código ou nome..."
           class="has-background-white-ter"
           v-model="ticker"
-          @input="refine(ticker); clicked = false"
+          @input="refine($event.target.value); clicked = false"
           @keyup.enter="submit"
         />
       </template>
@@ -63,7 +63,7 @@ export default {
   props: {
     hits: {
       type: Number,
-      default: 3
+      default: 4
     }
   },
 
