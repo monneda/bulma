@@ -7,7 +7,7 @@
   <div class="dropdown-menu">
     <div class="dropdown-content">
       <template v-for="item, i of items" :key="i">
-        <a class="dropdown-item">
+        <a class="dropdown-item pr-0">
           <slot name="item" :item="item" :index="i" />
         </a>
       </template>
