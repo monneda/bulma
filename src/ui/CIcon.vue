@@ -1,23 +1,25 @@
 <template>
-  <cartera      v-if="icon === 'cartera'"      />
-  <cartera-404  v-if="icon === 'cartera-404'"  />
-  <cartera-fill v-if="icon === 'cartera-fill'" />
-  <comment      v-if="icon === 'comment'"      />
-  <compass      v-if="icon === 'compass'"      />
-  <graph-line   v-if="icon === 'graph-line'"   />
-  <graph-pie    v-if="icon === 'graph-pie'"    />
-  <home         v-if="icon === 'home'"         />
-  <line-up      v-if="icon === 'line-up'"      />
-  <lock         v-if="icon === 'lock'"         />
-  <newspaper    v-if="icon === 'newspaper'"    />
-  <users        v-if="icon === 'users'"        />
-  <trophy       v-if="icon === 'trophy'"        />
+  <cartera       v-if="icon === 'cartera'"      />
+  <cartera-404   v-if="icon === 'cartera-404'"  />
+  <cartera-fill  v-if="icon === 'cartera-fill'" />
+  <cartera-light v-if="icon === 'cartera-light'" />
+  <comment       v-if="icon === 'comment'"      />
+  <compass       v-if="icon === 'compass'"      />
+  <graph-line    v-if="icon === 'graph-line'"   />
+  <graph-pie     v-if="icon === 'graph-pie'"    />
+  <home          v-if="icon === 'home'"         />
+  <line-up       v-if="icon === 'line-up'"      />
+  <lock          v-if="icon === 'lock'"         />
+  <newspaper     v-if="icon === 'newspaper'"    />
+  <users         v-if="icon === 'users'"        />
+  <trophy        v-if="icon === 'trophy'"        />
 </template>
 
 <script>
 import Cartera from '@/ui/icons/Cartera'
 import Cartera404 from '@/ui/icons/Cartera404'
 import CarteraFill from '@/ui/icons/CarteraFill'
+import CarteraLight from '@/ui/icons/CarteraLight'
 import Comment from '@/ui/icons/Comment'
 import Compass from '@/ui/icons/Compass'
 import GraphLine from '@/ui/icons/GraphLine'
@@ -36,6 +38,7 @@ export default {
     Cartera,
     Cartera404,
     CarteraFill,
+    CarteraLight,
     Comment,
     Compass,
     GraphLine,

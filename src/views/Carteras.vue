@@ -14,13 +14,13 @@
     </router-link>
   </template>
 </c-menu>
+  <NotFoundWallet v-if="!wallets.length"/>
 
-<br>
-
-<div class="container">
+<div v-if="wallets.length" class="container">
+  <br>
   <div class="columns mx-0 is-centered">
     <div class="column is-three-quarters">
-      <div v-if="wallets.length" class="is-flex is-flex-direction-column">
+      <div class="is-flex is-flex-direction-column">
 
         <!-- Periods -->
         <div class="tabs is-toggle is-fullwidth">
@@ -66,6 +66,7 @@ import Navbar from '@/comps/navbar/Navbar'
 import WalletsTile from '@/comps/wallets/WalletsTile'
 // import WalletsRank from '@/comps/wallets/WalletsRank'
 import NavbarBottom from '../comps/navbar/NavbarBottom'
+import NotFoundWallet from '../comps/wallets/NotFoundWallet'
 // import CIcon from '../ui/CIcon'
 
 export default {
@@ -75,6 +76,7 @@ export default {
     // CIcon,
     NavbarBottom,
     Navbar,
+    NotFoundWallet,
     // WalletsRank,
     WalletsTile
   },
