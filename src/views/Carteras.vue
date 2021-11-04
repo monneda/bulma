@@ -20,7 +20,7 @@
 <div class="container">
   <div class="columns mx-0 is-centered">
     <div class="column is-three-quarters">
-      <div class="is-flex is-flex-direction-column">
+      <div v-if="wallets.length" class="is-flex is-flex-direction-column">
 
         <!-- Periods -->
         <div class="tabs is-toggle is-fullwidth">

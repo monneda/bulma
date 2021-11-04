@@ -3,6 +3,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import UserGuard from './guard.user'
 import OwnerGuard from './guard.owner'
 import FeedGuard from './guard.feed'
+import LandingGuard from './guard.landing'
 import CallbackGuard from './guard.callback'
 
 const routes = [
@@ -20,6 +21,7 @@ const routes = [
   {
     path: '/feed',
     name: 'Feed',
+    beforeEnter: LandingGuard,
     component: () => import('@/views/Feed')
   },
   {
