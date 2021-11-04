@@ -14,7 +14,7 @@
     </router-link>
   </template>
 </c-menu>
-  <NotFoundWallet v-if="!wallets.length"/>
+  <NotFoundWallet v-if="!loading && !wallets.length"/>
 
 <div v-if="wallets.length" class="container">
   <br>
@@ -83,7 +83,8 @@ export default {
 
   data: () => ({
     period: 7,
-    wallets: []
+    wallets: [],
+    loading: true
   }),
 
   computed: {
@@ -97,11 +98,14 @@ export default {
 
   methods: {
     async fetchWallets () {
+      this.loading = true
       this.wallets = []
       const wallets = await client.wallets.byUsername(this.self.username)
       for (const w of wallets) {
-        client.wallets.byId(w.id, this.period).then(w => this.wallets.push(w))
+        const wallet = await client.wallets.byId(w.id, this.period)
+        this.wallets.push(wallet)
       }
+      this.loading = false
     },
     daysInYear () {
       return getDaysInYear()
