@@ -1,6 +1,6 @@
 <template>
 <article>
-  <h4 class="title is-4"> Adicionar ativos </h4>
+  <h4 class="title is-4 is-size-5-touch"> Adicionar Ativos </h4>
 
   <hr>
 
@@ -51,6 +51,10 @@
     class="has-background-white-ter"
     @keyup.enter="submit"
   />
+
+  <c-button class="is-primary has-text-weight-bold is-fullwidth mt-5" right icon="plus" @click="submit">
+    Adicionar Ativo
+  </c-button>
 </article>
 </template>
 
