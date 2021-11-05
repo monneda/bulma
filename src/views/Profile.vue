@@ -7,9 +7,9 @@
     <div class="column is-three-quarters">
       <br>
 
-      <ProfileBanner :username="username" />
+      <ProfileBannerDesktop class="is-hidden-touch" :username="username" />
+      <ProfileBannerMobile class="is-hidden-desktop" :username="username" />
 
-      <br>
       <br>
 
       <ProfilePortfolios :username="username" class="box" />
@@ -32,7 +32,8 @@ import { FEED_FETCH_EVENTS_FOR_USER } from '@/store/type.actions'
 import Navbar from '@/comps/navbar/Navbar'
 import NavbarBottom from '@/comps/navbar/NavbarBottom'
 import FeedItem from '@/comps/feed/FeedItem'
-import ProfileBanner from '@/comps/profile/ProfileBanner'
+import ProfileBannerDesktop from '@/comps/profile/ProfileBannerDesktop'
+import ProfileBannerMobile from '@/comps/profile/ProfileBannerMobile'
 import ProfilePortfolios from '@/comps/profile/ProfilePortfolios'
 
 export default {
@@ -40,7 +41,8 @@ export default {
     Navbar,
     FeedItem,
     ProfilePortfolios,
-    ProfileBanner,
+    ProfileBannerDesktop,
+    ProfileBannerMobile,
     NavbarBottom
   },
 

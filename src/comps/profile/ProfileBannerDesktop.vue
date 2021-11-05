@@ -2,7 +2,7 @@
 <article>
   <div class="columns">
     <!-- Image -->
-    <div class="column is-one-fifth is-flex is-justify-content-center is-align-items-center">
+    <div class="column is-one-quarter is-flex is-justify-content-center is-align-items-center">
       <c-avatar :src="user.picture" round size="10.625rem" />
     </div>
 
@@ -11,7 +11,7 @@
         <!-- Name -->
         <div class="level-left">
           <div class="level-item">
-            <div class="has-text-centered-mobile">
+            <div>
               <h4 class="title is-4"> {{ user.name }} </h4>
               <p> @{{ user.username }} </p>
             </div>
@@ -47,7 +47,7 @@
         </div>
       </div>
 
-      <hr>
+      <hr style="margin: 1rem 0">
 
       <!-- Stats -->
       <div class="level is-mobile has-text-centered-touch">
@@ -63,9 +63,9 @@
           </div> -->
 
           <!-- Followers -->
-          <div class="level-item px-2">
+          <div class="level-item pr-2">
             <router-link :to="`/u/${this.user.username}/followers`">
-              <p>
+              <p class="has-text-grey-darker">
                 <strong class="has-text-primary"> {{ user.followersCount }} </strong>
                 <br class="is-hidden-desktop">
                 seguidores
@@ -76,7 +76,7 @@
           <!-- Following -->
           <div class="level-item">
             <router-link :to="`/u/${this.user.username}/following`">
-              <p>
+              <p class="has-text-grey-darker">
                 <strong class="has-text-primary"> {{ user.followingCount }} </strong>
                 <br class="is-hidden-desktop">
                 seguindo
@@ -103,7 +103,7 @@
 import client from '@/commons/client.api'
 
 export default {
-  name: 'ProfileBanner',
+  name: 'ProfileBannerDesktop',
   props: {
     username: {
       type: String,
