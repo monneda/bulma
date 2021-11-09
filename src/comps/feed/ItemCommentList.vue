@@ -8,8 +8,8 @@
   />
 
   <br v-if="hasMore">
-  <a v-if="hasMore" @click="show += 2">
-    ver mais({{ Math.abs(item.commentCount - show) }})
+  <a v-if="hasMore" @click="show += 10">
+    ver mais ({{ Math.abs(item.commentCount - show) }})
   </a>
 </div>
 </template>
