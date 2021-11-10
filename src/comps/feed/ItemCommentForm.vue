@@ -8,7 +8,7 @@
     <div class="control has-icons-right">
       <c-textarea
         type="text"
-        v-model="text"
+        v-model.trim="text"
         :validator="i => i.length <= this.maxLength"
         :error="this.text.length + '/' + this.maxLength"
         right icon="paper-plane"

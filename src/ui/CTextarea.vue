@@ -68,7 +68,7 @@ export default {
   methods: {
     input (e) {
       this.$emit('input', e)
-      this.$emit('update:modelValue', e.target.value.trim())
+      this.$emit('update:modelValue', e.target.value)
     },
     submit () {
       if (!this.invalid) {
