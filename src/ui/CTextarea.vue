@@ -13,14 +13,17 @@
       :value="modelValue"
       :rows="rows"
       @input="input"
-      @keydown.enter.exact.prevent="submit"
     />
   </div>
   <span v-if="left" class="icon is-small is-left">
     <font-awesome-icon class="is-clickable" @click="submit" :icon="icon" />
   </span>
   <span v-if="right" class="icon is-right is-small mt-1">
-    <font-awesome-icon class="is-clickable" @click="submit" :icon="icon" />
+    <font-awesome-icon
+      class="is-clickable"
+      :class="{'has-text-success': !invalid, 'has-text-danger': invalid}"
+      @click="submit"
+      :icon="icon" />
   </span>
 
   <div class="is-flex is-justify-content-flex-end">
