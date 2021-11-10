@@ -39,7 +39,7 @@
         <!-- Content -->
         <div class="dropdown-content">
           <div class="dropdown-menu">
-            <a class="dropdown-item" @click="remove"> Delete </a>
+            <a class="dropdown-item" @click="remove"> Deletar </a>
           </div>
         </div>
       </div>
