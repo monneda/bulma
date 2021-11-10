@@ -6,6 +6,7 @@ import CMenu from './CMenu'
 import CModal from './CModal'
 import CModalCard from './CModalCard'
 import CInput from './CInput'
+import CTextarea from './CTextarea'
 import CSelect from './CSelect'
 import CTable from './CTable'
 import CDropdown from './CDropdown'
@@ -19,6 +20,7 @@ export {
   CModal,
   CModalCard,
   CInput,
+  CTextarea,
   CSelect,
   CTable,
   CDropdown

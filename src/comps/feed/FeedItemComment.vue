@@ -102,7 +102,7 @@ Added the style based on the following link:
 */
 p {
   line-height: 125%;
-  overflow-wrap: break-word;
+  overflow-wrap: anywhere;
   white-space:pre-wrap;
 }
 </style>

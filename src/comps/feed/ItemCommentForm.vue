@@ -3,16 +3,18 @@
   <!-- Image -->
   <c-avatar class="media-left" size="2.5rem" :src="$store.state.user.profile.picture" round />
 
-  <!-- Input -->
+  <!-- TextArea -->
   <div class="media-content my-auto">
     <div class="control has-icons-right">
-      <input
+      <c-textarea
         type="text"
         v-model="text"
-        @keyup.enter.prevent="create"
+        :validator="i => i.length <= this.maxLength"
+        :error="this.text.length + '/' + this.maxLength"
+        @submit="create"
         placeholder="Escreva um comentário"
-        class="input is-primary has-background-white-ter"
-      >
+        class="textarea is-primary has-background-white-ter has-fixed-size"
+      />
       <!-- TODO: emoji support (?) -->
       <!-- <span class="icon is-right">
         <font-awesome-icon icon="smile" />
@@ -27,7 +29,8 @@ export default {
   name: 'ItemCommentForm',
 
   data: () => ({
-    text: ''
+    text: '',
+    maxLength: 300
   }),
 
   methods: {
@@ -40,7 +43,7 @@ export default {
 </script>
 
 <style scoped>
-.input {
+.textarea {
   border-radius: 25px;
 }
 </style>
