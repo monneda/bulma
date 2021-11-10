@@ -1,7 +1,9 @@
 <template>
 <div class="field">
 
-  <div class="control">
+  <div class="control"
+       :class="{ 'has-icons-left': left, 'has-icons-right': right }"
+  >
     <textarea
       class="textarea"
       :type="type"
@@ -14,6 +16,12 @@
       @keydown.enter.exact.prevent="submit"
     />
   </div>
+  <span v-if="left" class="icon is-small is-left">
+    <font-awesome-icon class="is-clickable" @click="submit" :icon="icon" />
+  </span>
+  <span v-if="right" class="icon is-small is-right">
+    <font-awesome-icon class="is-clickable" @click="submit" :icon="icon" />
+  </span>
 
   <div class="is-flex is-justify-content-flex-end">
     <p v-if="!invalid && message" class="help is-success"> {{ message }} </p>
@@ -37,7 +45,12 @@ export default {
     // Validation
     message: { type: String, default: null },
     error: { type: String, default: null },
-    validator: { type: Function, default: () => () => true }
+    validator: { type: Function, default: () => () => true },
+
+    // Icon
+    icon: { type: String, default: null },
+    left: { type: Boolean, default: false },
+    right: { type: Boolean, default: false }
   },
 
   computed: {

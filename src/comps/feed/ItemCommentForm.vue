@@ -11,9 +11,10 @@
         v-model="text"
         :validator="i => i.length <= this.maxLength"
         :error="this.text.length + '/' + this.maxLength"
+        right icon="paper-plane"
         @submit="create"
         placeholder="Escreva um comentário"
-        class="textarea is-primary has-background-white-ter has-fixed-size"
+        class="textarea is-primary has-background-white-ter has-fixed-size pr-5"
       />
       <!-- TODO: emoji support (?) -->
       <!-- <span class="icon is-right">
