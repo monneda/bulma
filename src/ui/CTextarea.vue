@@ -19,7 +19,7 @@
   <span v-if="left" class="icon is-small is-left">
     <font-awesome-icon class="is-clickable" @click="submit" :icon="icon" />
   </span>
-  <span v-if="right" class="icon is-small is-right">
+  <span v-if="right" class="icon is-right is-small mt-1">
     <font-awesome-icon class="is-clickable" @click="submit" :icon="icon" />
   </span>
 
@@ -75,3 +75,9 @@ export default {
   }
 }
 </script>
+
+<style scoped >
+.textarea {
+  border-radius: 20px;
+}
+</style>

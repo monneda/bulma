@@ -42,9 +42,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.textarea {
-  border-radius: 25px;
-}
-</style>
