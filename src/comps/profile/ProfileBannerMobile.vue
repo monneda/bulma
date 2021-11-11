@@ -55,7 +55,7 @@
           seguidores
         </p>
       </router-link>
-      <router-link :to="`/u/${this.user.username}/followers`">
+      <router-link :to="`/u/${this.user.username}/following`">
         <p class="has-text-grey-darker">
           <strong class="has-text-primary"> {{ user.followingCount }} </strong>
           <br class="is-hidden-desktop">
