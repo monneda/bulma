@@ -13,9 +13,10 @@
       <div class="field">
         <div class="control">
           <label class="label"> URL da imagem </label>
-          <input
+          <textarea
             class="input"
             placeholder="Inserir url"
+            v-model="picture"
             @input="$emit('update:modelValue', $event.currentTarget.value)"
           />
         </div>
@@ -38,7 +39,20 @@ export default {
     active: {
       type: Boolean,
       default: false
+    },
+    inputValue: {
+      type: String,
+      default: 'oi'
     }
+  },
+
+  data: () => ({
+    postPicture: ''
+  }),
+
+  created () {
+    this.postPicture = this.inputValue
   }
+
 }
 </script>
