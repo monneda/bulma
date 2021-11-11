@@ -39,6 +39,7 @@
         <!-- Content -->
         <div class="dropdown-content">
           <div class="dropdown-menu">
+            <a v-if="itemIsEditable" class="dropdown-item" @click="edit"> Editar </a>
             <a class="dropdown-item" @click="remove"> Deletar </a>
           </div>
         </div>
@@ -72,10 +73,17 @@ export default {
   computed: {
     isSelf () {
       return this.$store.state.user.profile.username === this.item.owner.username
+    },
+    itemIsEditable () {
+      return this.item.type === 'TEXT_POST_CREATED'
     }
   },
 
   methods: {
+    edit () {
+      this.$emit('edit')
+      this.active = false
+    },
     async remove () {
       this.$emit('remove', this.item)
       this.active = false
