@@ -36,7 +36,7 @@ export default class extends Base {
       body: JSON.stringify(post.data),
       headers: { 'Content-Type': 'application/json' }
     }
-    return this.request('PATCH', 'posts/' + post.id, options)
+    return this.request('PATCH', `posts/${post.id}`, options)
   }
 
   deleteEvent (id) {
