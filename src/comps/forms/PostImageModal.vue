@@ -16,7 +16,7 @@
           <input
             class="input"
             placeholder="Inserir url"
-            v-model="postPicture"
+            :value="modelValue"
             @input="$emit('update:modelValue', $event.currentTarget.value)"
           />
         </div>
@@ -40,18 +40,10 @@ export default {
       type: Boolean,
       default: false
     },
-    inputValue: {
+    modelValue: {
       type: String,
       default: ''
     }
-  },
-
-  data: () => ({
-    postPicture: ''
-  }),
-
-  created () {
-    this.postPicture = this.inputValue
   }
 
 }
