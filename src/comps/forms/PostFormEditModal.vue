@@ -33,6 +33,7 @@
 
   <PostImageModal
     :active="imageModal"
+    :inputValue="picture"
     v-model="picture"
     @close="imageModal = false"
   />
