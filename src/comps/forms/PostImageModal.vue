@@ -13,10 +13,10 @@
       <div class="field">
         <div class="control">
           <label class="label"> URL da imagem </label>
-          <textarea
+          <input
             class="input"
             placeholder="Inserir url"
-            v-model="picture"
+            v-model="postPicture"
             @input="$emit('update:modelValue', $event.currentTarget.value)"
           />
         </div>
@@ -42,7 +42,7 @@ export default {
     },
     inputValue: {
       type: String,
-      default: 'oi'
+      default: ''
     }
   },
 
