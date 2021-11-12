@@ -1,6 +1,6 @@
 <template>
 <div>
-  <post-form-edit-modal
+  <PostFormEditModal
       :active="showEditModal"
       :postData="item.data"
       @close="showEditModal = false"
