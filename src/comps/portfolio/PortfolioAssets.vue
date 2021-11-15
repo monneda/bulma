@@ -66,8 +66,10 @@
     </div>
   </div> -->
 
-  <AssetTiles v-if="component === 'AssetTiles'" :assets="wallet.assets" />
-  <AssetTable v-if="component === 'AssetTable'" :assets="wallet.assets" />
+  <AssetTiles v-if="component === 'AssetTiles'" :sortedAssets="sortedAssets"/>
+  <AssetTable v-if="component === 'AssetTable'"
+              @toggle="toggle"
+              :sortedAssets="sortedAssets"/>
 </article>
 </template>
 
@@ -94,7 +96,41 @@ export default {
     component: 'AssetTiles',
     sector: 'Setor 1',
     segment: 'Segmento 1',
-    type: 'Tipo 1'
-  })
+    type: 'Tipo 1',
+
+    // Sorting
+    sort: 1,
+    sortedBy: 'name'
+  }),
+
+  computed: {
+    sortedAssets () {
+      const assets = [...this.wallet.assets].sort((a, b) => {
+        switch (this.sortedBy) {
+          case 'name':
+            return (a.ticker.localeCompare(b.ticker)) * this.sort
+          case 'weight':
+            return (a.weight - b.weight) * this.sort
+          case 'price':
+            return (a.price - b.price) * this.sort
+          case 'gain':
+            return (a.gain - b.gain) * this.sort
+          default:
+            return 1
+        }
+      })
+      return { assets: assets, sort: this.sort, sortedBy: this.sortedBy }
+    }
+  },
+
+  methods: {
+    toggle (key) {
+      if (this.sortedBy === key) {
+        this.sort = this.sort * -1
+      } else {
+        this.sortedBy = key
+      }
+    }
+  }
 }
 </script>

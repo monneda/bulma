@@ -2,16 +2,26 @@
 <article>
   <table class="table is-fullwidth is-hoverable is-striped">
     <thead>
-      <tr>
-        <th> Nome </th>
-        <th> Peso </th>
-        <th> Preço </th>
-        <th> Variação </th>
-      </tr>
+    <th v-for="key of Object.keys(map)" :key="key">
+      <div
+        class="is-flex is-justify-content-space-between is-align-items-center is-clickable"
+        @click="toggle(key)"
+      >
+        <!-- Column title -->
+        <span>
+            {{ map[key].charAt(0).toUpperCase() + map[key].substr(1).toLowerCase() }}
+        </span>
+
+        <!-- Sort icon -->
+        <span class="icon" :class="{'has-text-primary': key === this.sortedAssets.sortedBy}">
+            <font-awesome-icon :icon="icon(key)" />
+        </span>
+      </div>
+    </th>
     </thead>
 
     <tbody>
-      <asset-row v-for="item of assets" :key="item.ticker" :asset="item" />
+      <asset-row v-for="item of this.sortedAssets.assets" :key="item.ticker" :asset="item" />
     </tbody>
   </table>
 </article>
@@ -28,9 +38,19 @@ export default {
   },
 
   props: {
-    assets: {
-      type: Array,
-      default: () => []
+    sortedAssets: { type: Object, required: true }
+  },
+
+  data: () => ({
+    map: { name: 'Nome', weight: 'Peso', price: 'Preço', gain: 'Variação' }
+  }),
+
+  methods: {
+    toggle (key) {
+      this.$emit('toggle', key)
+    },
+    icon (key) {
+      return this.sortedAssets.sortedBy === key && this.sortedAssets.sort === 1 ? 'angle-down' : 'angle-up'
     }
   }
 }

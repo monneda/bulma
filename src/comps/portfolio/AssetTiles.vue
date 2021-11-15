@@ -1,6 +1,6 @@
 <template>
 <div class="columns is-flex-wrap-wrap">
-  <template v-for="item of assets" :key="item.ticker">
+  <template v-for="item of sortedAssets.assets" :key="item.ticker">
     <div class="column is-half">
       <AssetTile class="box" :asset="item" />
     </div>
@@ -19,9 +19,9 @@ export default {
   },
 
   props: {
-    assets: {
-      type: Array,
-      default: () => []
+    sortedAssets: {
+      type: Object,
+      required: true
     }
   }
 }
