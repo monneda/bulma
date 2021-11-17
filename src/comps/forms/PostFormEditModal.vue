@@ -69,6 +69,15 @@ export default {
     picture: ''
   }),
 
+  // I don't like this, but fixes the bug in:
+  // https://trello.com/c/Z6VJZtia
+  watch: {
+    postData (newVal, oldVal) {
+      this.text = newVal.text
+      this.picture = newVal.picture
+    }
+  },
+
   created () {
     this.text = this.postData.text
     this.picture = this.postData.picture
