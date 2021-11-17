@@ -1,6 +1,6 @@
 <template>
 <div>
-  <PostFormEditModal
+  <PostFormEditModal v-if="item.data"
       :active="showEditModal"
       :postData="item.data"
       @close="showEditModal = false"
