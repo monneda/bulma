@@ -20,14 +20,22 @@
     </section>
 
     <!-- Buttons -->
-    <footer class="modal-card-foot has-background-white">
-      <nav class="buttons has-text-grey">
+    <footer class="modal-card-foot has-background-white is-justify-content-space-between">
+      <div>
         <PostFormModalButton icon="image" label="Foto" @click="imageModal = true" />
+      </div>
+      <div class="has-text-grey is-flex is-align-items-center">
+        <span
+          v-if="!valid || warning"
+          class="mr-3"
+          :class="{'has-text-danger': !this.valid, 'has-text-warning': warning}">
+          {{text.length}}/{{textMaxLength}}
+        </span>
         <!-- <post-form-modal-button icon="video" label="Vídeo" /> -->
         <!-- <post-form-modal-button icon="poll" label="Enquete" /> -->
         <!-- <post-form-modal-button icon="file" label="Documento" /> -->
         <button class="button is-dark" @click="post"> Publicar </button>
-      </nav>
+      </div>
     </footer>
   </div>
 
@@ -61,13 +69,25 @@ export default {
   data: () => ({
     text: '',
     picture: '',
-    imageModal: false
+    imageModal: false,
+    textMaxLength: 840
   }),
+
+  computed: {
+    valid () {
+      return this.text.length <= this.textMaxLength
+    },
+    warning () {
+      return this.valid && this.text.length / this.textMaxLength > 0.8
+    }
+  },
 
   methods: {
     post () {
-      this.$emit('post', { text: this.text, picture: this.picture })
-      this.text = ''
+      if (this.valid) {
+        this.$emit('post', { text: this.text, picture: this.picture })
+        this.text = ''
+      }
     }
   }
 }
