@@ -11,7 +11,7 @@
       :placeholder="placeholder"
       :class="{ 'is-danger': invalid }"
       :value="modelValue"
-      :rows="computedRows"
+      :rows="rows"
       @input="input"
     />
   </div>
@@ -44,7 +44,6 @@ export default {
     type: { type: String, default: 'text' },
     placeholder: { type: String, default: '' },
     maxRows: { type: Number, default: 4 },
-    rows: { type: Number },
 
     // Validation
     message: { type: String, default: null },
@@ -61,10 +60,7 @@ export default {
     invalid () {
       return !this.validator(this.modelValue)
     },
-    computedRows () {
-      if (this.rows) {
-        return this.rows
-      }
+    rows () {
       return Math.min((this.modelValue.match(/\r?\n/g) || '').length + 1, this.maxRows)
     }
   },

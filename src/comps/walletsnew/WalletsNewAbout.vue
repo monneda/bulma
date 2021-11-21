@@ -29,12 +29,9 @@
     <div class="field">
       <div class="control">
         <label class="label"> Descrição </label>
-        <c-textarea
+        <textarea
           type="text"
-          v-model="descriptionText"
-          :rows="6"
-          :validator="i => i.length <= this.maxLength"
-          :error="this.descriptionText.length + '/' + this.maxLength"
+          :value="description"
           class="textarea has-background-white-ter is-size-6"
           placeholder="Explique um pouco da sua Cartera: estratégia, objetivos, ..."
           @input="e => $emit('update:description', e.target.value)"
@@ -60,11 +57,6 @@ export default {
       type: String
     }
   },
-
-  data: () => ({
-    descriptionText: '',
-    maxLength: 840
-  }),
 
   methods: {
     updateName (e) {
