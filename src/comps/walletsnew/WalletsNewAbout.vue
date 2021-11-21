@@ -31,10 +31,11 @@
         <label class="label"> Descrição </label>
         <c-textarea
           type="text"
+          :value="description"
           v-model="descriptionText"
           :rows="6"
-          :validator="i => i.length <= this.maxLength"
-          :error="this.descriptionText.length + '/' + this.maxLength"
+          :validator="validateDescription"
+          :error="this.descriptionText.length + '/' + this.maxDescriptionLength"
           class="textarea has-background-white-ter is-size-6"
           placeholder="Explique um pouco da sua Cartera: estratégia, objetivos, ..."
           @input="e => $emit('update:description', e.target.value)"
@@ -58,15 +59,24 @@ export default {
     },
     description: {
       type: String
+    },
+    isDescriptionValid: {
+      type: Boolean,
+      default: true
     }
   },
 
   data: () => ({
     descriptionText: '',
-    maxLength: 840
+    maxDescriptionLength: 840
   }),
 
   methods: {
+    validateDescription (d) {
+      const isValid = d.length <= this.maxDescriptionLength
+      this.$emit('update:isDescriptionValid', isValid)
+      return isValid
+    },
     updateName (e) {
       this.$emit('update:name', e.target.value)
     }

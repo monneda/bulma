@@ -10,7 +10,7 @@
       v-bind="$attrs"
       :placeholder="placeholder"
       :class="{ 'is-danger': invalid }"
-      :value="modelValue"
+      :value="value"
       :rows="computedRows"
       @input="input"
     />
@@ -41,6 +41,7 @@ export default {
   props: {
     // Form
     modelValue: { type: [String, Number], default: '' },
+    value: { type: String, default: '' },
     type: { type: String, default: 'text' },
     placeholder: { type: String, default: '' },
     maxRows: { type: Number, default: 4 },
