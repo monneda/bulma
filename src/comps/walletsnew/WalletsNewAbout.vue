@@ -32,10 +32,15 @@
         <textarea
           type="text"
           :value="description"
+          :rows="6"
           class="textarea has-background-white-ter is-size-6"
+          :class="{ 'is-danger': invalid }"
           placeholder="Explique um pouco da sua Cartera: estratégia, objetivos, ..."
           @input="e => $emit('update:description', e.target.value)"
         />
+      </div>
+      <div class="is-flex is-justify-content-flex-end">
+        <p v-if="invalid && error" class="help is-danger"> {{ error }} </p>
       </div>
     </div>
   </article>
@@ -55,10 +60,32 @@ export default {
     },
     description: {
       type: String
+    },
+    isDescriptionValid: {
+      type: Boolean,
+      default: true
+    }
+  },
+
+  data: () => ({
+    maxDescriptionLength: 840
+  }),
+
+  computed: {
+    invalid () {
+      return !this.validateDescription(this.description)
+    },
+    error () {
+      return this.description.length + '/' + this.maxDescriptionLength
     }
   },
 
   methods: {
+    validateDescription (d) {
+      const isValid = d.length <= this.maxDescriptionLength
+      this.$emit('update:isDescriptionValid', isValid)
+      return isValid
+    },
     updateName (e) {
       this.$emit('update:name', e.target.value)
     }
