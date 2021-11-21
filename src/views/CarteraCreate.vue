@@ -19,7 +19,6 @@
       v-if="step === 1"
       v-model:name="name"
       v-model:description="description"
-      v-model:isDescriptionValid="validDescription"
       :validName="validName"
     />
 
@@ -69,7 +68,6 @@ export default {
     step: 1,
     name: '',
     description: '',
-    validDescription: true,
     assets: [],
     wallet: null
   }),
@@ -96,7 +94,7 @@ export default {
       return this.assets.length !== 0
     },
     allValid () {
-      return this.validName && this.validDescription && this.validAssets
+      return this.validName && this.validAssets
     }
   }
 }
