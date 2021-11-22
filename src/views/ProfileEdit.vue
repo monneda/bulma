@@ -117,13 +117,13 @@ export default {
 
   methods: {
     async update () {
-      const patch = [
-        { op: 'replace', path: '/name', value: this.user.name },
-        { op: 'replace', path: '/username', value: this.user.username },
-        { op: 'replace', path: '/description', value: this.user.description },
-        { op: 'replace', path: '/picture', value: this.user.picture }
-      ]
-      const user = await client.profile.update(patch)
+      const update = {
+        name: this.user.name,
+        picture: this.user.picture,
+        username: this.user.username,
+        description: this.user.description
+      }
+      const user = await client.profile.update(update)
       this.$store.commit(SET_USER, user)
       this.$router.push(`/u/${this.user.username}`)
     }
