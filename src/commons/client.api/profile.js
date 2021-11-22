@@ -16,7 +16,7 @@ export default class extends Base {
   update (data) {
     const options = {
       body: JSON.stringify(data),
-      headers: { 'Content-Type': 'application/json-patch+json' }
+      headers: { 'Content-Type': 'application/json' }
     }
     return this.request('PATCH', 'profile', options)
   }
