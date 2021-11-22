@@ -35,7 +35,15 @@
         <div class="field">
           <div class="control">
             <label class="label"> Descrição </label>
-            <textarea class="textarea" v-model="wallet.description" />
+            <textarea
+                v-model="wallet.description"
+                class="textarea"
+                :class="{ 'is-danger': invalid }"
+                placeholder="Explique um pouco da sua Cartera: estratégia, objetivos, ..."
+            />
+          </div>
+          <div class="is-flex is-justify-content-flex-end">
+            <p v-if="invalid && error" class="help is-danger"> {{ error }} </p>
           </div>
         </div>
       </article>
@@ -87,8 +95,18 @@ export default {
   data: () => ({
     wallet: {
       assets: []
-    }
+    },
+    maxDescriptionLength: 840
   }),
+
+  computed: {
+    invalid () {
+      return this.wallet.description.length > this.maxDescriptionLength
+    },
+    error () {
+      return this.wallet.description.length + '/' + this.maxDescriptionLength
+    }
+  },
 
   methods: {
     remove ({ ticker }) {
