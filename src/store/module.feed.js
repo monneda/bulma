@@ -4,7 +4,8 @@ import * as ACTIONS from '@/store/type.actions'
 import * as MUTATIONS from '@/store/type.mutations'
 
 const state = {
-  events: {}
+  events: {},
+  global: true
 }
 
 const mutations = {
@@ -39,13 +40,17 @@ const mutations = {
     event.commentCount++
     event.comments[item.id] = item
     state.events[item.eventId] = event
+  },
+
+  [MUTATIONS.FEED_INVERT_GLOBAL] (state) {
+    state.global = !state.global
   }
 }
 
 const actions = {
   async [ACTIONS.FEED_FETCH_EVENTS] (ctx) {
     ctx.commit(MUTATIONS.FEED_PURGE)
-    const events = await client.feed.fetchEvents(10)
+    const events = await client.feed.fetchEvents(10, state.global)
     events.forEach(i => ctx.commit(MUTATIONS.FEED_EVENT_REPLACE, i))
   },
 
@@ -56,7 +61,7 @@ const actions = {
 
   async [ACTIONS.FEED_FETCH_EVENTS_NEXT_PAGE] (ctx) {
     const last = Object.keys(ctx.state.events).sort().shift()
-    const events = await client.feed.fetchEvents(5, last)
+    const events = await client.feed.fetchEvents(5, state.global, last)
     events.forEach(i => ctx.commit(MUTATIONS.FEED_EVENT_REPLACE, i))
   },
 
@@ -112,6 +117,11 @@ const actions = {
   async [ACTIONS.FEED_COMMENT_DELETE] (ctx, item) {
     await client.feed.deleteComment(item.eventId, item.id)
     ctx.commit(MUTATIONS.FEED_COMMENT_REMOVE, item)
+  },
+
+  async [ACTIONS.FEED_TOGGLE_GLOBAL] (ctx, item) {
+    ctx.commit(MUTATIONS.FEED_INVERT_GLOBAL, item)
+    ctx.dispatch(ACTIONS.FEED_FETCH_EVENTS)
   }
 }
 

@@ -1,8 +1,11 @@
 import Base from './client'
 
 export default class extends Base {
-  fetchEvents (size = 100, beforeId) {
+  fetchEvents (size = 100, global, beforeId) {
     const params = beforeId ? { size, before_id: beforeId } : { size }
+    if (global) {
+      params.type = 'global'
+    }
     return this.request('GET', 'feed', { params })
   }
 
