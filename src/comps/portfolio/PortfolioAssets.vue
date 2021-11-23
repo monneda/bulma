@@ -1,35 +1,53 @@
 <template>
 <article>
   <!-- Inputs -->
-<!--  <div class="level">-->
-<!--    <div class="level-left">-->
-<!--      <div class="level-item">-->
-        <div class="field has-addons is-hidden-touch">
-          <!-- Block -->
-          <div class="control">
-            <button
-              class="button"
-              :class="{'is-active': component === 'AssetTiles'}"
-              @click="component = 'AssetTiles'"
-            >
-              Blocos
-            </button>
-          </div>
-
-          <!-- List -->
-          <div class="control">
-            <button
-              class="button"
-              :class="{'is-active': component === 'AssetTable'}"
-              @click="component = 'AssetTable'"
-            >
-              Lista
-            </button>
-          </div>
+<div class="level is-mobile">
+  <div class="level-left">
+    <div class="level-item">
+      <div class="field has-addons is-hidden-touch">
+        <!-- Block -->
+        <div class="control">
+          <button
+            class="button"
+            :class="{'is-active': component === 'AssetTiles'}"
+            @click="component = 'AssetTiles'"
+          >
+            Blocos
+          </button>
         </div>
-<!--      </div>-->
-<!--    </div>-->
 
+        <!-- List -->
+        <div class="control">
+          <button
+            class="button"
+            :class="{'is-active': component === 'AssetTable'}"
+            @click="component = 'AssetTable'"
+          >
+            Lista
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="level-right">
+    <div class="level-item">
+      <div class="select is-primary">
+        <select v-model="sortedBy">
+          <option selected value="name">Ordernar por</option>
+          <option value="name">Nome</option>
+          <option value="weight">Peso</option>
+          <option value="price">Preço</option>
+          <option value="gain">Variação</option>
+        </select>
+      </div>
+    </div>
+    <div class="level-item is-clickable" @click="sort = sort * -1">
+      <span class="icon has-text-primary">
+        <font-awesome-icon :icon="sort < 0 ? 'sort-amount-up-alt' : 'sort-amount-down-alt'" size="lg" />
+      </span>
+    </div>
+  </div>
+</div>
 <!--    <div class="level-right">
       &lt;!&ndash; Sectors &ndash;&gt;
       <div class="level-item">
@@ -99,7 +117,7 @@ export default {
     type: 'Tipo 1',
 
     // Sorting
-    sort: 1,
+    sort: -1,
     sortedBy: 'name'
   }),
 
@@ -108,7 +126,7 @@ export default {
       const assets = [...this.wallet.assets].sort((a, b) => {
         switch (this.sortedBy) {
           case 'name':
-            return (a.ticker.localeCompare(b.ticker)) * this.sort
+            return (b.ticker.localeCompare(a.ticker)) * this.sort
           case 'weight':
             return (a.weight - b.weight) * this.sort
           case 'price':
