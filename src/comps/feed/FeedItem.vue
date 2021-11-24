@@ -1,10 +1,11 @@
 <template>
 <div v-if="data">
-  <ItemFormEditModal
+  <PostFormEditModal
     v-if="data.data"
     :postData="data.data"
     :active="modal"
     @close="modal = false"
+    @save="edit"
   />
 
   <ItemInfo
@@ -49,11 +50,11 @@ import Post from './Post'
 import Edit from './Edit'
 import NewCartera from './NewCartera'
 import ItemButtonList from './ItemButtonList'
-import ItemFormEditModal from './forms/ItemFormEditModal'
 import ItemCommentList from './comment/ItemCommentList'
 import ItemShareInfo from './ItemShareInfo'
 import ItemInfo from './ItemInfo'
 import NewAccount from './UserCreated'
+import PostFormEditModal from '@/comps/forms/PostFormEditModal'
 
 export default {
   name: 'FeedItem',
@@ -67,7 +68,7 @@ export default {
     ItemShareInfo,
     ItemInfo,
     NewCartera,
-    ItemFormEditModal
+    PostFormEditModal
   },
 
   props: {
@@ -88,9 +89,11 @@ export default {
       this.$emit('remove', this.data)
     },
 
-    async edit () {
-      this.data = await client.feed.editPost(this.data)
+    async edit (item) {
+      const update = { ...this.data, data: item }
+      this.data = await client.feed.editPost(update)
       this.$emit('edit', this.data)
+      this.modal = false
     },
 
     async react () {
