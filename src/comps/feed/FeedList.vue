@@ -60,12 +60,7 @@ export default {
 
     async fetch () {
       if (this.username) {
-        const user = await client.users.byUsername(this.username)
-        const items = await client.feed.fetchUserEvents(this.username)
-        for (const item of items) {
-          item.owner = user
-        }
-        this.items = items
+        this.items = await client.feed.fetchUserEvents(this.username)
         return
       }
       this.items = await client.feed.fetchEvents(10)
