@@ -1,5 +1,12 @@
 <template>
 <section class="section">
+  <h1 class="title is-1"> Push Notification </h1>
+  <c-button @click="ask"> Ask permission </c-button>
+  <br>
+  <c-button @click="push"> Push </c-button>
+</section>
+
+<section class="section">
   <h1 class="title is-1"> CMenu </h1>
 
   <c-menu>
@@ -195,7 +202,18 @@ export default {
 
   methods: {
     show () { console.log('you arrived at the bottom') },
-    hide () { console.log('you left the bottom') }
+    hide () { console.log('you left the bottom') },
+
+    ask () {
+      window.Notification.requestPermission(status => {
+        console.log('Permission:', status)
+      })
+    },
+
+    async push () {
+      const reg = await window.navigator.serviceWorker.getRegistration()
+      reg.showNotification('hello world')
+    }
   },
 
   async created () {
