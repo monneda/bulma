@@ -11,7 +11,7 @@
 <script>
 
 export default {
-  name: 'UserCreated',
+  name: 'ItemUserCreate',
 
   props: {
     event: {

@@ -20,7 +20,7 @@
 import Linkify from '@/comps/utils/Linkify'
 
 export default {
-  name: 'Post',
+  name: 'ItemTextPost',
 
   components: {
     Linkify
