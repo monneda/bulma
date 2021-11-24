@@ -1,5 +1,6 @@
 <template>
 <div class="dropdown is-right" :class="{ 'is-active': active }">
+  <!-- Button -->
   <div class="dropdown-trigger">
     <c-button
       class="is-light is-small"
@@ -8,6 +9,8 @@
       :icon="['fa', 'ellipsis-v']"
     />
   </div>
+
+  <!-- Menu -->
   <div class="dropdown-menu">
     <div class="dropdown-content">
       <a class="dropdown-item" @click="remove"> Deletar </a>
@@ -18,7 +21,7 @@
 
 <script>
 export default {
-  name: 'FeedItemCommentDropdown',
+  name: 'ItemCommentDropdown',
 
   data: () => ({
     active: false

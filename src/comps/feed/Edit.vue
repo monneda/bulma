@@ -1,10 +1,10 @@
 <template>
 <article>
+  <!-- Header -->
   <p v-if="edit.data.type === 'UPDATE'">
     Atualizei minha carteira:
     <router-link :to="`/c/${wallet.id}`"> {{ wallet.name }} </router-link>
   </p>
-
   <br>
 
   <!-- Start -->

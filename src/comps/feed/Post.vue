@@ -8,9 +8,9 @@
   <br v-if="post.data.picture">
 
   <!-- Image -->
-  <div class="container is-fluid">
-    <figure v-if="post.data.picture" class="image">
-      <img :src="post.data.picture" class="mx-auto" style="max-height: 60vh; width: auto">
+  <div v-if="post.data.picture" class="container is-fluid">
+    <figure class="image">
+      <img :src="post.data.picture" class="mx-auto">
     </figure>
   </div>
 </article>
@@ -34,13 +34,14 @@ export default {
   }
 }
 </script>
-<style scoped>
-/*
-  Style added to allow rendering of new lines `\n`. Adapted from:
-    https://stackoverflow.com/a/22896536
 
-  Added the style based on the following link:
-    https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Text/Wrapping_Text#breaking_long_words
+<style scoped>
+/**
+ * Style added to allow rendering of new lines `\n`. Adapted from:
+ *     https://stackoverflow.com/a/22896536
+ *
+ * Added the style based on the following link:
+ *     https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Text/Wrapping_Text#breaking_long_words
  */
 p {
   overflow-wrap: break-word;
@@ -49,5 +50,7 @@ p {
 
 img {
   border-radius: 25px;
+  max-height: 60vh;
+  width: auto;
 }
 </style>
