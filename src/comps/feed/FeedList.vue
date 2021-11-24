@@ -45,7 +45,14 @@ export default {
   methods: {
     async next () {
       const last = this.items[this.items.length - 1]
-      const items = await client.feed.fetchEvents(5, last.id)
+
+      let items
+      if (this.username) {
+        items = await client.feed.fetchUserEvents(this.username, 5, last.id)
+      } else {
+        items = await client.feed.fetchEvents(5, last.id)
+      }
+
       this.items.push(...items)
     },
 
@@ -60,7 +67,7 @@ export default {
 
     async fetch () {
       if (this.username) {
-        this.items = await client.feed.fetchUserEvents(this.username)
+        this.items = await client.feed.fetchUserEvents(this.username, 10)
         return
       }
       this.items = await client.feed.fetchEvents(10)

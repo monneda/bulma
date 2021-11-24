@@ -6,8 +6,9 @@ export default class extends Base {
     return this.request('GET', 'feed', { params })
   }
 
-  fetchUserEvents (username) {
-    return this.request('GET', `users/${username}/events`)
+  fetchUserEvents (username, size = 100, beforeId) {
+    const params = beforeId ? { size, before_id: beforeId } : { size }
+    return this.request('GET', `users/${username}/events`, { params })
   }
 
   fetchEvent (id) {
