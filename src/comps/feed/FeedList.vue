@@ -4,7 +4,7 @@
 
   <div v-for="(val, key) of items" :key="val.id">
     <FeedItem class="box my-5" :item="val" @remove="remove" />
-    <FeedSuggestions horizontal v-if="key % 4 === 1"/>
+    <FeedSuggestions horizontal v-if="suggestions && key % 4 === 1"/>
   </div>
 
   <c-view v-if="items.length > 0" @show="next" />
@@ -29,7 +29,8 @@ export default {
 
   props: {
     form: { type: Boolean, default: false },
-    username: { type: String, default: null }
+    username: { type: String, default: null },
+    suggestions: { type: Boolean, default: false }
   },
 
   data: () => ({
