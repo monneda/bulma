@@ -1,62 +1,59 @@
 <template>
-<div>
-  <PostFormEditModal v-if="item.data"
-      :active="showEditModal"
-      :postData="item.data"
-      @close="showEditModal = false"
-      @save="saveEdit"
+<div v-if="data">
+  <ItemFormEditModal
+    v-if="data.data"
+    :postData="data.data"
+    :active="modal"
+    @close="modal = false"
   />
 
-  <ItemInfo :item="item" @edit="editPost" @remove="removePost" />
+  <ItemInfo
+    :item="data"
+    @edit="modal = true"
+    @remove="remove"
+  />
 
-  <Post v-if="item.type === 'TEXT_POST_CREATED'" :post="item" />
-  <Edit v-if="item.type === 'WALLET_ASSETS_EDIT'" :edit="item" />
-  <NewCartera v-if="item.type === 'NEW_WALLET'" :event="item" />
-  <NewAccount v-if="item.type === 'USER_CREATED'" :event="item" />
+  <Post v-if="data.type === 'TEXT_POST_CREATED'" :post="data" />
+  <Edit v-if="data.type === 'WALLET_ASSETS_EDIT'" :edit="data" />
+  <NewCartera v-if="data.type === 'NEW_WALLET'" :event="data" />
+  <NewAccount v-if="data.type === 'USER_CREATED'" :event="data" />
 
   <br>
 
-  <ItemShareInfo :item="item" />
+  <ItemShareInfo :item="data" />
 
   <hr class="my-1">
   <ItemButtonList
     class="my-0"
-    :item="item"
-    @react="reactEvent"
-    @unreact="unreactEvent"
+    :item="data"
+    @react="react"
+    @unreact="unreact"
   />
   <hr class="my-1">
 
   <br>
 
-  <ItemCommentForm @create="createComment" />
-
-  <br>
-
-  <ItemCommentList :item="item" />
+  <!-- Comments -->
+  <ItemCommentList
+    :item="data"
+    @created="data.commentCount++"
+    @removed="data.commentCount--"
+  />
 </div>
 </template>
 
 <script>
-import {
-  FEED_COMMENT_CREATE,
-  FEED_COMMENT_DELETE,
-  FEED_EVENT_DELETE,
-  FEED_EVENT_EDIT,
-  FEED_EVENT_REACT,
-  FEED_EVENT_UNREACT
-} from '@/store/type.actions'
+import client from '@/commons/client.api'
 
 import Post from './Post'
 import Edit from './Edit'
 import NewCartera from './NewCartera'
 import ItemButtonList from './ItemButtonList'
-import ItemCommentList from './ItemCommentList'
-import ItemCommentForm from './ItemCommentForm'
+import ItemFormEditModal from './forms/ItemFormEditModal'
+import ItemCommentList from './comment/ItemCommentList'
 import ItemShareInfo from './ItemShareInfo'
 import ItemInfo from './ItemInfo'
 import NewAccount from './UserCreated'
-import PostFormEditModal from '@/comps/forms/PostFormEditModal'
 
 export default {
   name: 'FeedItem',
@@ -67,11 +64,10 @@ export default {
     Edit,
     ItemButtonList,
     ItemCommentList,
-    ItemCommentForm,
     ItemShareInfo,
     ItemInfo,
     NewCartera,
-    PostFormEditModal
+    ItemFormEditModal
   },
 
   props: {
@@ -82,40 +78,38 @@ export default {
   },
 
   data: () => ({
-    showEditModal: false
+    modal: false,
+    data: null
   }),
 
   methods: {
-    createComment (item) {
-      this.$store.dispatch(FEED_COMMENT_CREATE, { id: this.item.id, item })
+    async remove () {
+      await client.feed.deleteEvent(this.data.id)
+      this.$emit('remove', this.data)
     },
 
-    editPost () {
-      this.showEditModal = true
+    async edit () {
+      this.data = await client.feed.editPost(this.data)
+      this.$emit('edit', this.data)
     },
 
-    async saveEdit (updatedPostData) {
-      const updatedItem = { ...this.item }
-      updatedItem.data = updatedPostData
-      await this.$store.dispatch(FEED_EVENT_EDIT, updatedItem)
-      this.showEditModal = false
+    async react () {
+      await client.feed.reactEvent(this.data.id)
+      this.data.likeCount++
+      this.data.like = true
+      this.$emit('react', this.data)
     },
 
-    removePost (item) {
-      this.$store.dispatch(FEED_EVENT_DELETE, item)
-    },
-
-    removeComment (item) {
-      this.$store.dispatch(FEED_COMMENT_DELETE, item)
-    },
-
-    reactEvent (item) {
-      this.$store.dispatch(FEED_EVENT_REACT, item)
-    },
-
-    unreactEvent (item) {
-      this.$store.dispatch(FEED_EVENT_UNREACT, item)
+    async unreact () {
+      await client.feed.unreactEvent(this.data.id)
+      this.data.likeCount--
+      this.data.like = false
+      this.$emit('unreact', this.data)
     }
+  },
+
+  mounted () {
+    this.data = JSON.parse(JSON.stringify(this.item))
   }
 }
 </script>

@@ -12,9 +12,7 @@
       <div class="is-flex is-justify-content-space-between is-align-items-center">
         <!-- Username -->
         <router-link :to="`/u/${comment.user.username}`">
-          <strong class="has-text-gray-1">
-            @{{ comment.user.username }}
-          </strong>
+          <strong class="has-text-gray-1"> @{{ comment.user.username }} </strong>
         </router-link>
 
         <div class="is-flex is-align-items-center">
@@ -24,10 +22,7 @@
           </small>
 
           <!-- Dropdown -->
-          <FeedItemCommentDropdown
-            v-if="isSelf"
-            @remove="remove"
-          />
+          <ItemCommentDropdown v-if="isSelf" @remove="$emit('remove', comment)" />
         </div>
       </div>
 
@@ -41,12 +36,10 @@
 </template>
 
 <script>
-import { FEED_COMMENT_DELETE } from '@/store/type.actions'
-
 import Linkify from '@/comps/utils/Linkify'
 import TimeAgo from '@/comps/utils/TimeAgo'
 
-import FeedItemCommentDropdown from './FeedItemCommentDropdown'
+import ItemCommentDropdown from './ItemCommentDropdown'
 
 export default {
   name: 'FeedItemComment',
@@ -54,7 +47,7 @@ export default {
   components: {
     Linkify,
     TimeAgo,
-    FeedItemCommentDropdown
+    ItemCommentDropdown
   },
 
   props: {
@@ -67,12 +60,6 @@ export default {
   computed: {
     isSelf () {
       return this.$store.state.user.profile.username === this.comment.user.username
-    }
-  },
-
-  methods: {
-    remove () {
-      this.$store.dispatch(FEED_COMMENT_DELETE, this.comment)
     }
   }
 }
@@ -93,13 +80,13 @@ export default {
   border: 0px transparent;
 }
 
-/*
-Style added to allow rendering of new lines `\n`. Adapted from:
-  https://stackoverflow.com/a/22896536
-
-Added the style based on the following link:
-  https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Text/Wrapping_Text#breaking_long_words
-*/
+/**
+ * Style added to allow rendering of new lines `\n`. Adapted from:
+ *     https://stackoverflow.com/a/22896536
+ *
+ * Added the style based on the following link:
+ *     https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Text/Wrapping_Text#breaking_long_words
+ */
 p {
   line-height: 125%;
   overflow-wrap: anywhere;

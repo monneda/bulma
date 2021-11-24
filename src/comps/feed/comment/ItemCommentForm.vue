@@ -1,7 +1,12 @@
 <template>
 <article class="media">
   <!-- Image -->
-  <c-avatar class="media-left" size="2.5rem" :src="$store.state.user.profile.picture" round />
+  <c-avatar
+    class="media-left"
+    size="2.5rem"
+    :src="$store.state.user.profile.picture"
+    round
+  />
 
   <!-- TextArea -->
   <div class="media-content my-auto">
