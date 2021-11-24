@@ -18,7 +18,7 @@
 
       <h4 class="title is-4"> Publicações </h4>
 
-      <FeedItem v-for="i of items" :key="i.id" :item="i" class="box" />
+      <FeedList :form="false" :username="username" />
     </div>
   </div>
 </div>
@@ -27,23 +27,25 @@
 </template>
 
 <script>
-import { FEED_FETCH_EVENTS_FOR_USER } from '@/store/type.actions'
-
 import Navbar from '@/comps/navbar/Navbar'
 import NavbarBottom from '@/comps/navbar/NavbarBottom'
-import FeedItem from '@/comps/feed/FeedItem'
-import ProfileBannerDesktop from '@/comps/profile/ProfileBannerDesktop'
-import ProfileBannerMobile from '@/comps/profile/ProfileBannerMobile'
+
+import FeedList from '@/comps/feed/FeedList'
+
 import ProfilePortfolios from '@/comps/profile/ProfilePortfolios'
+import ProfileBannerMobile from '@/comps/profile/ProfileBannerMobile'
+import ProfileBannerDesktop from '@/comps/profile/ProfileBannerDesktop'
 
 export default {
   components: {
     Navbar,
-    FeedItem,
+    NavbarBottom,
+
+    FeedList,
+
     ProfilePortfolios,
-    ProfileBannerDesktop,
     ProfileBannerMobile,
-    NavbarBottom
+    ProfileBannerDesktop
   },
 
   props: {
@@ -51,22 +53,6 @@ export default {
       type: String,
       required: true
     }
-  },
-
-  computed: {
-    items () {
-      return this.$store.state.feed.events
-    }
-  },
-
-  watch: {
-    username () {
-      this.$store.dispatch(FEED_FETCH_EVENTS_FOR_USER, this.username)
-    }
-  },
-
-  created () {
-    this.$store.dispatch(FEED_FETCH_EVENTS_FOR_USER, this.username)
   }
 }
 </script>
