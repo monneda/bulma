@@ -8,20 +8,20 @@
     @save="edit"
   />
 
-  <ItemInfo
+  <ItemHeader
     :item="data"
     @edit="modal = true"
     @remove="remove"
   />
 
-  <Post v-if="data.type === 'TEXT_POST_CREATED'" :post="data" />
-  <Edit v-if="data.type === 'WALLET_ASSETS_EDIT'" :edit="data" />
-  <NewCartera v-if="data.type === 'NEW_WALLET'" :event="data" />
-  <NewAccount v-if="data.type === 'USER_CREATED'" :event="data" />
+  <ItemTextPost v-if="data.type === 'TEXT_POST_CREATED'" :post="data" />
+  <ItemUserCreate v-if="data.type === 'USER_CREATED'" :event="data" />
+  <ItemCarteraUpdate v-if="data.type === 'WALLET_ASSETS_EDIT'" :edit="data" />
+  <ItemCarteraCreate v-if="data.type === 'NEW_WALLET'" :event="data" />
 
   <br>
 
-  <ItemShareInfo :item="data" />
+  <ItemFooter :item="data" />
 
   <hr class="my-1">
   <ItemButtonList
@@ -46,28 +46,34 @@
 <script>
 import client from '@/commons/client.api'
 
-import Post from './Post'
-import Edit from './Edit'
-import NewCartera from './NewCartera'
-import ItemButtonList from './ItemButtonList'
+import ItemTextPost from './items/ItemTextPost'
+import ItemUserCreate from './items/ItemUserCreate'
+import ItemCarteraUpdate from './items/ItemCarteraUpdate'
+import ItemCarteraCreate from './items/ItemCarteraCreate'
+
 import ItemCommentList from './comment/ItemCommentList'
-import ItemShareInfo from './ItemShareInfo'
-import ItemInfo from './ItemInfo'
-import NewAccount from './UserCreated'
+
+import ItemHeader from './ItemHeader'
+import ItemFooter from './ItemFooter'
+import ItemButtonList from './ItemButtonList'
+
 import PostFormEditModal from '@/comps/forms/PostFormEditModal'
 
 export default {
   name: 'FeedItem',
 
   components: {
-    NewAccount,
-    Post,
-    Edit,
-    ItemButtonList,
+    ItemTextPost,
+    ItemUserCreate,
+    ItemCarteraUpdate,
+    ItemCarteraCreate,
+
     ItemCommentList,
-    ItemShareInfo,
-    ItemInfo,
-    NewCartera,
+
+    ItemHeader,
+    ItemFooter,
+    ItemButtonList,
+
     PostFormEditModal
   },
 

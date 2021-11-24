@@ -33,7 +33,7 @@
 import client from '@/commons/client.api'
 
 export default {
-  name: 'NewCartera',
+  name: 'ItemCarteraCreate',
 
   props: {
     event: {
