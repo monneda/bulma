@@ -62,7 +62,7 @@ export default {
   props: {
     item: {
       type: Object,
-      default: () => ({})
+      required: true
     }
   },
 
