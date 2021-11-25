@@ -15,8 +15,7 @@
 </template>
 
 <script>
-import { FEED_FETCH_EVENT } from '@/store/type.actions'
-
+import client from '@/commons/client.api'
 import FeedItem from '@/comps/feed/FeedItem'
 import Navbar from '@/comps/navbar/Navbar'
 import NavbarBottom from '@/comps/navbar/NavbarBottom'
@@ -37,14 +36,24 @@ export default {
     }
   },
 
-  computed: {
-    post () {
-      return this.$store.state.feed.events[this.id]
+  data: () => ({
+    post: null
+  }),
+
+  watch: {
+    async id () {
+      await this.fetch()
+    }
+  },
+
+  methods: {
+    async fetch () {
+      this.post = await client.feed.fetchEvent(this.id)
     }
   },
 
   async created () {
-    this.$store.dispatch(FEED_FETCH_EVENT, this.id)
+    await this.fetch()
   }
 }
 </script>

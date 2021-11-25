@@ -5,7 +5,7 @@
     <!-- Brand -->
     <div class="navbar-brand navbar-size-touch">
       <!-- Logo desktop width 125px -->
-      <router-link class="navbar-item is-hidden-mobile" to="/feed">
+      <router-link class="navbar-item is-hidden-touch" to="/feed">
         <figure class="image">
           <img class="is-radiusless" src="@/assets/svgs/logo.svg">
         </figure>
