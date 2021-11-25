@@ -7,7 +7,7 @@
   <div class="columns is-centered mx-0">
     <!-- Feed -->
     <div class="column is-three-fifths">
-      <FeedList form suggestions/>
+      <FeedList trending form suggestions/>
     </div>
 
     <!-- Suggestions -->

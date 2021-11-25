@@ -10,6 +10,7 @@ import CTextarea from './CTextarea'
 import CSelect from './CSelect'
 import CTable from './CTable'
 import CDropdown from './CDropdown'
+import CSwitch from './CSwitch'
 
 export {
   CAvatar,
@@ -23,5 +24,6 @@ export {
   CTextarea,
   CSelect,
   CTable,
-  CDropdown
+  CDropdown,
+  CSwitch
 }

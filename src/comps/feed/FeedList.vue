@@ -1,7 +1,22 @@
 <template>
 <div>
   <PostForm v-if="form" class="box" @create="create" />
-
+  <div class="tabs is-toggle is-fullwidth">
+    <ul class="">
+      <li>
+        <a @click=toggle
+           :class="global ? 'has-background-white' : 'has-background-white-ter has-text-weight-bold'">
+          Seguindo
+        </a>
+      </li>
+      <li>
+        <a @click=toggle
+           :class="!global ? 'has-background-white' : 'has-background-white-ter has-text-weight-bold'">
+          Comunidade
+        </a>
+      </li>
+    </ul>
+  </div>
   <div v-for="(val, key) of items" :key="val.id">
     <FeedItem class="box my-5" :item="val" @remove="remove" />
     <FeedSuggestions horizontal v-if="suggestions && key % 4 === 1"/>
@@ -30,11 +45,13 @@ export default {
   props: {
     form: { type: Boolean, default: false },
     username: { type: String, default: null },
-    suggestions: { type: Boolean, default: false }
+    suggestions: { type: Boolean, default: false },
+    trending: { type: Boolean, default: false }
   },
 
   data: () => ({
-    items: []
+    items: [],
+    global: false
   }),
 
   watch: {
@@ -50,6 +67,8 @@ export default {
       let items
       if (this.username) {
         items = await client.feed.fetchUserEvents(this.username, 5, last.id)
+      } else if (this.global) {
+        items = await client.feed.fetchGlobalEvents(5, last.id)
       } else {
         items = await client.feed.fetchEvents(5, last.id)
       }
@@ -69,9 +88,17 @@ export default {
     async fetch () {
       if (this.username) {
         this.items = await client.feed.fetchUserEvents(this.username, 10)
-        return
+      } else if (this.global) {
+        this.items = await client.feed.fetchGlobalEvents(10)
+      } else {
+        this.items = await client.feed.fetchEvents(10)
       }
-      this.items = await client.feed.fetchEvents(10)
+    },
+
+    async toggle () {
+      this.items = []
+      this.global = !this.global
+      await this.fetch()
     }
   },
 
