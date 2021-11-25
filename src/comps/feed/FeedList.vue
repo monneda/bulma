@@ -1,8 +1,8 @@
 <template>
 <div>
   <PostForm v-if="form" class="box" @create="create" />
-  <div class="tabs is-toggle is-fullwidth">
-    <ul class="">
+  <div v-if="trending" class="tabs is-toggle is-fullwidth">
+    <ul>
       <li>
         <a @click=toggle
            :class="global ? 'has-background-white' : 'has-background-white-ter has-text-weight-bold'">
