@@ -54,6 +54,10 @@ export default class extends Base {
     return this.request('GET', `events/${id}/comments`, { params })
   }
 
+  fetchComment (eventId, commentId) {
+    return this.request('GET', `events/${eventId}/comments/${commentId}`)
+  }
+
   createComment (id, comment) {
     const options = {
       body: JSON.stringify(comment),
