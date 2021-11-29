@@ -1,10 +1,10 @@
 <template>
-<div>
+<div v-if="page">
   <ItemCommentForm @create="add" />
 
   <!-- Comments -->
   <template v-for="c of paged" :key="c.id">
-    <ItemComment class="py-0" :comment="c" @remove="remove" />
+    <ItemComment class="py-0" :id="c.id" @remove="remove" />
   </template>
 
   <!-- See more link -->
@@ -29,48 +29,54 @@ export default {
   },
 
   props: {
-    item: {
-      type: Object,
+    id: {
+      type: String,
       required: true
     }
   },
 
   data: () => ({
     show: 2,
-    comments: []
+    page: null
   }),
 
   computed: {
     paged () {
-      const totalComments = Math.min(this.show, this.item.commentCount)
-      return this.comments.slice(0, totalComments)
+      const total = Math.min(this.show, this.page.total)
+      return this.page.data.slice(0, total)
     },
 
     hasMore () {
-      return this.show < this.item.commentCount
+      return this.show < this.page.total
     },
 
     remaining () {
-      return Math.abs(this.item.commentCount - this.show)
+      return Math.abs(this.page.total - this.show)
     }
   },
 
   methods: {
     async remove (comment) {
-      await client.feed.deleteComment(this.item.id, comment.id)
-      this.comments = this.comments.filter(i => i.id !== comment.id)
+      await client.feed.deleteComment(this.id, comment.id)
+      this.page.content = this.page.content.filter(i => i.id !== comment.id)
+      this.page.total--
       this.$emit('removed', comment)
     },
 
     async add (comment) {
-      const comm = await client.feed.createComment(this.item.id, comment)
-      this.comments.unshift(comm)
+      const comm = await client.feed.createComment(this.id, comment)
+      this.page.content.unshift(comm)
+      this.page.total++
       this.$emit('created', comment)
+    },
+
+    async fetch () {
+      this.page = await client.feed.fetchComments(this.id, 100)
     }
   },
 
   async created () {
-    this.comments = await client.feed.fetchComments(this.item.id, 100)
+    this.fetch()
   }
 }
 </script>
