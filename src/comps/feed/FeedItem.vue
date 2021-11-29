@@ -36,7 +36,7 @@
 
   <!-- Comments -->
   <ItemCommentList
-    :item="data"
+    :id="data.id"
     @created="data.commentCount++"
     @removed="data.commentCount--"
   />

@@ -1,5 +1,5 @@
 <template>
-<article class="media">
+<article v-if="comment" class="media">
   <!-- Image -->
   <div class="media-left">
     <router-link :to="`/u/${comment.user.username}`">
@@ -36,6 +36,8 @@
 </template>
 
 <script>
+import client from '@/commons/client.api'
+
 import Linkify from '@/comps/utils/Linkify'
 import TimeAgo from '@/comps/utils/TimeAgo'
 
@@ -51,15 +53,24 @@ export default {
   },
 
   props: {
-    comment: {
-      type: Object,
-      required: true
-    }
+    id: { type: String, required: true }
   },
+
+  data: () => ({
+    comment: null
+  }),
 
   computed: {
     isSelf () {
       return this.$store.state.user.profile.username === this.comment.user.username
+    }
+  },
+
+  async created () {
+    try {
+      this.comment = await client.comments.fetch(this.id)
+    } catch (e) {
+      console.error(await e.json())
     }
   }
 }
