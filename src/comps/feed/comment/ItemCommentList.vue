@@ -58,14 +58,14 @@ export default {
   methods: {
     async remove (comment) {
       await client.feed.deleteComment(this.id, comment.id)
-      this.page.content = this.page.content.filter(i => i.id !== comment.id)
+      this.page.data = this.page.data.filter(i => i.id !== comment.id)
       this.page.total--
       this.$emit('removed', comment)
     },
 
     async add (comment) {
-      const comm = await client.feed.createComment(this.id, comment)
-      this.page.content.unshift(comm)
+      const { id } = await client.feed.createComment(this.id, comment)
+      this.page.data.unshift({ id })
       this.page.total++
       this.$emit('created', comment)
     },
