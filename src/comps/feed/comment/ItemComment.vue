@@ -67,11 +67,7 @@ export default {
   },
 
   async created () {
-    try {
-      this.comment = await client.comments.fetch(this.id)
-    } catch (e) {
-      console.error(await e.json())
-    }
+    this.comment = await client.comments.fetch(this.id)
   }
 }
 </script>
