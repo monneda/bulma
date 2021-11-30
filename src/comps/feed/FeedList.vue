@@ -1,28 +1,42 @@
 <template>
-<div>
+<div v-if="page">
   <PostForm v-if="form" class="box" @create="create" />
+
+  <!-- Feed toggle -->
   <div v-if="trending" class="tabs is-toggle is-fullwidth">
     <ul>
+      <!-- User feed -->
       <li>
-        <a @click=toggle
-           :class="global ? 'has-background-white' : 'has-background-white-ter has-text-weight-bold'">
+        <a
+          @click=toggle
+          :class="global
+            ? 'has-background-white'
+            : 'has-background-white-ter has-text-weight-bold'"
+          >
           Seguindo
         </a>
       </li>
+
+      <!-- Global feed -->
       <li>
-        <a @click=toggle
-           :class="!global ? 'has-background-white' : 'has-background-white-ter has-text-weight-bold'">
+        <a
+          @click=toggle
+          :class="!global
+            ? 'has-background-white'
+            : 'has-background-white-ter has-text-weight-bold'"
+          >
           Comunidade
         </a>
       </li>
     </ul>
   </div>
-  <div v-for="(val, key) of items" :key="val.id">
-    <FeedItem class="box my-5" :item="val" @remove="remove" />
+
+  <div v-for="(val, key) of page.data" :key="val.id">
+    <FeedItem class="box my-5" :id="val.id" @remove="remove" />
     <FeedSuggestions horizontal v-if="suggestions && key % 4 === 1"/>
   </div>
 
-  <c-view v-if="items.length > 0" @show="next" />
+  <c-view v-if="page.data.length > 0" @show="next" />
 </div>
 </template>
 
@@ -50,54 +64,55 @@ export default {
   },
 
   data: () => ({
-    items: [],
+    page: null,
     global: false
   }),
 
-  watch: {
-    async username () {
-      await this.fetch()
-    }
-  },
-
   methods: {
     async next () {
-      const last = this.items[this.items.length - 1]
+      const last = this.page.data[this.page.data.length - 1]
 
-      let items
+      let page
       if (this.username) {
-        items = await client.feed.fetchUserEvents(this.username, 5, last.id)
+        page = await client.feed.fetchUserEvents(this.username, 5, last.id)
       } else if (this.global) {
-        items = await client.feed.fetchGlobalEvents(5, last.id)
+        page = await client.feed.fetchGlobalEvents(5, last.id)
       } else {
-        items = await client.feed.fetchEvents(5, last.id)
+        page = await client.feed.fetchEvents(5, last.id)
       }
 
-      this.items.push(...items)
+      page.data.unshift(...this.page.data)
+      this.page = page
     },
 
     async create (item) {
       const post = await client.feed.createEvent(item)
-      this.items.unshift(post)
+      this.page.data.unshift(post)
     },
 
     async remove (item) {
-      this.items = this.items.filter(i => i.id !== item.id)
+      this.page.data = this.page.data.filter(i => i.id !== item.id)
     },
 
     async fetch () {
       if (this.username) {
-        this.items = await client.feed.fetchUserEvents(this.username, 10)
+        this.page = await client.feed.fetchUserEvents(this.username, 10)
       } else if (this.global) {
-        this.items = await client.feed.fetchGlobalEvents(10)
+        this.page = await client.feed.fetchGlobalEvents(10)
       } else {
-        this.items = await client.feed.fetchEvents(10)
+        this.page = await client.feed.fetchEvents(10)
       }
     },
 
     async toggle () {
       this.items = []
       this.global = !this.global
+      await this.fetch()
+    }
+  },
+
+  watch: {
+    async username () {
       await this.fetch()
     }
   },
