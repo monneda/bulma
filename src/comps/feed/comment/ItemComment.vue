@@ -30,6 +30,14 @@
       <p class="mt-2 has-text-justified-desktop">
         <Linkify :text="comment.text" />
       </p>
+
+      <!-- Likes -->
+      <div class="pt-2 is-clickable">
+        <span :class="{ 'has-text-primary': comment.reacted }" @click="react">
+          <font-awesome-icon icon="heart" size="sm" />
+        </span>
+        <small class="px-2"> {{ comment.reactionCount }} </small>
+      </div>
     </div>
   </div>
 </article>
@@ -63,6 +71,20 @@ export default {
   computed: {
     isSelf () {
       return this.$store.state.user.profile.username === this.comment.user.username
+    }
+  },
+
+  methods: {
+    async react () {
+      if (this.comment.reacted === false) {
+        await client.comments.react(this.comment.id)
+        this.comment.reacted = true
+        this.comment.reactionCount++
+        return
+      }
+      await client.comments.unreact(this.comment.id)
+      this.comment.reacted = false
+      this.comment.reactionCount--
     }
   },
 
