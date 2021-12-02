@@ -11,7 +11,7 @@ const routes = [
     path: '/',
     name: 'Landing',
     beforeEnter: FeedGuard,
-    component: () => import('@/views/Landing')
+    component: () => import(/* webpackChunkName: "group-landing" */ '@/views/Landing')
   },
   {
     path: '/callback',
@@ -22,100 +22,100 @@ const routes = [
     path: '/feed',
     name: 'Feed',
     beforeEnter: LandingGuard,
-    component: () => import('@/views/Feed')
+    component: () => import(/* webpackChunkName: "group-feed" */ '@/views/Feed')
   },
   {
     path: '/c',
     name: 'Carteras',
-    component: () => import('@/views/Carteras')
+    component: () => import(/* webpackChunkName: "group-cartera" */ '@/views/Carteras')
   },
   {
     path: '/c/create',
     name: 'CarteraNew',
-    component: () => import('@/views/CarteraCreate')
+    component: () => import(/* webpackChunkName: "group-cartera" */ '@/views/CarteraCreate')
   },
   {
     props: true,
     path: '/c/:id/edit',
     name: 'CarteraEdit',
-    component: () => import('@/views/CarteraEdit')
+    component: () => import(/* webpackChunkName: "group-cartera" */ '@/views/CarteraEdit')
   },
   {
     props: true,
     path: '/c/:id',
     name: 'Cartera',
-    component: () => import('@/views/Cartera')
+    component: () => import(/* webpackChunkName: "group-cartera" */ '@/views/Cartera')
   },
   {
     path: '/notifications',
     name: 'Notifications',
-    component: () => import('@/views/Notifications')
+    component: () => import(/* webpackChunkName: "group-notifications" */ '@/views/Notifications')
   },
   {
     props: true,
     name: 'Profile',
     path: '/u/:username',
-    component: () => import('@/views/Profile')
+    component: () => import(/* webpackChunkName: "group-profile" */ '@/views/Profile')
   },
   {
     props: true,
     name: 'ProfileEdit',
     path: '/u/:username/edit',
     beforeEnter: OwnerGuard,
-    component: () => import('@/views/ProfileEdit')
+    component: () => import(/* webpackChunkName: "group-profile" */ '@/views/ProfileEdit')
   },
   {
     props: true,
     name: 'Following',
     path: '/u/:username/following',
     meta: { page: 'following' },
-    component: () => import('@/views/Follows')
+    component: () => import(/* webpackChunkName: "group-profile" */ '@/views/Follows')
   },
   {
     props: true,
     name: 'Followers',
     path: '/u/:username/followers',
     meta: { page: 'followers' },
-    component: () => import('@/views/Follows')
+    component: () => import(/* webpackChunkName: "group-profile" */ '@/views/Follows')
   },
   {
     props: true,
     name: 'Suggestions',
     path: '/suggestions',
     meta: { page: 'suggestions' },
-    component: () => import('@/views/Follows')
+    component: () => import(/* webpackChunkName: "group-profile" */ '@/views/Follows')
   },
   {
     props: true,
     name: 'Post',
     path: '/p/:id',
-    component: () => import('@/views/Post')
+    component: () => import(/* webpackChunkName: "group-feed" */ '@/views/Post')
   },
   {
     props: true,
     name: 'Asset',
     path: '/a/:ticker',
-    component: () => import('@/views/Asset')
+    component: () => import(/* webpackChunkName: "group-asset" */ '@/views/Asset')
   },
   {
     path: '/about',
     name: 'About',
-    component: () => import('@/views/About')
+    component: () => import(/* webpackChunkName: "group-about" */ '@/views/About')
   },
   {
     path: '/settings',
     name: 'Settings',
-    component: () => import('@/views/legal/Legal')
+    component: () => import(/* webpackChunkName: "group-about" */ '@/views/legal/Legal')
   },
   {
     path: '/t',
     name: 'Test',
-    component: () => import('@/views/Test')
+    component: () => import(/* webpackChunkName: "group-debug" */ '@/views/Test')
   },
   {
     path: '/ui',
     name: 'Ui',
-    component: () => import('@/views/Ui')
+    component: () => import(/* webpackChunkName: "group-debug" */ '@/views/Ui')
   },
   {
     // Adapted from:
