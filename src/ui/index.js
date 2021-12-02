@@ -11,6 +11,7 @@ import CSelect from './CSelect'
 import CTable from './CTable'
 import CDropdown from './CDropdown'
 import CSwitch from './CSwitch'
+import CNotification from './CNotification'
 
 export {
   CAvatar,
@@ -25,5 +26,6 @@ export {
   CSelect,
   CTable,
   CDropdown,
-  CSwitch
+  CSwitch,
+  CNotification
 }

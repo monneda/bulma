@@ -7,6 +7,22 @@
 </section>
 
 <section class="section">
+  <h1 class="title is-1"> CNotification </h1>
+  <c-button
+    @click="notification.active = !notification.active"
+  >
+    Show toast
+  </c-button>
+  <c-notification
+    class="is-primary"
+    :active="notification.active"
+    @close="notification.active = false"
+  >
+    Hi, I'm toast
+  </c-notification>
+</section>
+
+<section class="section">
   <h1 class="title is-1"> CMenu </h1>
 
   <c-menu>
@@ -197,6 +213,10 @@ export default {
     dropdown: {
       active: false,
       items: ['first', 'second', 'third']
+    },
+
+    notification: {
+      active: false
     }
   }),
 
