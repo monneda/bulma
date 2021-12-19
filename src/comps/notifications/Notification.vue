@@ -73,23 +73,15 @@ export default {
     router () {
       switch (this.notification.type) {
         case 'USER_COMMENT_EVENT':
-          this.$router.push(`/p/${this.notification.data.eventId}`)
-          break
         case 'USER_LIKE_EVENT':
-          this.$router.push(`/p/${this.notification.data.eventId}`)
-          break
         case 'USER_TAGGED_COMMENT_EVENT':
+        case 'USER_COMMENT_EVENT_COMMENTED':
           this.$router.push(`/p/${this.notification.data.eventId}`)
           break
         case 'USER_COMMENT_LIKE_EVENT':
           this.$router.push(`/p/${this.notification.data}`)
           break
         case 'USER_FOLLOWED':
-          this.$router.push(`/u/${this.notification.user.username}`)
-          break
-        case 'USER_COMMENT_EVENT_COMMENTED':
-          this.$router.push(`/p/${this.notification.data.eventId}`)
-          break
         default:
           this.$router.push(`/u/${this.notification.user.username}`)
       }
