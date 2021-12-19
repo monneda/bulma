@@ -32,6 +32,7 @@ const TEXT = {
   USER_COMMENT_EVENT: 'comentou na sua postagem: ',
   USER_FOLLOWED: 'te seguiu',
   USER_LIKE_EVENT: 'curtiu sua postagem',
+  USER_COMMENT_LIKE_EVENT: 'curtiu seu comentário',
   USER_TAGGED_COMMENT_EVENT: 'te marcou em um comentário: ',
   USER_COMMENT_EVENT_COMMENTED: 'comentou em uma publicação que você interagiu: '
 }
@@ -79,6 +80,9 @@ export default {
           break
         case 'USER_TAGGED_COMMENT_EVENT':
           this.$router.push(`/p/${this.notification.data.eventId}`)
+          break
+        case 'USER_COMMENT_LIKE_EVENT':
+          this.$router.push(`/p/${this.notification.data}`)
           break
         case 'USER_FOLLOWED':
           this.$router.push(`/u/${this.notification.user.username}`)
