@@ -25,19 +25,19 @@
           <!-- Sector -->
           <div class="column is-one-third">
             <h5 class="title is-5"> Setor </h5>
-            <p class="subtitle is-7"> {{ sector.sector }} </p>
+            <p class="subtitle is-6"> {{ sector.sector }} </p>
           </div>
 
           <!-- Subsector -->
           <div class="column is-one-third">
             <h5 class="title is-5"> Subsetor </h5>
-            <p class="subtitle is-7"> {{ sector.subsector }} </p>
+            <p class="subtitle is-6"> {{ sector.subsector }} </p>
           </div>
 
           <!-- Segment -->
           <div class="column is-one-third">
             <h5 class="title is-5"> Segmento </h5>
-            <p class="subtitle is-7"> {{ sector.segment }} </p>
+            <p class="subtitle is-6"> {{ sector.segment }} </p>
           </div>
         </div>
       </article>
