@@ -41,6 +41,44 @@
           </div>
         </div>
       </article>
+      <article class="box">
+        <h4 class="title is-4"> Indicadores </h4>
+
+        <hr>
+
+        <div class="columns is-multiline">
+          <!-- Subsector -->
+          <div class="column is-half">
+            <h5 class="title is-5"> P/L </h5>
+            <p class="subtitle is-6"> {{ assetIndicators.pl }} </p>
+          </div>
+
+          <div class="column is-half">
+            <h5 class="title is-5"> P/VP </h5>
+            <p class="subtitle is-6"> {{ assetIndicators.pvp }} </p>
+          </div>
+
+          <div class="column is-half">
+            <h5 class="title is-5"> ROE </h5>
+            <p class="subtitle is-6"> {{ assetIndicators.roe }} </p>
+          </div>
+
+          <div class="column is-half">
+            <h5 class="title is-5"> EV/Ebitda </h5>
+            <p class="subtitle is-6"> {{ assetIndicators.evEbitda }} </p>
+          </div>
+
+          <div class="column is-half">
+            <h5 class="title is-5"> Liquidez corrente </h5>
+            <p class="subtitle is-6"> {{ assetIndicators.liquidezCorr }} </p>
+          </div>
+
+          <div class="column is-half">
+            <h5 class="title is-5"> Margem líquida </h5>
+            <p class="subtitle is-6"> {{ assetIndicators.margLiquida }} </p>
+          </div>
+        </div>
+      </article>
     </div>
   </div>
 </div>
@@ -100,6 +138,7 @@ export default {
   methods: {
     async fetchData (days) {
       this.asset = await client.assets.fetchAsset(this.ticker, days)
+      this.assetIndicators = await client.assets.fetchAssetIndicators(this.ticker, days)
       this.history = await client.assets.fetchHistory(this.ticker, days)
     }
   },
