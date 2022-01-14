@@ -15,8 +15,8 @@
     </div>
 
     <!-- Avoid glitching out when we do not have the sector of the ticker -->
-    <div class="column is-two-fifths" v-if="asset && sector">
-      <article class="box">
+    <div class="column is-two-fifths" v-if="asset">
+      <article class="box" v-if="sector">
         <h4 class="title is-4"> Sobre a {{ asset.ticker }} </h4>
 
         <hr>
@@ -41,7 +41,7 @@
           </div>
         </div>
       </article>
-      <article class="box">
+      <article class="box" v-if="assetIndicators">
         <h4 class="title is-4"> Indicadores </h4>
 
         <hr>
@@ -118,6 +118,7 @@ export default {
   data: () => ({
     period: 7,
     asset: null,
+    assetIndicators: null,
     history: { prices: [] }
   }),
 
@@ -138,8 +139,8 @@ export default {
   methods: {
     async fetchData (days) {
       this.asset = await client.assets.fetchAsset(this.ticker, days)
-      this.assetIndicators = await client.assets.fetchAssetIndicators(this.ticker, days)
       this.history = await client.assets.fetchHistory(this.ticker, days)
+      this.assetIndicators = await client.assets.fetchAssetIndicators(this.ticker, days)
     }
   },
 
