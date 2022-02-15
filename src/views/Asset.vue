@@ -70,12 +70,12 @@
 
           <div class="column is-half">
             <h5 class="title is-5"> Liquidez corrente </h5>
-            <p class="subtitle is-6"> {{ assetIndicators.liquidezCorr }} </p>
+            <p class="subtitle is-6"> {{ assetIndicators.liquidezCorrente }} </p>
           </div>
 
           <div class="column is-half">
             <h5 class="title is-5"> Margem líquida </h5>
-            <p class="subtitle is-6"> {{ assetIndicators.margLiquida }} </p>
+            <p class="subtitle is-6"> {{ assetIndicators.margemLiquida }} </p>
           </div>
         </div>
       </article>
