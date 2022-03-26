@@ -31,7 +31,7 @@
             class="is-white"
             v-if="isSelf"
             left
-            :icon="['fa', 'ellipsis-v']"
+            :icon="['fa', 'ellipsis-vertical']"
             @click="active = !active"
           />
         </div>

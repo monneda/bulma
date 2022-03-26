@@ -37,7 +37,7 @@
     <div v-if="$store.state.user.auth" class="navbar-menu navbar-menu-touch" ref="menu">
       <!-- icons navbar desktop -->
       <div class="navbar-end is-hidden-touch">
-        <navbar-item to="/feed" icon="home" label="FEED" />
+        <navbar-item to="/feed" icon="house" label="FEED" />
         <navbar-item to="/c" icon="wallet"  label="CARTERAS" />
         <!-- <navbar-item to="/a" icon="chart-line" label="ATIVOS" /> -->
         <!-- <navbar-item to="/explore" icon="compass" label="DESCOBRIR" /> -->
