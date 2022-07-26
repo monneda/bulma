@@ -19,7 +19,7 @@
     "@meilisearch/instant-meilisearch": "^0.5.10",
     "bulma": "^0.9.4",
     "bulma-switch": "^2.0.4",
-    "chart.js": "^2.9.4",
+    "chart.js": "^3.8.2",
     "chartjs-plugin-colorschemes": "^0.4.0",
     "core-js": "^3.22.8",
     "register-service-worker": "^1.7.1",
