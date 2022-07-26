@@ -16,7 +16,7 @@
     "@fortawesome/free-regular-svg-icons": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@fortawesome/vue-fontawesome": "^3.0.0",
-    "@meilisearch/instant-meilisearch": "^0.5.10",
+    "@meilisearch/instant-meilisearch": "^0.8.1",
     "bulma": "^0.9.4",
     "bulma-switch": "^2.0.4",
     "chart.js": "^2.9.4",
